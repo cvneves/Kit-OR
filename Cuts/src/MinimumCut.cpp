@@ -2,13 +2,12 @@
 
 void minimumCut(Graph *G, int a)
 {
-
 }
 
 void minimumCutPhase(Graph *G, int a)
 {
     std::vector<int> V(G->getNumNodes() - 1);
-    std::vector<int> A(G->getNumNodes() - 1, -1);
+    std::vector<int> A(G->getNumNodes(), -1);
 
     A[0] = a;
 
@@ -27,7 +26,7 @@ void minimumCutPhase(Graph *G, int a)
         double greatestWeightSum = -std::numeric_limits<double>::infinity();
         auto node = V.begin();
         auto jt = V.begin();
-        
+
         for (int j = 0; j < V.size(); j++, jt++)
         {
             double weightSum = 0;
@@ -56,4 +55,3 @@ void minimumCutPhase(Graph *G, int a)
         std::cout << A[i] << " ";
     }
 }
-
