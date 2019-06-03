@@ -1,7 +1,7 @@
-BB/src/vscode
-Cuts/src/vscode
-ILS/src/vscode
-RL/src/vscode
+BB/src/.vscode
+Cuts/src/.vscode
+ILS/src/.vscode
+RL/src/.vscode
 RL/tsp
 BB/tsp
 ILS/tsp
