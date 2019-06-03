@@ -4,35 +4,35 @@
 #include <vector>
 #include <map>
 #include <iostream>
+#include <algorithm>
+#include <limits>
 
-  typedef struct edge
-  {
-    int i, j;
-    double w;
-  } Edge;
-
+typedef struct edge
+{
+  int i, j;
+  double w;
+} Edge;
 
 class Graph
 {
 private:
-  Edge* edges;
+  Edge *edges;
   int numEdges, numNodes, **edgeIndex;
 
 public:
   Graph(int, double **);
   virtual ~Graph();
 
-  int V();
-  int E();
+  int getNumNodes();
+  int getNumEdges();
 
   double w(int, int);
-  double w(std::pair<int, int>);
 
   int getEdge(int, int);
 
   void printEdges();
-  
-  Edge * getEdges();
+
+  Edge *getEdges();
 };
 
 #endif

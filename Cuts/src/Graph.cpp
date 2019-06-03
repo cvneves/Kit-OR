@@ -35,11 +35,12 @@ Graph::Graph(int N, double **M)
             edgeIndex[i][j] = edgeIndex[j][i];
         }
     }
+
 }
 
 Graph::~Graph()
 {
-    for(int i = 0; i < numNodes; i++)
+    for (int i = 0; i < numNodes; i++)
     {
         delete[] edgeIndex[i];
     }
@@ -47,10 +48,11 @@ Graph::~Graph()
     delete[] edges;
 }
 
-int Graph::V() { return numNodes; }
-int Graph::E() { return numEdges; }
+int Graph::getNumNodes() { return numNodes; }
+int Graph::getNumEdges() { return numEdges; }
 
 double Graph::w(int i, int j) { return edges[edgeIndex[i][j]].w; }
+
 int Graph::getEdge(int i, int j) { return edgeIndex[i][j]; }
 
 void Graph::printEdges()
@@ -58,11 +60,11 @@ void Graph::printEdges()
     for (int i = 0; i < numEdges; i++)
     {
         Edge e = edges[i];
-        std::cout << edgeIndex[e.j][e.i] <<"{" << e.i << ", " << e.j << "}, w = " << e.w << "\n";
+        std::cout << edgeIndex[e.j][e.i] << "{" << e.i << ", " << e.j << "}, w = " << e.w << "\n";
     }
 }
 
-Edge * Graph::getEdges()
+Edge *Graph::getEdges()
 {
     return edges;
 }

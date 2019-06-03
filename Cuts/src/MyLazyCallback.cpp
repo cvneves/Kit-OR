@@ -36,14 +36,14 @@ std::vector<IloConstraint> *MyLazyCallback::separate()
 {
     std::vector<IloConstraint> *constraints = new std::vector<IloConstraint>();
 
-    IloNumArray x_vals(getEnv(), G->E());
+    IloNumArray x_vals(getEnv(), G->getNumEdges());
     getValues(x_vals, x);
 
-    std::vector<std::vector<int>> m(G->V(), std::vector<int>(G->V()));
+    std::vector<std::vector<int>> m(G->getNumNodes(), std::vector<int>(G->getNumNodes()));
 
-    std::vector<std::pair<int, int>> edges(G->V());
+    std::vector<std::pair<int, int>> edges(G->getNumNodes());
 
-    for (int i = 0, j = 0; i < G->E(); i++)
+    for (int i = 0, j = 0; i < G->getNumEdges(); i++)
     {
         if (x_vals[i] > 1 - EPSILON)
         {
@@ -89,7 +89,7 @@ std::vector<IloConstraint> *MyLazyCallback::separate()
         IloExpr sumS(getEnv());
         int S_size = S.size();
 
-        if(S_size == G->V())
+        if(S_size == G->getNumNodes())
         {
             return constraints;
         }
