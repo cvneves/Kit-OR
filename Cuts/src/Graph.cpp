@@ -35,7 +35,6 @@ Graph::Graph(int N, double **M)
             edgeIndex[i][j] = edgeIndex[j][i];
         }
     }
-
 }
 
 Graph::~Graph()
@@ -51,7 +50,11 @@ Graph::~Graph()
 int Graph::getNumNodes() { return numNodes; }
 int Graph::getNumEdges() { return numEdges; }
 
+void Graph::setNumNodes(int n) { numNodes = n; }
+void Graph::setNumEdges(int n) { numEdges = n; }
+
 double Graph::w(int i, int j) { return edges[edgeIndex[i][j]].w; }
+void Graph::setW(int i, int j, double w) { edges[getEdge(i, j)].w = w; }
 
 int Graph::getEdge(int i, int j) { return edgeIndex[i][j]; }
 

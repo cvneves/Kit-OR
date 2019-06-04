@@ -21,12 +21,17 @@ private:
 
 public:
   Graph(int, double **);
+  Graph() {}
   virtual ~Graph();
 
   int getNumNodes();
   int getNumEdges();
 
+  void setNumNodes(int);
+  void setNumEdges(int);
+
   double w(int, int);
+  void setW(int i, int j, double w);
 
   int getEdge(int, int);
 

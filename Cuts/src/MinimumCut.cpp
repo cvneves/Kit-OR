@@ -2,22 +2,34 @@
 
 void minimumCut(Graph *G, int a)
 {
+    Graph *H = new Graph;
+    *H = *G;
+    std::vector<bool> deletedNodes(G->getNumNodes(), false);
+    int l = 0;
+
+    // for (int i = 0; i < H->getNumNodes(); i++)
+    // {
+    minimumCutPhase(H, 0, deletedNodes, l);
+    minimumCutPhase(H, 0, deletedNodes, l);
+    minimumCutPhase(H, 0, deletedNodes, l);
+    minimumCutPhase(H, 0, deletedNodes, l);
+    minimumCutPhase(H, 0, deletedNodes, l);
+    // }
 }
 
-void minimumCutPhase(Graph *G, int a)
+void minimumCutPhase(Graph *G, int a, std::vector<bool> &deletedNodes, int &l)
 {
-    std::vector<int> V(G->getNumNodes() - 1);
-    std::vector<int> A(G->getNumNodes(), -1);
-
-    A[0] = a;
-
+    std::vector<int> V(G->getNumNodes() - 1 - l);
     for (int i = 0, j = 0; i < G->getNumNodes(); i++)
     {
-        if (i == a)
+        if (i == a || deletedNodes[i] == true)
             continue;
         V[j] = i;
         j++;
     }
+
+    std::vector<int> A(V.size() + 1, -1);
+    A[0] = a;
 
     int k = 1;
 
@@ -54,4 +66,13 @@ void minimumCutPhase(Graph *G, int a)
     {
         std::cout << A[i] << " ";
     }
+    std::cout << "\n";
+
+    for (int i = 0; i < A.size() - 1; i++)
+    {
+        G->getEdges()[G->getEdge(i, A[A.size() - 2])].w += G->getEdges()[G->getEdge(i, A[A.size() - 1])].w;
+    }
+
+    deletedNodes[A[A.size() - 1]] = true;
+    l++;
 }

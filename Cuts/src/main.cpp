@@ -92,7 +92,8 @@ int main(int argc, char **argv)
 	// 	}
 	// }
 
-	minimumCutPhase(G, 0);
+
+	minimumCut(G, 0);
 
 	return 0;
 }
