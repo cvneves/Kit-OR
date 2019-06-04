@@ -21,7 +21,28 @@ int main(int argc, char **argv)
 	d->printMatrixDist();
 	std::cout << "\n";
 
-	Graph *G = new Graph(d->getDimension(), d->getMatrixCost());
+	double **w = new double *[d->getDimension()];
+	std::vector<std::vector<double>> XAH = {{0, 2, 0, 0, 3, 0, 0, 0},
+											{2, 0, 3, 0, 2, 2, 0, 0},
+											{0, 3, 0, 4, 0, 0, 2, 0},
+											{0, 0, 4, 0, 0, 0, 2, 2},
+											{3, 2, 0, 0, 0, 3, 0, 0},
+											{0, 2, 0, 0, 3, 0, 1, 0},
+											{0, 0, 2, 2, 0, 1, 0, 3},
+											{0, 0, 0, 2, 0, 0, 3, 0}};
+	for (int i = 0; i < d->getDimension(); i++)
+	{
+		w[i] = new double[d->getDimension()];
+	}
+	for (int i = 0; i < d->getDimension(); i++)
+	{
+		for (int j = 0; j < d->getDimension(); j++)
+		{
+			w[i][j] = XAH[i][j];
+		}
+	}
+
+	Graph *G = new Graph(8, w);
 	// G->printEdges();
 	int N = G->getNumNodes();
 
@@ -92,6 +113,71 @@ int main(int argc, char **argv)
 	// 	}
 	// }
 
+	//Modelo
+	IloEnv env;
+	IloModel modelo(env);
+
+	//Variaveis
+	IloBoolVarArray x(env, G->getNumEdges());
+	IloBoolVarArray y(env, G->getNumNodes());
+
+	for (int e = 0; e < G->getNumEdges(); e++)
+	{
+		modelo.add(x[e]);
+	}
+	for (int i = 0; i < G->getNumNodes(); i++)
+	{
+		modelo.add(y[i]);
+	}
+
+	//Restriçoes de grau
+	IloExpr sum1(env);
+	for (int i = 0; i < G->getNumNodes(); i++)
+	{
+		sum1 += y[i];
+	}
+	modelo.add(sum1 >= 1);
+	modelo.add(sum1 <= G->getNumNodes() - 1);
+
+	for (int i = 0; i < G->getNumNodes(); i++)
+	{
+		for (int j = i + 1; j < G->getNumNodes(); j++)
+		{
+			modelo.add(x[G->getEdge(i, j)] >= y[i] - y[j]);
+			modelo.add(x[G->getEdge(i, j)] >= y[j] - y[i]);
+		}
+	}
+
+	// FO
+	{
+		IloExpr sumEdges(env);
+		for (int e = 0; e < G->getNumEdges(); e++)
+		{
+			Edge &ed = G->getEdges()[e];
+			sumEdges += x[e] * ed.w;
+		}
+		modelo.add(IloMinimize(env, sumEdges));
+	}
+
+	IloCplex TSP(modelo);
+
+	try
+	{
+		TSP.solve();
+	}
+
+	catch (IloException &e)
+	{
+		std::cout << e;
+	}
+
+	std::cout << "status: " << TSP.getStatus() << std::endl;
+	std::cout << "custo:" << TSP.getObjValue() << std::endl;
+
+	for (int i = 0; i < G->getNumNodes(); i++)
+	{
+		std::cout << TSP.getValue(y[i]) << "\n";
+	}
 
 	minimumCut(G, 0);
 

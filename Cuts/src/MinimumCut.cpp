@@ -2,19 +2,13 @@
 
 void minimumCut(Graph *G, int a)
 {
-    Graph *H = new Graph;
-    *H = *G;
     std::vector<bool> deletedNodes(G->getNumNodes(), false);
     int l = 0;
 
-    // for (int i = 0; i < H->getNumNodes(); i++)
-    // {
-    minimumCutPhase(H, 0, deletedNodes, l);
-    minimumCutPhase(H, 0, deletedNodes, l);
-    minimumCutPhase(H, 0, deletedNodes, l);
-    minimumCutPhase(H, 0, deletedNodes, l);
-    minimumCutPhase(H, 0, deletedNodes, l);
-    // }
+    for (int i = 0; i < G->getNumNodes() - 1; i++)
+    {
+        minimumCutPhase(G, 1, deletedNodes, l);
+    }
 }
 
 void minimumCutPhase(Graph *G, int a, std::vector<bool> &deletedNodes, int &l)
@@ -33,9 +27,11 @@ void minimumCutPhase(Graph *G, int a, std::vector<bool> &deletedNodes, int &l)
 
     int k = 1;
 
+    double greatestWeightSum;
+
     while (k < A.size())
     {
-        double greatestWeightSum = -std::numeric_limits<double>::infinity();
+        greatestWeightSum = -std::numeric_limits<double>::infinity();
         auto node = V.begin();
         auto jt = V.begin();
 
@@ -68,10 +64,12 @@ void minimumCutPhase(Graph *G, int a, std::vector<bool> &deletedNodes, int &l)
     }
     std::cout << "\n";
 
-    for (int i = 0; i < A.size() - 1; i++)
+    for (int i = 0; i < A.size() - 2; i++)
     {
-        G->getEdges()[G->getEdge(i, A[A.size() - 2])].w += G->getEdges()[G->getEdge(i, A[A.size() - 1])].w;
+        G->getEdges()[G->getEdge(A[i], A[A.size() - 2])].w += G->getEdges()[G->getEdge(A[i], A[A.size() - 1])].w;
     }
+
+    std::cout << greatestWeightSum << "\n";
 
     deletedNodes[A[A.size() - 1]] = true;
     l++;
