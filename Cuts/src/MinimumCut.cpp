@@ -1,6 +1,6 @@
 #include "MinimumCut.h"
 
-void minimumCut(Graph *G, int a)
+double minimumCut(Graph *G, int a, std::vector<bool> &S)
 {
     std::vector<bool> deletedNodes(G->getNumNodes(), false);
     int l = 0;
@@ -9,9 +9,9 @@ void minimumCut(Graph *G, int a)
     std::vector<int> A;
     int nSubsets = 0;
     int lastNode;
-    std::vector<bool> S(G->getNumNodes(), false);
+    S = std::vector<bool>(G->getNumNodes(), false);
 
-    for(int i = 0; i < partition.size();i++)
+    for (int i = 0; i < partition.size(); i++)
     {
         partition[i][i] = true;
     }
@@ -29,14 +29,14 @@ void minimumCut(Graph *G, int a)
         partition[A[A.size() - 1]][A[A.size() - 2]] = true;
     }
 
-    for (int i = 0; i < partition.size(); i++)
-    {
-        for (int j = 0; j < partition.size(); j++)
-        {
-            std::cout << bestPartition[i][j] << " ";
-        }
-        std::cout << "\n";
-    }
+    // for (int i = 0; i < partition.size(); i++)
+    // {
+    //     for (int j = 0; j < partition.size(); j++)
+    //     {
+    //         std::cout << bestPartition[i][j] << " ";
+    //     }
+    //     std::cout << "\n";
+    // }
 
     std::cout << "Minimum cut cost: " << mincutCost << "\n";
 
@@ -60,13 +60,15 @@ void minimumCut(Graph *G, int a)
         }
     }
 
-    std::cout << "S: ";
+    // std::cout << "S: ";
 
-    for (const int &i : S)
-    {
-        std::cout << i << " ";
-    }
-    std::cout << "\n";
+    // for (const int &i : S)
+    // {
+    //     std::cout << i << " ";
+    // }
+    // std::cout << "\n";
+
+    return mincutCost;
 }
 
 void minimumCutPhase(Graph *G, int a, std::vector<bool> &deletedNodes, int &l, double &cutCost, std::vector<int> &A)

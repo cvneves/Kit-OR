@@ -1,6 +1,7 @@
 #include "Graph.h"
 #include "data.h"
 #include "MyLazyCallback.h"
+#include "MyCutCallback.h"
 #include "MinimumCut.h"
 #include <iostream>
 #include <fstream>
@@ -21,99 +22,9 @@ int main(int argc, char **argv)
 	d->printMatrixDist();
 	std::cout << "\n";
 
-	double **w = new double *[d->getDimension()];
-	std::vector<std::vector<double>> XAH = {{0, 2, 0, 0, 3, 0, 0, 0},
-											{2, 0, 3, 0, 2, 2, 0, 0},
-											{0, 3, 0, 4, 0, 0, 2, 0},
-											{0, 0, 4, 0, 0, 0, 2, 2},
-											{3, 2, 0, 0, 0, 3, 0, 0},
-											{0, 2, 0, 0, 3, 0, 1, 0},
-											{0, 0, 2, 2, 0, 1, 0, 3},
-											{0, 0, 0, 2, 0, 0, 3, 0}};
-	for (int i = 0; i < d->getDimension(); i++)
-	{
-		w[i] = new double[d->getDimension()];
-	}
-	for (int i = 0; i < d->getDimension(); i++)
-	{
-		for (int j = 0; j < d->getDimension(); j++)
-		{
-			w[i][j] = XAH[i][j];
-		}
-	}
-
-	
-	Graph *G = new Graph(8, w);
-	// Graph *G = new Graph(d->getDimension(), d->getMatrixCost());
-	// G->printEdges();
+	Graph *G = new Graph(d->getDimension(), d->getMatrixCost());
+	G->printEdges();
 	int N = G->getNumNodes();
-
-	// //Modelo
-	// IloEnv env;
-	// IloModel modelo(env);
-
-	// //Variaveis
-	// IloBoolVarArray x(env, G->getNumEdges());
-
-	// for (int e = 0; e < G->getNumEdges(); e++)
-	// {
-	// 	modelo.add(x[e]);
-	// }
-
-	// //Restriçoes de grau
-	// for (int i = 0; i < N; i++)
-	// {
-	// 	IloExpr sum(env);
-	// 	for (int j = 0; j < N; j++)
-	// 	{
-	// 		if (i == j)
-	// 			continue;
-
-	// 		int e = G->getEdge(i, j);
-	// 		sum += x[e];
-	// 	}
-	// 	modelo.add(sum == 2);
-	// }
-
-	// // FO
-	// {
-	// 	IloExpr sumEdges(env);
-	// 	for (int e = 0; e < G->getNumEdges(); e++)
-	// 	{
-	// 		Edge &ed = G->getEdges()[e];
-	// 		sumEdges += x[e] * ed.w;
-	// 	}
-	// 	modelo.add(IloMinimize(env, sumEdges));
-	// }
-
-	// IloCplex TSP(modelo);
-
-	// IloBoolVarArray &x_ref = x;
-
-	// MyLazyCallback *lazyCbk = new (env) MyLazyCallback(env, x_ref, G);
-	// TSP.use(lazyCbk);
-
-	// try
-	// {
-	// 	TSP.solve();
-	// }
-
-	// catch (IloException &e)
-	// {
-	// 	std::cout << e;
-	// }
-
-	// std::cout << "status: " << TSP.getStatus() << std::endl;
-	// std::cout << "custo:" << TSP.getObjValue() << std::endl;
-
-	// for (int e = 0; e < G->E(); e++)
-	// {
-	// 	if (TSP.getValue(x[e]) > 0.9)
-	// 	{
-	// 		Edge &ed = G->getEdges()[e];
-	// 		std::cout << ed.i << ", " << ed.j << "\n";
-	// 	}
-	// }
 
 	//Modelo
 	IloEnv env;
@@ -121,33 +32,25 @@ int main(int argc, char **argv)
 
 	//Variaveis
 	IloBoolVarArray x(env, G->getNumEdges());
-	IloBoolVarArray y(env, G->getNumNodes());
 
 	for (int e = 0; e < G->getNumEdges(); e++)
 	{
 		modelo.add(x[e]);
 	}
-	for (int i = 0; i < G->getNumNodes(); i++)
-	{
-		modelo.add(y[i]);
-	}
 
 	//Restriçoes de grau
-	IloExpr sum1(env);
-	for (int i = 0; i < G->getNumNodes(); i++)
+	for (int i = 0; i < N; i++)
 	{
-		sum1 += y[i];
-	}
-	modelo.add(sum1 >= 1);
-	modelo.add(sum1 <= G->getNumNodes() - 1);
-
-	for (int i = 0; i < G->getNumNodes(); i++)
-	{
-		for (int j = i + 1; j < G->getNumNodes(); j++)
+		IloExpr sum(env);
+		for (int j = 0; j < N; j++)
 		{
-			modelo.add(x[G->getEdge(i, j)] >= y[i] - y[j]);
-			modelo.add(x[G->getEdge(i, j)] >= y[j] - y[i]);
+			if (i == j)
+				continue;
+
+			int e = G->getEdge(i, j);
+			sum += x[e];
 		}
+		modelo.add(sum == 2);
 	}
 
 	// FO
@@ -163,6 +66,13 @@ int main(int argc, char **argv)
 
 	IloCplex TSP(modelo);
 
+	IloBoolVarArray &x_ref = x;
+
+	MyLazyCallback *lazyCbk = new (env) MyLazyCallback(env, x_ref, G);
+	MyCutCallback *cutCbk = new (env) MyCutCallback(env, x_ref, G);
+	TSP.use(lazyCbk);
+	TSP.use(cutCbk);
+
 	try
 	{
 		TSP.solve();
@@ -176,12 +86,14 @@ int main(int argc, char **argv)
 	std::cout << "status: " << TSP.getStatus() << std::endl;
 	std::cout << "custo:" << TSP.getObjValue() << std::endl;
 
-	for (int i = 0; i < G->getNumNodes(); i++)
-	{
-		std::cout << TSP.getValue(y[i]) << "\n";
-	}
-
-	minimumCut(G, 0);
+	// for (int e = 0; e < G->E(); e++)
+	// {
+	// 	if (TSP.getValue(x[e]) > 0.9)
+	// 	{
+	// 		Edge &ed = G->getEdges()[e];
+	// 		std::cout << ed.i << ", " << ed.j << "\n";
+	// 	}
+	// }
 
 	return 0;
 }
