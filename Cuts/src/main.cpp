@@ -42,7 +42,9 @@ int main(int argc, char **argv)
 		}
 	}
 
+	
 	Graph *G = new Graph(8, w);
+	// Graph *G = new Graph(d->getDimension(), d->getMatrixCost());
 	// G->printEdges();
 	int N = G->getNumNodes();
 
