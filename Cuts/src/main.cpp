@@ -23,6 +23,8 @@ int main(int argc, char **argv)
 	std::cout << "\n";
 
 	Graph *G = new Graph(d->getDimension(), d->getMatrixCost());
+	Graph *H = new Graph(d->getDimension(), d->getMatrixCost());
+
 	G->printEdges();
 	int N = G->getNumNodes();
 
@@ -69,7 +71,7 @@ int main(int argc, char **argv)
 	IloBoolVarArray &x_ref = x;
 
 	MyLazyCallback *lazyCbk = new (env) MyLazyCallback(env, x_ref, G);
-	MyCutCallback *cutCbk = new (env) MyCutCallback(env, x_ref, G);
+	MyCutCallback *cutCbk = new (env) MyCutCallback(env, x_ref, H);
 	TSP.use(lazyCbk);
 	TSP.use(cutCbk);
 

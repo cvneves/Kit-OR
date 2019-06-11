@@ -25,8 +25,7 @@ void MyCutCallback::main()
     IloNumArray x_vals(getEnv(), G->getNumEdges());
     getValues(x_vals, x);
 
-    Graph *H = new Graph;
-    *H = *G;
+    Graph *H = G;
 
     for (int i = 0, l = 0; i < H->getNumNodes(); i++)
     {
@@ -35,6 +34,9 @@ void MyCutCallback::main()
             H->getEdges()[l].w = x_vals[l];
         }
     }
+
+    std::cout << "\n\n\n\n\n\n\n\n"
+              << getNodeData() << "\n\n\n\n\n\n\n\n";
 
     std::vector<bool> S;
 
@@ -68,8 +70,6 @@ void MyCutCallback::main()
         }
         add(sum >= 2);
     }
-    
-
 }
 
 IloConstraint *MyCutCallback::separate()
