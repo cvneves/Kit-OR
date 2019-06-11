@@ -38,7 +38,7 @@ double minimumCut(Graph *G, int a, std::vector<bool> &S)
     //     std::cout << "\n";
     // }
 
-    std::cout << "Minimum cut cost: " << mincutCost << "\n";
+    // std::cout << "Minimum cut cost: " << mincutCost << "\n";
 
     {
         int i = 0;

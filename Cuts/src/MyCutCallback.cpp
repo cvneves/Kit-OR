@@ -1,4 +1,5 @@
 #include "MyCutCallback.h"
+#include "NodeInfo.h"
 
 #include <iostream>
 #include <vector>
@@ -9,6 +10,8 @@
 #include <algorithm>
 #include <exception>
 #include <list>
+
+#define MAX_ITER 100
 
 MyCutCallback::MyCutCallback(IloEnv env, const IloBoolVarArray &x_ref, Graph *Gr) : IloCplex::UserCutCallbackI(env), x(env), G(Gr)
 {
@@ -22,6 +25,23 @@ IloCplex::CallbackI *MyCutCallback::duplicateCallback() const
 
 void MyCutCallback::main()
 {
+
+    NodeInfo *data = dynamic_cast<NodeInfo *>(getNodeData());
+
+    if (!data)
+    {
+        if (NodeInfo::rootData == NULL)
+        {
+            NodeInfo::initRootData();
+        }
+        data = NodeInfo::rootData;
+    }
+
+    if (data->getIterations() >= MAX_ITER)
+    {
+        return;
+    }
+
     IloNumArray x_vals(getEnv(), G->getNumEdges());
     getValues(x_vals, x);
 
@@ -34,9 +54,6 @@ void MyCutCallback::main()
             H->getEdges()[l].w = x_vals[l];
         }
     }
-
-    std::cout << "\n\n\n\n\n\n\n\n"
-              << getNodeData() << "\n\n\n\n\n\n\n\n";
 
     std::vector<bool> S;
 
@@ -70,6 +87,7 @@ void MyCutCallback::main()
         }
         add(sum >= 2);
     }
+    data->addIteration();
 }
 
 IloConstraint *MyCutCallback::separate()

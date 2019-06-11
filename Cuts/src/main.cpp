@@ -2,6 +2,7 @@
 #include "data.h"
 #include "MyLazyCallback.h"
 #include "MyCutCallback.h"
+#include "MyBranchCallback.h"
 #include "MinimumCut.h"
 #include <iostream>
 #include <fstream>
@@ -72,8 +73,12 @@ int main(int argc, char **argv)
 
 	MyLazyCallback *lazyCbk = new (env) MyLazyCallback(env, x_ref, G);
 	MyCutCallback *cutCbk = new (env) MyCutCallback(env, x_ref, H);
+	MyBranchCallback *branchCbk = new (env) MyBranchCallback(env);
+
+
 	TSP.use(lazyCbk);
 	TSP.use(cutCbk);
+	TSP.use(branchCbk);
 
 	try
 	{
