@@ -4,6 +4,7 @@
 #include <ilcplex/ilocplex.h>
 #include <vector>
 #include "Graph.h"
+#include "MaxBack.h"
 
 class MyLazyCallback : public IloCplex::LazyConstraintCallbackI
 {

@@ -59,6 +59,7 @@ void MyCutCallback::main()
 
     double minCutCost = minimumCut(H, 0, S);
 
+
     int l = 0;
     for (int i = 0; i < S.size(); i++)
     {

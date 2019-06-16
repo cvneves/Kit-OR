@@ -5,6 +5,7 @@
 #include <vector>
 #include "Graph.h"
 #include "MinimumCut.h"
+#include "MaxBack.h"
 
 class MyCutCallback : public IloCplex::UserCutCallbackI
 {

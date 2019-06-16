@@ -53,11 +53,25 @@ std::vector<IloConstraint> *MyLazyCallback::separate()
         }
     }
 
+    for (int i = 0, l = 0; i < G->getNumNodes(); i++)
+    {
+        for (int j = i + 1; j < G->getNumNodes(); j++, l++)
+        {
+            G->setW(i, j, (int)(x_vals[l] > 1 - EPSILON ? 1 : 0));
+        }
+    }
+
+    std::vector<bool> S1(G->getNumNodes(), 0);
+    double mb = maxBack(G, 0, S1);
+
+    std::cout << "\n\n\n";
+
     while (edges.empty() == false)
     {
         std::vector<int> S;
         int node = edges[0].first;
         bool found = false;
+
         while (1)
         {
             auto it = edges.begin();
@@ -85,11 +99,10 @@ std::vector<IloConstraint> *MyLazyCallback::separate()
             found = false;
         }
 
-
         IloExpr sumS(getEnv());
         int S_size = S.size();
 
-        if(S_size == G->getNumNodes())
+        if (S_size == G->getNumNodes())
         {
             return constraints;
         }
@@ -104,6 +117,6 @@ std::vector<IloConstraint> *MyLazyCallback::separate()
 
         constraints->push_back(sumS <= S_size - 1);
     }
-    
+
     return constraints;
 }

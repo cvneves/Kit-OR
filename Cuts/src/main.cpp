@@ -3,6 +3,7 @@
 #include "MyLazyCallback.h"
 #include "MyCutCallback.h"
 #include "MyBranchCallback.h"
+#include "MaxBack.h"
 #include "MinimumCut.h"
 #include <iostream>
 #include <fstream>
@@ -71,7 +72,7 @@ int main(int argc, char **argv)
 
 	IloBoolVarArray &x_ref = x;
 
-	MyLazyCallback *lazyCbk = new (env) MyLazyCallback(env, x_ref, G);
+	MyLazyCallback *lazyCbk = new (env) MyLazyCallback(env, x_ref, H);
 	MyCutCallback *cutCbk = new (env) MyCutCallback(env, x_ref, H);
 	MyBranchCallback *branchCbk = new (env) MyBranchCallback(env);
 
@@ -101,6 +102,12 @@ int main(int argc, char **argv)
 	// 		std::cout << ed.i << ", " << ed.j << "\n";
 	// 	}
 	// }
+
+
+	// std::vector<bool> S(G->getNumNodes(), 0);
+	// double mb = maxBack(G,  0, S);
+	// std::cout << mb << "\n";
+
 
 	return 0;
 }
