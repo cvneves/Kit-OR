@@ -78,8 +78,8 @@ int main(int argc, char **argv)
 
 
 	TSP.use(lazyCbk);
-	TSP.use(cutCbk);
-	TSP.use(branchCbk);
+	//TSP.use(cutCbk);
+	//TSP.use(branchCbk);
 
 	try
 	{

@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <list>
 
+
 double maxBack(Graph *G, int a, std::vector<bool> &S);
 
 #endif 

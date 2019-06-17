@@ -6,6 +6,7 @@
 #include <iostream>
 #include <algorithm>
 #include <limits>
+#define EPSILON 0.00001
 
 typedef struct edge
 {

@@ -1,7 +1,8 @@
 #include "MaxBack.h"
 
-double maxBack(Graph *G, int a, std::vector<bool> &S)
+double maxBack(Graph *G, int a, std::vector<bool> &S1)
 {
+    std::vector<bool> S = S1;
     S[a] = true;
     int N = S.size(), s0_size = 1;
     std::vector<double> b(N);
@@ -20,14 +21,14 @@ double maxBack(Graph *G, int a, std::vector<bool> &S)
         cutval += b[i];
     }
 
-    while (s0_size < S.size())
+    while (s0_size < S.size() - 1)
     {
         int maxB = std::max_element(b.begin(), b.end()) - b.begin();
         s0_size++;
 
         cutval += 2 - 2 * b[maxB];
 
-        std::cout << cutval << "\n";   
+        // std::cout << cutval << "\n";
 
         S[maxB] = true;
         b[maxB] = -std::numeric_limits<double>::infinity();
@@ -40,7 +41,20 @@ double maxBack(Graph *G, int a, std::vector<bool> &S)
             }
             b[i] += G->w(maxB, i);
         }
+
+        if (cutval - cutmin < 0)
+        {
+            cutmin = cutval;
+            S1 = S;
+        }
     }
 
-    return cutval;
+    // std::cout << "\n";
+    // for (int i = 0; i < S1.size(); i++)
+    // {
+    //     std::cout << S1[i] << " ";
+    // }
+    // std::cout << "\n";
+
+    return cutmin;
 }
