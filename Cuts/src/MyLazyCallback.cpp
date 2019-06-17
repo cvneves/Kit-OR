@@ -36,7 +36,6 @@ void MyLazyCallback::main()
 std::vector<IloConstraint> *MyLazyCallback::separate()
 {
 
-
     std::vector<IloConstraint> *constraints = new std::vector<IloConstraint>();
 
     IloNumArray x_vals(getEnv(), G->getNumEdges());
@@ -68,7 +67,6 @@ std::vector<IloConstraint> *MyLazyCallback::separate()
     double mb = maxBack(G, 0, S1);
     int S1_size = 0;
 
-
     // for (int i = 0; i < S1.size(); i++)
     // {
     //     if (S1[i] == true)
@@ -79,11 +77,13 @@ std::vector<IloConstraint> *MyLazyCallback::separate()
 
     // std::cout << "\nmb: " << mb << ", S size: " << S1_size << "\n";
 
-    // if (S1_size < 3 || S1_size > S1.size() - 3)
-    // {
-    //     std::cout << "\nAA\n";
-    //     return constraints;
-    // }
+    if (mb >= 2 + EPSILON)
+    {
+        std::cout << "\nAA\n";
+        return constraints;
+    }
+
+    // std::cout << "\nmb : " << mb << "\n";
 
     // if (mb - 2 < EPSILON && S1_size >= 3 && S1_size <= S1.size() - 3)
     // {

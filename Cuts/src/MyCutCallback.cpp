@@ -12,7 +12,7 @@
 #include <list>
 
 #define MAX_ITER 100
-#define MB_DEPTH 100
+#define MB_DEPTH 10
 
 MyCutCallback::MyCutCallback(IloEnv env, const IloBoolVarArray &x_ref, Graph *Gr) : IloCplex::UserCutCallbackI(env), x(env), G(Gr)
 {
