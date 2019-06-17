@@ -8,7 +8,9 @@ class NodeInfo : public IloCplex::MIPCallbackI::NodeData
     int iterations;
 
 public:
-    NodeInfo();
+    int depth;
+
+    NodeInfo(int);
     int getIterations();
     void addIteration();
     static NodeInfo *rootData;

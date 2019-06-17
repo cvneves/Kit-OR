@@ -1,4 +1,5 @@
 #include "MyLazyCallback.h"
+#include "NodeInfo.h"
 
 #include <iostream>
 #include <vector>
@@ -34,6 +35,8 @@ void MyLazyCallback::main()
 
 std::vector<IloConstraint> *MyLazyCallback::separate()
 {
+
+
     std::vector<IloConstraint> *constraints = new std::vector<IloConstraint>();
 
     IloNumArray x_vals(getEnv(), G->getNumEdges());
@@ -65,85 +68,94 @@ std::vector<IloConstraint> *MyLazyCallback::separate()
     double mb = maxBack(G, 0, S1);
     int S1_size = 0;
 
-    for(int i = 0; i < S1.size();i++)
-    {
-        if(S1[i]==true)
-        {
-            S1_size++;
-        }
-    }
 
-    if (mb - 2 < EPSILON && S1_size >= 3 && S1_size <= S1.size() - 3)
+    // for (int i = 0; i < S1.size(); i++)
+    // {
+    //     if (S1[i] == true)
+    //     {
+    //         S1_size++;
+    //     }
+    // }
+
+    // std::cout << "\nmb: " << mb << ", S size: " << S1_size << "\n";
+
+    // if (S1_size < 3 || S1_size > S1.size() - 3)
+    // {
+    //     std::cout << "\nAA\n";
+    //     return constraints;
+    // }
+
+    // if (mb - 2 < EPSILON && S1_size >= 3 && S1_size <= S1.size() - 3)
+    // {
+    //     IloExpr sum(getEnv());
+    //     for (int i = 0; i < S1.size(); i++)
+    //     {
+    //         if (S1[i] == true)
+    //         {
+    //             for (int j = 0; j < S1.size(); j++)
+    //             {
+    //                 if (S1[j] == false)
+    //                 {
+    //                     sum += x[G->getEdge(i, j)];
+    //                     // std::cout << i << ", " << j << "\n";
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     constraints->push_back(sum >= 2);
+    // }
+
+    while (edges.empty() == false)
     {
-        IloExpr sum(getEnv());
-        for (int i = 0; i < S1.size(); i++)
+        std::vector<int> S;
+        int node = edges[0].first;
+        bool found = false;
+
+        while (1)
         {
-            if (S1[i] == true)
+            auto it = edges.begin();
+            for (; it != edges.end(); it++)
             {
-                for (int j = 0; j < S1.size(); j++)
+                if (it->first == node)
                 {
-                    if (S1[j] == false)
-                    {
-                        sum += x[G->getEdge(i, j)];
-                        // std::cout << i << ", " << j << "\n";
-                    }
+                    node = it->second;
+                    S.push_back(node);
+                    edges.erase(it);
+                    found = true;
+                    break;
+                }
+                if (it->second == node)
+                {
+                    node = it->first;
+                    S.push_back(node);
+                    edges.erase(it);
+                    found = true;
+                    break;
                 }
             }
+            if (found == false)
+                break;
+            found = false;
         }
-        constraints->push_back(sum >= 2);
+
+        IloExpr sumS(getEnv());
+        int S_size = S.size();
+
+        if (S_size == G->getNumNodes())
+        {
+            return constraints;
+        }
+
+        for (int i = 0; i < S_size; i++)
+        {
+            for (int j = i + 1; j < S_size; j++)
+            {
+                sumS += x[G->getEdge(S[i], S[j])];
+            }
+        }
+
+        constraints->push_back(sumS <= S_size - 1);
     }
-
-    // while (edges.empty() == false)
-    // {
-    //     std::vector<int> S;
-    //     int node = edges[0].first;
-    //     bool found = false;
-
-    //     while (1)
-    //     {
-    //         auto it = edges.begin();
-    //         for (; it != edges.end(); it++)
-    //         {
-    //             if (it->first == node)
-    //             {
-    //                 node = it->second;
-    //                 S.push_back(node);
-    //                 edges.erase(it);
-    //                 found = true;
-    //                 break;
-    //             }
-    //             if (it->second == node)
-    //             {
-    //                 node = it->first;
-    //                 S.push_back(node);
-    //                 edges.erase(it);
-    //                 found = true;
-    //                 break;
-    //             }
-    //         }
-    //         if (found == false)
-    //             break;
-    //         found = false;
-    //     }
-
-    //     IloExpr sumS(getEnv());
-    //     int S_size = S.size();
-
-    //     if (S_size == G->getNumNodes())
-    //     {
-    //         return constraints;
-    //     }
-
-    //     for (int i = 0; i < S_size; i++)
-    //     {
-    //         for (int j = i + 1; j < S_size; j++)
-    //         {
-    //             sumS += x[G->getEdge(S[i], S[j])];
-    //         }
-    //     }
-
-    //     constraints->push_back(sumS <= S_size - 1);
-    // }
 
     return constraints;
 }

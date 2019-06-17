@@ -12,6 +12,7 @@
 #include <list>
 
 #define MAX_ITER 100
+#define MB_DEPTH 100
 
 MyCutCallback::MyCutCallback(IloEnv env, const IloBoolVarArray &x_ref, Graph *Gr) : IloCplex::UserCutCallbackI(env), x(env), G(Gr)
 {
@@ -55,11 +56,16 @@ void MyCutCallback::main()
         }
     }
 
-    std::vector<bool> S;
+    std::vector<bool> S(H->getNumNodes(), false);
 
-    double minCutCost = minimumCut(H, 0, S);
+    double minCutCost;
 
-
+    minCutCost = maxBack(H, 0, S);
+    if (minCutCost - 2 > EPSILON && data->depth < MB_DEPTH)
+    {
+       minCutCost = minimumCut(H, 0, S);
+    }
+    
     int l = 0;
     for (int i = 0; i < S.size(); i++)
     {

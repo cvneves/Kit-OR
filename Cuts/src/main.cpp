@@ -21,13 +21,13 @@ int main(int argc, char **argv)
 
 	Data *d = new Data(argc, argv[1]);
 	d->readData();
-	d->printMatrixDist();
+	// d->printMatrixDist();
 	std::cout << "\n";
 
 	Graph *G = new Graph(d->getDimension(), d->getMatrixCost());
 	Graph *H = new Graph(d->getDimension(), d->getMatrixCost());
 
-	G->printEdges();
+	// G->printEdges();
 	int N = G->getNumNodes();
 
 	//Modelo
@@ -78,8 +78,8 @@ int main(int argc, char **argv)
 
 
 	TSP.use(lazyCbk);
-	//TSP.use(cutCbk);
-	//TSP.use(branchCbk);
+	TSP.use(cutCbk);
+	TSP.use(branchCbk);
 
 	try
 	{

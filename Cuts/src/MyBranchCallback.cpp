@@ -37,7 +37,7 @@ void MyBranchCallback::main()
         for (IloInt i = 0; i < nbranch; ++i)
         {
             IloNum const est = getBranch(vars, bounds, dirs, i);
-            makeBranch(vars, bounds, dirs, est, new NodeInfo());
+            makeBranch(vars, bounds, dirs, est, new NodeInfo(data->depth+1));
         }
 
         dirs.end();
