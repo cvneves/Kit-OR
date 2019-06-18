@@ -69,13 +69,11 @@ int main(int argc, char **argv)
 	}
 
 	IloCplex TSP(modelo);
-
 	IloBoolVarArray &x_ref = x;
 
 	MyLazyCallback *lazyCbk = new (env) MyLazyCallback(env, x_ref, H);
 	MyCutCallback *cutCbk = new (env) MyCutCallback(env, x_ref, H);
 	MyBranchCallback *branchCbk = new (env) MyBranchCallback(env);
-
 
 	TSP.use(lazyCbk);
 	TSP.use(cutCbk);
@@ -103,11 +101,15 @@ int main(int argc, char **argv)
 	// 	}
 	// }
 
-
 	// std::vector<bool> S(G->getNumNodes(), 0);
 	// double mb = maxBack(G,  0, S);
 	// std::cout << mb << "\n";
 
+	env.end();
+
+	delete d;
+	delete G;
+	delete H;
 
 	return 0;
 }
