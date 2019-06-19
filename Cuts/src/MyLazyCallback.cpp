@@ -33,9 +33,9 @@ void MyLazyCallback::main()
         add((*cons)[i]);
     }
 
-    lazyMutex.unlock();
-
     delete cons;
+
+    lazyMutex.unlock();
 }
 
 std::vector<IloConstraint> *MyLazyCallback::separate()
@@ -73,6 +73,9 @@ std::vector<IloConstraint> *MyLazyCallback::separate()
             G->setW(i, j, (int)(x_vals[l] > 1 - EPSILON ? 1 : 0));
         }
     }
+
+
+    // x_vals.end();
 
     std::vector<bool> S1(G->getNumNodes(), false);
     double mb = maxBack(G, 0, S1);
@@ -135,6 +138,7 @@ std::vector<IloConstraint> *MyLazyCallback::separate()
 
         constraints->push_back(sumS <= S_size - 1);
     }
+
 
     return constraints;
 }

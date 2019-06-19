@@ -41,6 +41,8 @@ void MyCutCallback::main()
 
     if (data->getIterations() >= MAX_ITER)
     {
+
+        lazyMutex.unlock();
         return;
     }
 

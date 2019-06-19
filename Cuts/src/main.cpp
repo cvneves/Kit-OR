@@ -47,10 +47,10 @@ int main(int argc, char **argv)
 
 	srand(time(NULL));
 	readData(argc, argv, &dimension, &matrizAdj);
-	std::vector<int> solucao = GILS_RVND();
+	// std::vector<int> solucao = GILS_RVND();
 	
-	double UB = calcularValorObj(solucao, matrizAdj);
-	std::cout << "\n" << UB << "\n";
+	// double UB = calcularValorObj(solucao, matrizAdj);
+	// std::cout << "\n" << UB << "\n";
 
 	Graph *G = new Graph(dimension, matrizAdj);
 	Graph *H = new Graph(dimension, matrizAdj);
@@ -103,12 +103,12 @@ int main(int argc, char **argv)
 	MyBranchCallback *branchCbk = new (env) MyBranchCallback(env);
 
 	TSP.use(lazyCbk);
-	// TSP.use(cutCbk);
+	TSP.use(cutCbk);
 	TSP.use(branchCbk);
 
 	TSP.setParam(IloCplex::TiLim, 2 * 60 * 60);
 	TSP.setParam(IloCplex::Threads, 1);
-	TSP.setParam(IloCplex::CutUp, UB + 1);
+	// TSP.setParam(IloCplex::CutUp, UB + 1);
 
 	try
 	{
