@@ -11,7 +11,7 @@ Graph::Graph(int N, double **M)
     {
         for (int j = i + 1; j < numNodes; j++)
         {
-            edges[e].w = M[i][j];
+            edges[e].w = M[i+1][j+1];
             edges[e].i = i;
             edges[e].j = j;
             e++;

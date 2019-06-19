@@ -8,19 +8,3 @@ Probing time = 0.08 sec. (0.18 ticks)
 MIP emphasis: balance optimality and feasibility.
 MIP search method: traditional branch-and-cut.
 Parallel mode: none, using 1 thread.
-Root relaxation solution time = 5.14 sec. (0.96 ticks)
-
-        Nodes                                         Cuts/
-   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap         Variable B NodeID Parent  Depth
-
-*     0     0      integral     0    11197.0000    11197.0000       78    0.00%                        0             0
-Elapsed time = 5.88 sec. (2.30 ticks, tree = 0.00 MB, solutions = 1)
-
-Root node processing (before b&c):
-  Real time             =    5.97 sec. (2.33 ticks)
-Sequential b&c:
-  Real time             =    0.00 sec. (0.00 ticks)
-                          ------------
-Total (root+branch&cut) =    5.97 sec. (2.33 ticks)
-status: Optimal
-custo:11197

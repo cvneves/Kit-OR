@@ -27,77 +27,77 @@ IloCplex::CallbackI *MyCutCallback::duplicateCallback() const
 void MyCutCallback::main()
 {
 
-    // NodeInfo *data = dynamic_cast<NodeInfo *>(getNodeData());
+    NodeInfo *data = dynamic_cast<NodeInfo *>(getNodeData());
 
-    // if (!data)
-    // {
-    //     if (NodeInfo::rootData == NULL)
-    //     {
-    //         NodeInfo::initRootData();
-    //     }
-    //     data = NodeInfo::rootData;
-    // }
+    if (!data)
+    {
+        if (NodeInfo::rootData == NULL)
+        {
+            NodeInfo::initRootData();
+        }
+        data = NodeInfo::rootData;
+    }
 
-    // if (data->getIterations() >= MAX_ITER)
-    // {
-    //     return;
-    // }
+    if (data->getIterations() >= MAX_ITER)
+    {
+        return;
+    }
 
-    // IloNumArray x_vals(getEnv(), G->getNumEdges());
+    IloNumArray x_vals(getEnv(), G->getNumEdges());
     // IloNumArray x_vals(getEnv(), (130*130-130)/2);
 
 
-    // getValues(x_vals, x);
+    getValues(x_vals, x);
 
-    // Graph *H = G;
+    Graph *H = G;
 
-    // for (int i = 0, l = 0; i < H->getNumNodes(); i++)
-    // {
-    //     for (int j = i + 1; j < H->getNumNodes(); j++, l++)
-    //     {
-    //         H->getEdges()[l].w = x_vals[l];
-    //     }
-    // }
+    for (int i = 0, l = 0; i < H->getNumNodes(); i++)
+    {
+        for (int j = i + 1; j < H->getNumNodes(); j++, l++)
+        {
+            H->getEdges()[l].w = x_vals[l];
+        }
+    }
 
-    // std::vector<bool> S(H->getNumNodes(), false);
+    std::vector<bool> S(H->getNumNodes(), false);
 
-    // double minCutCost;
+    double minCutCost;
 
-    // minCutCost = maxBack(H, 0, S);
-    // if (minCutCost - 2 > EPSILON && data->depth < MB_DEPTH)
-    // {
-    //    minCutCost = minimumCut(H, 0, S);
-    // }
+    minCutCost = maxBack(H, 0, S);
+    if (minCutCost - 2 > EPSILON && data->depth < MB_DEPTH)
+    {
+       minCutCost = minimumCut(H, 0, S);
+    }
     
-    // int l = 0;
-    // for (int i = 0; i < S.size(); i++)
-    // {
-    //     if (S[i] == true)
-    //     {
-    //         l++;
-    //     }
-    // }
+    int l = 0;
+    for (int i = 0; i < S.size(); i++)
+    {
+        if (S[i] == true)
+        {
+            l++;
+        }
+    }
 
-    // if ((l >= 3 && l <= S.size() - 3) && minCutCost - 2 <= EPSILON)
-    // {
-    //     IloExpr sum(getEnv());
-    //     for (int i = 0; i < S.size(); i++)
-    //     {
-    //         if (S[i] == true)
-    //         {
-    //             for (int j = 0; j < S.size(); j++)
-    //             {
-    //                 if (S[j] == false)
-    //                 {
-    //                     sum += x[H->getEdge(i, j)];
-    //                     // std::cout << i << ", " << j << "\n";
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     add(sum >= 2);
-    // }
-    // data->addIteration();
+    if ((l >= 3 && l <= S.size() - 3) && minCutCost - 2 <= EPSILON)
+    {
+        IloExpr sum(getEnv());
+        for (int i = 0; i < S.size(); i++)
+        {
+            if (S[i] == true)
+            {
+                for (int j = 0; j < S.size(); j++)
+                {
+                    if (S[j] == false)
+                    {
+                        sum += x[H->getEdge(i, j)];
+                        // std::cout << i << ", " << j << "\n";
+                    }
+                }
+            }
+        }
+        add(sum >= 2);
+    }
+    data->addIteration();
 }
 
 IloConstraint *MyCutCallback::separate()
