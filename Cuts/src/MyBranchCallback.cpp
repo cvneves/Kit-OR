@@ -11,6 +11,8 @@ IloCplex::CallbackI *MyBranchCallback::duplicateCallback() const
 
 void MyBranchCallback::main()
 {
+    lazyMutex.lock();
+
     IloInt const nbranch = getNbranches();
 
     if (nbranch > 0)
@@ -37,7 +39,7 @@ void MyBranchCallback::main()
         for (IloInt i = 0; i < nbranch; ++i)
         {
             IloNum const est = getBranch(vars, bounds, dirs, i);
-            makeBranch(vars, bounds, dirs, est, new NodeInfo(data->depth+1));
+            makeBranch(vars, bounds, dirs, est, new NodeInfo(data->depth + 1));
         }
 
         dirs.end();
@@ -48,4 +50,8 @@ void MyBranchCallback::main()
     {
         prune();
     }
+
+    lazyMutex.unlock();
 }
+
+std::mutex MyBranchCallback::lazyMutex;
