@@ -128,6 +128,12 @@ int main(int argc, char **argv)
 	delete G;
 	delete H;
 
+	for(int i = 0; i < dimension; i++)
+	{
+		delete[] matrizAdj[i];
+	}
+	delete [] matrizAdj;
+
 	return 0;
 }
 

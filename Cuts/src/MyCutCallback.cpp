@@ -61,6 +61,8 @@ void MyCutCallback::main()
         }
     }
 
+    x_vals.end();
+
     std::vector<bool> S(H->getNumNodes(), false);
 
     double minCutCost;
@@ -98,6 +100,7 @@ void MyCutCallback::main()
             }
         }
         add(sum >= 2);
+        sum.end();
     }
     data->addIteration();
 
