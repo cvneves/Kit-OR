@@ -75,7 +75,6 @@ std::vector<IloConstraint> *MyLazyCallback::separate()
     }
 
 
-    // x_vals.end();
 
     std::vector<bool> S1(G->getNumNodes(), false);
     double mb = maxBack(G, 0, S1);

@@ -123,19 +123,6 @@ int main(int argc, char **argv)
 	std::cout << "status: " << TSP.getStatus() << std::endl;
 	std::cout << "custo:" << TSP.getObjValue() << std::endl;
 
-	// for (int e = 0; e < G->E(); e++)
-	// {
-	// 	if (TSP.getValue(x[e]) > 0.9)
-	// 	{
-	// 		Edge &ed = G->getEdges()[e];
-	// 		std::cout << ed.i << ", " << ed.j << "\n";
-	// 	}
-	// }
-
-	// std::vector<bool> S(G->getNumNodes(), 0);
-	// double mb = maxBack(G,  0, S);
-	// std::cout << mb << "\n";
-
 	env.end();
 
 	delete G;
