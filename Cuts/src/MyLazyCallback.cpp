@@ -25,11 +25,16 @@ IloCplex::CallbackI *MyLazyCallback::duplicateCallback() const
 
 void MyLazyCallback::main()
 {
+    lazyMutex.lock();
+
     std::vector<IloConstraint> *cons = separate();
     for (int i = 0; i < cons->size(); i++)
     {
         add((*cons)[i]);
     }
+
+    lazyMutex.unlock();
+
     delete cons;
 }
 
@@ -40,8 +45,6 @@ std::vector<IloConstraint> *MyLazyCallback::separate()
 
     IloNumArray x_vals(getEnv(), G->getNumEdges());
     getValues(x_vals, x);
-
-
 
     // std::vector<double> x_vals(G->getNumEdges());
     // for(int i = 0; i < G->getNumEdges();i++)
@@ -135,3 +138,5 @@ std::vector<IloConstraint> *MyLazyCallback::separate()
 
     return constraints;
 }
+
+std::mutex MyLazyCallback::lazyMutex;

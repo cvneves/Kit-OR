@@ -6,19 +6,21 @@
 #include "Graph.h"
 #include "MinimumCut.h"
 #include "MaxBack.h"
+#include <mutex>
 
 class MyCutCallback : public IloCplex::UserCutCallbackI
 {
-  public:
-    MyCutCallback(IloEnv env, const IloBoolVarArray &x_ref, Graph *G);
-    IloCplex::CallbackI *duplicateCallback() const;
-    void main();
+public:
+  MyCutCallback(IloEnv env, const IloBoolVarArray &x_ref, Graph *G);
+  IloCplex::CallbackI *duplicateCallback() const;
+  void main();
 
-    IloConstraint* separate();
+  IloConstraint *separate();
+  static std::mutex lazyMutex;
 
-  private:
-    IloBoolVarArray x;
-    Graph *G;
+private:
+  IloBoolVarArray x;
+  Graph *G;
 };
 
 #endif

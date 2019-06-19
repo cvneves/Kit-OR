@@ -108,7 +108,7 @@ int main(int argc, char **argv)
 
 	TSP.setParam(IloCplex::TiLim, 2 * 60 * 60);
 	TSP.setParam(IloCplex::Threads, 1);
-	TSP.setParam(IloCplex::CutUp, UB + 1);
+	//TSP.setParam(IloCplex::CutUp, UB + 1);
 
 	try
 	{

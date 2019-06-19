@@ -26,6 +26,7 @@ IloCplex::CallbackI *MyCutCallback::duplicateCallback() const
 
 void MyCutCallback::main()
 {
+    lazyMutex.lock();
 
     NodeInfo *data = dynamic_cast<NodeInfo *>(getNodeData());
 
@@ -46,7 +47,6 @@ void MyCutCallback::main()
     IloNumArray x_vals(getEnv(), G->getNumEdges());
     // IloNumArray x_vals(getEnv(), (130*130-130)/2);
 
-
     getValues(x_vals, x);
 
     Graph *H = G;
@@ -66,9 +66,9 @@ void MyCutCallback::main()
     minCutCost = maxBack(H, 0, S);
     if (minCutCost - 2 > EPSILON && data->depth < MB_DEPTH)
     {
-       minCutCost = minimumCut(H, 0, S);
+        minCutCost = minimumCut(H, 0, S);
     }
-    
+
     int l = 0;
     for (int i = 0; i < S.size(); i++)
     {
@@ -98,8 +98,12 @@ void MyCutCallback::main()
         add(sum >= 2);
     }
     data->addIteration();
+
+    lazyMutex.unlock();
 }
 
 IloConstraint *MyCutCallback::separate()
 {
 }
+
+std::mutex MyCutCallback::lazyMutex;
