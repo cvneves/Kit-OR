@@ -47,10 +47,11 @@ int main(int argc, char **argv)
 
 	srand(time(NULL));
 	readData(argc, argv, &dimension, &matrizAdj);
-	// std::vector<int> solucao = GILS_RVND();
-	
-	// double UB = calcularValorObj(solucao, matrizAdj);
-	// std::cout << "\n" << UB << "\n";
+	std::vector<int> solucao = GILS_RVND();
+
+	double UB = calcularValorObj(solucao, matrizAdj);
+	std::cout << "\n"
+			  << UB << "\n";
 
 	Graph *G = new Graph(dimension, matrizAdj);
 	Graph *H = new Graph(dimension, matrizAdj);
@@ -60,6 +61,19 @@ int main(int argc, char **argv)
 	//Modelo
 	IloEnv env;
 	IloModel modelo(env);
+
+	// Solucao inicial
+	IloNumArray x_start(env, G->getNumEdges());
+
+	for (int i = 0; i < G->getNumEdges(); i++)
+	{
+		x_start[i] = 0;
+	}
+
+	for (int i = 0; i < solucao.size() - 1; i++)
+	{
+		x_start[G->getEdge(solucao[i] - 1, solucao[i + 1] - 1)] = 1;
+	}
 
 	//Variaveis
 	IloBoolVarArray x(env, G->getNumEdges());
@@ -106,9 +120,16 @@ int main(int argc, char **argv)
 	TSP.use(cutCbk);
 	TSP.use(branchCbk);
 
+	IloNumVarArray y(env);
+	for(int i = 0; i < G->getNumEdges();i++)
+	{
+		y.add(x[i]);
+	}
+	TSP.addMIPStart(y, x_start);
+
 	TSP.setParam(IloCplex::TiLim, 2 * 60 * 60);
 	TSP.setParam(IloCplex::Threads, 1);
-	// TSP.setParam(IloCplex::CutUp, UB + 1);
+	TSP.setParam(IloCplex::CutUp, UB + 1);
 
 	try
 	{
@@ -128,11 +149,11 @@ int main(int argc, char **argv)
 	delete G;
 	delete H;
 
-	for(int i = 0; i < dimension; i++)
+	for (int i = 0; i < dimension; i++)
 	{
 		delete[] matrizAdj[i];
 	}
-	delete [] matrizAdj;
+	delete[] matrizAdj;
 
 	return 0;
 }
