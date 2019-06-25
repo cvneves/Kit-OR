@@ -51,6 +51,7 @@ void MyBranchCallback::main()
         prune();
     }
 
+
     lazyMutex.unlock();
 }
 

@@ -31,6 +31,7 @@ void MyLazyCallback::main()
     for (int i = 0; i < cons->size(); i++)
     {
         add((*cons)[i]);
+        (*cons)[i].end();
     }
 
     delete cons;
