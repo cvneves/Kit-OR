@@ -6,7 +6,7 @@ void solve(Data &data, std::vector<std::vector<int>> &patterns)
 {
     IloEnv env;
     IloModel master(env);
-    IloNumVarArray lambda(env, data.getNItems(), 0.0, 1.0);
+    IloNumVarArray lambda(env, data.getNItems(), 0.0, IloInfinity);
     IloRangeArray constraints(env);
 
     IloExpr sum(env);
@@ -86,7 +86,7 @@ void solve(Data &data, std::vector<std::vector<int>> &patterns)
 
         if (pricing.getObjValue() < -EPSILON)
         {
-            lambda.add(IloNumVar(masterObj(1) + constraints(x_vals), 0.0, 1.0));
+            lambda.add(IloNumVar(masterObj(1) + constraints(x_vals), 0.0, IloInfinity));
             // master.add();
 
             try
@@ -111,5 +111,8 @@ void solve(Data &data, std::vector<std::vector<int>> &patterns)
     {
         std::cout << BPP.getValue(lambda[i]) << "\n";
     }
+
+    BPP.exportModel("modelo.lp");
+
     env.end();
 }
