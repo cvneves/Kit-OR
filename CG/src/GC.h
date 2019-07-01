@@ -6,12 +6,21 @@
 
 #define EPSILON 0.000001
 
-typedef struct node
+class Problema
 {
-    
+    Data data;
+    IloEnv env;
+    IloModel masterModel, pricingModel;
+    IloNumVarArray lambda;
+    IloBoolVarArray x;
+    IloRangeArray masterRanges;
+    IloObjective masterObj, pricingObj;
+    IloCplex master, pricing;
+    IloNumArray pi;
 
-} Node;
-
-void solve(Data &data, std::vector<std::vector<int>> &patterns);
+public:
+    Problema(Data &data);
+    void solve();
+};
 
 #endif
