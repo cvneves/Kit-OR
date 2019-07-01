@@ -29,5 +29,6 @@ int main(int argc, char **argv)
     // std::vector<std::vector<int>> patterns;
     // solve(data, patterns);
 
+
     return 0;
 }

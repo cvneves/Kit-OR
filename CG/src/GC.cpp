@@ -1,10 +1,10 @@
 #include "GC.h"
 
-Problema::Problema(Data &data)
+Problema::Problema(Data &d)
 {
     //Construçao do mestre
 
-    this->data = data;
+    this->data = d;
 
     env = IloEnv();
     masterModel = IloModel(env);
@@ -56,6 +56,7 @@ Problema::Problema(Data &data)
     {
         std::cout << master.getValue(lambda[i]) << "\n";
     }
+
 }
 
 void Problema::solve()
@@ -115,4 +116,5 @@ void Problema::solve()
 
     std::cout << "Status: " << master.getStatus() << "\n";
     std::cout << "Bins usados: " << master.getObjValue() << "\n\n\n\n\n";
+
 }

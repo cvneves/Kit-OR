@@ -9,7 +9,6 @@
 class Problema
 {
     Data data;
-    IloEnv env;
     IloModel masterModel, pricingModel;
     IloNumVarArray lambda;
     IloBoolVarArray x;
@@ -21,6 +20,7 @@ class Problema
 public:
     Problema(Data &data);
     void solve();
+    IloEnv env;
 };
 
 #endif
