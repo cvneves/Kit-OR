@@ -3,6 +3,8 @@
 
 #include "Data.h"
 #include <ilcplex/ilocplex.h>
+#include <cmath>
+#include <limits>
 
 #define EPSILON 0.000001
 
@@ -16,6 +18,8 @@ class Problema
     IloObjective masterObj, pricingObj;
     IloCplex master, pricing;
     IloNumArray pi;
+
+    std::vector<std::vector<int>> ;
 
 public:
     Problema(Data &data);

@@ -56,12 +56,10 @@ Problema::Problema(Data &d)
     {
         std::cout << master.getValue(lambda[i]) << "\n";
     }
-
 }
 
 void Problema::solve()
 {
-
     while (1)
     {
         master.getDuals(pi, masterRanges);
@@ -74,6 +72,8 @@ void Problema::solve()
         }
 
         pricingObj.setExpr(1 - somaPricing);
+
+        somaPricing.end();
 
         IloCplex pricing(pricingModel);
 
@@ -93,7 +93,6 @@ void Problema::solve()
         if (pricing.getObjValue() < -EPSILON)
         {
             lambda.add(IloNumVar(masterObj(1) + masterRanges(x_vals), 0.0, IloInfinity));
-
             try
             {
                 master.solve();
@@ -102,21 +101,51 @@ void Problema::solve()
             {
                 std::cout << e;
             }
+
+            x_vals.end();
         }
         else
         {
+            x_vals.end();
+
             break;
         }
     }
 
     for (int i = 0; i < lambda.getSize(); i++)
     {
-        std::cout << master.getValue(lambda[i]) << "\n";
+        std::cout << i << ", " << master.getValue(lambda[i]) << "\n";
     }
 
     std::cout << "Status: " << master.getStatus() << "\n";
     std::cout << "Bins usados: " << master.getObjValue() << "\n\n\n\n\n";
 
-    master.exportModel("modelo.lp");
+    //branching rule
 
+    IloNumArray lambdaVals(env, lambda.getSize());
+    master.getValues(lambdaVals, lambda);
+    double deltaFrac = std::numeric_limits<double>::infinity();
+    int lambdaBranch;
+    double tempDeltaFrac;
+
+    for (int i = data.getNItems(); i < lambdaVals.getSize(); i++)
+    {
+        tempDeltaFrac = std::abs(0.5 - lambdaVals[i]);
+        if (tempDeltaFrac < deltaFrac)
+        {
+            lambdaBranch = i;
+            deltaFrac = tempDeltaFrac;
+        }
+    }
+
+    for(int i = 0; i < data.getNItems(); i++)
+    {
+        
+    }    
+
+    lambdaVals.end();
+
+    std::cout << lambdaBranch << ", " << deltaFrac << "\n";
+
+    master.exportModel("modelo.lp");
 }
