@@ -117,4 +117,6 @@ void Problema::solve()
     std::cout << "Status: " << master.getStatus() << "\n";
     std::cout << "Bins usados: " << master.getObjValue() << "\n\n\n\n\n";
 
+    master.exportModel("modelo.lp");
+
 }

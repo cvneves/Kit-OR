@@ -31,6 +31,8 @@
         "utility": "cpp",
         "string_view": "cpp",
         "cmath": "cpp",
-        "optional": "cpp"
+        "optional": "cpp",
+        "deque": "cpp",
+        "numeric": "cpp"
     }
 }
