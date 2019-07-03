@@ -66,6 +66,9 @@ Problema::Problema(Data &d)
 
 void Problema::solve()
 {
+
+    xPares = std::vector<std::vector<double>>(data.getNItems(), std::vector<double>(data.getNItems(), 0));
+
     while (1)
     {
         master.getDuals(pi, masterRanges);
@@ -99,14 +102,18 @@ void Problema::solve()
         if (pricing.getObjValue() < -EPSILON)
         {
             lambda.add(IloNumVar(masterObj(1) + masterRanges(x_vals), 0.0, IloInfinity));
+
             std::vector<int> itens;
+
             for (int i = 0; i < x_vals.getSize(); i++)
             {
                 if (x_vals[i] > 1 - EPSILON)
                 {
-                    lambdaItens[i].push_back(lambda.getSize() - 1);
+                    itens.push_back(i);
                 }
             }
+            lambdaItens.push_back(itens);
+
             try
             {
                 master.solve();
@@ -139,36 +146,40 @@ void Problema::solve()
     IloNumArray lambdaVals(env, lambda.getSize());
     master.getValues(lambdaVals, lambda);
     double deltaFrac = std::numeric_limits<double>::infinity();
-    int lambdaBranch;
     double tempDeltaFrac;
 
     std::vector<double> lambdaPares((data.getNItems() * data.getNItems() - data.getNItems()) / 2);
+
+    for (int i = data.getNItems(); i < lambdaItens.size(); i++)
+    {
+        for (int j = 0; j < lambdaItens[i].size() - 1; j++)
+        {
+            xPares[lambdaItens[i][j]][lambdaItens[i][j + 1]] = (xPares[lambdaItens[i][j + 1]][lambdaItens[i][j]] += lambdaVals[i]);
+        }
+    }
+
+    std::pair<int, int> branchingPair;
 
     for (int i = 0; i < data.getNItems(); i++)
     {
         for (int j = i + 1; j < data.getNItems(); j++)
         {
-            
+            tempDeltaFrac = std::abs(0.5 - xPares[i][j]);
+            if (tempDeltaFrac < deltaFrac)
+            {
+                branchingPair = {i, j};
+                deltaFrac = tempDeltaFrac;
+            }
         }
     }
 
     for (int i = data.getNItems(); i < lambdaVals.getSize(); i++)
     {
-        tempDeltaFrac = std::abs(0.5 - lambdaVals[i]);
-        if (tempDeltaFrac < deltaFrac)
-        {
-            lambdaBranch = i;
-            deltaFrac = tempDeltaFrac;
-        }
-    }
-
-    for (int i = 0; i < data.getNItems(); i++)
-    {
     }
 
     lambdaVals.end();
 
-    std::cout << lambdaBranch << ", " << deltaFrac << "\n";
+    std::cout << branchingPair.first << ", " << branchingPair.second << ", " << deltaFrac << "\n";
 
     for (int i = 0; i < lambdaItens.size(); i++)
     {
@@ -177,6 +188,14 @@ void Problema::solve()
             std::cout << lambdaItens[i][j] << " ";
         }
         std::cout << "\n";
+    }
+
+    for (int i = 0; i < data.getNItems(); i++)
+    {
+        for (int j = i + 1; j < data.getNItems(); j++)
+        {
+            std::cout << i << ", " << j << ": " << xPares[i][j] << "\n";
+        }
     }
 
     master.exportModel("modelo.lp");

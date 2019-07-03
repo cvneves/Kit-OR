@@ -20,7 +20,7 @@ class Problema
     IloNumArray pi;
 
     std::vector<std::vector<int>> lambdaItens;
-    
+    std::vector<std::vector<double>> xPares;
 
 public:
     Problema(Data &data);
