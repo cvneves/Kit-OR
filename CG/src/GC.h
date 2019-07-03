@@ -19,7 +19,8 @@ class Problema
     IloCplex master, pricing;
     IloNumArray pi;
 
-    std::vector<std::vector<int>> ;
+    std::vector<std::vector<int>> lambdaItens;
+    
 
 public:
     Problema(Data &data);

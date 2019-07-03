@@ -42,6 +42,12 @@ Problema::Problema(Data &d)
 
     pricing = IloCplex(pricingModel);
 
+    lambdaItens = std::vector<std::vector<int>>(data.getNItems(), {1});
+    for (int i = 0; i < data.getNItems(); i++)
+    {
+        lambdaItens[i][0] = i;
+    }
+
     try
     {
         master.solve();
@@ -93,6 +99,14 @@ void Problema::solve()
         if (pricing.getObjValue() < -EPSILON)
         {
             lambda.add(IloNumVar(masterObj(1) + masterRanges(x_vals), 0.0, IloInfinity));
+            std::vector<int> itens;
+            for (int i = 0; i < x_vals.getSize(); i++)
+            {
+                if (x_vals[i] > 1 - EPSILON)
+                {
+                    lambdaItens[i].push_back(lambda.getSize() - 1);
+                }
+            }
             try
             {
                 master.solve();
@@ -128,6 +142,16 @@ void Problema::solve()
     int lambdaBranch;
     double tempDeltaFrac;
 
+    std::vector<double> lambdaPares((data.getNItems() * data.getNItems() - data.getNItems()) / 2);
+
+    for (int i = 0; i < data.getNItems(); i++)
+    {
+        for (int j = i + 1; j < data.getNItems(); j++)
+        {
+            
+        }
+    }
+
     for (int i = data.getNItems(); i < lambdaVals.getSize(); i++)
     {
         tempDeltaFrac = std::abs(0.5 - lambdaVals[i]);
@@ -138,14 +162,22 @@ void Problema::solve()
         }
     }
 
-    for(int i = 0; i < data.getNItems(); i++)
+    for (int i = 0; i < data.getNItems(); i++)
     {
-        
-    }    
+    }
 
     lambdaVals.end();
 
     std::cout << lambdaBranch << ", " << deltaFrac << "\n";
+
+    for (int i = 0; i < lambdaItens.size(); i++)
+    {
+        for (int j = 0; j < lambdaItens[i].size(); j++)
+        {
+            std::cout << lambdaItens[i][j] << " ";
+        }
+        std::cout << "\n";
+    }
 
     master.exportModel("modelo.lp");
 }
