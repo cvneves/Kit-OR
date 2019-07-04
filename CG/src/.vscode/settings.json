@@ -33,6 +33,7 @@
         "cmath": "cpp",
         "optional": "cpp",
         "deque": "cpp",
-        "numeric": "cpp"
+        "numeric": "cpp",
+        "list": "cpp"
     }
 }

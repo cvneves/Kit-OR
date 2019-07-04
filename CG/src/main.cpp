@@ -1,7 +1,9 @@
 #include "Data.h"
-#include "GC.h"
+#include "Problema.h"
+#include "Node.h"
 #include <stdio.h>
 #include <iostream>
+#include <list>
 #include <ilcplex/ilocplex.h>
 
 int main(int argc, char **argv)
@@ -17,9 +19,37 @@ int main(int argc, char **argv)
 
     Problema p(data);
 
-    p.solve();
+    Node raiz;
 
+    // std::pair<int, int> branchingPair = {1,2};
+    std::pair<int, int> branchingPair = p.solve(raiz);
 
+    Node n1, n2;
+    n1.juntos.push_back(branchingPair);
+    n2.separados.push_back(branchingPair);
+
+    std::list<Node> tree = {n2, n1};
+    auto node_it = tree.begin();
+
+    int k = 1;
+    while (k--)
+    {
+        node_it = tree.end();
+        node_it--;
+
+        branchingPair = p.solve(*node_it);
+
+        Node nj, ns;
+        nj = ns = *node_it;
+
+        nj.juntos.push_back(branchingPair);
+        ns.separados.push_back(branchingPair);
+
+        tree.push_back(ns);
+        tree.push_back(nj);
+
+        tree.erase(node_it);
+    }
 
     // master.exportModel("modelo.lp");
 
@@ -28,7 +58,6 @@ int main(int argc, char **argv)
     //Solve
     // std::vector<std::vector<int>> patterns;
     // solve(data, patterns);
-
 
     return 0;
 }

@@ -10,8 +10,8 @@
 
 class Node
 {
+public:
     std::vector<std::pair<int, int>> separados, juntos;
 };
-
 
 #endif
