@@ -41,6 +41,9 @@ Problema::Problema(Data &d)
     pricingObj = IloObjective(env2);
     pricingModel.add(pricingObj);
 
+    pricingConstraints = IloConstraintArray(env2);
+    pricingModel.add(pricingConstraints);
+
     pricing = IloCplex(pricingModel);
 
     lambdaItens = std::vector<std::vector<int>>(data.getNItems(), {1});
@@ -72,7 +75,7 @@ Problema::Problema(Data &d)
 std::pair<int, int> Problema::solve(Node &node)
 {
     //tratamento de nos juntos
-    if (!node.juntos.empty())
+    if (!node.is_root && node.tipo_branch == true)
     {
         int i = node.juntos[node.juntos.size() - 1].first;
         int j = node.juntos[node.juntos.size() - 1].second;
@@ -82,12 +85,16 @@ std::pair<int, int> Problema::solve(Node &node)
     }
 
     //tratamento de nos separados
-    if (!node.separados.empty())
+    std::vector<int> colunasProibidas;
+    if (!node.is_root && node.tipo_branch == false)
     {
         int i = node.separados[node.separados.size() - 1].first;
         int j = node.separados[node.separados.size() - 1].second;
 
-        pricingModel.add(x[i] + x[j] <= 1);
+        IloConstraint cons = (x[i] + x[j] <= 1);
+
+        pricingModel.add(cons);
+        pricingConstraints.add(cons);
 
         for (int k = data.getNItems(); k < lambdaItens.size(); k++)
         {
@@ -97,6 +104,7 @@ std::pair<int, int> Problema::solve(Node &node)
                 {
                     std::cout << i << ", " << j << "\n\n";
                     lambda[k].setUB(0);
+                    colunasProibidas.push_back(k);
                 }
             }
         }
@@ -127,8 +135,6 @@ std::pair<int, int> Problema::solve(Node &node)
         pricingObj.setExpr(1 - somaPricing);
 
         somaPricing.end();
-
-        IloCplex pricing(pricingModel);
 
         pricing.setOut(env2.getNullStream());
         try
@@ -226,16 +232,23 @@ std::pair<int, int> Problema::solve(Node &node)
     lambdaVals.end();
 
     master.exportModel("modelo.lp");
-    pricing.exportModel("pricing.lp");
 
     //Podar
     if (std::abs(deltaFrac - 0.5) < EPSILON)
     {
-        
-
+        if (!node.tipo_branch && node.is_root == false)
+        {
+            pricingModel.remove(pricingConstraints[pricingConstraints.getSize() - 1]);
+            for (auto &k : colunasProibidas)
+            {
+                lambda[k].setUB(1.0);
+            }
+        }
 
         return {0, 0};
     }
+
+    pricing.exportModel("pricing.lp");
 
     std::cout << "par: " << branchingPair.first << ", " << branchingPair.second << "\n\n\n\n";
 

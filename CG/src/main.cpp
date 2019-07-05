@@ -20,13 +20,16 @@ int main(int argc, char **argv)
     Problema p(data);
 
     Node raiz;
+    raiz.is_root = true;
 
     // std::pair<int, int> branchingPair = {1,2};
     std::pair<int, int> branchingPair = p.solve(raiz);
 
     Node n1, n2;
     n1.juntos.push_back(branchingPair);
+    n1.tipo_branch = true;
     n2.separados.push_back(branchingPair);
+    n2.tipo_branch = false;
 
     std::list<Node> tree = {n1, n2};
     auto node_it = tree.begin();
@@ -45,11 +48,14 @@ int main(int argc, char **argv)
             nj = ns = *node_it;
 
             nj.juntos.push_back(branchingPair);
+            nj.tipo_branch = true;
             ns.separados.push_back(branchingPair);
+            ns.tipo_branch = false;
 
             tree.push_back(nj);
             tree.push_back(ns);
         }
+
         tree.erase(node_it);
     }
 
