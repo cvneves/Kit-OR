@@ -93,15 +93,25 @@ std::pair<int, int> Problema::solve(Node &node)
         {
             for (int l = 0; l < lambdaItens[k].size() - 1; l++)
             {
-                if (lambdaItens[k][l] == 1 && lambdaItens[k][l + 1] == 1)
+                if ((lambdaItens[k][l] == i && lambdaItens[k][l + 1] == j) || (lambdaItens[k][l] == j && lambdaItens[k][l + 1] == i))
                 {
-                    lambda[k].setUB(0.0);
+                    std::cout << i << ", " << j << "\n\n";
+                    lambda[k].setUB(0);
                 }
             }
         }
     }
 
     xPares = std::vector<std::vector<double>>(data.getNItems(), std::vector<double>(data.getNItems(), 0));
+
+    try
+    {
+        master.solve();
+    }
+    catch (IloException &e)
+    {
+        std::cout << e;
+    }
 
     while (1)
     {
@@ -140,7 +150,7 @@ std::pair<int, int> Problema::solve(Node &node)
 
             std::vector<int> itens;
 
-            std::cout << "\n\n\nitens pricing : ";
+            std::cout << "itens pricing : ";
             for (int i = 0; i < x_vals.getSize(); i++)
             {
                 if (x_vals[i] > 1 - EPSILON)
@@ -149,7 +159,7 @@ std::pair<int, int> Problema::solve(Node &node)
                     itens.push_back(i);
                 }
             }
-            std::cout << "\n\n\n";
+            std::cout << "\n";
 
             lambdaItens.push_back(itens);
 
@@ -179,7 +189,7 @@ std::pair<int, int> Problema::solve(Node &node)
     }
 
     std::cout << "Status: " << master.getStatus() << "\n";
-    std::cout << "Bins usados: " << master.getObjValue() << "\n\n\n\n\n";
+    std::cout << "Bins usados: " << master.getObjValue() << "\n";
 
     //branching rule
 
@@ -213,14 +223,21 @@ std::pair<int, int> Problema::solve(Node &node)
         }
     }
 
-    // if()
-
     lambdaVals.end();
 
     master.exportModel("modelo.lp");
     pricing.exportModel("pricing.lp");
 
-    std::cout << branchingPair.first << ", " << branchingPair.second << "\n";
+    //Podar
+    if (std::abs(deltaFrac - 0.5) < EPSILON)
+    {
+        
+
+
+        return {0, 0};
+    }
+
+    std::cout << "par: " << branchingPair.first << ", " << branchingPair.second << "\n\n\n\n";
 
     return branchingPair;
 }

@@ -28,7 +28,7 @@ int main(int argc, char **argv)
     n1.juntos.push_back(branchingPair);
     n2.separados.push_back(branchingPair);
 
-    std::list<Node> tree = {n2, n1};
+    std::list<Node> tree = {n1, n2};
     auto node_it = tree.begin();
 
     int k = 1;
@@ -39,15 +39,17 @@ int main(int argc, char **argv)
 
         branchingPair = p.solve(*node_it);
 
-        Node nj, ns;
-        nj = ns = *node_it;
+        if (!(branchingPair.first == branchingPair.second == 0))
+        {
+            Node nj, ns;
+            nj = ns = *node_it;
 
-        nj.juntos.push_back(branchingPair);
-        ns.separados.push_back(branchingPair);
+            nj.juntos.push_back(branchingPair);
+            ns.separados.push_back(branchingPair);
 
-        tree.push_back(ns);
-        tree.push_back(nj);
-
+            tree.push_back(nj);
+            tree.push_back(ns);
+        }
         tree.erase(node_it);
     }
 
