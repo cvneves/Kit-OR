@@ -25,10 +25,11 @@ class Problema
     std::vector<std::vector<int>> lambdaItens;
     std::vector<std::vector<double>> xPares;
 
-public:
-    Problema(Data &data);
-    std::pair<int, int> solve(Node& node);
+  public:
+    Problema(Data &data, double UB);
+    std::pair<int, int> solve(Node &node);
     IloEnv env1, env2;
+    double bestInteger, UB;
 };
 
 #endif

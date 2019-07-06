@@ -1,9 +1,10 @@
 #include "Problema.h"
 
-Problema::Problema(Data &d)
+Problema::Problema(Data &d, double UB)
 {
     //Construçao do mestre
-
+    this->UB = UB;
+    bestInteger = std::numeric_limits<double>::infinity();
     this->data = d;
 
     env1 = IloEnv();
@@ -165,6 +166,27 @@ std::pair<int, int> Problema::solve(Node &node)
 
         if (pricing.getStatus() == IloAlgorithm::Infeasible)
         {
+            if (!node.tipo_branch && !node.is_root)
+            {
+                pricingModel.remove(pricingConstraints[pricingConstraints.getSize() - 1]);
+                for (auto &k : colunasProibidas)
+                {
+                    lambda[k].setUB(1.0);
+                }
+            }
+            if (node.tipo_branch && !node.is_root)
+            {
+
+                int i = node.juntos[node.juntos.size() - 1].first;
+                int j = node.juntos[node.juntos.size() - 1].second;
+
+                x[i].setLB(0.0);
+                x[j].setLB(0.0);
+
+                masterObj.setLinearCoef(lambda[i], 1.0);
+                masterObj.setLinearCoef(lambda[j], 1.0);
+            }
+
             return {0, 0};
         }
 
@@ -180,16 +202,16 @@ std::pair<int, int> Problema::solve(Node &node)
 
             std::vector<int> itens;
 
-            std::cout << "itens pricing : ";
+            // std::cout << "itens pricing : ";
             for (int i = 0; i < x_vals.getSize(); i++)
             {
                 if (x_vals[i] > 1 - EPSILON)
                 {
-                    std::cout << i << " ";
+                    // std::cout << i << " ";
                     itens.push_back(i);
                 }
             }
-            std::cout << "\n";
+            // std::cout << "\n";
 
             lambdaItens.push_back(itens);
 
@@ -265,10 +287,19 @@ std::pair<int, int> Problema::solve(Node &node)
     // master.exportModel("modelo.lp");
     // pricing.exportModel("pricing.lp");
 
+    //melhor solucao inteira
+
     //Podar
 
     if (std::abs(0.5 - deltaFrac) < EPSILON)
     {
+        // if (std::abs(0.5 - deltaFrac) < EPSILON)
+        {
+            if (master.getObjValue() < bestInteger)
+            {
+                bestInteger = master.getObjValue();
+            }
+        }
         if (!node.tipo_branch && !node.is_root)
         {
             pricingModel.remove(pricingConstraints[pricingConstraints.getSize() - 1]);

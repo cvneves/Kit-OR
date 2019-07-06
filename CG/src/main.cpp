@@ -17,7 +17,7 @@ int main(int argc, char **argv)
     Data data;
     data.readData(argv[1]);
 
-    Problema p(data);
+    Problema p(data, std::numeric_limits<double>::infinity());
 
     Node raiz;
     raiz.is_root = true;
@@ -38,7 +38,6 @@ int main(int argc, char **argv)
     int k = 2;
     while (!tree.empty())
     {
-        std::cout << "Num nodes: " << numNodes << "\n";
         node_it = tree.end();
         node_it--;
 
@@ -55,9 +54,12 @@ int main(int argc, char **argv)
             ns.separados.push_back(branchingPair);
             ns.tipo_branch = false;
 
-            tree.push_back(ns);
             tree.push_back(nj);
+            tree.push_back(ns);
         }
+
+        std::cout << "Num nodes: " << numNodes << "\n";
+        std::cout << "best integer: " << p.bestInteger << "\n";
 
         tree.erase(node_it);
     }
