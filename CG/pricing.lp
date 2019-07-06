@@ -6,8 +6,8 @@ Minimize
 Subject To
  c1: 3 x1 + 4 x2 + 6 x3 + 8 x4 + 9 x5 <= 10
 Bounds
- 0 <= x1 <= 1
- 0 <= x2 <= 1
+      x1 = 1
+      x2 = 1
  0 <= x3 <= 1
  0 <= x4 <= 1
  0 <= x5 <= 1

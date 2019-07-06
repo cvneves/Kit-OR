@@ -8,6 +8,7 @@
 #include <limits>
 
 #define EPSILON 0.000001
+#define M 1000000
 
 class Problema
 {

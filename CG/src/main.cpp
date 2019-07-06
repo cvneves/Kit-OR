@@ -31,10 +31,10 @@ int main(int argc, char **argv)
     n2.separados.push_back(branchingPair);
     n2.tipo_branch = false;
 
-    std::list<Node> tree = {n1, n2};
+    std::list<Node> tree = {n2, n1};
     auto node_it = tree.begin();
 
-    int k = 1;
+    int k = 2;
     while (k--)
     {
         node_it = tree.end();
@@ -52,8 +52,8 @@ int main(int argc, char **argv)
             ns.separados.push_back(branchingPair);
             ns.tipo_branch = false;
 
-            tree.push_back(nj);
             tree.push_back(ns);
+            tree.push_back(nj);
         }
 
         tree.erase(node_it);
