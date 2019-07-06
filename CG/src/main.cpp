@@ -32,7 +32,7 @@ int main(int argc, char **argv)
     n2.tipo_branch = false;
     int numNodes = 2;
 
-    std::list<Node> tree = {n2, n1};
+    std::list<Node> tree = {n1, n2};
     auto node_it = tree.begin();
 
     int k = 2;
