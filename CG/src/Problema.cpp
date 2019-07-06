@@ -99,6 +99,9 @@ std::pair<int, int> Problema::solve(Node &node)
         int i = node.separados[node.separados.size() - 1].first;
         int j = node.separados[node.separados.size() - 1].second;
 
+        std::cout << "\n\n\n\n"
+                  << i << j << "\n\n\n\n\n";
+
         parAtual = node.separados[node.separados.size() - 1];
 
         IloConstraint cons = (x[i] + x[j] <= 1);
@@ -149,6 +152,7 @@ std::pair<int, int> Problema::solve(Node &node)
         somaPricing.end();
 
         pricing.setOut(env2.getNullStream());
+
         try
         {
             pricing.solve();
@@ -234,13 +238,13 @@ std::pair<int, int> Problema::solve(Node &node)
     {
         for (int j = i + 1; j < data.getNItems(); j++)
         {
-            // if (!node.is_root)
-            // {
-            //     if ((parAtual.first == i && parAtual.second == j) || (parAtual.first == j && parAtual.second == i))
-            //     {
-            //         continue;
-            //     }
-            // }
+            if (!node.is_root)
+            {
+                if ((parAtual.first == i && parAtual.second == j) || (parAtual.first == j && parAtual.second == i))
+                {
+                    continue;
+                }
+            }
             tempDeltaFrac = std::abs(0.5 - xPares[i][j]);
             if (tempDeltaFrac < deltaFrac)
             {
@@ -253,8 +257,10 @@ std::pair<int, int> Problema::solve(Node &node)
     lambdaVals.end();
 
     master.exportModel("modelo.lp");
+    pricing.exportModel("pricing.lp");
 
     //Podar
+
     if (std::abs(0.5 - deltaFrac) < EPSILON)
     {
         if (!node.tipo_branch && !node.is_root)
@@ -267,19 +273,19 @@ std::pair<int, int> Problema::solve(Node &node)
         }
         if (node.tipo_branch && !node.is_root)
         {
+
             int i = node.juntos[node.juntos.size() - 1].first;
             int j = node.juntos[node.juntos.size() - 1].second;
 
             x[i].setLB(0.0);
             x[j].setLB(0.0);
 
-            masterObj.setLinearCoef(lambda[i], M);
-            masterObj.setLinearCoef(lambda[j], M);
+            masterObj.setLinearCoef(lambda[i], 1.0);
+            masterObj.setLinearCoef(lambda[j], 1.0);
         }
 
         return {0, 0};
     }
-    pricing.exportModel("pricing.lp");
 
     std::cout << "par: " << branchingPair.first << ", " << branchingPair.second << "\n\n\n\n";
 
