@@ -74,7 +74,7 @@ Problema::Problema(Data &d)
 
 std::pair<int, int> Problema::solve(Node &node)
 {
-    //tratamento de nos juntos
+    //tratamento de itens juntos
 
     std::pair<int, int> parAtual;
 
@@ -92,15 +92,15 @@ std::pair<int, int> Problema::solve(Node &node)
         masterObj.setLinearCoef(lambda[j], M);
     }
 
-    //tratamento de nos separados
+    //tratamento de itens separados
     std::vector<int> colunasProibidas;
     if (!node.is_root && node.tipo_branch == false)
     {
         int i = node.separados[node.separados.size() - 1].first;
         int j = node.separados[node.separados.size() - 1].second;
 
-        std::cout << "\n\n\n\n"
-                  << i << j << "\n\n\n\n\n";
+        // std::cout << "\n\n\n\n"
+        //           << i << j << "\n\n\n\n\n";
 
         parAtual = node.separados[node.separados.size() - 1];
 
@@ -163,11 +163,17 @@ std::pair<int, int> Problema::solve(Node &node)
             std::cout << e;
         }
 
+        if (pricing.getStatus() == IloAlgorithm::Infeasible)
+        {
+            return {0, 0};
+        }
+
         IloNumArray x_vals(env2, data.getNItems());
         pricing.getValues(x_vals, x);
 
         if (pricing.getObjValue() < -EPSILON)
         {
+
             gerouColuna = true;
 
             lambda.add(IloNumVar(masterObj(1) + masterRanges(x_vals), 0.0, IloInfinity));
@@ -256,8 +262,8 @@ std::pair<int, int> Problema::solve(Node &node)
 
     lambdaVals.end();
 
-    master.exportModel("modelo.lp");
-    pricing.exportModel("pricing.lp");
+    // master.exportModel("modelo.lp");
+    // pricing.exportModel("pricing.lp");
 
     //Podar
 
@@ -284,6 +290,7 @@ std::pair<int, int> Problema::solve(Node &node)
             masterObj.setLinearCoef(lambda[j], 1.0);
         }
 
+        std::cout << "par: " << 0 << ", " << 0 << "\n\n\n\n";
         return {0, 0};
     }
 

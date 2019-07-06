@@ -30,20 +30,23 @@ int main(int argc, char **argv)
     n1.tipo_branch = true;
     n2.separados.push_back(branchingPair);
     n2.tipo_branch = false;
+    int numNodes = 2;
 
-    std::list<Node> tree = {n1, n2};
+    std::list<Node> tree = {n2, n1};
     auto node_it = tree.begin();
 
     int k = 2;
-    while (k--)
+    while (!tree.empty())
     {
+        std::cout << "Num nodes: " << numNodes << "\n";
         node_it = tree.end();
         node_it--;
 
         branchingPair = p.solve(*node_it);
 
-        if (!(branchingPair.first == branchingPair.second == 0))
+        if (!(branchingPair.first == 0 && branchingPair.second == 0))
         {
+            numNodes += 2;
             Node nj, ns;
             nj = ns = *node_it;
 
@@ -52,8 +55,8 @@ int main(int argc, char **argv)
             ns.separados.push_back(branchingPair);
             ns.tipo_branch = false;
 
-            tree.push_back(nj);
             tree.push_back(ns);
+            tree.push_back(nj);
         }
 
         tree.erase(node_it);
