@@ -54,15 +54,17 @@ int main(int argc, char **argv)
             ns.separados.push_back(branchingPair);
             ns.tipo_branch = false;
 
-            tree.push_back(ns);
             tree.push_back(nj);
+            tree.push_back(ns);
         }
 
-        std::cout << "Num nodes: " << numNodes << "\n";
+        std::cout << "Num nodes: " << tree.size() << "\n";
         std::cout << "best integer: " << p.bestInteger << "\n";
 
         tree.erase(node_it);
     }
+
+    // std::cout << "E\n\n\n\n";
 
     // master.exportModel("modelo.lp");
 

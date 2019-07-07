@@ -81,47 +81,44 @@ std::pair<int, int> Problema::solve(Node &node)
         std::cout << ((node.tipo_branch == true) ? "Juntos\n" : "Separados\n");
     }
 
-    //tratamento de itens juntos
-    if (!node.is_root && node.tipo_branch == true)
-    {
-        int i = node.juntos[node.juntos.size() - 1].first;
-        int j = node.juntos[node.juntos.size() - 1].second;
-
-        parAtual = node.juntos[node.juntos.size() - 1];
-
-        x[i].setLB(1.0);
-        x[j].setLB(1.0);
-
-        masterObj.setLinearCoef(lambda[i], M);
-        masterObj.setLinearCoef(lambda[j], M);
-    }
-
-    //tratamento de itens separados
     std::vector<int> colunasProibidas;
-    if (!node.is_root && node.tipo_branch == false)
+
+    if (!node.is_root)
     {
-        int i = node.separados[node.separados.size() - 1].first;
-        int j = node.separados[node.separados.size() - 1].second;
+        //restriçoes dos itens juntos
 
-        // std::cout << "\n\n\n\n"
-        //           << i << j << "\n\n\n\n\n";
-
-        parAtual = node.separados[node.separados.size() - 1];
-
-        IloConstraint cons = (x[i] + x[j] <= 1);
-
-        pricingModel.add(cons);
-        pricingConstraints.add(cons);
-
-        for (int k = data.getNItems(); k < lambdaItens.size(); k++)
+        for (auto &parAtual : node.juntos)
         {
-            for (int l = 0; l < lambdaItens[k].size() - 1; l++)
+            int i = parAtual.first;
+            int j = parAtual.second;
+
+            x[i].setLB(1.0);
+            x[j].setLB(1.0);
+
+            masterObj.setLinearCoef(lambda[i], M);
+            masterObj.setLinearCoef(lambda[j], M);
+        }
+
+        // restriçoes dos itens separados
+        for (auto &parAtual : node.separados)
+        {
+            int i = parAtual.first;
+            int j = parAtual.second;
+
+            IloConstraint cons = (x[i] + x[j] <= 1);
+
+            pricingModel.add(cons);
+            pricingConstraints.add(cons);
+
+            for (int k = data.getNItems(); k < lambdaItens.size(); k++)
             {
-                if ((lambdaItens[k][l] == i && lambdaItens[k][l + 1] == j) || (lambdaItens[k][l] == j && lambdaItens[k][l + 1] == i))
+                for (int l = 0; l < lambdaItens[k].size() - 1; l++)
                 {
-                    // std::cout << i << ", " << j << "\n\n";
-                    lambda[k].setUB(0);
-                    colunasProibidas.push_back(k);
+                    if ((lambdaItens[k][l] == i && lambdaItens[k][l + 1] == j) || (lambdaItens[k][l] == j && lambdaItens[k][l + 1] == i))
+                    {
+                        lambda[k].setUB(0);
+                        colunasProibidas.push_back(k);
+                    }
                 }
             }
         }
@@ -172,25 +169,28 @@ std::pair<int, int> Problema::solve(Node &node)
         if (pricing.getStatus() == IloAlgorithm::Infeasible)
         {
             std::cout << "Infeasible pricing\n";
-            if (!node.tipo_branch && !node.is_root)
+            if (!node.is_root)
             {
-                pricingModel.remove(pricingConstraints[pricingConstraints.getSize() - 1]);
+                for (int constr = 0; constr < pricingConstraints.getSize(); constr++)
+                {
+                    pricingModel.remove(pricingConstraints[constr]);
+                }
                 for (auto &k : colunasProibidas)
                 {
                     lambda[k].setUB(1.0);
                 }
-            }
-            if (node.tipo_branch && !node.is_root)
-            {
 
-                int i = node.juntos[node.juntos.size() - 1].first;
-                int j = node.juntos[node.juntos.size() - 1].second;
+                for (auto &parAtual : node.juntos)
+                {
+                    int i = parAtual.first;
+                    int j = parAtual.second;
 
-                x[i].setLB(0.0);
-                x[j].setLB(0.0);
+                    x[i].setLB(0.0);
+                    x[j].setLB(0.0);
 
-                masterObj.setLinearCoef(lambda[i], 1.0);
-                masterObj.setLinearCoef(lambda[j], 1.0);
+                    masterObj.setLinearCoef(lambda[i], 1.0);
+                    masterObj.setLinearCoef(lambda[j], 1.0);
+                }
             }
 
             std::cout << "par: " << 0 << ", " << 0 << "\n\n\n\n";
@@ -278,7 +278,7 @@ std::pair<int, int> Problema::solve(Node &node)
     {
         for (int j = i + 1; j < data.getNItems(); j++)
         {
-            std::pair<int,int> bp = {i, j};
+            std::pair<int, int> bp = {i, j};
             if (!node.is_root)
             {
                 if ((std::find(node.juntos.begin(), node.juntos.end(), bp) != node.juntos.end()) || (std::find(node.separados.begin(), node.separados.end(), bp) != node.separados.end()))
@@ -287,7 +287,6 @@ std::pair<int, int> Problema::solve(Node &node)
                 }
                 else
                 {
-
                 }
             }
 
@@ -329,25 +328,29 @@ std::pair<int, int> Problema::solve(Node &node)
                 bestInteger = master.getObjValue();
             }
         }
-        if (!node.tipo_branch && !node.is_root)
+
+        if (!node.is_root)
         {
-            pricingModel.remove(pricingConstraints[pricingConstraints.getSize() - 1]);
+            for (int constr = 0; constr < pricingConstraints.getSize(); constr++)
+            {
+                pricingModel.remove(pricingConstraints[constr]);
+            }
             for (auto &k : colunasProibidas)
             {
                 lambda[k].setUB(1.0);
             }
-        }
-        if (node.tipo_branch && !node.is_root)
-        {
 
-            int i = node.juntos[node.juntos.size() - 1].first;
-            int j = node.juntos[node.juntos.size() - 1].second;
+            for (auto &parAtual : node.juntos)
+            {
+                int i = parAtual.first;
+                int j = parAtual.second;
 
-            x[i].setLB(0.0);
-            x[j].setLB(0.0);
+                x[i].setLB(0.0);
+                x[j].setLB(0.0);
 
-            masterObj.setLinearCoef(lambda[i], 1.0);
-            masterObj.setLinearCoef(lambda[j], 1.0);
+                masterObj.setLinearCoef(lambda[i], 1.0);
+                masterObj.setLinearCoef(lambda[j], 1.0);
+            }
         }
 
         std::cout << "par: " << 0 << ", " << 0 << "\n\n\n\n";
