@@ -47,15 +47,17 @@ int main(int argc, char **argv)
         {
             numNodes += 2;
             Node nj, ns;
-            nj = ns = *node_it;
+            ns = *node_it;
+            nj = *node_it;
 
             nj.juntos.push_back(branchingPair);
             nj.tipo_branch = true;
+
             ns.separados.push_back(branchingPair);
             ns.tipo_branch = false;
 
-            tree.push_back(nj);
             tree.push_back(ns);
+            tree.push_back(nj);
         }
 
         std::cout << "Num nodes: " << tree.size() << "\n";

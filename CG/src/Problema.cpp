@@ -139,6 +139,9 @@ std::pair<int, int> Problema::solve(Node &node)
 
     bool gerouColuna = false;
 
+    double lastPricingObj = std::numeric_limits<double>::infinity();
+    std::vector<int> lastPricingSolution(1, 0);
+
     while (1)
     {
         master.getDuals(pi, masterRanges);
@@ -203,25 +206,26 @@ std::pair<int, int> Problema::solve(Node &node)
         IloNumArray x_vals(env2, data.getNItems());
         pricing.getValues(x_vals, x);
 
-        if (pricing.getObjValue() < -EPSILON)
-        {
+        std::vector<int> itens;
 
+        std::cout << "itens pricing : ";
+        for (int i = 0; i < x_vals.getSize(); i++)
+        {
+            if (x_vals[i] > 1 - EPSILON)
+            {
+                std::cout << i << " ";
+                itens.push_back(i);
+            }
+        }
+        std::cout << "\n";
+
+        if (pricing.getObjValue() < -EPSILON) 
+        {
+            lastPricingSolution = itens;
+            lastPricingObj = pricing.getObjValue();
             gerouColuna = true;
 
             lambda.add(IloNumVar(masterObj(1) + masterRanges(x_vals), 0.0, IloInfinity));
-
-            std::vector<int> itens;
-
-            // std::cout << "itens pricing : ";
-            for (int i = 0; i < x_vals.getSize(); i++)
-            {
-                if (x_vals[i] > 1 - EPSILON)
-                {
-                    // std::cout << i << " ";
-                    itens.push_back(i);
-                }
-            }
-            // std::cout << "\n";
 
             lambdaItens.push_back(itens);
 
