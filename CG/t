@@ -1660,2340 +1660,2009 @@ pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
 pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-Status: Optimal
-Bins usados: 24.6615
-Gerou colunas 
-par: 28, 29
-
-
-
-Num nodes: 5
-best integer: inf
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 4
-best integer: inf
-Separados
-pricing obj value: -3.93775e-05
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-pricing obj value: -3.93775e-05
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-Status: Optimal
-Bins usados: 25.0323
-Gerou colunas 
-par: 12, 28
-
-
-
-Num nodes: 5
-best integer: inf
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 4
-best integer: inf
-Separados
-pricing obj value: -4.17334e-05
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-pricing obj value: -4.17334e-05
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-Status: Optimal
-Bins usados: 25.0855
-Gerou colunas 
-par: 9, 29
-
-
-
-Num nodes: 5
-best integer: inf
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 4
-best integer: inf
-Separados
-pricing obj value: 0
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-Status: Optimal
-Bins usados: 25.2627
-Não gerou coluna 
-par: 32, 34
-
-
-
-Num nodes: 5
-best integer: inf
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 4
-best integer: inf
-Separados
-pricing obj value: -4.44089e-16
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-Status: Optimal
-Bins usados: 25.4
-Não gerou coluna 
-par: 23, 25
-
-
-
-Num nodes: 5
-best integer: inf
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 4
-best integer: inf
-Separados
-pricing obj value: -4.44089e-16
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-Status: Optimal
-Bins usados: 25.5119
-Não gerou coluna 
-par: 22, 23
-
-
-
-Num nodes: 5
-best integer: inf
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 4
-best integer: inf
-Separados
-pricing obj value: 0
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-Status: Optimal
-Bins usados: 25.8333
-Não gerou coluna 
-par: 20, 23
-
-
-
-Num nodes: 5
-best integer: inf
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 4
-best integer: inf
-Separados
-pricing obj value: -4.44089e-16
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-Status: Optimal
-Bins usados: 26.0741
-Não gerou coluna 
-par: 7, 16
-
-
-
-Num nodes: 5
-best integer: inf
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 4
-best integer: inf
-Separados
-pricing obj value: 4.44089e-16
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-Status: Optimal
-Bins usados: 26.1667
-Não gerou coluna 
-par: 4, 27
-
-
-
-Num nodes: 5
-best integer: inf
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 4
-best integer: inf
-Separados
-pricing obj value: 0
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-Status: Optimal
-Bins usados: 26.2424
-Não gerou coluna 
-par: 12, 23
-
-
-
-Num nodes: 5
-best integer: inf
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 4
-best integer: inf
-Separados
-pricing obj value: 0
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-Status: Optimal
-Bins usados: 26.3684
-Não gerou coluna 
-par: 30, 34
-
-
-
-Num nodes: 5
-best integer: inf
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 4
-best integer: inf
-Separados
-pricing obj value: 0
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-Status: Optimal
-Bins usados: 26.5
-Não gerou coluna 
-par: 30, 33
-
-
-
-Num nodes: 5
-best integer: inf
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 4
-best integer: inf
-Separados
-pricing obj value: -4.44089e-16
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-Status: Optimal
-Bins usados: 26.875
-Não gerou coluna 
-par: 2, 26
-
-
-
-Num nodes: 5
-best integer: inf
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 4
-best integer: inf
-Separados
-pricing obj value: 0
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-Status: Optimal
-Bins usados: 27
-Não gerou coluna 
-par: 21, 23
-
-
-
-Num nodes: 5
-best integer: inf
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 4
-best integer: inf
-Separados
-pricing obj value: 0
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-Status: Optimal
-Bins usados: 27.75
-Não gerou coluna 
-par: 21, 33
-
-
-
-Num nodes: 5
-best integer: inf
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 4
-best integer: inf
-Separados
-pricing obj value: 0
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-Status: Optimal
-Bins usados: 27.88
-Não gerou coluna 
-par: 4, 21
-
-
-
-Num nodes: 5
-best integer: inf
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 4
-best integer: inf
-Separados
-pricing obj value: -4.88281e-05
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-pricing obj value: -4.88281e-05
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-Status: Optimal
-Bins usados: 28.2
-Gerou colunas 
-par: 18, 27
-
-
-
-Num nodes: 5
-best integer: inf
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 4
-best integer: inf
-Separados
-pricing obj value: 0
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-Status: Optimal
-Bins usados: 28.5
-Não gerou coluna 
-par: 0, 27
-
-
-
-Num nodes: 5
-best integer: inf
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 4
-best integer: inf
-Separados
-pricing obj value: 0
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-Status: Optimal
-Bins usados: 28.75
-Não gerou coluna 
-par: 7, 23
-
-
-
-Num nodes: 5
-best integer: inf
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 4
-best integer: inf
-Separados
-pricing obj value: -4.44089e-16
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-Status: Optimal
-Bins usados: 28.9231
-Não gerou coluna 
-par: 8, 23
-
-
-
-Num nodes: 5
-best integer: inf
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 4
-best integer: inf
-Separados
-pricing obj value: 0
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-Status: Optimal
-Bins usados: 29.2
-Não gerou coluna 
-par: 12, 31
-
-
-
-Num nodes: 5
-best integer: inf
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 4
-best integer: inf
-Separados
-pricing obj value: 0
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-Status: Optimal
-Bins usados: 29.8
-Não gerou coluna 
-par: 14, 15
-
-
-
-Num nodes: 5
-best integer: inf
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 4
-best integer: inf
-Separados
-pricing obj value: 0
+pricing obj value: -3.75601e-06
 itens pricing : 6 17 49 
-Status: Optimal
-Bins usados: 30
-Não gerou coluna 
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: -0.0114079
-itens pricing : 6 17 
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 15.8756
-Gerou colunas 
-par: 7, 19
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 15.879
-Não gerou coluna 
-par: 3, 27
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 15.8908
-Não gerou coluna 
-par: 19, 21
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 15.8966
-Não gerou coluna 
-par: 11, 14
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 15.9014
-Não gerou coluna 
-par: 7, 23
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 15.91
-Não gerou coluna 
-par: 2, 30
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 15.9169
-Não gerou coluna 
-par: 4, 21
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 15.926
-Não gerou coluna 
-par: 5, 15
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 15.9354
-Não gerou coluna 
-par: 0, 24
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 15.9471
-Não gerou coluna 
-par: 3, 30
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 15.9531
-Não gerou coluna 
-par: 2, 22
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 15.9621
-Não gerou coluna 
-par: 12, 28
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 15.9855
-Não gerou coluna 
-par: 0, 32
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 15.9908
-Não gerou coluna 
-par: 13, 21
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 15.9948
-Não gerou coluna 
-par: 9, 26
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 16.0082
-Não gerou coluna 
-par: 2, 27
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 16.1432
-Não gerou coluna 
-par: 4, 20
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 16.3189
-Não gerou coluna 
-par: 15, 25
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 16.4413
-Não gerou coluna 
-par: 13, 25
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 16.6051
-Não gerou coluna 
-par: 4, 27
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.00995316
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 16.6505
-Não gerou coluna 
-par: 21, 23
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 16.7152
-Não gerou coluna 
-par: 1, 24
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 16.8042
-Não gerou coluna 
-par: 15, 23
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.114991
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 16.9523
-Não gerou coluna 
-par: 1, 32
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.163049
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 17.0281
-Não gerou coluna 
-par: 10, 30
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.0517011
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 17.1285
-Não gerou coluna 
-par: 10, 21
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.022113
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 17.2545
-Não gerou coluna 
-par: 10, 27
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 17.3115
-Não gerou coluna 
-par: 5, 18
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.0545765
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 17.3801
-Não gerou coluna 
-par: 20, 21
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.223592
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 17.4683
-Não gerou coluna 
-par: 21, 27
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.205128
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 17.5744
-Não gerou coluna 
-par: 0, 29
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.148368
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 17.5895
-Não gerou coluna 
-par: 25, 36
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.192912
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 17.6515
-Não gerou coluna 
-par: 15, 21
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.150529
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 17.7923
-Não gerou coluna 
-par: 48, 49
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.225532
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 17.9106
-Não gerou coluna 
-par: 45, 46
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.253577
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 18.0053
-Não gerou coluna 
-par: 4, 28
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.322314
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 18.0486
-Não gerou coluna 
-par: 28, 30
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.249617
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 18.0769
-Não gerou coluna 
-par: 7, 34
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.21997
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 18.144
-Não gerou coluna 
-par: 28, 29
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.127475
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 18.2983
-Não gerou coluna 
-par: 13, 20
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.126722
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 18.4353
-Não gerou coluna 
-par: 9, 29
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.106106
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 18.4752
-Não gerou coluna 
-par: 20, 30
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.10455
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 18.6447
-Não gerou coluna 
-par: 25, 26
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.025641
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 18.7393
-Não gerou coluna 
-par: 7, 30
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.164835
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 18.9945
-Não gerou coluna 
-par: 41, 45
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.139706
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 19.0288
-Não gerou coluna 
-par: 15, 17
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 19.198
-Não gerou coluna 
-par: 9, 16
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 19.2668
-Não gerou coluna 
-par: 14, 15
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.0671015
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 19.3444
-Não gerou coluna 
-par: 26, 30
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.014295
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 19.4561
-Não gerou coluna 
-par: 27, 30
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 19.65
-Não gerou coluna 
-par: 6, 18
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 19.7857
-Não gerou coluna 
-par: 12, 23
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 20.0381
-Não gerou coluna 
-par: 24, 25
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 20.3632
-Não gerou coluna 
-par: 38, 39
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 20.6495
-Não gerou coluna 
-par: 8, 25
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 20.8
-Não gerou coluna 
-par: 37, 38
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 20.9216
-Não gerou coluna 
-par: 8, 14
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 21.0854
-Não gerou coluna 
-par: 16, 17
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 21.2234
-Não gerou coluna 
-par: 11, 24
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 21.4576
-Não gerou coluna 
-par: 2, 26
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 21.5909
-Não gerou coluna 
-par: 3, 22
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 21.6161
-Não gerou coluna 
-par: 13, 16
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 21.6478
-Não gerou coluna 
-par: 27, 29
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 21.7069
-Não gerou coluna 
-par: 29, 30
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 22.1895
-Não gerou coluna 
-par: 7, 28
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 22.4783
-Não gerou coluna 
-par: 7, 17
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 22.5119
-Não gerou coluna 
-par: 4, 29
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 22.6467
-Não gerou coluna 
-par: 7, 31
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 22.75
-Não gerou coluna 
-par: 4, 33
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 23.068
-Não gerou coluna 
-par: 41, 43
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 23.6
-Não gerou coluna 
-par: 8, 28
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 23.8056
-Não gerou coluna 
-par: 10, 28
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 24.1594
-Não gerou coluna 
-par: 18, 22
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 24.4375
-Não gerou coluna 
-par: 12, 16
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0.035461
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 24.7447
-Não gerou coluna 
-par: 11, 17
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 24.8
-Não gerou coluna 
-par: 34, 38
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 25
-Não gerou coluna 
-par: 16, 20
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 25.75
-Não gerou coluna 
-par: 5, 19
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 26
-Não gerou coluna 
-par: 19, 22
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 26.3333
-Não gerou coluna 
-par: 16, 24
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 26.4138
-Não gerou coluna 
-par: 36, 38
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 26.75
-Não gerou coluna 
-par: 36, 40
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 27.05
-Não gerou coluna 
-par: 32, 33
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 1.11022e-16
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 27.5714
-Não gerou coluna 
-par: 14, 24
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 27.8182
-Não gerou coluna 
-par: 3, 35
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 27.9571
-Não gerou coluna 
-par: 6, 27
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 28.1667
-Não gerou coluna 
-par: 25, 34
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 28.3333
-Não gerou coluna 
-par: 1, 26
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 28.6
-Não gerou coluna 
-par: 14, 19
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 29
-Não gerou coluna 
-par: 10, 24
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 29.1818
-Não gerou coluna 
-par: 6, 29
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 29.4444
-Não gerou coluna 
-par: 14, 31
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 29.6667
-Não gerou coluna 
-par: 15, 20
-
-
-
-Num nodes: 4
-best integer: 30
-Juntos
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 3
-best integer: 30
-Separados
-pricing obj value: 0
-itens pricing : 6 17 
-Status: Optimal
-Bins usados: 30.5
-Não gerou coluna 
-par: 1, 34
-
-
-
-Num nodes: 2
-best integer: 30
-Separados
-Infeasible pricing
-par: 0, 0
-
-
-
-Num nodes: 1
-best integer: 30
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens pricing : 6 17 49 
+pricing obj value: -3.75601e-06
+itens prici

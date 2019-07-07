@@ -202,6 +202,7 @@ std::pair<int, int> Problema::solve(Node &node)
         }
 
         std::cout << "pricing obj value: " << pricing.getObjValue() << "\n";
+        std::cout << "pricing status: " << pricing.getStatus() << "\n";
 
         IloNumArray x_vals(env2, data.getNItems());
         pricing.getValues(x_vals, x);
@@ -219,7 +220,7 @@ std::pair<int, int> Problema::solve(Node &node)
         }
         std::cout << "\n";
 
-        if (pricing.getObjValue() < -EPSILON) 
+        if (pricing.getObjValue() < -EPSILON)
         {
             lastPricingSolution = itens;
             lastPricingObj = pricing.getObjValue();
