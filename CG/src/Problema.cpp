@@ -78,7 +78,10 @@ std::pair<int, int> Problema::solve(Node &node)
     //tratamento de itens juntos
 
     std::pair<int, int> parAtual;
-
+    if (node.is_root == false)
+    {
+        std::cout << ((node.tipo_branch == true) ? "Juntos\n" : "Separados\n");
+    }
     if (!node.is_root && node.tipo_branch == true)
     {
         int i = node.juntos[node.juntos.size() - 1].first;
@@ -166,6 +169,7 @@ std::pair<int, int> Problema::solve(Node &node)
 
         if (pricing.getStatus() == IloAlgorithm::Infeasible)
         {
+            std::cout << "Infeasible pricing\n";
             if (!node.tipo_branch && !node.is_root)
             {
                 pricingModel.remove(pricingConstraints[pricingConstraints.getSize() - 1]);
@@ -187,8 +191,12 @@ std::pair<int, int> Problema::solve(Node &node)
                 masterObj.setLinearCoef(lambda[j], 1.0);
             }
 
+            std::cout << "par: " << 0 << ", " << 0 << "\n\n\n\n";
             return {0, 0};
+            break;
         }
+
+        std::cout << "pricing obj value: " << pricing.getObjValue() << "\n";
 
         IloNumArray x_vals(env2, data.getNItems());
         pricing.getValues(x_vals, x);
@@ -237,7 +245,7 @@ std::pair<int, int> Problema::solve(Node &node)
 
     for (int i = 0; i < lambda.getSize(); i++)
     {
-        std::cout << i << ", " << master.getValue(lambda[i]) << "\n";
+        // std::cout << i << ", " << master.getValue(lambda[i]) << "\n";
     }
 
     std::cout << "Status: " << master.getStatus() << "\n";
@@ -266,17 +274,20 @@ std::pair<int, int> Problema::solve(Node &node)
     {
         for (int j = i + 1; j < data.getNItems(); j++)
         {
-            if (!node.is_root)
-            {
-                if ((parAtual.first == i && parAtual.second == j) || (parAtual.first == j && parAtual.second == i))
-                {
-                    continue;
-                }
-            }
+
             tempDeltaFrac = std::abs(0.5 - xPares[i][j]);
             if (tempDeltaFrac < deltaFrac)
             {
                 branchingPair = {i, j};
+
+                if (!node.is_root)
+                {
+                    if (std::find(node.juntos.begin(), node.juntos.end(), branchingPair) != node.juntos.end() || std::find(node.separados.begin(), node.separados.end(), branchingPair) != node.separados.end())
+                    {
+                        continue;
+                    }
+                }
+
                 deltaFrac = tempDeltaFrac;
             }
         }
@@ -284,16 +295,26 @@ std::pair<int, int> Problema::solve(Node &node)
 
     lambdaVals.end();
 
-    // master.exportModel("modelo.lp");
-    // pricing.exportModel("pricing.lp");
+    master.exportModel("modelo.lp");
+    pricing.exportModel("pricing.lp");
 
     //melhor solucao inteira
 
     //Podar
 
+    if (!gerouColuna)
+    {
+        std::cout << "Não gerou coluna \n";
+    }
+    if (gerouColuna)
+    {
+        std::cout << "Gerou colunas \n";
+    }
+
     if (std::abs(0.5 - deltaFrac) < EPSILON)
     {
-        // if (std::abs(0.5 - deltaFrac) < EPSILON)
+
+        if (std::abs(0.5 - deltaFrac) < EPSILON)
         {
             if (master.getObjValue() < bestInteger)
             {

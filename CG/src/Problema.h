@@ -6,9 +6,10 @@
 #include <ilcplex/ilocplex.h>
 #include <cmath>
 #include <limits>
+#include <algorithm>
 
-#define EPSILON 0.000001
-#define M 1000000
+#define EPSILON 1e-6
+#define M 1e12
 
 class Problema
 {
