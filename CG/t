@@ -1,0 +1,963 @@
+pricing obj value: -7
+pricing obj value: -7
+pricing obj value: -7
+pricing obj value: -7
+pricing obj value: -7
+pricing obj value: -7
+pricing obj value: -7
+pricing obj value: -7
+pricing obj value: -7
+pricing obj value: -3.25
+pricing obj value: -5
+pricing obj value: -5
+pricing obj value: -5
+pricing obj value: -4
+pricing obj value: -4.2
+pricing obj value: -4.33333
+pricing obj value: -4.25
+pricing obj value: -2.92308
+pricing obj value: -3.62857
+pricing obj value: -4.05882
+pricing obj value: -3.58571
+pricing obj value: -3.12934
+pricing obj value: -2.74648
+pricing obj value: -3.1446
+pricing obj value: -2.94915
+pricing obj value: -3.18047
+pricing obj value: -3.11459
+pricing obj value: -2.21249
+pricing obj value: -2.65209
+pricing obj value: -3.26144
+pricing obj value: -2.03836
+pricing obj value: -2.96793
+pricing obj value: -2.42168
+pricing obj value: -2.11747
+pricing obj value: -1.53599
+pricing obj value: -1.80255
+pricing obj value: -2.21322
+pricing obj value: -1.95385
+pricing obj value: -1.71282
+pricing obj value: -1.28792
+pricing obj value: -2.09091
+pricing obj value: -1.22884
+pricing obj value: -1.36929
+pricing obj value: -1.92937
+pricing obj value: -1.58072
+pricing obj value: -1
+pricing obj value: -1
+pricing obj value: -1
+pricing obj value: -0.692843
+pricing obj value: -0.534518
+pricing obj value: -0.482677
+pricing obj value: -0.71224
+pricing obj value: -1.31585
+pricing obj value: -0.454103
+pricing obj value: -0.575758
+pricing obj value: -0.398951
+pricing obj value: -0.572468
+pricing obj value: -0.81357
+pricing obj value: -1.22179
+pricing obj value: -0.35353
+pricing obj value: -0.828033
+pricing obj value: -0.503302
+pricing obj value: -0.409238
+pricing obj value: -0.594579
+pricing obj value: -0.777831
+pricing obj value: -0.336945
+pricing obj value: -0.323083
+pricing obj value: -1.03826
+pricing obj value: -0.326784
+pricing obj value: -0.29152
+pricing obj value: -0.369686
+pricing obj value: -0.736527
+pricing obj value: -0.279161
+pricing obj value: -0.577938
+pricing obj value: -0.278677
+pricing obj value: -0.245702
+pricing obj value: -0.510776
+pricing obj value: -0.441176
+pricing obj value: -0.14451
+pricing obj value: -0.393643
+pricing obj value: -0.227243
+pricing obj value: -0.132075
+pricing obj value: -0.206155
+pricing obj value: -0.193983
+pricing obj value: -0.173184
+pricing obj value: -0.139077
+pricing obj value: -0.118332
+pricing obj value: -0.12459
+pricing obj value: -0.122203
+pricing obj value: -0.337629
+pricing obj value: -0.25
+pricing obj value: -0.163265
+pricing obj value: -0.13728
+pricing obj value: -0.129032
+pricing obj value: -0.132791
+pricing obj value: -0.116253
+pricing obj value: -0.0958904
+pricing obj value: -0.0978261
+pricing obj value: -0.213115
+pricing obj value: -0.144578
+pricing obj value: -0.196667
+pricing obj value: -0.125
+pricing obj value: -0.121281
+pricing obj value: -0.0758427
+pricing obj value: -0.0634921
+pricing obj value: -0.25
+pricing obj value: -0.121622
+pricing obj value: -0.101266
+pricing obj value: -0.156863
+pricing obj value: -0.101604
+pricing obj value: -0.110727
+pricing obj value: -0.0761246
+pricing obj value: -0.0657439
+pricing obj value: -0.0504202
+pricing obj value: -0.0583658
+pricing obj value: -0.0428016
+pricing obj value: 0
+Status: Optimal
+Bins usados: 24.75
+Gerou colunas 
+par: 18, 31
+
+
+
+Juntos
+pricing obj value: 0
+Status: Optimal
+Bins usados: 24.75
+Não gerou coluna 
+par: 31, 47
+
+
+
+Num nodes: 4
+best integer: inf
+Juntos
+pricing obj value: 0
+Status: Optimal
+Bins usados: 24.75
+Não gerou coluna 
+par: 13, 33
+
+
+
+Num nodes: 6
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 6
+best integer: inf
+Separados
+pricing obj value: 1.11022e-16
+Status: Optimal
+Bins usados: 24.7876
+Não gerou coluna 
+par: 11, 37
+
+
+
+Num nodes: 8
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 8
+best integer: inf
+Separados
+pricing obj value: 0
+Status: Optimal
+Bins usados: 24.881
+Não gerou coluna 
+par: 14, 32
+
+
+
+Num nodes: 10
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 10
+best integer: inf
+Separados
+pricing obj value: 0
+Status: Optimal
+Bins usados: 24.9333
+Não gerou coluna 
+par: 14, 30
+
+
+
+Num nodes: 12
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 12
+best integer: inf
+Separados
+pricing obj value: 0
+Status: Optimal
+Bins usados: 24.9804
+Não gerou coluna 
+par: 8, 44
+
+
+
+Num nodes: 14
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 14
+best integer: inf
+Separados
+pricing obj value: 0
+Status: Optimal
+Bins usados: 24.9811
+Não gerou coluna 
+par: 18, 37
+
+
+
+Num nodes: 16
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 16
+best integer: inf
+Separados
+pricing obj value: -0.0625
+pricing obj value: 0
+Status: Optimal
+Bins usados: 25.0476
+Gerou colunas 
+par: 6, 48
+
+
+
+Num nodes: 18
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 18
+best integer: inf
+Separados
+pricing obj value: -0.0606061
+pricing obj value: -0.0285714
+pricing obj value: -0.018315
+pricing obj value: 0
+Status: Optimal
+Bins usados: 25.0495
+Gerou colunas 
+par: 8, 46
+
+
+
+Num nodes: 20
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 20
+best integer: inf
+Separados
+pricing obj value: 0
+Status: Optimal
+Bins usados: 25.0495
+Não gerou coluna 
+par: 7, 46
+
+
+
+Num nodes: 22
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 22
+best integer: inf
+Separados
+pricing obj value: -0.015083
+pricing obj value: 0
+Status: Optimal
+Bins usados: 25.0632
+Gerou colunas 
+par: 15, 30
+
+
+
+Num nodes: 24
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 24
+best integer: inf
+Separados
+pricing obj value: -0.0125786
+pricing obj value: 0
+Status: Optimal
+Bins usados: 25.0877
+Gerou colunas 
+par: 18, 33
+
+
+
+Num nodes: 26
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 26
+best integer: inf
+Separados
+pricing obj value: 0
+Status: Optimal
+Bins usados: 25.1212
+Não gerou coluna 
+par: 9, 43
+
+
+
+Num nodes: 28
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 28
+best integer: inf
+Separados
+pricing obj value: 0
+Status: Optimal
+Bins usados: 25.1522
+Não gerou coluna 
+par: 9, 45
+
+
+
+Num nodes: 30
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 30
+best integer: inf
+Separados
+pricing obj value: 0
+Status: Optimal
+Bins usados: 25.1795
+Não gerou coluna 
+par: 45, 46
+
+
+
+Num nodes: 32
+best integer: inf
+Juntos
+pricing obj value: 0.0940171
+Status: Optimal
+Bins usados: 25.1795
+Não gerou coluna 
+par: 32, 33
+
+
+
+Num nodes: 34
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 34
+best integer: inf
+Separados
+pricing obj value: 0.283784
+Status: Optimal
+Bins usados: 25.3514
+Não gerou coluna 
+par: 13, 34
+
+
+
+Num nodes: 36
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 36
+best integer: inf
+Separados
+pricing obj value: 0.125
+Status: Optimal
+Bins usados: 25.4375
+Não gerou coluna 
+par: 25, 31
+
+
+
+Num nodes: 38
+best integer: inf
+Juntos
+pricing obj value: 0.425
+Status: Optimal
+Bins usados: 25.4375
+Não gerou coluna 
+par: 31, 33
+
+
+
+Num nodes: 40
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 40
+best integer: inf
+Separados
+pricing obj value: 0.217391
+Status: Optimal
+Bins usados: 25.5652
+Não gerou coluna 
+par: 10, 43
+
+
+
+Num nodes: 42
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 42
+best integer: inf
+Separados
+pricing obj value: 0.310345
+Status: Optimal
+Bins usados: 25.5862
+Não gerou coluna 
+par: 37, 46
+
+
+
+Num nodes: 44
+best integer: inf
+Juntos
+pricing obj value: 0.551724
+Status: Optimal
+Bins usados: 25.5862
+Não gerou coluna 
+par: 17, 40
+
+
+
+Num nodes: 46
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 46
+best integer: inf
+Separados
+pricing obj value: 0.428571
+Status: Optimal
+Bins usados: 25.6786
+Não gerou coluna 
+par: 18, 34
+
+
+
+Num nodes: 48
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 48
+best integer: inf
+Separados
+pricing obj value: 0.464912
+Status: Optimal
+Bins usados: 25.886
+Não gerou coluna 
+par: 19, 24
+
+
+
+Num nodes: 50
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 50
+best integer: inf
+Separados
+pricing obj value: 0.72323
+Status: Optimal
+Bins usados: 26.02
+Não gerou coluna 
+par: 46, 48
+
+
+
+Num nodes: 52
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 52
+best integer: inf
+Separados
+pricing obj value: 0.55
+Status: Optimal
+Bins usados: 26.26
+Não gerou coluna 
+par: 12, 36
+
+
+
+Num nodes: 54
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 54
+best integer: inf
+Separados
+pricing obj value: 0.65
+Status: Optimal
+Bins usados: 26.35
+Não gerou coluna 
+par: 17, 38
+
+
+
+Num nodes: 56
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 56
+best integer: inf
+Separados
+pricing obj value: 0.692708
+Status: Optimal
+Bins usados: 26.4635
+Não gerou coluna 
+par: 17, 37
+
+
+
+Num nodes: 58
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 58
+best integer: inf
+Separados
+pricing obj value: 0.202532
+Status: Optimal
+Bins usados: 26.4937
+Não gerou coluna 
+par: 17, 32
+
+
+
+Num nodes: 60
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 60
+best integer: inf
+Separados
+pricing obj value: -0.04
+pricing obj value: 0
+Status: Optimal
+Bins usados: 26.56
+Gerou colunas 
+par: 11, 38
+
+
+
+Num nodes: 62
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 62
+best integer: inf
+Separados
+pricing obj value: 0.189655
+Status: Optimal
+Bins usados: 26.5948
+Não gerou coluna 
+par: 47, 48
+
+
+
+Num nodes: 64
+best integer: inf
+Juntos
+pricing obj value: 0.189655
+Status: Optimal
+Bins usados: 26.5948
+Não gerou coluna 
+par: 31, 37
+
+
+
+Num nodes: 66
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 66
+best integer: inf
+Separados
+pricing obj value: 0.333333
+Status: Optimal
+Bins usados: 26.7222
+Não gerou coluna 
+par: 24, 30
+
+
+
+Num nodes: 68
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 68
+best integer: inf
+Separados
+pricing obj value: 0.555556
+Status: Optimal
+Bins usados: 26.8333
+Não gerou coluna 
+par: 15, 28
+
+
+
+Num nodes: 70
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 70
+best integer: inf
+Separados
+pricing obj value: 0.537037
+Status: Optimal
+Bins usados: 26.9444
+Não gerou coluna 
+par: 48, 49
+
+
+
+Num nodes: 72
+best integer: inf
+Juntos
+pricing obj value: 0.814815
+Status: Optimal
+Bins usados: 26.9444
+Não gerou coluna 
+par: 16, 29
+
+
+
+Num nodes: 74
+best integer: inf
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 74
+best integer: inf
+Separados
+pricing obj value: 1
+Status: Optimal
+Bins usados: 27
+Não gerou coluna 
+par: 0, 0
+
+
+
+Num nodes: 74
+best integer: 27
+Separados
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 74
+best integer: 27
+Separados
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 74
+best integer: 27
+Separados
+pricing obj value: 0.621359
+Status: Optimal
+Bins usados: 26.7864
+Não gerou coluna 
+par: 17, 37
+
+
+
+Num nodes: 76
+best integer: 27
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 76
+best integer: 27
+Separados
+pricing obj value: 0.814815
+Status: Optimal
+Bins usados: 26.9444
+Não gerou coluna 
+par: 16, 29
+
+
+
+Num nodes: 78
+best integer: 27
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 78
+best integer: 27
+Separados
+pricing obj value: 1
+Status: Optimal
+Bins usados: 27
+Não gerou coluna 
+par: 0, 0
+
+
+
+Num nodes: 78
+best integer: 27
+Separados
+pricing obj value: 0.777778
+Status: Optimal
+Bins usados: 26.9444
+Não gerou coluna 
+par: 16, 29
+
+
+
+Num nodes: 80
+best integer: 27
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 80
+best integer: 27
+Separados
+pricing obj value: 1
+Status: Optimal
+Bins usados: 27
+Não gerou coluna 
+par: 0, 0
+
+
+
+Num nodes: 80
+best integer: 27
+Separados
+pricing obj value: 0.833333
+Status: Optimal
+Bins usados: 26.9444
+Não gerou coluna 
+par: 16, 29
+
+
+
+Num nodes: 82
+best integer: 27
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 82
+best integer: 27
+Separados
+pricing obj value: 0.983051
+Status: Optimal
+Bins usados: 27
+Não gerou coluna 
+par: 0, 0
+
+
+
+Num nodes: 82
+best integer: 27
+Separados
+pricing obj value: 0.793814
+Status: Optimal
+Bins usados: 26.9691
+Não gerou coluna 
+par: 18, 39
+
+
+
+Num nodes: 84
+best integer: 27
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 84
+best integer: 27
+Separados
+pricing obj value: 0.808271
+Status: Optimal
+Bins usados: 26.9887
+Não gerou coluna 
+par: 24, 32
+
+
+
+Num nodes: 86
+best integer: 27
+Juntos
+Infeasible pricing
+par: 0, 0
+
+
+
+Num nodes: 86
+best integer: 27
+Separados
+pricing obj value: 0.607921
+Status: Optimal
+Bins usados: 27.2356
+Não gerou coluna 
+par: 20, 23
+
+
+
+Num nodes: 86
+best integer: 27
+Separados
+pricing obj value: 0.607921
+Status: Optimal
+Bins usados: 27.2356
+Não gerou coluna 
+par: 20, 23
+
+
+
+Num nodes: 86
+best integer: 27

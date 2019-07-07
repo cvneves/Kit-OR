@@ -14,6 +14,7 @@ public:
     std::vector<std::pair<int, int>> separados, juntos;
     bool tipo_branch; // 1 se estão juntos, 0 se estão separados
     bool is_root;
+    double LB;
 };
 
 #endif

@@ -138,6 +138,8 @@ std::pair<int, int> Problema::solve(Node &node)
         std::cout << e;
     }
 
+    node.LB = master.getObjValue();
+
     bool gerouColuna = false;
 
     while (1)
@@ -233,6 +235,8 @@ std::pair<int, int> Problema::solve(Node &node)
                 std::cout << e;
             }
 
+            node.LB = master.getObjValue();
+
             x_vals.end();
         }
         else
@@ -274,19 +278,23 @@ std::pair<int, int> Problema::solve(Node &node)
     {
         for (int j = i + 1; j < data.getNItems(); j++)
         {
+            std::pair<int,int> bp = {i, j};
+            if (!node.is_root)
+            {
+                if ((std::find(node.juntos.begin(), node.juntos.end(), bp) != node.juntos.end()) || (std::find(node.separados.begin(), node.separados.end(), bp) != node.separados.end()))
+                {
+                    continue;
+                }
+                else
+                {
+                    // std::cout << "XOOOOOOOOOH\n\n\n\n\n\n";
+                }
+            }
 
             tempDeltaFrac = std::abs(0.5 - xPares[i][j]);
             if (tempDeltaFrac < deltaFrac)
             {
                 branchingPair = {i, j};
-
-                if (!node.is_root)
-                {
-                    if (std::find(node.juntos.begin(), node.juntos.end(), branchingPair) != node.juntos.end() || std::find(node.separados.begin(), node.separados.end(), branchingPair) != node.separados.end())
-                    {
-                        continue;
-                    }
-                }
 
                 deltaFrac = tempDeltaFrac;
             }

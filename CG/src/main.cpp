@@ -43,7 +43,7 @@ int main(int argc, char **argv)
 
         branchingPair = p.solve(*node_it);
 
-        if (!(branchingPair.first == 0 && branchingPair.second == 0))
+        if (!(branchingPair.first == 0 && branchingPair.second == 0) && !(node_it->LB > p.bestInteger))
         {
             numNodes += 2;
             Node nj, ns;
