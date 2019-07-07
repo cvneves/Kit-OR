@@ -75,13 +75,13 @@ Problema::Problema(Data &d, double UB)
 
 std::pair<int, int> Problema::solve(Node &node)
 {
-    //tratamento de itens juntos
-
     std::pair<int, int> parAtual;
-    if (node.is_root == false)
+    if (!node.is_root)
     {
         std::cout << ((node.tipo_branch == true) ? "Juntos\n" : "Separados\n");
     }
+
+    //tratamento de itens juntos
     if (!node.is_root && node.tipo_branch == true)
     {
         int i = node.juntos[node.juntos.size() - 1].first;
@@ -287,7 +287,7 @@ std::pair<int, int> Problema::solve(Node &node)
                 }
                 else
                 {
-                    // std::cout << "XOOOOOOOOOH\n\n\n\n\n\n";
+
                 }
             }
 
