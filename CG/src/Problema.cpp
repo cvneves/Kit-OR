@@ -180,7 +180,7 @@ std::pair<int, int> Problema::solve(Node &node)
                 }
                 for (auto &k : colunasProibidas)
                 {
-                    lambda[k].setUB(1.0);
+                    lambda[k].setUB(IloInfinity);
                 }
 
                 for (auto &parAtual : node.juntos)
@@ -220,7 +220,7 @@ std::pair<int, int> Problema::solve(Node &node)
         }
         std::cout << "\n";
 
-        if (pricing.getObjValue() < -EPSILON)
+        if (pricing.getObjValue() < -EPSILON && itens != lastPricingSolution)
         {
             lastPricingSolution = itens;
             lastPricingObj = pricing.getObjValue();
@@ -342,7 +342,7 @@ std::pair<int, int> Problema::solve(Node &node)
             }
             for (auto &k : colunasProibidas)
             {
-                lambda[k].setUB(1.0);
+                lambda[k].setUB(IloInfinity);
             }
 
             for (auto &parAtual : node.juntos)
