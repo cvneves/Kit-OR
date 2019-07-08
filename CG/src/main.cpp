@@ -32,12 +32,13 @@ int main(int argc, char **argv)
     n2.tipo_branch = false;
     int numNodes = 2;
 
-    std::list<Node> tree = {n2, n1};
+    std::list<Node> tree = {n1, n2};
     auto node_it = tree.begin();
 
-    int k = 100;
+    int k = 2;
     
-    while (!tree.empty())
+    while(!tree.empty())
+    // while (!tree.empty())
     {
         node_it = tree.end();
         node_it--;
@@ -50,6 +51,9 @@ int main(int argc, char **argv)
             Node nj, ns;
             ns = *node_it;
             nj = *node_it;
+            
+            ns.is_root = false;
+            nj.is_root = false;
 
             nj.juntos.push_back(branchingPair);
             nj.tipo_branch = true;
@@ -61,7 +65,7 @@ int main(int argc, char **argv)
             tree.push_back(nj);
         }
 
-        std::cout << "Num nodes: " << tree.size() << "\n";
+        // std::cout << "Num nodes: " << tree.size() << "\n";
         std::cout << "best integer: " << p.bestInteger << "\n";
 
         tree.erase(node_it);

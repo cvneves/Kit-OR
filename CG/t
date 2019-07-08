@@ -1,150 +1,2942 @@
-pricing obj value: -7
+pricing obj value: -11
 pricing status: Optimal
-itens pricing : 42 43 44 45 46 47 48 49 
-pricing obj value: -7
+itens pricing : 38 39 40 41 42 43 44 45 46 47 48 49 
+pricing obj value: -10
 pricing status: Optimal
-itens pricing : 41 42 43 44 45 46 47 48 
-pricing obj value: -7
+itens pricing : 38 39 40 41 42 43 44 45 46 47 48 
+pricing obj value: -10
 pricing status: Optimal
-itens pricing : 41 42 43 44 45 46 47 49 
-pricing obj value: -7
+itens pricing : 37 38 39 40 41 42 43 44 45 46 47 
+pricing obj value: -10
 pricing status: Optimal
-itens pricing : 41 43 44 45 46 47 48 49 
-pricing obj value: -7
+itens pricing : 37 38 39 40 41 42 43 44 45 46 48 
+pricing obj value: -10
 pricing status: Optimal
-itens pricing : 41 42 44 45 46 47 48 49 
-pricing obj value: -7
+itens pricing : 36 37 39 40 41 42 43 44 45 46 49 
+pricing obj value: -10
 pricing status: Optimal
-itens pricing : 41 42 43 45 46 47 48 49 
-pricing obj value: -7
+itens pricing : 36 37 40 41 42 43 44 45 46 47 48 
+pricing obj value: -10
 pricing status: Optimal
-itens pricing : 41 42 43 44 46 47 48 49 
-pricing obj value: -7
+itens pricing : 36 37 38 41 42 43 44 45 46 47 49 
+pricing obj value: -10
 pricing status: Optimal
-itens pricing : 41 42 43 44 45 47 48 49 
-pricing obj value: -7
+itens pricing : 36 37 38 39 42 43 44 45 46 47 48 
+pricing obj value: -10
 pricing status: Optimal
-itens pricing : 41 42 43 44 45 46 48 49 
-pricing obj value: -3.25
+itens pricing : 36 37 38 40 43 44 45 46 47 48 49 
+pricing obj value: -10
 pricing status: Optimal
-itens pricing : 37 38 39 40 47 49 
-pricing obj value: -5
+itens pricing : 35 36 37 39 41 44 45 46 47 48 49 
+pricing obj value: -9
 pricing status: Optimal
-itens pricing : 32 41 42 43 44 48 
-pricing obj value: -5
+itens pricing : 36 37 38 39 40 42 45 46 47 48 49 
+pricing obj value: -8.5
 pricing status: Optimal
-itens pricing : 29 42 43 44 45 46 
-pricing obj value: -5
+itens pricing : 35 36 37 38 41 43 46 47 48 49 
+pricing obj value: -9
 pricing status: Optimal
-itens pricing : 40 41 43 45 46 48 
-pricing obj value: -4
+itens pricing : 36 37 39 40 42 43 44 47 48 49 
+pricing obj value: -6
 pricing status: Optimal
-itens pricing : 37 38 39 41 46 
-pricing obj value: -4.2
+itens pricing : 31 32 35 36 40 41 45 
+pricing obj value: -6.88889
 pricing status: Optimal
-itens pricing : 36 38 39 45 48 49 
-pricing obj value: -4.33333
+itens pricing : 33 34 35 38 39 42 44 46 49 
+pricing obj value: -8
 pricing status: Optimal
-itens pricing : 37 39 40 42 47 48 
-pricing obj value: -4.25
+itens pricing : 34 35 37 38 43 44 45 47 48 
+pricing obj value: -7.5
 pricing status: Optimal
-itens pricing : 37 38 40 44 45 47 
-pricing obj value: -2.92308
+itens pricing : 34 35 37 39 42 43 46 47 48 49 
+pricing obj value: -5.18885
 pricing status: Optimal
-itens pricing : 35 36 37 41 49 
-pricing obj value: -3.62857
+itens pricing : 32 33 34 37 39 41 48 49 
+pricing obj value: -5.38806
 pricing status: Optimal
-itens pricing : 35 36 38 46 47 48 
-pricing obj value: -4.05882
+itens pricing : 29 33 34 38 42 43 47 
+pricing obj value: -5.35052
 pricing status: Optimal
-itens pricing : 39 40 41 42 45 47 
-pricing obj value: -3.58571
+itens pricing : 31 32 33 40 43 44 46 48 
+pricing obj value: -5.00205
 pricing status: Optimal
-itens pricing : 36 39 40 43 44 
-pricing obj value: -3.12934
+itens pricing : 31 32 34 37 44 46 47 
+pricing obj value: -4.25049
 pricing status: Optimal
-itens pricing : 34 35 40 44 48 49 
-pricing obj value: -2.74648
+itens pricing : 30 31 37 38 39 43 45 49 
+pricing obj value: -4.08122
 pricing status: Optimal
-itens pricing : 35 38 40 43 45 
-pricing obj value: -3.1446
+itens pricing : 30 31 34 36 44 46 48 
+pricing obj value: -5.04979
 pricing status: Optimal
-itens pricing : 33 34 39 45 47 
-pricing obj value: -2.94915
+itens pricing : 30 31 35 37 42 47 48 49 
+pricing obj value: -2.65538
 pricing status: Optimal
-itens pricing : 33 34 40 42 49 
-pricing obj value: -3.18047
+itens pricing : 29 30 32 40 44 46 
+pricing obj value: -5.09536
 pricing status: Optimal
-itens pricing : 32 33 37 43 49 
-pricing obj value: -3.11459
+itens pricing : 30 33 35 36 39 43 48 
+pricing obj value: -5.16435
 pricing status: Optimal
-itens pricing : 32 33 36 45 48 
-pricing obj value: -2.21249
+itens pricing : 29 33 37 38 40 41 44 
+pricing obj value: -3.55311
 pricing status: Optimal
-itens pricing : 31 32 34 47 
-pricing obj value: -2.65209
+itens pricing : 29 31 36 39 41 42 46 
+pricing obj value: -3.77766
 pricing status: Optimal
-itens pricing : 31 33 35 44 
-pricing obj value: -3.26144
+itens pricing : 28 29 42 44 45 48 49 
+pricing obj value: -2.13689
 pricing status: Optimal
-itens pricing : 31 37 38 43 48 
-pricing obj value: -2.03836
+itens pricing : 27 28 40 41 46 47 49 
+pricing obj value: -3.41967
 pricing status: Optimal
-itens pricing : 28 29 30 49 
-pricing obj value: -2.96793
+itens pricing : 30 34 36 37 39 42 45 
+pricing obj value: -4.98796
 pricing status: Optimal
-itens pricing : 34 35 36 42 
-pricing obj value: -2.42168
+itens pricing : 28 32 33 38 45 46 48 
+pricing obj value: -3.32452
 pricing status: Optimal
-itens pricing : 30 33 40 43 47 
-pricing obj value: -2.11747
+itens pricing : 28 32 36 38 39 44 47 
+pricing obj value: -2.5737
 pricing status: Optimal
-itens pricing : 27 28 42 46 
-pricing obj value: -1.53599
+itens pricing : 28 32 35 37 42 43 
+pricing obj value: -3.81348
 pricing status: Optimal
-itens pricing : 27 29 37 
-pricing obj value: -1.80255
+itens pricing : 28 31 34 39 40 48 
+pricing obj value: -3.22694
 pricing status: Optimal
-itens pricing : 30 34 41 45 
-pricing obj value: -2.21322
+itens pricing : 29 30 34 35 41 
+pricing obj value: -2.66949
 pricing status: Optimal
-itens pricing : 30 31 40 46 48 
-pricing obj value: -1.95385
+itens pricing : 26 29 36 37 46 49 
+pricing obj value: -1.6762
 pricing status: Optimal
-itens pricing : 26 27 41 
-pricing obj value: -1.71282
+itens pricing : 26 27 31 44 
+pricing obj value: -2.80413
 pricing status: Optimal
-itens pricing : 30 32 39 44 
-pricing obj value: -1.28792
+itens pricing : 27 30 38 40 45 47 48 
+pricing obj value: -2.0369
 pricing status: Optimal
-itens pricing : 25 26 46 48 
-pricing obj value: -2.09091
+itens pricing : 25 26 39 40 42 
+pricing obj value: -1.53513
 pricing status: Optimal
-itens pricing : 32 33 38 42 
-pricing obj value: -1.22884
+itens pricing : 24 25 33 45 49 
+pricing obj value: -2.96817
 pricing status: Optimal
-itens pricing : 24 25 43 
-pricing obj value: -1.36929
+itens pricing : 25 34 36 37 41 43 
+pricing obj value: -2.61681
 pricing status: Optimal
-itens pricing : 23 26 45 
-pricing obj value: -1.92937
+itens pricing : 27 31 32 38 43 46 
+pricing obj value: -1.74891
 pricing status: Optimal
-itens pricing : 28 38 39 40 
-pricing obj value: -1.58072
+itens pricing : 23 24 37 47 48 
+pricing obj value: -2.36885
 pricing status: Optimal
-itens pricing : 24 36 42 44 
+itens pricing : 24 28 36 38 43 
+pricing obj value: -1.53053
+pricing status: Optimal
+itens pricing : 22 23 38 42 49 
+pricing obj value: -2.52957
+pricing status: Optimal
+itens pricing : 23 27 35 45 46 
+pricing obj value: -3.16378
+pricing status: Optimal
+itens pricing : 28 30 31 43 45 47 
+pricing obj value: -2.4399
+pricing status: Optimal
+itens pricing : 27 32 33 36 40 
+pricing obj value: -1.43822
+pricing status: Optimal
+itens pricing : 21 22 39 43 
+pricing obj value: -2.12032
+pricing status: Optimal
+itens pricing : 25 28 36 44 46 47 
+pricing obj value: -1.97499
+pricing status: Optimal
+itens pricing : 22 31 37 40 42 46 
+pricing obj value: -1.17955
+pricing status: Optimal
+itens pricing : 20 21 37 
+pricing obj value: -2.57317
+pricing status: Optimal
+itens pricing : 26 32 34 42 46 47 49 
+pricing obj value: -1.2215
+pricing status: Optimal
+itens pricing : 19 20 48 
+pricing obj value: -2.10525
+pricing status: Optimal
+itens pricing : 28 29 32 41 47 
+pricing obj value: -2.43874
+pricing status: Optimal
+itens pricing : 23 31 33 40 46 47 
+pricing obj value: -1.03283
+pricing status: Optimal
+itens pricing : 18 19 49 
+pricing obj value: -2.07626
+pricing status: Optimal
+itens pricing : 30 32 33 38 41 45 47 
+pricing obj value: -2.78293
+pricing status: Optimal
+itens pricing : 23 34 40 41 42 44 45 
+pricing obj value: -1.88996
+pricing status: Optimal
+itens pricing : 22 26 32 45 
+pricing obj value: -1.86155
+pricing status: Optimal
+itens pricing : 25 31 32 38 42 
+pricing obj value: -2.21383
+pricing status: Optimal
+itens pricing : 28 33 34 39 42 44 46 
 pricing obj value: -1
 pricing status: Optimal
-itens pricing : 22 23 
+itens pricing : 17 18 
 pricing obj value: -1
 pricing status: Optimal
-itens pricing : 21 22 
-pricing obj value: -1
+itens pricing : 17 19 
+pricing obj value: -0.521544
 pricing status: Optimal
-itens pricing : 20 23 
-pricing obj value: -0.692843
+itens pricing : 16 28 42 48 49 
+pricing obj value: -0.676928
 pricing status: Optimal
-itens pricing : 20 37 45 46 49 
-pricing obj value: -0.534518
+itens pricing : 16 27 39 
+pricing obj value: -1.32974
 pricing status: Optimal
-itens 
+itens pricing : 16 35 41 42 44 46 
+pricing obj value: -1.21754
+pricing status: Optimal
+itens pricing : 25 30 33 38 44 
+pricing obj value: -1.30035
+pricing status: Optimal
+itens pricing : 23 29 35 40 44 
+pricing obj value: -1.42227
+pricing status: Optimal
+itens pricing : 21 23 36 47 
+pricing obj value: -0.508911
+pricing status: Optimal
+itens pricing : 15 32 34 47 
+pricing obj value: -0.84499
+pricing status: Optimal
+itens pricing : 15 38 40 41 45 46 
+pricing obj value: -0.839268
+pricing status: Optimal
+itens pricing : 15 29 42 46 
+pricing obj value: -1.1327
+pricing status: Optimal
+itens pricing : 23 28 32 41 
+pricing obj value: -1.05955
+pricing status: Optimal
+itens pricing : 25 30 35 40 43 46 
+pricing obj value: -0.940892
+pricing status: Optimal
+itens pricing : 15 31 35 48 
+pricing obj value: -1.11107
+pricing status: Optimal
+itens pricing : 24 30 36 40 41 49 
+pricing obj value: -0.914712
+pricing status: Optimal
+itens pricing : 22 28 40 41 47 
+pricing obj value: -0.445577
+pricing status: Optimal
+itens pricing : 14 25 44 
+pricing obj value: -1.37616
+pricing status: Optimal
+itens pricing : 26 33 34 41 42 43 
+pricing obj value: -1.07844
+pricing status: Optimal
+itens pricing : 23 30 33 40 45 
+pricing obj value: -0.687437
+pricing status: Optimal
+itens pricing : 14 30 39 47 
+pricing obj value: -0.463423
+pricing status: Optimal
+itens pricing : 13 33 41 46 48 
+pricing obj value: -0.661178
+pricing status: Optimal
+itens pricing : 13 31 40 43 
+pricing obj value: -1.66348
+pricing status: Optimal
+itens pricing : 24 26 34 40 
+pricing obj value: -0.785993
+pricing status: Optimal
+itens pricing : 13 35 36 42 
+pricing obj value: -1.11493
+pricing status: Optimal
+itens pricing : 28 29 31 33 
+pricing obj value: -0.862898
+pricing status: Optimal
+itens pricing : 16 26 43 47 
+pricing obj value: -0.838186
+pricing status: Optimal
+itens pricing : 16 30 38 46 
+pricing obj value: -0.396927
+pricing status: Optimal
+itens pricing : 12 30 38 
+pricing obj value: -0.914553
+pricing status: Optimal
+itens pricing : 22 28 34 45 49 
+pricing obj value: -0.73661
+pricing status: Optimal
+itens pricing : 14 34 36 41 
+pricing obj value: -0.917864
+pricing status: Optimal
+itens pricing : 22 33 35 37 43 46 
+pricing obj value: -0.668621
+pricing status: Optimal
+itens pricing : 12 24 
+pricing obj value: -0.347473
+pricing status: Optimal
+itens pricing : 10 37 39 41 
+pricing obj value: -0.493475
+pricing status: Optimal
+itens pricing : 10 28 49 
+pricing obj value: -0.468342
+pricing status: Optimal
+itens pricing : 18 22 38 
+pricing obj value: -0.347999
+pricing status: Optimal
+itens pricing : 11 34 42 48 
+pricing obj value: -0.483704
+pricing status: Optimal
+itens pricing : 23 26 33 43 
+pricing obj value: -0.393617
+pricing status: Optimal
+itens pricing : 11 36 38 45 
+pricing obj value: -0.539198
+pricing status: Optimal
+itens pricing : 22 25 30 
+pricing obj value: -0.436883
+pricing status: Optimal
+itens pricing : 11 29 
+pricing obj value: -0.313764
+pricing status: Optimal
+itens pricing : 9 33 41 
+pricing obj value: -0.652473
+pricing status: Optimal
+itens pricing : 15 28 37 
+pricing obj value: -0.376021
+pricing status: Optimal
+itens pricing : 9 32 43 
+pricing obj value: -0.311565
+pricing status: Optimal
+itens pricing : 8 31 46 
+pricing obj value: -0.710181
+pricing status: Optimal
+itens pricing : 13 30 44 45 
+pricing obj value: -0.433751
+pricing status: Optimal
+itens pricing : 8 40 45 48 49 
+pricing obj value: -0.550199
+pricing status: Optimal
+itens pricing : 15 27 40 
+pricing obj value: -0.652202
+pricing status: Optimal
+itens pricing : 13 23 
+pricing obj value: -0.568016
+pricing status: Optimal
+itens pricing : 10 33 45 48 
+pricing obj value: -0.261795
+pricing status: Optimal
+itens pricing : 7 35 39 
+pricing obj value: -0.39393
+pricing status: Optimal
+itens pricing : 8 34 42 
+pricing obj value: -0.304002
+pricing status: Optimal
+itens pricing : 7 37 47 48 
+pricing obj value: -0.205479
+pricing status: Optimal
+itens pricing : 6 40 42 
+pricing obj value: -0.277486
+pricing status: Optimal
+itens pricing : 7 36 41 
+pricing obj value: -0.230967
+pricing status: Optimal
+itens pricing : 6 33 
+pricing obj value: -0.469965
+pricing status: Optimal
+itens pricing : 21 26 34 45 
+pricing obj value: -0.17278
+pricing status: Optimal
+itens pricing : 4 34 
+pricing obj value: -0.438767
+pricing status: Optimal
+itens pricing : 24 29 35 38 45 
+pricing obj value: -0.311496
+pricing status: Optimal
+itens pricing : 21 27 41 42 48 
+pricing obj value: -0.3255
+pricing status: Optimal
+itens pricing : 9 30 
+pricing obj value: -0.24096
+pricing status: Optimal
+itens pricing : 8 32 47 
+pricing obj value: -0.183389
+pricing status: Optimal
+itens pricing : 4 41 45 
+pricing obj value: -0.172168
+pricing status: Optimal
+itens pricing : 5 42 43 
+pricing obj value: -0.24266
+pricing status: Optimal
+itens pricing : 5 40 48 
+pricing obj value: -0.220923
+pricing status: Optimal
+itens pricing : 14 31 32 
+pricing obj value: -0.164924
+pricing status: Optimal
+itens pricing : 3 35 
+pricing obj value: -0.277108
+pricing status: Optimal
+itens pricing : 15 21 
+pricing obj value: -0.212121
+pricing status: Optimal
+itens pricing : 3 39 47 
+pricing obj value: -0.135558
+pricing status: Optimal
+itens pricing : 2 38 
+pricing obj value: -0.223983
+pricing status: Optimal
+itens pricing : 12 36 45 46 47 
+pricing obj value: -0.254307
+pricing status: Optimal
+itens pricing : 16 24 46 47 
+pricing obj value: -0.244709
+pricing status: Optimal
+itens pricing : 16 31 37 44 47 
+pricing obj value: -0.155451
+pricing status: Optimal
+itens pricing : 19 22 45 47 
+pricing obj value: -0.131003
+pricing status: Optimal
+itens pricing : 2 37 
+pricing obj value: -0.112089
+pricing status: Optimal
+itens pricing : 1 38 
+pricing obj value: -0.285326
+pricing status: Optimal
+itens pricing : 16 20 
+pricing obj value: -0.301948
+pricing status: Optimal
+itens pricing : 11 32 46 47 
+pricing obj value: -0.223235
+pricing status: Optimal
+itens pricing : 19 21 46 47 
+pricing obj value: -0.135207
+pricing status: Optimal
+itens pricing : 24 26 28 
+pricing obj value: -0.119143
+pricing status: Optimal
+itens pricing : 21 28 33 40 
+pricing obj value: -0.0985355
+pricing status: Optimal
+itens pricing : 2 39 
+pricing obj value: -0.0944313
+pricing status: Optimal
+itens pricing : 1 39 
+pricing obj value: -0.0814332
+pricing status: Optimal
+itens pricing : 13 21 
+pricing obj value: -0.082696
+pricing status: Optimal
+itens pricing : 0 44 
+pricing obj value: -0.0900854
+pricing status: Optimal
+itens pricing : 16 19 
+pricing obj value: -0.157233
+pricing status: Optimal
+itens pricing : 6 41 47 49 
+pricing obj value: -0.133501
+pricing status: Optimal
+itens pricing : 17 22 47 48 
+pricing obj value: -0.0693762
+pricing status: Optimal
+itens pricing : 15 26 41 
+pricing obj value: -0.136179
+pricing status: Optimal
+itens pricing : 14 29 45 48 
+pricing obj value: -0.103982
+pricing status: Optimal
+itens pricing : 14 27 43 
+pricing obj value: -0.148907
+pricing status: Optimal
+itens pricing : 25 27 28 
+pricing obj value: -0.0796978
+pricing status: Optimal
+itens pricing : 14 24 45 
+pricing obj value: -0.0740921
+pricing status: Optimal
+itens pricing : 9 29 
+pricing obj value: -0.149068
+pricing status: Optimal
+itens pricing : 25 26 31 45 49 
+pricing obj value: -0.083248
+pricing status: Optimal
+itens pricing : 14 26 42 
+pricing obj value: -0.137755
+pricing status: Optimal
+itens pricing : 12 25 
+pricing obj value: -0.13227
+pricing status: Optimal
+itens pricing : 11 31 41 
+pricing obj value: -0.0916667
+pricing status: Optimal
+itens pricing : 23 27 32 48 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 3, 35
+
+
+
+Itens juntos: 
+Itens separados: 
+3, 35
+pricing obj value: -0.346154
+pricing status: Optimal
+itens pricing : 10 35 36 
+pricing obj value: -0.158103
+pricing status: Optimal
+itens pricing : 3 36 
+pricing obj value: -0.139706
+pricing status: Optimal
+itens pricing : 7 40 43 45 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 8, 31
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+pricing obj value: -0.341667
+pricing status: Optimal
+itens pricing : 8 38 39 46 
+pricing obj value: -0.297872
+pricing status: Optimal
+itens pricing : 10 31 46 48 
+pricing obj value: -0.182692
+pricing status: Optimal
+itens pricing : 5 45 46 
+pricing obj value: -0.105828
+pricing status: Optimal
+itens pricing : 23 26 31 46 
+pricing obj value: -0.0748219
+pricing status: Optimal
+itens pricing : 0 45 
+pricing obj value: -0.0739437
+pricing status: Optimal
+itens pricing : 11 30 45 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 16, 19
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+pricing obj value: -0.16087
+pricing status: Optimal
+itens pricing : 3 41 46 
+pricing obj value: -0.136364
+pricing status: Optimal
+itens pricing : 8 35 46 48 
+pricing obj value: -0.0900951
+pricing status: Optimal
+itens pricing : 19 23 35 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 17, 19
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+pricing obj value: -0.231343
+pricing status: Optimal
+itens pricing : 7 31 49 
+pricing obj value: -0.166667
+pricing status: Optimal
+itens pricing : 16 22 45 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 15, 27
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+pricing obj value: -0.305556
+pricing status: Optimal
+itens pricing : 19 27 40 42 
+pricing obj value: -0.104418
+pricing status: Optimal
+itens pricing : 4 40 46 
+pricing obj value: -0.057971
+pricing status: Optimal
+itens pricing : 15 23 46 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 7, 35
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+pricing obj value: -0.170068
+pricing status: Optimal
+itens pricing : 7 32 
+pricing obj value: -0.129195
+pricing status: Optimal
+itens pricing : 15 22 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 19, 23
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+pricing obj value: -0.307692
+pricing status: Optimal
+itens pricing : 19 26 35 
+pricing obj value: -0.0714286
+pricing status: Optimal
+itens pricing : 8 35 39 
+pricing obj value: -0.0695364
+pricing status: Optimal
+itens pricing : 21 23 31 
+pricing obj value: -0.0491803
+pricing status: Optimal
+itens pricing : 5 34 
+pricing obj value: -0.0491803
+pricing status: Optimal
+itens pricing : 16 18 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 7, 32
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+pricing obj value: -0.0722121
+pricing status: Optimal
+itens pricing : 10 32 39 
+pricing obj value: -0.0796646
+pricing status: Optimal
+itens pricing : 20 22 35 
+pricing obj value: -0.0689278
+pricing status: Optimal
+itens pricing : 7 31 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 11, 30
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+pricing obj value: -0.0546624
+pricing status: Optimal
+itens pricing : 17 25 35 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 5, 40
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+pricing obj value: -0.0517621
+pricing status: Optimal
+itens pricing : 11 32 40 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 8, 32
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+pricing obj value: -0.142857
+pricing status: Optimal
+itens pricing : 8 30 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 14, 27
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+pricing obj value: -0.0721649
+pricing status: Optimal
+itens pricing : 19 27 39 43 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 11, 32
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+Status: Optimal
+Bins usados: 20
+Não gerou coluna 
+par: 4, 41
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+Status: Optimal
+Bins usados: 20
+Não gerou coluna 
+par: 9, 29
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+pricing obj value: -0.0526316
+pricing status: Optimal
+itens pricing : 9 31 44 
+pricing obj value: -0.0847458
+pricing status: Optimal
+itens pricing : 5 41 47 
+pricing obj value: -0.0600522
+pricing status: Optimal
+itens pricing : 4 39 44 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 0, 44
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+Status: Optimal
+Bins usados: 20
+Não gerou coluna 
+par: 17, 22
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+pricing obj value: -0.0757895
+pricing status: Optimal
+itens pricing : 0 43 
+pricing obj value: -0.0598291
+pricing status: Optimal
+itens pricing : 17 27 40 47 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 17, 18
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+Status: Optimal
+Bins usados: 20
+Não gerou coluna 
+par: 15, 22
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+Status: Optimal
+Bins usados: 20
+Não gerou coluna 
+par: 4, 39
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+pricing obj value: -0.163636
+pricing status: Optimal
+itens pricing : 11 28 
+pricing obj value: -0.142857
+pricing status: Optimal
+itens pricing : 19 22 44 48 
+pricing obj value: -0.0769231
+pricing status: Optimal
+itens pricing : 17 21 39 
+pricing obj value: -0.05
+pricing status: Optimal
+itens pricing : 5 39 44 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 14, 26
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+pricing obj value: -0.0816327
+pricing status: Optimal
+itens pricing : 14 22 
+pricing obj value: -0.111111
+pricing status: Optimal
+itens pricing : 9 32 42 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 7, 31
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+pricing obj value: -0.0813953
+pricing status: Optimal
+itens pricing : 4 35 49 
+pricing obj value: -0.0787402
+pricing status: Optimal
+itens pricing : 7 33 47 
+pricing obj value: -0.0626186
+pricing status: Optimal
+itens pricing : 20 27 32 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 15, 23
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+Status: Optimal
+Bins usados: 20
+Não gerou coluna 
+par: 0, 43
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+pricing obj value: -0.0331325
+pricing status: Optimal
+itens pricing : 2 46 48 
+pricing obj value: -0.0326797
+pricing status: Optimal
+itens pricing : 19 22 43 46 
+pricing obj value: -0.0295858
+pricing status: Optimal
+itens pricing : 17 27 35 
+pricing obj value: -0.0502092
+pricing status: Optimal
+itens pricing : 7 39 42 46 
+pricing obj value: -0.0378788
+pricing status: Optimal
+itens pricing : 15 29 36 
+pricing obj value: -0.0352113
+pricing status: Optimal
+itens pricing : 7 36 39 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 5, 39
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+Status: Optimal
+Bins usados: 20
+Não gerou coluna 
+par: 13, 21
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+pricing obj value: -0.0526316
+pricing status: Optimal
+itens pricing : 13 22 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 32, 43
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+32, 43
+pricing obj value: -0.0666667
+pricing status: Optimal
+itens pricing : 9 35 43 48 
+pricing obj value: -0.05
+pricing status: Optimal
+itens pricing : 6 40 43 
+pricing obj value: -0.046875
+pricing status: Optimal
+itens pricing : 0 48 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 3, 36
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+32, 43
+3, 36
+pricing obj value: -0.0769231
+pricing status: Optimal
+itens pricing : 17 26 36 
+pricing obj value: -0.0327869
+pricing status: Optimal
+itens pricing : 7 36 40 
+pricing obj value: -0.0390071
+pricing status: Optimal
+itens pricing : 4 40 43 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 4, 34
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+32, 43
+3, 36
+4, 34
+Status: Optimal
+Bins usados: 20
+Não gerou coluna 
+par: 36, 41
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+32, 43
+3, 36
+4, 34
+36, 41
+pricing obj value: -0.148148
+pricing status: Optimal
+itens pricing : 7 42 43 47 
+pricing obj value: -0.0635452
+pricing status: Optimal
+itens pricing : 4 42 44 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 13, 22
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+32, 43
+3, 36
+4, 34
+36, 41
+13, 22
+pricing obj value: -0.0651596
+pricing status: Optimal
+itens pricing : 13 25 47 
+pricing obj value: -0.0436508
+pricing status: Optimal
+itens pricing : 3 43 44 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 4, 40
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+32, 43
+3, 36
+4, 34
+36, 41
+13, 22
+4, 40
+pricing obj value: -0.0700637
+pricing status: Optimal
+itens pricing : 10 29 
+pricing obj value: -0.0804598
+pricing status: Optimal
+itens pricing : 4 42 43 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 10, 29
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+32, 43
+3, 36
+4, 34
+36, 41
+13, 22
+4, 40
+10, 29
+Status: Optimal
+Bins usados: 20
+Não gerou coluna 
+par: 3, 39
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+32, 43
+3, 36
+4, 34
+36, 41
+13, 22
+4, 40
+10, 29
+3, 39
+pricing obj value: -0.0508475
+pricing status: Optimal
+itens pricing : 3 40 47 
+pricing obj value: -0.045045
+pricing status: Optimal
+itens pricing : 18 29 32 
+pricing obj value: -0.028169
+pricing status: Optimal
+itens pricing : 4 46 47 48 
+pricing obj value: -0.0322581
+pricing status: Optimal
+itens pricing : 4 35 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 3, 40
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+32, 43
+3, 36
+4, 34
+36, 41
+13, 22
+4, 40
+10, 29
+3, 39
+3, 40
+pricing obj value: -0.0364964
+pricing status: Optimal
+itens pricing : 18 20 46 
+pricing obj value: -0.0364964
+pricing status: Optimal
+itens pricing : 15 26 39 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 3, 41
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+32, 43
+3, 36
+4, 34
+36, 41
+13, 22
+4, 40
+10, 29
+3, 39
+3, 40
+3, 41
+pricing obj value: -0.0963855
+pricing status: Optimal
+itens pricing : 3 42 46 
+pricing obj value: -0.084507
+pricing status: Optimal
+itens pricing : 9 31 43 
+pricing obj value: -0.0333333
+pricing status: Optimal
+itens pricing : 6 36 
+pricing obj value: -0.0333333
+pricing status: Optimal
+itens pricing : 19 27 36 
+pricing obj value: -0.04
+pricing status: Optimal
+itens pricing : 16 23 41 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 3, 42
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+32, 43
+3, 36
+4, 34
+36, 41
+13, 22
+4, 40
+10, 29
+3, 39
+3, 40
+3, 41
+3, 42
+pricing obj value: -0.0882353
+pricing status: Optimal
+itens pricing : 3 46 47 
+pricing obj value: -0.025641
+pricing status: Optimal
+itens pricing : 19 20 46 
+pricing obj value: -0.0434783
+pricing status: Optimal
+itens pricing : 17 29 31 
+pricing obj value: -0.02
+pricing status: Optimal
+itens pricing : 5 36 
+pricing obj value: -0.02
+pricing status: Optimal
+itens pricing : 4 36 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 4, 35
+
+
+
+best integer: inf
+Itens juntos: 
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+32, 43
+3, 36
+4, 34
+36, 41
+13, 22
+4, 40
+10, 29
+3, 39
+3, 40
+3, 41
+3, 42
+4, 35
+pricing obj value: -0.0882353
+pricing status: Optimal
+itens pricing : 7 40 41 49 
+pricing obj value: -0.0583942
+pricing status: Optimal
+itens pricing : 5 35 
+pricing obj value: -0.0510949
+pricing status: Optimal
+itens pricing : 3 38 
+pricing obj value: -0.0410095
+pricing status: Optimal
+itens pricing : 19 21 41 
+pricing obj value: -0.047619
+pricing status: Optimal
+itens pricing : 13 26 45 
+pricing obj value: -0.0208333
+pricing status: Optimal
+itens pricing : 13 31 32 
+pricing obj value: -0.02
+pricing status: Optimal
+itens pricing : 4 38 46 
+pricing obj value: -0.0361446
+pricing status: Optimal
+itens pricing : 2 41 49 
+pricing obj value: -0.0220386
+pricing status: Optimal
+itens pricing : 14 21 
+pricing obj value: -0.0215054
+pricing status: Optimal
+itens pricing : 13 27 48 
+pricing obj value: -0.0222222
+pricing status: Optimal
+itens pricing : 10 31 41 
+pricing obj value: -0.0210526
+pricing status: Optimal
+itens pricing : 21 22 32 
+pricing obj value: -0.00892857
+pricing status: Optimal
+itens pricing : 19 20 47 
+pricing obj value: -0.00892857
+pricing status: Optimal
+itens pricing : 16 22 42 
+pricing obj value: -0.00892857
+pricing status: Optimal
+itens pricing : 15 25 42 
+Status: Optimal
+Bins usados: 20
+Gerou colunas 
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+4, 35
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+32, 43
+3, 36
+4, 34
+36, 41
+13, 22
+4, 40
+10, 29
+3, 39
+3, 40
+3, 41
+3, 42
+Status: Optimal
+Bins usados: 20
+Não gerou coluna 
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+3, 42
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+32, 43
+3, 36
+4, 34
+36, 41
+13, 22
+4, 40
+10, 29
+3, 39
+3, 40
+3, 41
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+3, 41
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+32, 43
+3, 36
+4, 34
+36, 41
+13, 22
+4, 40
+10, 29
+3, 39
+3, 40
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+3, 40
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+32, 43
+3, 36
+4, 34
+36, 41
+13, 22
+4, 40
+10, 29
+3, 39
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+3, 39
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+32, 43
+3, 36
+4, 34
+36, 41
+13, 22
+4, 40
+10, 29
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+10, 29
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+32, 43
+3, 36
+4, 34
+36, 41
+13, 22
+4, 40
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+4, 40
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+32, 43
+3, 36
+4, 34
+36, 41
+13, 22
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+13, 22
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+32, 43
+3, 36
+4, 34
+36, 41
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+36, 41
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+32, 43
+3, 36
+4, 34
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+4, 34
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+32, 43
+3, 36
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+3, 36
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+32, 43
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+32, 43
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+13, 21
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+13, 21
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+5, 39
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+5, 39
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+0, 43
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+0, 43
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+15, 23
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+15, 23
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+7, 31
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+7, 31
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+14, 26
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+14, 26
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+4, 39
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+4, 39
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+15, 22
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+15, 22
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+17, 18
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+17, 18
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+17, 22
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+17, 22
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+0, 44
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+0, 44
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+9, 29
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+9, 29
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+4, 41
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+4, 41
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+11, 32
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+11, 32
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+14, 27
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+14, 27
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+8, 32
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+8, 32
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+5, 40
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+5, 40
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+11, 30
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+11, 30
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+7, 32
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+7, 32
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+19, 23
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+19, 23
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+7, 35
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+7, 35
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+15, 27
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+15, 27
+Itens separados: 
+3, 35
+8, 31
+16, 19
+17, 19
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+17, 19
+Itens separados: 
+3, 35
+8, 31
+16, 19
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+16, 19
+Itens separados: 
+3, 35
+8, 31
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 20
+Status: Optimal
+Bins usados: 20
+Não gerou coluna 
+par: 0, 0
+
+
+
+best integer: 20

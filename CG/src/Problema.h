@@ -18,7 +18,7 @@ class Problema
     IloNumVarArray lambda;
     IloBoolVarArray x;
     IloRangeArray masterRanges;
-    IloConstraintArray pricingConstraints;
+    // IloConstraintArray pricingConstraints;
     IloObjective masterObj, pricingObj;
     IloCplex master, pricing;
     IloNumArray pi;
