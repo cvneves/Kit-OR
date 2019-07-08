@@ -36,6 +36,7 @@ int main(int argc, char **argv)
     auto node_it = tree.begin();
 
     int k = 100;
+    
     while (!tree.empty())
     {
         node_it = tree.end();

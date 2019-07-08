@@ -75,7 +75,7 @@ Problema::Problema(Data &d, double UB)
 
 std::pair<int, int> Problema::solve(Node &node)
 {
-    std::pair<int, int> parAtual;
+    // std::pair<int, int> parAtual;
     if (!node.is_root)
     {
         std::cout << ((node.tipo_branch == true) ? "Juntos\n" : "Separados\n");
@@ -86,7 +86,6 @@ std::pair<int, int> Problema::solve(Node &node)
     if (!node.is_root)
     {
         //restriçoes dos itens juntos
-
         for (auto &parAtual : node.juntos)
         {
             int i = parAtual.first;
@@ -116,7 +115,7 @@ std::pair<int, int> Problema::solve(Node &node)
                 {
                     if ((lambdaItens[k][l] == i && lambdaItens[k][l + 1] == j) || (lambdaItens[k][l] == j && lambdaItens[k][l + 1] == i))
                     {
-                        lambda[k].setUB(0);
+                        lambda[k].setUB(0.0);
                         colunasProibidas.push_back(k);
                     }
                 }
@@ -178,7 +177,7 @@ std::pair<int, int> Problema::solve(Node &node)
                 {
                     pricingModel.remove(pricingConstraints[constr]);
                 }
-                for (auto &k : colunasProibidas)
+                for (int k = 0; k < lambda.getSize(); k++)
                 {
                     lambda[k].setUB(IloInfinity);
                 }
@@ -195,6 +194,9 @@ std::pair<int, int> Problema::solve(Node &node)
                     masterObj.setLinearCoef(lambda[j], 1.0);
                 }
             }
+
+            master.exportModel("modelo.lp");
+            pricing.exportModel("pricing.lp");
 
             std::cout << "par: " << 0 << ", " << 0 << "\n\n\n\n";
             return {0, 0};
@@ -307,9 +309,6 @@ std::pair<int, int> Problema::solve(Node &node)
 
     lambdaVals.end();
 
-    master.exportModel("modelo.lp");
-    pricing.exportModel("pricing.lp");
-
     //melhor solucao inteira
 
     //Podar
@@ -340,7 +339,8 @@ std::pair<int, int> Problema::solve(Node &node)
             {
                 pricingModel.remove(pricingConstraints[constr]);
             }
-            for (auto &k : colunasProibidas)
+
+            for (int k = 0; k < lambda.getSize(); k++)
             {
                 lambda[k].setUB(IloInfinity);
             }
@@ -363,6 +363,9 @@ std::pair<int, int> Problema::solve(Node &node)
     }
 
     std::cout << "par: " << branchingPair.first << ", " << branchingPair.second << "\n\n\n\n";
+
+    master.exportModel("modelo.lp");
+    pricing.exportModel("pricing.lp");
 
     return branchingPair;
 }
