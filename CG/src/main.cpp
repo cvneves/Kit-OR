@@ -61,8 +61,8 @@ int main(int argc, char **argv)
             ns.separados.push_back(branchingPair);
             ns.tipo_branch = false;
 
-            tree.push_back(ns);
             tree.push_back(nj);
+            tree.push_back(ns);
         }
 
         // std::cout << "Num nodes: " << tree.size() << "\n";
@@ -70,6 +70,8 @@ int main(int argc, char **argv)
 
         tree.erase(node_it);
     }
+
+    std::cout << p.bestInteger << "\n";
 
     // std::cout << "E\n\n\n\n";
 

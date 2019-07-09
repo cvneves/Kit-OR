@@ -14,13 +14,13 @@
 class Problema
 {
     Data data;
-    IloModel masterModel, pricingModel;
+    IloModel masterModel;
     IloNumVarArray lambda;
-    IloBoolVarArray x;
+    // IloBoolVarArray x;
     IloRangeArray masterRanges;
     // IloConstraintArray pricingConstraints;
-    IloObjective masterObj, pricingObj;
-    IloCplex master, pricing;
+    IloObjective masterObj;
+    IloCplex master;
     IloNumArray pi;
 
     std::vector<std::vector<int>> lambdaItens;
@@ -29,7 +29,7 @@ class Problema
   public:
     Problema(Data &data, double UB);
     std::pair<int, int> solve(Node &node);
-    IloEnv env1, env2;
+    IloEnv env1;
     double bestInteger, UB;
 };
 
