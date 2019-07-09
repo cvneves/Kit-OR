@@ -37,8 +37,8 @@ int main(int argc, char **argv)
 
     int k = 2;
     
-    while(!tree.empty())
-    // while (!tree.empty())
+    // while(k--)
+    while (!tree.empty())
     {
         node_it = tree.end();
         node_it--;

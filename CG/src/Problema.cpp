@@ -72,7 +72,7 @@ Problema::Problema(Data &d, double UB)
 
 std::pair<int, int> Problema::solve(Node &node)
 {
-    IloConstraintArray pricingConstraints = IloConstraintArray(env2);
+    IloConstraintArray pricingConstraints = IloConstraintArray(env2, 0);
     pricingModel.add(pricingConstraints);
 
     // std::pair<int, int> parAtual;
@@ -177,9 +177,6 @@ std::pair<int, int> Problema::solve(Node &node)
         {
             std::cout << "Infeasible pricing\n";
 
-            master.exportModel("modelo.lp");
-            pricing.exportModel("pricing.lp");
-
             if (!node.is_root)
             {
                 for (int constr = 0; constr < pricingConstraints.getSize(); constr++)
@@ -208,6 +205,12 @@ std::pair<int, int> Problema::solve(Node &node)
             }
 
             std::cout << "par: " << 0 << ", " << 0 << "\n\n\n\n";
+
+            master.exportModel("modelo.lp");
+            pricing.exportModel("pricing.lp");
+
+            std::cout << "EEE";
+
             return {0, 0};
             break;
         }
@@ -340,9 +343,6 @@ std::pair<int, int> Problema::solve(Node &node)
     if (std::abs(0.5 - deltaFrac) < EPSILON)
     {
 
-        master.exportModel("modelo.lp");
-        pricing.exportModel("pricing.lp");
-
         if (std::abs(0.5 - deltaFrac) < EPSILON)
         {
             if (master.getObjValue() < bestInteger)
@@ -380,13 +380,16 @@ std::pair<int, int> Problema::solve(Node &node)
 
         std::cout << "par: " << 0 << ", " << 0 << "\n\n\n\n";
 
+        master.exportModel("modelo.lp");
+        pricing.exportModel("pricing.lp");
+
         return {0, 0};
     }
 
     std::cout << "par: " << branchingPair.first << ", " << branchingPair.second << "\n\n\n\n";
 
-    master.exportModel("modelo.lp");
-    pricing.exportModel("pricing.lp");
+    // master.exportModel("modelo.lp");
+    // pricing.exportModel("pricing.lp");
 
     return branchingPair;
 }

@@ -509,707 +509,2402 @@ par: 8, 31
 
 best integer: inf
 Itens juntos: 
+8, 31
 Itens separados: 
 3, 35
-8, 31
-pricing obj value: -0.341667
-pricing status: Optimal
-itens pricing : 8 38 39 46 
-pricing obj value: -0.297872
-pricing status: Optimal
-itens pricing : 10 31 46 48 
-pricing obj value: -0.182692
-pricing status: Optimal
-itens pricing : 5 45 46 
-pricing obj value: -0.105828
-pricing status: Optimal
-itens pricing : 23 26 31 46 
-pricing obj value: -0.0748219
-pricing status: Optimal
-itens pricing : 0 45 
-pricing obj value: -0.0739437
-pricing status: Optimal
-itens pricing : 11 30 45 
 Status: Optimal
 Bins usados: 20
-Gerou colunas 
-par: 16, 19
-
-
-
-best integer: inf
-Itens juntos: 
-Itens separados: 
-3, 35
-8, 31
-16, 19
-pricing obj value: -0.16087
-pricing status: Optimal
-itens pricing : 3 41 46 
-pricing obj value: -0.136364
-pricing status: Optimal
-itens pricing : 8 35 46 48 
-pricing obj value: -0.0900951
-pricing status: Optimal
-itens pricing : 19 23 35 
-Status: Optimal
-Bins usados: 20
-Gerou colunas 
-par: 17, 19
-
-
-
-best integer: inf
-Itens juntos: 
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-pricing obj value: -0.231343
-pricing status: Optimal
-itens pricing : 7 31 49 
-pricing obj value: -0.166667
-pricing status: Optimal
-itens pricing : 16 22 45 
-Status: Optimal
-Bins usados: 20
-Gerou colunas 
-par: 15, 27
-
-
-
-best integer: inf
-Itens juntos: 
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-pricing obj value: -0.305556
-pricing status: Optimal
-itens pricing : 19 27 40 42 
-pricing obj value: -0.104418
-pricing status: Optimal
-itens pricing : 4 40 46 
-pricing obj value: -0.057971
-pricing status: Optimal
-itens pricing : 15 23 46 
-Status: Optimal
-Bins usados: 20
-Gerou colunas 
-par: 7, 35
-
-
-
-best integer: inf
-Itens juntos: 
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-pricing obj value: -0.170068
-pricing status: Optimal
-itens pricing : 7 32 
-pricing obj value: -0.129195
-pricing status: Optimal
-itens pricing : 15 22 
-Status: Optimal
-Bins usados: 20
-Gerou colunas 
-par: 19, 23
-
-
-
-best integer: inf
-Itens juntos: 
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-pricing obj value: -0.307692
-pricing status: Optimal
-itens pricing : 19 26 35 
-pricing obj value: -0.0714286
-pricing status: Optimal
-itens pricing : 8 35 39 
-pricing obj value: -0.0695364
-pricing status: Optimal
-itens pricing : 21 23 31 
-pricing obj value: -0.0491803
-pricing status: Optimal
-itens pricing : 5 34 
-pricing obj value: -0.0491803
-pricing status: Optimal
-itens pricing : 16 18 
-Status: Optimal
-Bins usados: 20
-Gerou colunas 
-par: 7, 32
-
-
-
-best integer: inf
-Itens juntos: 
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-pricing obj value: -0.0722121
-pricing status: Optimal
-itens pricing : 10 32 39 
-pricing obj value: -0.0796646
-pricing status: Optimal
-itens pricing : 20 22 35 
-pricing obj value: -0.0689278
-pricing status: Optimal
-itens pricing : 7 31 
-Status: Optimal
-Bins usados: 20
-Gerou colunas 
-par: 11, 30
-
-
-
-best integer: inf
-Itens juntos: 
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-pricing obj value: -0.0546624
-pricing status: Optimal
-itens pricing : 17 25 35 
-Status: Optimal
-Bins usados: 20
-Gerou colunas 
-par: 5, 40
-
-
-
-best integer: inf
-Itens juntos: 
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-pricing obj value: -0.0517621
-pricing status: Optimal
-itens pricing : 11 32 40 
-Status: Optimal
-Bins usados: 20
-Gerou colunas 
+Não gerou coluna 
 par: 8, 32
 
 
 
 best integer: inf
 Itens juntos: 
+8, 31
+8, 32
 Itens separados: 
 3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-pricing obj value: -0.142857
-pricing status: Optimal
-itens pricing : 8 30 
-Status: Optimal
-Bins usados: 20
-Gerou colunas 
-par: 14, 27
+Infeasible pricing
+par: 0, 0
 
 
 
 best integer: inf
 Itens juntos: 
+8, 31
 Itens separados: 
 3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
 8, 32
-14, 27
-pricing obj value: -0.0721649
+pricing obj value: -0.153846
 pricing status: Optimal
-itens pricing : 19 27 39 43 
+itens pricing : 8 31 47 
 Status: Optimal
-Bins usados: 20
+Bins usados: 20.0248
 Gerou colunas 
+par: 19, 21
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+19, 21
+Itens separados: 
+3, 35
+8, 32
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+Status: Optimal
+Bins usados: 20.0323
+Não gerou coluna 
 par: 11, 32
 
 
 
 best integer: inf
 Itens juntos: 
+8, 31
+11, 32
 Itens separados: 
 3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
 8, 32
-14, 27
-11, 32
-Status: Optimal
-Bins usados: 20
-Não gerou coluna 
-par: 4, 41
+19, 21
+Infeasible pricing
+par: 0, 0
 
 
 
 best integer: inf
 Itens juntos: 
+8, 31
 Itens separados: 
 3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
 8, 32
-14, 27
+19, 21
 11, 32
-4, 41
 Status: Optimal
-Bins usados: 20
+Bins usados: 20.0566
 Não gerou coluna 
-par: 9, 29
+par: 23, 27
 
 
 
 best integer: inf
 Itens juntos: 
+8, 31
+23, 27
 Itens separados: 
 3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
 8, 32
-14, 27
+19, 21
 11, 32
-4, 41
-9, 29
-pricing obj value: -0.0526316
-pricing status: Optimal
-itens pricing : 9 31 44 
-pricing obj value: -0.0847458
-pricing status: Optimal
-itens pricing : 5 41 47 
-pricing obj value: -0.0600522
-pricing status: Optimal
-itens pricing : 4 39 44 
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
 Status: Optimal
-Bins usados: 20
+Bins usados: 20.1039
+Não gerou coluna 
+par: 16, 20
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+16, 20
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+Status: Optimal
+Bins usados: 20.1306
+Não gerou coluna 
+par: 2, 37
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+2, 37
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+Status: Optimal
+Bins usados: 20.1625
+Não gerou coluna 
+par: 22, 26
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+22, 26
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+Status: Optimal
+Bins usados: 20.2143
+Não gerou coluna 
+par: 5, 40
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+5, 40
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+Status: Optimal
+Bins usados: 20.2861
+Não gerou coluna 
+par: 4, 34
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+4, 34
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+pricing obj value: -0.0464726
+pricing status: Optimal
+itens pricing : 8 31 48 
+Status: Optimal
+Bins usados: 20.3182
 Gerou colunas 
-par: 0, 44
+par: 9, 32
 
 
 
 best integer: inf
 Itens juntos: 
+8, 31
+9, 32
 Itens separados: 
 3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
 8, 32
-14, 27
+19, 21
 11, 32
-4, 41
-9, 29
-0, 44
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
 Status: Optimal
-Bins usados: 20
+Bins usados: 20.5
 Não gerou coluna 
-par: 17, 22
+par: 9, 30
 
 
 
 best integer: inf
 Itens juntos: 
+8, 31
+9, 30
 Itens separados: 
 3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
 8, 32
-14, 27
+19, 21
 11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-pricing obj value: -0.0757895
-pricing status: Optimal
-itens pricing : 0 43 
-pricing obj value: -0.0598291
-pricing status: Optimal
-itens pricing : 17 27 40 47 
-Status: Optimal
-Bins usados: 20
-Gerou colunas 
-par: 17, 18
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+Infeasible pricing
+par: 0, 0
 
 
 
 best integer: inf
 Itens juntos: 
+8, 31
 Itens separados: 
 3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
 8, 32
-14, 27
+19, 21
 11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
 Status: Optimal
-Bins usados: 20
+Bins usados: 20.544
 Não gerou coluna 
-par: 15, 22
+par: 34, 42
 
 
 
 best integer: inf
 Itens juntos: 
+8, 31
+34, 42
 Itens separados: 
 3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
 8, 32
-14, 27
+19, 21
 11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
 Status: Optimal
-Bins usados: 20
+Bins usados: 20.6168
 Não gerou coluna 
-par: 4, 39
+par: 3, 36
 
 
 
 best integer: inf
 Itens juntos: 
+8, 31
+3, 36
 Itens separados: 
 3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
 8, 32
-14, 27
+19, 21
 11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-pricing obj value: -0.163636
-pricing status: Optimal
-itens pricing : 11 28 
-pricing obj value: -0.142857
-pricing status: Optimal
-itens pricing : 19 22 44 48 
-pricing obj value: -0.0769231
-pricing status: Optimal
-itens pricing : 17 21 39 
-pricing obj value: -0.05
-pricing status: Optimal
-itens pricing : 5 39 44 
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
 Status: Optimal
-Bins usados: 20
-Gerou colunas 
+Bins usados: 20.6462
+Não gerou coluna 
+par: 11, 36
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+11, 36
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+Status: Optimal
+Bins usados: 20.7361
+Não gerou coluna 
+par: 10, 28
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+10, 28
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+Status: Optimal
+Bins usados: 20.8466
+Não gerou coluna 
+par: 7, 40
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+7, 40
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+Status: Optimal
+Bins usados: 20.8617
+Não gerou coluna 
 par: 14, 26
 
 
 
 best integer: inf
 Itens juntos: 
+8, 31
+14, 26
 Itens separados: 
 3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
 8, 32
-14, 27
+19, 21
 11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-pricing obj value: -0.0816327
-pricing status: Optimal
-itens pricing : 14 22 
-pricing obj value: -0.111111
-pricing status: Optimal
-itens pricing : 9 32 42 
-Status: Optimal
-Bins usados: 20
-Gerou colunas 
-par: 7, 31
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+Infeasible pricing
+par: 0, 0
 
 
 
 best integer: inf
 Itens juntos: 
+8, 31
 Itens separados: 
 3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
 8, 32
-14, 27
+19, 21
 11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-pricing obj value: -0.0813953
-pricing status: Optimal
-itens pricing : 4 35 49 
-pricing obj value: -0.0787402
-pricing status: Optimal
-itens pricing : 7 33 47 
-pricing obj value: -0.0626186
-pricing status: Optimal
-itens pricing : 20 27 32 
-Status: Optimal
-Bins usados: 20
-Gerou colunas 
-par: 15, 23
-
-
-
-best integer: inf
-Itens juntos: 
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
+23, 27
+16, 20
+2, 37
+22, 26
 5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
 14, 26
-7, 31
-15, 23
 Status: Optimal
-Bins usados: 20
+Bins usados: 20.8929
 Não gerou coluna 
-par: 0, 43
+par: 12, 25
 
 
 
 best integer: inf
 Itens juntos: 
+8, 31
+12, 25
 Itens separados: 
 3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+Status: Optimal
+Bins usados: 20.9362
+Não gerou coluna 
+par: 16, 19
+
+
+
+best integer: inf
+Itens juntos: 
 8, 31
 16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
+Itens separados: 
+3, 35
 8, 32
-14, 27
+19, 21
 11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
 14, 26
-7, 31
-15, 23
-0, 43
-pricing obj value: -0.0331325
-pricing status: Optimal
-itens pricing : 2 46 48 
-pricing obj value: -0.0326797
-pricing status: Optimal
-itens pricing : 19 22 43 46 
-pricing obj value: -0.0295858
-pricing status: Optimal
-itens pricing : 17 27 35 
-pricing obj value: -0.0502092
-pricing status: Optimal
-itens pricing : 7 39 42 46 
-pricing obj value: -0.0378788
-pricing status: Optimal
-itens pricing : 15 29 36 
-pricing obj value: -0.0352113
-pricing status: Optimal
-itens pricing : 7 36 39 
+12, 25
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
 Status: Optimal
-Bins usados: 20
+Bins usados: 20.9861
+Não gerou coluna 
+par: 45, 48
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+45, 48
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+pricing obj value: -0.0232558
+pricing status: Optimal
+itens pricing : 8 31 49 
+Status: Optimal
+Bins usados: 21.0572
 Gerou colunas 
-par: 5, 39
+par: 6, 33
 
 
 
 best integer: inf
 Itens juntos: 
+8, 31
+6, 33
 Itens separados: 
 3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
 8, 32
-14, 27
+19, 21
 11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
 14, 26
-7, 31
-15, 23
-0, 43
-5, 39
+12, 25
+16, 19
+45, 48
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
 Status: Optimal
-Bins usados: 20
+Bins usados: 21.0904
+Não gerou coluna 
+par: 28, 32
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+28, 32
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+Status: Optimal
+Bins usados: 21.1262
+Não gerou coluna 
+par: 6, 40
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+6, 40
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+Status: Optimal
+Bins usados: 21.1899
+Não gerou coluna 
+par: 16, 26
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+16, 26
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+pricing obj value: -0.031746
+pricing status: Optimal
+itens pricing : 8 31 
+Status: Optimal
+Bins usados: 21.3043
+Gerou colunas 
+par: 12, 30
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+12, 30
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+Status: Optimal
+Bins usados: 21.3571
+Não gerou coluna 
+par: 2, 38
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+2, 38
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+Status: Optimal
+Bins usados: 21.3571
+Não gerou coluna 
+par: 1, 38
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+1, 38
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+Status: Optimal
+Bins usados: 21.3643
+Não gerou coluna 
+par: 16, 28
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+16, 28
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+Status: Optimal
+Bins usados: 21.4231
+Não gerou coluna 
+par: 31, 49
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+Status: Optimal
+Bins usados: 21.4231
+Não gerou coluna 
+par: 15, 26
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+15, 26
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+Status: Optimal
+Bins usados: 21.4516
+Não gerou coluna 
+par: 9, 33
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+9, 33
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+Status: Optimal
+Bins usados: 21.5455
+Não gerou coluna 
+par: 21, 26
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+21, 26
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+Status: Optimal
+Bins usados: 21.5455
+Não gerou coluna 
+par: 14, 27
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+14, 27
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+Status: Optimal
+Bins usados: 21.5618
+Não gerou coluna 
+par: 22, 28
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+22, 28
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+Status: Optimal
+Bins usados: 21.6538
+Não gerou coluna 
+par: 16, 30
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+16, 30
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+Status: Optimal
+Bins usados: 21.8425
+Não gerou coluna 
+par: 15, 28
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+15, 28
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+Status: Optimal
+Bins usados: 21.881
+Não gerou coluna 
+par: 33, 40
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+33, 40
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+Status: Optimal
+Bins usados: 22.0865
+Não gerou coluna 
+par: 44, 46
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+44, 46
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+Status: Optimal
+Bins usados: 22.1482
+Não gerou coluna 
+par: 14, 25
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+14, 25
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+Status: Optimal
+Bins usados: 22.2414
 Não gerou coluna 
 par: 13, 21
 
@@ -1217,1726 +2912,10707 @@ par: 13, 21
 
 best integer: inf
 Itens juntos: 
+8, 31
+31, 49
+13, 21
 Itens separados: 
 3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
 8, 32
-14, 27
+19, 21
 11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-pricing obj value: -0.0526316
-pricing status: Optimal
-itens pricing : 13 22 
-Status: Optimal
-Bins usados: 20
-Gerou colunas 
-par: 32, 43
-
-
-
-best integer: inf
-Itens juntos: 
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
+23, 27
+16, 20
+2, 37
+22, 26
 5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-32, 43
-pricing obj value: -0.0666667
-pricing status: Optimal
-itens pricing : 9 35 43 48 
-pricing obj value: -0.05
-pricing status: Optimal
-itens pricing : 6 40 43 
-pricing obj value: -0.046875
-pricing status: Optimal
-itens pricing : 0 48 
-Status: Optimal
-Bins usados: 20
-Gerou colunas 
-par: 3, 36
-
-
-
-best integer: inf
-Itens juntos: 
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-32, 43
-3, 36
-pricing obj value: -0.0769231
-pricing status: Optimal
-itens pricing : 17 26 36 
-pricing obj value: -0.0327869
-pricing status: Optimal
-itens pricing : 7 36 40 
-pricing obj value: -0.0390071
-pricing status: Optimal
-itens pricing : 4 40 43 
-Status: Optimal
-Bins usados: 20
-Gerou colunas 
-par: 4, 34
-
-
-
-best integer: inf
-Itens juntos: 
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-32, 43
-3, 36
 4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
 Status: Optimal
-Bins usados: 20
+Bins usados: 22.2671
+Não gerou coluna 
+par: 5, 42
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+5, 42
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+Status: Optimal
+Bins usados: 22.4203
+Não gerou coluna 
+par: 17, 18
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+17, 18
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+Status: Optimal
+Bins usados: 22.6651
+Não gerou coluna 
+par: 15, 32
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+15, 32
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+Status: Optimal
+Bins usados: 23.0018
+Não gerou coluna 
+par: 14, 24
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+14, 24
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+pricing obj value: -4.24592e-05
+pricing status: Optimal
+itens pricing : 8 31 49 
+Status: Optimal
+Bins usados: 23.0725
+Gerou colunas 
+par: 14, 34
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+14, 34
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+Status: Optimal
+Bins usados: 23.1331
+Não gerou coluna 
+par: 10, 35
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+10, 35
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+Status: Optimal
+Bins usados: 23.2496
+Não gerou coluna 
+par: 34, 40
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+34, 40
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+Status: Optimal
+Bins usados: 23.2979
+Não gerou coluna 
+par: 26, 33
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+26, 33
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+Status: Optimal
+Bins usados: 23.6346
+Não gerou coluna 
+par: 17, 19
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+17, 19
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+Status: Optimal
+Bins usados: 23.6346
+Não gerou coluna 
+par: 4, 41
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+4, 41
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+Status: Optimal
+Bins usados: 23.8417
+Não gerou coluna 
+par: 45, 47
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+45, 47
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+Status: Optimal
+Bins usados: 23.9559
+Não gerou coluna 
+par: 16, 27
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+16, 27
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+Status: Optimal
+Bins usados: 24.1199
+Não gerou coluna 
+par: 18, 22
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+18, 22
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+Status: Optimal
+Bins usados: 24.181
+Não gerou coluna 
+par: 32, 33
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+32, 33
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+Status: Optimal
+Bins usados: 24.4157
+Não gerou coluna 
+par: 7, 35
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+7, 35
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+Status: Optimal
+Bins usados: 24.5464
+Não gerou coluna 
+par: 29, 30
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+29, 30
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+Status: Optimal
+Bins usados: 24.9216
+Não gerou coluna 
+par: 2, 39
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+2, 39
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+Status: Optimal
+Bins usados: 24.9216
+Não gerou coluna 
+par: 1, 39
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+1, 39
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+Status: Optimal
+Bins usados: 24.9466
+Não gerou coluna 
+par: 7, 36
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+7, 36
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+Status: Optimal
+Bins usados: 25.0457
+Não gerou coluna 
+par: 33, 35
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+33, 35
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+Status: Optimal
+Bins usados: 25.3021
+Não gerou coluna 
+par: 25, 30
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+25, 30
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+Status: Optimal
+Bins usados: 25.5454
+Não gerou coluna 
+par: 14, 30
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+14, 30
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+Status: Optimal
+Bins usados: 25.95
+Não gerou coluna 
+par: 0, 44
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+0, 44
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+Status: Optimal
+Bins usados: 25.9545
+Não gerou coluna 
+par: 13, 30
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+13, 30
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+13, 30
+Status: Optimal
+Bins usados: 26.4706
+Não gerou coluna 
+par: 29, 33
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+29, 33
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+13, 30
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+13, 30
+29, 33
+Status: Optimal
+Bins usados: 27
+Não gerou coluna 
+par: 13, 33
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+13, 33
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+13, 30
+29, 33
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+13, 30
+29, 33
+13, 33
+Status: Optimal
+Bins usados: 27.2857
+Não gerou coluna 
+par: 13, 23
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+13, 23
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+13, 30
+29, 33
+13, 33
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+13, 30
+29, 33
+13, 33
+13, 23
+Status: Optimal
+Bins usados: 27.4615
+Não gerou coluna 
+par: 12, 24
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+12, 24
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+13, 30
+29, 33
+13, 33
+13, 23
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+13, 30
+29, 33
+13, 33
+13, 23
+12, 24
+Status: Optimal
+Bins usados: 27.4737
+Não gerou coluna 
+par: 24, 26
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+24, 26
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+13, 30
+29, 33
+13, 33
+13, 23
+12, 24
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+13, 30
+29, 33
+13, 33
+13, 23
+12, 24
+24, 26
+Status: Optimal
+Bins usados: 27.6939
+Não gerou coluna 
+par: 16, 24
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+16, 24
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+13, 30
+29, 33
+13, 33
+13, 23
+12, 24
+24, 26
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+13, 30
+29, 33
+13, 33
+13, 23
+12, 24
+24, 26
+16, 24
+Status: Optimal
+Bins usados: 27.9615
+Não gerou coluna 
+par: 15, 21
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+15, 21
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+13, 30
+29, 33
+13, 33
+13, 23
+12, 24
+24, 26
+16, 24
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+13, 30
+29, 33
+13, 33
+13, 23
+12, 24
+24, 26
+16, 24
+15, 21
+Status: Optimal
+Bins usados: 28.087
+Não gerou coluna 
+par: 15, 27
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+15, 27
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+13, 30
+29, 33
+13, 33
+13, 23
+12, 24
+24, 26
+16, 24
+15, 21
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+13, 30
+29, 33
+13, 33
+13, 23
+12, 24
+24, 26
+16, 24
+15, 21
+15, 27
+Status: Optimal
+Bins usados: 28.202
+Não gerou coluna 
+par: 34, 36
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+34, 36
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+13, 30
+29, 33
+13, 33
+13, 23
+12, 24
+24, 26
+16, 24
+15, 21
+15, 27
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+13, 30
+29, 33
+13, 33
+13, 23
+12, 24
+24, 26
+16, 24
+15, 21
+15, 27
+34, 36
+Status: Optimal
+Bins usados: 28.4002
+Não gerou coluna 
+par: 31, 46
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+31, 46
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+13, 30
+29, 33
+13, 33
+13, 23
+12, 24
+24, 26
+16, 24
+15, 21
+15, 27
+34, 36
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+13, 30
+29, 33
+13, 33
+13, 23
+12, 24
+24, 26
+16, 24
+15, 21
+15, 27
+34, 36
+31, 46
+Status: Optimal
+Bins usados: 28.5
+Não gerou coluna 
+par: 10, 37
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+10, 37
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+13, 30
+29, 33
+13, 33
+13, 23
+12, 24
+24, 26
+16, 24
+15, 21
+15, 27
+34, 36
+31, 46
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: inf
+Itens juntos: 
+8, 31
+31, 49
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+15, 26
+9, 33
+21, 26
+14, 27
+22, 28
+16, 30
+15, 28
+33, 40
+44, 46
+14, 25
+13, 21
+5, 42
+17, 18
+15, 32
+14, 24
+14, 34
+10, 35
+34, 40
+26, 33
+17, 19
+4, 41
+45, 47
+16, 27
+18, 22
+32, 33
+7, 35
+29, 30
+2, 39
+1, 39
+7, 36
+33, 35
+25, 30
+14, 30
+0, 44
+13, 30
+29, 33
+13, 33
+13, 23
+12, 24
+24, 26
+16, 24
+15, 21
+15, 27
+34, 36
+31, 46
+10, 37
+Status: Optimal
+Bins usados: 29
+Não gerou coluna 
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+Status: Optimal
+Bins usados: 21.4459
+Não gerou coluna 
+par: 15, 26
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+15, 26
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+Status: Optimal
+Bins usados: 21.5
+Não gerou coluna 
+par: 9, 29
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+9, 29
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+Status: Optimal
+Bins usados: 21.5
+Não gerou coluna 
+par: 9, 33
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+9, 33
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+Status: Optimal
+Bins usados: 21.5583
+Não gerou coluna 
+par: 10, 35
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+10, 35
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+Status: Optimal
+Bins usados: 21.6115
+Não gerou coluna 
+par: 13, 23
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+13, 23
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+Status: Optimal
+Bins usados: 21.6875
+Não gerou coluna 
+par: 34, 45
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+34, 45
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+Status: Optimal
+Bins usados: 21.8583
+Não gerou coluna 
+par: 4, 41
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+4, 41
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+Status: Optimal
+Bins usados: 21.9806
+Não gerou coluna 
+par: 45, 46
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+45, 46
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+Status: Optimal
+Bins usados: 22.0086
+Não gerou coluna 
+par: 15, 28
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+15, 28
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+Status: Optimal
+Bins usados: 22.08
+Não gerou coluna 
+par: 14, 24
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+14, 24
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+Status: Optimal
+Bins usados: 22.1394
 Não gerou coluna 
 par: 36, 41
 
 
 
-best integer: inf
+best integer: 29
 Itens juntos: 
+8, 31
+36, 41
 Itens separados: 
 3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
 8, 32
-14, 27
+19, 21
 11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-32, 43
-3, 36
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
 4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
 36, 41
-pricing obj value: -0.148148
-pricing status: Optimal
-itens pricing : 7 42 43 47 
-pricing obj value: -0.0635452
-pricing status: Optimal
-itens pricing : 4 42 44 
 Status: Optimal
-Bins usados: 20
-Gerou colunas 
-par: 13, 22
+Bins usados: 22.2404
+Não gerou coluna 
+par: 36, 37
 
 
 
-best integer: inf
+best integer: 29
 Itens juntos: 
+8, 31
+36, 37
 Itens separados: 
 3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
 8, 32
-14, 27
+19, 21
 11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-32, 43
-3, 36
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
 4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
 36, 41
-13, 22
-pricing obj value: -0.0651596
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+pricing obj value: -3.45093e-05
 pricing status: Optimal
-itens pricing : 13 25 47 
-pricing obj value: -0.0436508
-pricing status: Optimal
-itens pricing : 3 43 44 
+itens pricing : 8 31 48 
 Status: Optimal
-Bins usados: 20
+Bins usados: 22.4789
 Gerou colunas 
-par: 4, 40
+par: 15, 21
 
 
 
-best integer: inf
+best integer: 29
 Itens juntos: 
+8, 31
+15, 21
 Itens separados: 
 3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
 8, 32
-14, 27
+19, 21
 11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-32, 43
-3, 36
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
 4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
 36, 41
-13, 22
-4, 40
-pricing obj value: -0.0700637
+36, 37
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+pricing obj value: -3.07197e-05
 pricing status: Optimal
-itens pricing : 10 29 
-pricing obj value: -0.0804598
-pricing status: Optimal
-itens pricing : 4 42 43 
+itens pricing : 8 31 48 
 Status: Optimal
-Bins usados: 20
+Bins usados: 22.5828
 Gerou colunas 
-par: 10, 29
+par: 15, 32
 
 
 
-best integer: inf
+best integer: 29
+Itens juntos: 
+8, 31
+15, 32
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+Status: Optimal
+Bins usados: 22.868
+Não gerou coluna 
+par: 19, 20
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+19, 20
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+Status: Optimal
+Bins usados: 23.0365
+Não gerou coluna 
+par: 13, 35
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+13, 35
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+Status: Optimal
+Bins usados: 23.4923
+Não gerou coluna 
+par: 27, 32
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+27, 32
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+Status: Optimal
+Bins usados: 23.777
+Não gerou coluna 
+par: 32, 33
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+32, 33
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+Status: Optimal
+Bins usados: 23.9695
+Não gerou coluna 
+par: 15, 27
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+15, 27
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+Status: Optimal
+Bins usados: 23.9954
+Não gerou coluna 
+par: 11, 29
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+11, 29
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+Status: Optimal
+Bins usados: 24.0667
+Não gerou coluna 
+par: 17, 18
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+17, 18
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+Status: Optimal
+Bins usados: 24.3052
+Não gerou coluna 
+par: 15, 29
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+15, 29
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+Status: Optimal
+Bins usados: 24.6322
+Não gerou coluna 
+par: 44, 46
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+44, 46
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+Status: Optimal
+Bins usados: 24.6739
+Não gerou coluna 
+par: 13, 30
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+13, 30
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+Status: Optimal
+Bins usados: 24.7895
+Não gerou coluna 
+par: 34, 40
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+34, 40
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+Status: Optimal
+Bins usados: 25.0536
+Não gerou coluna 
+par: 24, 26
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+24, 26
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+Status: Optimal
+Bins usados: 25.4
+Não gerou coluna 
+par: 23, 30
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+23, 30
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+Status: Optimal
+Bins usados: 25.9
+Não gerou coluna 
+par: 33, 34
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+33, 34
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+Status: Optimal
+Bins usados: 26
+Não gerou coluna 
+par: 16, 27
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+16, 27
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+Status: Optimal
+Bins usados: 26.2069
+Não gerou coluna 
+par: 22, 23
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+22, 23
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+Status: Optimal
+Bins usados: 26.623
+Não gerou coluna 
+par: 17, 19
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+17, 19
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+Status: Optimal
+Bins usados: 26.6522
+Não gerou coluna 
+par: 34, 35
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+34, 35
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+Status: Optimal
+Bins usados: 26.8333
+Não gerou coluna 
+par: 0, 44
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+0, 44
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+Status: Optimal
+Bins usados: 27.175
+Não gerou coluna 
+par: 16, 30
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+16, 30
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+16, 30
+pricing obj value: -4.06901e-05
+pricing status: Optimal
+itens pricing : 8 31 48 
+Status: Optimal
+Bins usados: 27.4583
+Gerou colunas 
+par: 12, 24
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+12, 24
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+16, 30
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+16, 30
+12, 24
+pricing obj value: -4.06901e-05
+pricing status: Optimal
+itens pricing : 8 31 48 
+Status: Optimal
+Bins usados: 27.5
+Gerou colunas 
+par: 2, 39
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+2, 39
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+16, 30
+12, 24
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+16, 30
+12, 24
+2, 39
+Status: Optimal
+Bins usados: 27.5
+Não gerou coluna 
+par: 1, 39
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+1, 39
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+16, 30
+12, 24
+2, 39
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+16, 30
+12, 24
+2, 39
+1, 39
+pricing obj value: -4.06901e-05
+pricing status: Optimal
+itens pricing : 8 31 48 
+Status: Optimal
+Bins usados: 27.75
+Gerou colunas 
+par: 14, 30
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+14, 30
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+16, 30
+12, 24
+2, 39
+1, 39
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+16, 30
+12, 24
+2, 39
+1, 39
+14, 30
+Status: Optimal
+Bins usados: 28.0479
+Não gerou coluna 
+par: 23, 26
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+23, 26
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+16, 30
+12, 24
+2, 39
+1, 39
+14, 30
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+16, 30
+12, 24
+2, 39
+1, 39
+14, 30
+23, 26
+pricing obj value: -5.42535e-05
+pricing status: Optimal
+itens pricing : 8 31 48 
+Status: Optimal
+Bins usados: 28.1481
+Gerou colunas 
+par: 24, 25
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+24, 25
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+16, 30
+12, 24
+2, 39
+1, 39
+14, 30
+23, 26
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+16, 30
+12, 24
+2, 39
+1, 39
+14, 30
+23, 26
+24, 25
+pricing obj value: -9.39002e-06
+pricing status: Optimal
+itens pricing : 8 31 48 
+Status: Optimal
+Bins usados: 28.4615
+Gerou colunas 
+par: 25, 26
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+25, 26
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+16, 30
+12, 24
+2, 39
+1, 39
+14, 30
+23, 26
+24, 25
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+16, 30
+12, 24
+2, 39
+1, 39
+14, 30
+23, 26
+24, 25
+25, 26
+Status: Optimal
+Bins usados: 28.5385
+Não gerou coluna 
+par: 20, 21
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+20, 21
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+16, 30
+12, 24
+2, 39
+1, 39
+14, 30
+23, 26
+24, 25
+25, 26
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+16, 30
+12, 24
+2, 39
+1, 39
+14, 30
+23, 26
+24, 25
+25, 26
+20, 21
+Status: Optimal
+Bins usados: 28.6296
+Não gerou coluna 
+par: 13, 21
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+13, 21
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+16, 30
+12, 24
+2, 39
+1, 39
+14, 30
+23, 26
+24, 25
+25, 26
+20, 21
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+16, 30
+12, 24
+2, 39
+1, 39
+14, 30
+23, 26
+24, 25
+25, 26
+20, 21
+13, 21
+Status: Optimal
+Bins usados: 28.75
+Não gerou coluna 
+par: 25, 30
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+25, 30
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+16, 30
+12, 24
+2, 39
+1, 39
+14, 30
+23, 26
+24, 25
+25, 26
+20, 21
+13, 21
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+16, 30
+12, 24
+2, 39
+1, 39
+14, 30
+23, 26
+24, 25
+25, 26
+20, 21
+13, 21
+25, 30
+Status: Optimal
+Bins usados: 28.8696
+Não gerou coluna 
+par: 24, 29
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+24, 29
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+16, 30
+12, 24
+2, 39
+1, 39
+14, 30
+23, 26
+24, 25
+25, 26
+20, 21
+13, 21
+25, 30
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
+Itens juntos: 
+8, 31
+Itens separados: 
+3, 35
+8, 32
+19, 21
+11, 32
+23, 27
+16, 20
+2, 37
+22, 26
+5, 40
+4, 34
+9, 32
+9, 30
+34, 42
+3, 36
+11, 36
+10, 28
+7, 40
+14, 26
+12, 25
+16, 19
+45, 48
+6, 33
+28, 32
+6, 40
+16, 26
+12, 30
+2, 38
+1, 38
+16, 28
+31, 49
+15, 26
+9, 29
+9, 33
+10, 35
+13, 23
+34, 45
+4, 41
+45, 46
+15, 28
+14, 24
+36, 41
+36, 37
+15, 21
+15, 32
+19, 20
+13, 35
+27, 32
+32, 33
+15, 27
+11, 29
+17, 18
+15, 29
+44, 46
+13, 30
+34, 40
+24, 26
+23, 30
+33, 34
+16, 27
+22, 23
+17, 19
+34, 35
+0, 44
+16, 30
+12, 24
+2, 39
+1, 39
+14, 30
+23, 26
+24, 25
+25, 26
+20, 21
+13, 21
+25, 30
+24, 29
+Status: Optimal
+Bins usados: 29.3636
+Não gerou coluna 
+par: 14, 25
+
+
+
+best integer: 29
 Itens juntos: 
 Itens separados: 
 3, 35
 8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-32, 43
-3, 36
-4, 34
-36, 41
-13, 22
-4, 40
-10, 29
+Infeasible pricing
+par: 0, 0
+
+
+
+best integer: 29
 Status: Optimal
 Bins usados: 20
 Não gerou coluna 
-par: 3, 39
+par: 1, 38
 
 
 
-best integer: inf
+best integer: 29
 Itens juntos: 
-Itens separados: 
 3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-32, 43
-3, 36
-4, 34
-36, 41
-13, 22
-4, 40
-10, 29
-3, 39
-pricing obj value: -0.0508475
-pricing status: Optimal
-itens pricing : 3 40 47 
-pricing obj value: -0.045045
-pricing status: Optimal
-itens pricing : 18 29 32 
-pricing obj value: -0.028169
-pricing status: Optimal
-itens pricing : 4 46 47 48 
-pricing obj value: -0.0322581
-pricing status: Optimal
-itens pricing : 4 35 
-Status: Optimal
-Bins usados: 20
-Gerou colunas 
-par: 3, 40
-
-
-
-best integer: inf
-Itens juntos: 
+1, 38
 Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-32, 43
-3, 36
-4, 34
-36, 41
-13, 22
-4, 40
-10, 29
-3, 39
-3, 40
-pricing obj value: -0.0364964
-pricing status: Optimal
-itens pricing : 18 20 46 
-pricing obj value: -0.0364964
-pricing status: Optimal
-itens pricing : 15 26 39 
-Status: Optimal
-Bins usados: 20
-Gerou colunas 
-par: 3, 41
-
-
-
-best integer: inf
-Itens juntos: 
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-32, 43
-3, 36
-4, 34
-36, 41
-13, 22
-4, 40
-10, 29
-3, 39
-3, 40
-3, 41
-pricing obj value: -0.0963855
-pricing status: Optimal
-itens pricing : 3 42 46 
-pricing obj value: -0.084507
-pricing status: Optimal
-itens pricing : 9 31 43 
-pricing obj value: -0.0333333
-pricing status: Optimal
-itens pricing : 6 36 
-pricing obj value: -0.0333333
-pricing status: Optimal
-itens pricing : 19 27 36 
-pricing obj value: -0.04
-pricing status: Optimal
-itens pricing : 16 23 41 
-Status: Optimal
-Bins usados: 20
-Gerou colunas 
-par: 3, 42
-
-
-
-best integer: inf
-Itens juntos: 
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-32, 43
-3, 36
-4, 34
-36, 41
-13, 22
-4, 40
-10, 29
-3, 39
-3, 40
-3, 41
-3, 42
-pricing obj value: -0.0882353
-pricing status: Optimal
-itens pricing : 3 46 47 
-pricing obj value: -0.025641
-pricing status: Optimal
-itens pricing : 19 20 46 
-pricing obj value: -0.0434783
-pricing status: Optimal
-itens pricing : 17 29 31 
-pricing obj value: -0.02
-pricing status: Optimal
-itens pricing : 5 36 
-pricing obj value: -0.02
-pricing status: Optimal
-itens pricing : 4 36 
-Status: Optimal
-Bins usados: 20
-Gerou colunas 
-par: 4, 35
-
-
-
-best integer: inf
-Itens juntos: 
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-32, 43
-3, 36
-4, 34
-36, 41
-13, 22
-4, 40
-10, 29
-3, 39
-3, 40
-3, 41
-3, 42
-4, 35
-pricing obj value: -0.0882353
-pricing status: Optimal
-itens pricing : 7 40 41 49 
-pricing obj value: -0.0583942
-pricing status: Optimal
-itens pricing : 5 35 
-pricing obj value: -0.0510949
-pricing status: Optimal
-itens pricing : 3 38 
-pricing obj value: -0.0410095
-pricing status: Optimal
-itens pricing : 19 21 41 
-pricing obj value: -0.047619
-pricing status: Optimal
-itens pricing : 13 26 45 
-pricing obj value: -0.0208333
-pricing status: Optimal
-itens pricing : 13 31 32 
-pricing obj value: -0.02
-pricing status: Optimal
-itens pricing : 4 38 46 
-pricing obj value: -0.0361446
-pricing status: Optimal
-itens pricing : 2 41 49 
-pricing obj value: -0.0220386
-pricing status: Optimal
-itens pricing : 14 21 
-pricing obj value: -0.0215054
-pricing status: Optimal
-itens pricing : 13 27 48 
-pricing obj value: -0.0222222
-pricing status: Optimal
-itens pricing : 10 31 41 
-pricing obj value: -0.0210526
-pricing status: Optimal
-itens pricing : 21 22 32 
-pricing obj value: -0.00892857
-pricing status: Optimal
-itens pricing : 19 20 47 
-pricing obj value: -0.00892857
-pricing status: Optimal
-itens pricing : 16 22 42 
-pricing obj value: -0.00892857
-pricing status: Optimal
-itens pricing : 15 25 42 
-Status: Optimal
-Bins usados: 20
-Gerou colunas 
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-4, 35
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-32, 43
-3, 36
-4, 34
-36, 41
-13, 22
-4, 40
-10, 29
-3, 39
-3, 40
-3, 41
-3, 42
-Status: Optimal
-Bins usados: 20
-Não gerou coluna 
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-3, 42
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-32, 43
-3, 36
-4, 34
-36, 41
-13, 22
-4, 40
-10, 29
-3, 39
-3, 40
-3, 41
 Infeasible pricing
 par: 0, 0
 
 
 
-best integer: 20
+best integer: 29
 Itens juntos: 
-3, 41
-Itens separados: 
 3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-32, 43
-3, 36
-4, 34
-36, 41
-13, 22
-4, 40
-10, 29
-3, 39
-3, 40
+Itens separados: 
+1, 38
 Infeasible pricing
 par: 0, 0
 
 
 
-best integer: 20
-Itens juntos: 
-3, 40
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-32, 43
-3, 36
-4, 34
-36, 41
-13, 22
-4, 40
-10, 29
-3, 39
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-3, 39
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-32, 43
-3, 36
-4, 34
-36, 41
-13, 22
-4, 40
-10, 29
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-10, 29
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-32, 43
-3, 36
-4, 34
-36, 41
-13, 22
-4, 40
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-4, 40
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-32, 43
-3, 36
-4, 34
-36, 41
-13, 22
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-13, 22
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-32, 43
-3, 36
-4, 34
-36, 41
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-36, 41
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-32, 43
-3, 36
-4, 34
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-4, 34
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-32, 43
-3, 36
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-3, 36
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-32, 43
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-32, 43
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-13, 21
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-13, 21
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-5, 39
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-5, 39
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-0, 43
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-0, 43
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-15, 23
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-15, 23
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-7, 31
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-7, 31
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-14, 26
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-14, 26
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-4, 39
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-4, 39
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-15, 22
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-15, 22
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-17, 18
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-17, 18
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-17, 22
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-17, 22
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-0, 44
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-0, 44
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-9, 29
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-9, 29
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-4, 41
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-4, 41
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-11, 32
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-11, 32
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-14, 27
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-14, 27
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-8, 32
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-8, 32
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-5, 40
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-5, 40
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-11, 30
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-11, 30
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-7, 32
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-7, 32
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-19, 23
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-19, 23
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-7, 35
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-7, 35
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-15, 27
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-15, 27
-Itens separados: 
-3, 35
-8, 31
-16, 19
-17, 19
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-17, 19
-Itens separados: 
-3, 35
-8, 31
-16, 19
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-16, 19
-Itens separados: 
-3, 35
-8, 31
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Itens juntos: 
-8, 31
-Itens separados: 
-3, 35
-Infeasible pricing
-par: 0, 0
-
-
-
-best integer: 20
-Status: Optimal
-Bins usados: 20
-Não gerou coluna 
-par: 0, 0
-
-
-
-best integer: 20
+best integer: 29
