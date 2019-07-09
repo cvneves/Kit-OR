@@ -55,6 +55,10 @@ Problema::Problema(Data &d, double UB)
 
 std::pair<int, int> Problema::solve(Node &node)
 {
+
+    std::cout << "Inicio do nó \n\n";
+
+
     IloEnv env2;
 
     IloModel pricingModel = IloModel(env2);
@@ -254,6 +258,8 @@ std::pair<int, int> Problema::solve(Node &node)
             {
                 std::cout << e;
             }
+
+            std::cout << "Valor obj do mestre: " << master.getObjValue() << "\n";
 
             node.LB = master.getObjValue();
 
