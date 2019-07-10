@@ -137,6 +137,8 @@ std::pair<int, int> Problema::solve(Node &node)
         std::cout << e;
     }
 
+    node.LB = master.getObjValue();
+
     bool gerouColuna = false;
 
     double lastPricingObj = std::numeric_limits<double>::infinity();
@@ -227,6 +229,7 @@ std::pair<int, int> Problema::solve(Node &node)
             }
         }
 
+        // if (pricing.getObjValue() < -EPSILON )
         if (pricing.getObjValue() < -EPSILON && itens != lastPricingSolution)
         {
             // std::cout << "pricing obj value: " << pricing.getObjValue() << "\n";
@@ -273,10 +276,10 @@ std::pair<int, int> Problema::solve(Node &node)
         }
     }
 
-    for (int i = 0; i < lambda.getSize(); i++)
-    {
-        // std::cout << i << ", " << master.getValue(lambda[i]) << "\n";
-    }
+    // for (int i = 0; i < lambda.getSize(); i++)
+    // {
+    //     // std::cout << i << ", " << master.getValue(lambda[i]) << "\n";
+    // }
 
     // std::cout << "Status: " << master.getStatus() << "\n";
     // std::cout << "Bins usados: " << master.getObjValue() << "\n";

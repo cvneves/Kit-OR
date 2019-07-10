@@ -5,6 +5,7 @@
 #include <iostream>
 #include <list>
 #include <ilcplex/ilocplex.h>
+#include <chrono>
 
 int main(int argc, char **argv)
 {
@@ -16,6 +17,9 @@ int main(int argc, char **argv)
 
     Data data;
     data.readData(argv[1]);
+
+    std::chrono::time_point<std::chrono::system_clock> start, end;
+    start = std::chrono::system_clock::now();
 
     Problema p(data, std::numeric_limits<double>::infinity());
 
@@ -36,12 +40,23 @@ int main(int argc, char **argv)
     auto node_it = tree.begin();
 
     int k = 2;
-    
+
     // while(k--)
     while (!tree.empty())
     {
-        node_it = tree.end();
-        node_it--;
+
+        double menorLB = std::numeric_limits<double>::infinity();
+        for (auto it = tree.begin(); it != tree.end(); it++)
+        {
+            if(it->LB < menorLB)
+            {
+                menorLB = it->LB;
+                node_it = it;
+            }
+        }
+
+        // node_it = tree.end();
+        // node_it--;
 
         branchingPair = p.solve(*node_it);
 
@@ -51,7 +66,7 @@ int main(int argc, char **argv)
             Node nj, ns;
             ns = *node_it;
             nj = *node_it;
-            
+
             ns.is_root = false;
             nj.is_root = false;
 
@@ -61,8 +76,8 @@ int main(int argc, char **argv)
             ns.separados.push_back(branchingPair);
             ns.tipo_branch = false;
 
-            tree.push_back(nj);
             tree.push_back(ns);
+            tree.push_back(nj);
         }
 
         // std::cout << "Num nodes: " << tree.size() << "\n";
@@ -71,7 +86,13 @@ int main(int argc, char **argv)
         tree.erase(node_it);
     }
 
-    std::cout << p.bestInteger << "\n";
+    std::cout << "Bins usados: " << p.bestInteger << "\n";
+
+    end = std::chrono::system_clock::now();
+
+    int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+
+    std::cout << "Elapsed time (s): " << elapsed_seconds / 1000.0 << "\n\n";
 
     // std::cout << "E\n\n\n\n";
 

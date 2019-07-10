@@ -30,7 +30,7 @@ class Problema
     Problema(Data &data, double UB);
     std::pair<int, int> solve(Node &node);
     IloEnv env1;
-    double bestInteger, UB;
+    double bestInteger, UB, LB;
 };
 
 #endif
