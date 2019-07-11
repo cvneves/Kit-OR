@@ -16,7 +16,7 @@ Problema::Problema(Data &d, double UB)
     IloExpr sum(env1);
     for (int i = 0; i < data.getNItems(); i++)
     {
-        sum += lambda[i];
+        sum += M * lambda[i];
         masterRanges.add(lambda[i] == 1);
     }
 
@@ -94,8 +94,8 @@ std::pair<int, int> Problema::solve(Node &node)
             x[i].setLB(1.0);
             x[j].setLB(1.0);
 
-            masterObj.setLinearCoef(lambda[i], M);
-            masterObj.setLinearCoef(lambda[j], M);
+            // masterObj.setLinearCoef(lambda[i], M);
+            // masterObj.setLinearCoef(lambda[j], M);
         }
 
         // std::cout << "Itens separados: \n";
@@ -202,8 +202,8 @@ std::pair<int, int> Problema::solve(Node &node)
                     x[i].setLB(0.0);
                     x[j].setLB(0.0);
 
-                    masterObj.setLinearCoef(lambda[i], 1.0);
-                    masterObj.setLinearCoef(lambda[j], 1.0);
+                    // masterObj.setLinearCoef(lambda[i], 1.0);
+                    // masterObj.setLinearCoef(lambda[j], 1.0);
                 }
             }
 
@@ -258,6 +258,7 @@ std::pair<int, int> Problema::solve(Node &node)
             lambdaItens.push_back(itens);
 
             master.setOut(env1.getNullStream());
+
             try
             {
                 master.solve();
@@ -267,7 +268,53 @@ std::pair<int, int> Problema::solve(Node &node)
                 std::cout << e;
             }
 
-            std::cout << "Valor obj do mestre: " << master.getObjValue() << "\n";
+            IloNumArray lambdaVals(env1, lambda.getSize());
+
+            for (int i = 0; i < data.getNItems(); i++)
+            {
+                if (lambdaVals[i] > EPSILON)
+                {
+                    // std::cout << "A\n\n\n";
+                    if (!node.is_root)
+                    {
+                        // for (int constr = 0; constr < pricingConstraints.getSize(); constr++)
+                        // {
+                        //     pricingModel.remove(pricingConstraints[constr]);
+                        // }
+                        // pricingModel.remove(pricingConstraints);
+                        // pricingConstraints.end();
+
+                        for (auto &k : colunasProibidas)
+                        {
+                            lambda[k].setUB(IloInfinity);
+                        }
+
+                        for (auto &parAtual : node.juntos)
+                        {
+                            int i = parAtual.first;
+                            int j = parAtual.second;
+
+                            x[i].setLB(0.0);
+                            x[j].setLB(0.0);
+
+                            // masterObj.setLinearCoef(lambda[i], 1.0);
+                            // masterObj.setLinearCoef(lambda[j], 1.0);
+                        }
+                    }
+
+                    // std::cout << "par: " << 0 << ", " << 0 << "\n\n\n\n";
+
+                    // master.exportModel("modelo.lp");
+                    // pricing.exportModel("pricing.lp");
+
+                    pricingModel.end();
+                    env2.end();
+
+                    return {0, 0};
+                }
+            }
+
+            std::cout << "valor obj do mestre: " << master.getObjValue() << "\n";
 
             node.LB = master.getObjValue();
             LB = master.getObjValue();
@@ -315,8 +362,8 @@ std::pair<int, int> Problema::solve(Node &node)
                 x[i].setLB(0.0);
                 x[j].setLB(0.0);
 
-                masterObj.setLinearCoef(lambda[i], 1.0);
-                masterObj.setLinearCoef(lambda[j], 1.0);
+                // masterObj.setLinearCoef(lambda[i], 1.0);
+                // masterObj.setLinearCoef(lambda[j], 1.0);
             }
         }
 
@@ -426,8 +473,8 @@ std::pair<int, int> Problema::solve(Node &node)
                 x[i].setLB(0.0);
                 x[j].setLB(0.0);
 
-                masterObj.setLinearCoef(lambda[i], 1.0);
-                masterObj.setLinearCoef(lambda[j], 1.0);
+                // masterObj.setLinearCoef(lambda[i], 1.0);
+                // masterObj.setLinearCoef(lambda[j], 1.0);
             }
         }
 
