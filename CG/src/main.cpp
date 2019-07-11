@@ -44,13 +44,14 @@ int main(int argc, char **argv)
     // while(k--)
     while (!tree.empty())
     {
+        std::cout << "\n\n";
 
-        double menorLB = std::numeric_limits<double>::infinity();
+        double maiorLB = -std::numeric_limits<double>::infinity();
         for (auto it = tree.begin(); it != tree.end(); it++)
         {
-            if(it->LB < menorLB)
+            if (it->LB > maiorLB)
             {
-                menorLB = it->LB;
+                maiorLB = it->LB;
                 node_it = it;
             }
         }
@@ -80,10 +81,12 @@ int main(int argc, char **argv)
             tree.push_back(nj);
         }
 
-        // std::cout << "Num nodes: " << tree.size() << "\n";
+        std::cout << "Num nodes: " << tree.size() << "\n";
         std::cout << "best integer: " << p.bestInteger << "\n";
 
         tree.erase(node_it);
+
+        std::cout << "\n\n";
     }
 
     std::cout << "Bins usados: " << p.bestInteger << "\n";

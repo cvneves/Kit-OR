@@ -1,0 +1,2 @@
+soluçao 42
+tempo 5248.44s

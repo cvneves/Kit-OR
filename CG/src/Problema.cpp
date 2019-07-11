@@ -4,7 +4,8 @@ Problema::Problema(Data &d, double UB)
 {
     //Construçao do mestre
     this->UB = UB;
-    bestInteger = std::numeric_limits<double>::infinity();
+    // bestInteger = std::numeric_limits<double>::infinity();
+    bestInteger = UB;
     this->data = d;
 
     env1 = IloEnv();
@@ -56,8 +57,7 @@ Problema::Problema(Data &d, double UB)
 std::pair<int, int> Problema::solve(Node &node)
 {
 
-    std::cout << "Inicio do nó \n\n";
-
+    // std::cout << "Inicio do nó \n\n";
 
     IloEnv env2;
 
@@ -138,6 +138,7 @@ std::pair<int, int> Problema::solve(Node &node)
     }
 
     node.LB = master.getObjValue();
+    LB = master.getObjValue();
 
     bool gerouColuna = false;
 
@@ -150,12 +151,16 @@ std::pair<int, int> Problema::solve(Node &node)
 
         IloExpr somaPricing(env2);
 
+        std::cout << "Duais: ";
+
         for (int i = 0; i < data.getNItems(); i++)
         {
-            somaPricing += pi[i] * x[i];
+            somaPricing += -pi[i] * x[i];
+            std::cout << pi[i] << " ";
         }
+        std::cout << "\n";
 
-        pricingObj.setExpr(1 - somaPricing);
+        pricingObj.setExpr(somaPricing);
 
         somaPricing.end();
 
@@ -184,7 +189,7 @@ std::pair<int, int> Problema::solve(Node &node)
                 // pricingModel.remove(pricingConstraints);
                 // pricingConstraints.end();
 
-                for (int k = 0; k < lambda.getSize(); k++)
+                for (auto &k : colunasProibidas)
                 {
                     lambda[k].setUB(IloInfinity);
                 }
@@ -229,20 +234,20 @@ std::pair<int, int> Problema::solve(Node &node)
             }
         }
 
-        // if (pricing.getObjValue() < -EPSILON )
-        if (pricing.getObjValue() < -EPSILON && itens != lastPricingSolution)
+        if (1 + pricing.getObjValue() < -EPSILON)
+        // if (pricing.getObjValue() < -EPSILON && itens != lastPricingSolution)
         {
-            // std::cout << "pricing obj value: " << pricing.getObjValue() << "\n";
+            std::cout << "valor obj do pricing: " << pricing.getObjValue() << "\n";
             // std::cout << "pricing status: " << pricing.getStatus() << "\n";
-            // std::cout << "itens pricing : ";
-            // for (int i = 0; i < x_vals.getSize(); i++)
-            // {
-            //     if (x_vals[i] > 1 - EPSILON)
-            //     {
-            //         std::cout << i << " ";
-            //     }
-            // }
-            // std::cout << "\n";
+            std::cout << "soluçao pricing : ";
+            for (int i = 0; i < x_vals.getSize(); i++)
+            {
+                if (x_vals[i] > 1 - EPSILON)
+                {
+                    std::cout << i << " ";
+                }
+            }
+            std::cout << "\n";
 
             lastPricingSolution = itens;
             lastPricingObj = pricing.getObjValue();
@@ -265,6 +270,7 @@ std::pair<int, int> Problema::solve(Node &node)
             std::cout << "Valor obj do mestre: " << master.getObjValue() << "\n";
 
             node.LB = master.getObjValue();
+            LB = master.getObjValue();
 
             x_vals.end();
         }
@@ -289,14 +295,14 @@ std::pair<int, int> Problema::solve(Node &node)
         // std::cout << "A\n\n\n";
         if (!node.is_root)
         {
-            // for (inNaaadst constr = 0; constr < pricingConstraints.getSize(); constr++)
+            // for (int constr = 0; constr < pricingConstraints.getSize(); constr++)
             // {
             //     pricingModel.remove(pricingConstraints[constr]);
             // }
             // pricingModel.remove(pricingConstraints);
             // pricingConstraints.end();
 
-            for (int k = 0; k < lambda.getSize(); k++)
+            for (auto &k : colunasProibidas)
             {
                 lambda[k].setUB(IloInfinity);
             }
@@ -390,7 +396,7 @@ std::pair<int, int> Problema::solve(Node &node)
     if (std::abs(0.5 - deltaFrac) < EPSILON)
     {
 
-        if (std::abs(0.5 - deltaFrac) < EPSILON)
+        // if (std::abs(0.5 - deltaFrac) < EPSILON)
         {
             if (master.getObjValue() < bestInteger)
             {
@@ -407,7 +413,7 @@ std::pair<int, int> Problema::solve(Node &node)
             // pricingModel.remove(pricingConstraints);
             // pricingConstraints.end();
 
-            for (int k = 0; k < lambda.getSize(); k++)
+            for (auto &k : colunasProibidas)
             {
                 lambda[k].setUB(IloInfinity);
             }
