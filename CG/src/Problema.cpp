@@ -151,14 +151,14 @@ std::pair<int, int> Problema::solve(Node &node)
 
         IloExpr somaPricing(env2);
 
-        std::cout << "Duais: ";
+        // std::cout << "Duais: ";
 
         for (int i = 0; i < data.getNItems(); i++)
         {
             somaPricing += -pi[i] * x[i];
-            std::cout << pi[i] << " ";
+            // std::cout << pi[i] << " ";
         }
-        std::cout << "\n";
+        // std::cout << "\n";
 
         pricingObj.setExpr(somaPricing);
 
@@ -237,16 +237,16 @@ std::pair<int, int> Problema::solve(Node &node)
         if (1 + pricing.getObjValue() < -EPSILON)
         // if (pricing.getObjValue() < -EPSILON && itens != lastPricingSolution)
         {
-            std::cout << "valor obj do pricing: " << pricing.getObjValue() << "\n";
+            // std::cout << "valor obj do pricing: " << pricing.getObjValue() << "\n";
             // std::cout << "pricing status: " << pricing.getStatus() << "\n";
-            std::cout << "soluçao pricing : ";
-            for (int i = 0; i < x_vals.getSize(); i++)
-            {
-                if (x_vals[i] > 1 - EPSILON)
-                {
-                    std::cout << i << " ";
-                }
-            }
+            // std::cout << "soluçao pricing : ";
+            // for (int i = 0; i < x_vals.getSize(); i++)
+            // {
+            //     if (x_vals[i] > 1 - EPSILON)
+            //     {
+            //         std::cout << i << " ";
+            //     }
+            // }
             std::cout << "\n";
 
             lastPricingSolution = itens;
@@ -268,49 +268,53 @@ std::pair<int, int> Problema::solve(Node &node)
                 std::cout << e;
             }
 
-            IloNumArray lambdaVals(env1, lambda.getSize());
-
-            for (int i = 0; i < data.getNItems(); i++)
+            if (!node.is_root)
             {
-                if (lambdaVals[i] > EPSILON)
+                IloNumArray lambdaVals(env1, lambda.getSize());
+                master.getValues(lambdaVals, lambda);
+
+                for (int i = 0; i < data.getNItems(); i++)
                 {
-                    // std::cout << "A\n\n\n";
-                    if (!node.is_root)
+                    if (lambdaVals[i] > EPSILON)
                     {
-                        // for (int constr = 0; constr < pricingConstraints.getSize(); constr++)
-                        // {
-                        //     pricingModel.remove(pricingConstraints[constr]);
-                        // }
-                        // pricingModel.remove(pricingConstraints);
-                        // pricingConstraints.end();
-
-                        for (auto &k : colunasProibidas)
+                        // std::cout << "A\n\n\n";
+                        if (!node.is_root)
                         {
-                            lambda[k].setUB(IloInfinity);
+                            // for (int constr = 0; constr < pricingConstraints.getSize(); constr++)
+                            // {
+                            //     pricingModel.remove(pricingConstraints[constr]);
+                            // }
+                            // pricingModel.remove(pricingConstraints);
+                            // pricingConstraints.end();
+
+                            for (auto &k : colunasProibidas)
+                            {
+                                lambda[k].setUB(IloInfinity);
+                            }
+
+                            for (auto &parAtual : node.juntos)
+                            {
+                                int i = parAtual.first;
+                                int j = parAtual.second;
+
+                                x[i].setLB(0.0);
+                                x[j].setLB(0.0);
+
+                                // masterObj.setLinearCoef(lambda[i], 1.0);
+                                // masterObj.setLinearCoef(lambda[j], 1.0);
+                            }
                         }
 
-                        for (auto &parAtual : node.juntos)
-                        {
-                            int i = parAtual.first;
-                            int j = parAtual.second;
+                        // std::cout << "par: " << 0 << ", " << 0 << "\n\n\n\n";
 
-                            x[i].setLB(0.0);
-                            x[j].setLB(0.0);
+                        // master.exportModel("modelo.lp");
+                        // pricing.exportModel("pricing.lp");
 
-                            // masterObj.setLinearCoef(lambda[i], 1.0);
-                            // masterObj.setLinearCoef(lambda[j], 1.0);
-                        }
+                        pricingModel.end();
+                        env2.end();
+
+                        return {0, 0};
                     }
-
-                    // std::cout << "par: " << 0 << ", " << 0 << "\n\n\n\n";
-
-                    // master.exportModel("modelo.lp");
-                    // pricing.exportModel("pricing.lp");
-
-                    pricingModel.end();
-                    env2.end();
-
-                    return {0, 0};
                 }
             }
 
