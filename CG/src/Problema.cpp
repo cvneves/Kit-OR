@@ -2,9 +2,7 @@
 
 Problema::Problema(Data &d, double UB)
 {
-    //Construçao do mestre
     this->UB = UB;
-    // bestInteger = std::numeric_limits<double>::infinity();
     bestInteger = UB;
     this->data = d;
 
@@ -47,20 +45,11 @@ Problema::Problema(Data &d, double UB)
     {
         std::cout << e;
     }
-
-    // for (int i = 0; i < lambda.getSize(); i++)
-    // {
-    //     std::cout << master.getValue(lambda[i]) << "\n";
-    // }
 }
 
 std::pair<int, int> Problema::solve(Node &node)
 {
-
-    // std::cout << "Inicio do nó \n\n";
-
     IloEnv env2;
-
     IloModel pricingModel = IloModel(env2);
 
     IloExpr somaItems(env2);
@@ -83,33 +72,24 @@ std::pair<int, int> Problema::solve(Node &node)
 
     if (!node.is_root)
     {
-        // std::cout << "Itens juntos: \n";
         //restriçoes dos itens juntos
         for (auto &parAtual : node.juntos)
         {
             int i = parAtual.first;
             int j = parAtual.second;
-            // std::cout << i << ", " << j << "\n";
 
             x[i].setLB(1.0);
             x[j].setLB(1.0);
-
-            // masterObj.setLinearCoef(lambda[i], M);
-            // masterObj.setLinearCoef(lambda[j], M);
         }
 
-        // std::cout << "Itens separados: \n";
         // restriçoes dos itens separados
         for (auto &parAtual : node.separados)
         {
             int i = parAtual.first;
             int j = parAtual.second;
 
-            // std::cout << i << ", " << j << "\n";
-
             IloConstraint cons = (x[i] + x[j] <= 1);
 
-            // pricingConstraints.add(cons);
             pricingModel.add(cons);
 
             for (int k = data.getNItems(); k < lambdaItens.size(); k++)
@@ -151,14 +131,10 @@ std::pair<int, int> Problema::solve(Node &node)
 
         IloExpr somaPricing(env2);
 
-        // std::cout << "Duais: ";
-
         for (int i = 0; i < data.getNItems(); i++)
         {
             somaPricing += -pi[i] * x[i];
-            // std::cout << pi[i] << " ";
         }
-        // std::cout << "\n";
 
         pricingObj.setExpr(somaPricing);
 
@@ -178,16 +154,10 @@ std::pair<int, int> Problema::solve(Node &node)
 
         if (pricing.getStatus() == IloAlgorithm::Infeasible)
         {
-            // std::cout << "Infeasible pricing\n";
+            std::cout << "A\n";
 
             if (!node.is_root)
             {
-                // for (int constr = 0; constr < pricingConstraints.getSize(); constr++)
-                // {
-                //     pricingModel.remove(pricingConstraints[constr]);
-                // }
-                // pricingModel.remove(pricingConstraints);
-                // pricingConstraints.end();
 
                 for (auto &k : colunasProibidas)
                 {
@@ -201,18 +171,8 @@ std::pair<int, int> Problema::solve(Node &node)
 
                     x[i].setLB(0.0);
                     x[j].setLB(0.0);
-
-                    // masterObj.setLinearCoef(lambda[i], 1.0);
-                    // masterObj.setLinearCoef(lambda[j], 1.0);
                 }
             }
-
-            // std::cout << "par: " << 0 << ", " << 0 << "\n\n\n\n";
-
-            // master.exportModel("modelo.lp");
-            // pricing.exportModel("pricing.lp");
-
-            // std::cout << "EEE";
 
             pricingModel.end();
             env2.end();
@@ -235,18 +195,8 @@ std::pair<int, int> Problema::solve(Node &node)
         }
 
         if (1 + pricing.getObjValue() < -EPSILON)
-        // if (pricing.getObjValue() < -EPSILON && itens != lastPricingSolution)
         {
-            // std::cout << "valor obj do pricing: " << pricing.getObjValue() << "\n";
-            // std::cout << "pricing status: " << pricing.getStatus() << "\n";
-            // std::cout << "soluçao pricing : ";
-            // for (int i = 0; i < x_vals.getSize(); i++)
-            // {
-            //     if (x_vals[i] > 1 - EPSILON)
-            //     {
-            //         std::cout << i << " ";
-            //     }
-            // }
+
             std::cout << "\n";
 
             lastPricingSolution = itens;
@@ -268,8 +218,16 @@ std::pair<int, int> Problema::solve(Node &node)
                 std::cout << e;
             }
 
+            std::cout << "lambda: ";
+            for (int i = 0; i < lambda.getSize(); i++)
+            {
+                std::cout << master.getValue(lambda[i]) << " ";
+            }
+            std::cout << "\n";
+
             if (!node.is_root)
             {
+                std::cout << "B\n";
                 IloNumArray lambdaVals(env1, lambda.getSize());
                 master.getValues(lambdaVals, lambda);
 
@@ -277,15 +235,8 @@ std::pair<int, int> Problema::solve(Node &node)
                 {
                     if (lambdaVals[i] > EPSILON)
                     {
-                        // std::cout << "A\n\n\n";
                         if (!node.is_root)
                         {
-                            // for (int constr = 0; constr < pricingConstraints.getSize(); constr++)
-                            // {
-                            //     pricingModel.remove(pricingConstraints[constr]);
-                            // }
-                            // pricingModel.remove(pricingConstraints);
-                            // pricingConstraints.end();
 
                             for (auto &k : colunasProibidas)
                             {
@@ -299,16 +250,8 @@ std::pair<int, int> Problema::solve(Node &node)
 
                                 x[i].setLB(0.0);
                                 x[j].setLB(0.0);
-
-                                // masterObj.setLinearCoef(lambda[i], 1.0);
-                                // masterObj.setLinearCoef(lambda[j], 1.0);
                             }
                         }
-
-                        // std::cout << "par: " << 0 << ", " << 0 << "\n\n\n\n";
-
-                        // master.exportModel("modelo.lp");
-                        // pricing.exportModel("pricing.lp");
 
                         pricingModel.end();
                         env2.end();
@@ -333,25 +276,12 @@ std::pair<int, int> Problema::solve(Node &node)
         }
     }
 
-    // for (int i = 0; i < lambda.getSize(); i++)
-    // {
-    //     // std::cout << i << ", " << master.getValue(lambda[i]) << "\n";
-    // }
-
-    // std::cout << "Status: " << master.getStatus() << "\n";
-    // std::cout << "Bins usados: " << master.getObjValue() << "\n";
-
     if (std::ceil(master.getObjValue() - EPSILON) - bestInteger >= 0)
     {
-        // std::cout << "A\n\n\n";
         if (!node.is_root)
         {
-            // for (int constr = 0; constr < pricingConstraints.getSize(); constr++)
-            // {
-            //     pricingModel.remove(pricingConstraints[constr]);
-            // }
-            // pricingModel.remove(pricingConstraints);
-            // pricingConstraints.end();
+
+            std::cout << "C\n";
 
             for (auto &k : colunasProibidas)
             {
@@ -365,16 +295,8 @@ std::pair<int, int> Problema::solve(Node &node)
 
                 x[i].setLB(0.0);
                 x[j].setLB(0.0);
-
-                // masterObj.setLinearCoef(lambda[i], 1.0);
-                // masterObj.setLinearCoef(lambda[j], 1.0);
             }
         }
-
-        // std::cout << "par: " << 0 << ", " << 0 << "\n\n\n\n";
-
-        // master.exportModel("modelo.lp");
-        // pricing.exportModel("pricing.lp");
 
         pricingModel.end();
         env2.end();
@@ -431,23 +353,8 @@ std::pair<int, int> Problema::solve(Node &node)
 
     lambdaVals.end();
 
-    //melhor solucao inteira
-
-    //Podar
-
-    // if (!gerouColuna)
-    // {
-    //     std::cout << "Não gerou coluna \n";
-    // }
-    // if (gerouColuna)
-    // {
-    //     std::cout << "Gerou colunas \n";
-    // }
-
     if (std::abs(0.5 - deltaFrac) < EPSILON)
     {
-
-        // if (std::abs(0.5 - deltaFrac) < EPSILON)
         {
             if (master.getObjValue() < bestInteger)
             {
@@ -457,13 +364,8 @@ std::pair<int, int> Problema::solve(Node &node)
 
         if (!node.is_root)
         {
-            // for (int constr = 0; constr < pricingConstraints.getSize(); constr++)
-            // {
-            //     pricingModel.remove(pricingConstraints[constr]);
-            // }
-            // pricingModel.remove(pricingConstraints);
-            // pricingConstraints.end();
 
+            std::cout << "D\n";
             for (auto &k : colunasProibidas)
             {
                 lambda[k].setUB(IloInfinity);
@@ -476,27 +378,14 @@ std::pair<int, int> Problema::solve(Node &node)
 
                 x[i].setLB(0.0);
                 x[j].setLB(0.0);
-
-                // masterObj.setLinearCoef(lambda[i], 1.0);
-                // masterObj.setLinearCoef(lambda[j], 1.0);
             }
         }
-
-        // std::cout << "par: " << 0 << ", " << 0 << "\n\n\n\n";
-
-        // master.exportModel("modelo.lp");
-        // pricing.exportModel("pricing.lp");
 
         pricingModel.end();
         env2.end();
 
         return {0, 0};
     }
-
-    // std::cout << "par: " << branchingPair.first << ", " << branchingPair.second << "\n\n\n\n";
-
-    // master.exportModel("modelo.lp");
-    // pricing.exportModel("pricing.lp");
 
     pricingModel.end();
     env2.end();
