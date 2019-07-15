@@ -216,6 +216,7 @@ std::pair<int, int> Problema::solve(Node &node)
     double deltaFrac = std::numeric_limits<double>::infinity();
     double tempDeltaFrac;
 
+    std::pair<int, int> branchingPair;
     for (int i = 0; i < data.getNItems(); i++)
     {
         for (int j = i + 1; j < data.getNItems(); j++)
@@ -229,13 +230,19 @@ std::pair<int, int> Problema::solve(Node &node)
                     z[j][i] += lambda_values[k];
                 }
             }
-            std::cout << i << ", " << j << ": " << z[i][j] << "\n";
+
+            tempDeltaFrac = std::abs(0.5 - z[i][j]);
+            if (tempDeltaFrac < deltaFrac)
+            {
+                branchingPair = {i, j};
+                deltaFrac = tempDeltaFrac;
+            }
         }
     }
 
-    
 
-    return {1, 1};
+
+    return branchingPair;
 }
 
 void Problema::prune()
