@@ -16,19 +16,18 @@ class Problema
     Data data;
     IloModel masterModel;
     IloNumVarArray lambda;
-    // IloBoolVarArray x;
     IloRangeArray masterRanges;
-    // IloConstraintArray pricingConstraints;
     IloObjective masterObj;
     IloCplex master;
     IloNumArray pi;
 
-    std::vector<std::vector<int>> lambdaItens;
-    std::vector<std::vector<double>> xPares;
+    std::vector<std::vector<bool>> lambdaItens;
+    std::vector<std::vector<double>> z;
 
   public:
     Problema(Data &data, double UB);
     std::pair<int, int> solve(Node &node);
+    void prune();
     IloEnv env1;
     double bestInteger, UB, LB;
 };

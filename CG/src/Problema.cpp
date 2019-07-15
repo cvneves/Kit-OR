@@ -2,9 +2,9 @@
 
 Problema::Problema(Data &d, double UB)
 {
-    this->UB = UB;
-    bestInteger = UB;
     this->data = d;
+
+    //Construçao do mestre
 
     env1 = IloEnv();
     masterModel = IloModel(env1);
@@ -27,109 +27,106 @@ Problema::Problema(Data &d, double UB)
 
     pi = IloNumArray(env1, data.getNItems());
 
-    lambdaItens = std::vector<std::vector<int>>(data.getNItems(), {1});
-
-    master.setOut(env1.getNullStream());
+    lambdaItens = std::vector<std::vector<bool>>(data.getNItems(), std::vector<bool>(data.getNItems(), false));
 
     for (int i = 0; i < data.getNItems(); i++)
     {
-        lambdaItens[i][0] = i;
+        lambdaItens[i][i] = true;
     }
+
+    master.setOut(env1.getNullStream());
 
     try
     {
         master.solve();
     }
-
     catch (IloException &e)
     {
-        std::cout << e;
+        std::cout << e << '\n';
     }
 }
 
 std::pair<int, int> Problema::solve(Node &node)
 {
+    //Construçao do subproblema
     IloEnv env2;
-    IloModel pricingModel = IloModel(env2);
-
-    IloExpr somaItems(env2);
-
-    IloBoolVarArray x = IloBoolVarArray(env2, data.getNItems());
+    IloModel pricingModel(env2);
+    IloExpr somaMochila(env2);
+    IloBoolVarArray x(env2, data.getNItems());
 
     for (int i = 0; i < data.getNItems(); i++)
     {
-        somaItems += data.getItemWeight(i) * x[i];
+        somaMochila += data.getItemWeight(i) * x[i];
     }
 
-    pricingModel.add(somaItems <= data.getBinCapacity());
-    IloObjective pricingObj = IloObjective(env2);
+    pricingModel.add(somaMochila <= data.getBinCapacity());
+    IloObjective pricingObj(env2);
     pricingModel.add(pricingObj);
 
-    IloCplex pricing = IloCplex(pricingModel);
+    IloCplex pricing(pricingModel);
     pricing.setOut(env2.getNullStream());
-
-    std::vector<int> colunasProibidas;
 
     if (!node.is_root)
     {
-        //restriçoes dos itens juntos
-        for (auto &parAtual : node.juntos)
+        //Restriçoes dos itens juntos
+        for (auto &p : node.juntos)
         {
-            int i = parAtual.first;
-            int j = parAtual.second;
+            // x_i = x_j = 1
+            x[p.first].setLB(1.0);
+            x[p.second].setLB(1.0);
 
-            x[i].setLB(1.0);
-            x[j].setLB(1.0);
-        }
-
-        // restriçoes dos itens separados
-        for (auto &parAtual : node.separados)
-        {
-            int i = parAtual.first;
-            int j = parAtual.second;
-
-            IloConstraint cons = (x[i] + x[j] <= 1);
-
-            pricingModel.add(cons);
-
-            for (int k = data.getNItems(); k < lambdaItens.size(); k++)
+            // se lambda não contém o par, eliminá-lo
+            for (int i = data.getNItems(); i < lambdaItens.size(); i++)
             {
-                for (int l = 0; l < lambdaItens[k].size() - 1; l++)
+                //nenhum dos itens está no padrão, ignorar
+                if (lambdaItens[i][p.first] == false && lambdaItens[i][p.second] == false)
                 {
-                    if ((lambdaItens[k][l] == i && lambdaItens[k][l + 1] == j) || (lambdaItens[k][l] == j && lambdaItens[k][l + 1] == i))
-                    {
-                        lambda[k].setUB(0.0);
-                        colunasProibidas.push_back(k);
-                    }
+                    continue;
+                }
+                //os dois itens estão no padrão, ignorar
+                if (lambdaItens[i][p.first] == true && lambdaItens[i][p.second] == true)
+                {
+                    continue;
+                }
+                //apenas um dos itens está no padrão
+                lambda[i].setUB(0.0);
+            }
+        }
+        //Restriçoes dos itens separados
+        for (auto &p : node.separados)
+        {
+            // adicionar restriçao x_i + x_j <= 1
+            pricingModel.add(x[p.first] + x[p.second] <= 1);
+
+            // se lambda contém o par, eliminá-lo
+            for (int i = data.getNItems(); i < lambdaItens.size(); i++)
+            {
+                if (lambdaItens[i][p.first] == true && lambdaItens[i][p.second] == true)
+                {
+                    lambda[i].setUB(0.0);
                 }
             }
         }
     }
 
-    xPares = std::vector<std::vector<double>>(data.getNItems(), std::vector<double>(data.getNItems(), 0));
+    z = std::vector<std::vector<double>>(data.getNItems(), std::vector<double>(data.getNItems(), 0));
 
+    //Resolver o mestre pela primeira vez
     try
     {
         master.solve();
     }
     catch (IloException &e)
     {
-        std::cout << e;
+        std::cout << e << '\n';
     }
-
-    node.LB = master.getObjValue();
-    LB = master.getObjValue();
-
-    bool gerouColuna = false;
-
-    double lastPricingObj = std::numeric_limits<double>::infinity();
-    std::vector<int> lastPricingSolution(1, 0);
 
     while (1)
     {
         master.getDuals(pi, masterRanges);
-
         IloExpr somaPricing(env2);
+
+        //FO do pricing a partir das variaveis duais
 
         for (int i = 0; i < data.getNItems(); i++)
         {
@@ -138,76 +135,62 @@ std::pair<int, int> Problema::solve(Node &node)
 
         pricingObj.setExpr(somaPricing);
 
-        somaPricing.end();
-
-        pricing.setOut(env2.getNullStream());
-
         try
         {
             pricing.solve();
         }
-
         catch (IloException &e)
         {
-            std::cout << e;
+            std::cout << e << '\n';
         }
 
+        // Primeiro caso de pricing inviavel
         if (pricing.getStatus() == IloAlgorithm::Infeasible)
         {
-            std::cout << "A\n";
+            prune();
+            return {0, 0};
+        }
+
+        IloNumArray x_values(env2, data.getNItems());
+
+        // Verificar se o custo reduzido é negativo
+        if (1 + pricing.getObjValue() < -EPSILON)
+        {
+            // Verificar antes presença de variaveis artificiais na soluçao
+            IloNumArray lambda_values(env1, lambda.getSize());
+            master.getValues(lambda_values, lambda);
+
+            std::cout << master.getObjValue() << "\n";
 
             if (!node.is_root)
             {
-
-                for (auto &k : colunasProibidas)
+                for (int i = 0; i < data.getNItems(); i++)
                 {
-                    lambda[k].setUB(IloInfinity);
-                }
-
-                for (auto &parAtual : node.juntos)
-                {
-                    int i = parAtual.first;
-                    int j = parAtual.second;
-
-                    x[i].setLB(0.0);
-                    x[j].setLB(0.0);
+                    if (lambda_values[i] > EPSILON)
+                    {
+                        prune();
+                        return {0, 0};
+                    }
                 }
             }
 
-            pricingModel.end();
-            env2.end();
+            // Adicionar nova coluna
 
-            return {0, 0};
-            break;
-        }
+            pricing.getValues(x_values, x);
+            lambda.add(IloNumVar(masterObj(1) + masterRanges(x_values), 0.0, IloInfinity));
 
-        IloNumArray x_vals(env2, data.getNItems());
-        pricing.getValues(x_vals, x);
+            // Atualizar estrutura auxiliar
 
-        std::vector<int> itens;
-
-        for (int i = 0; i < x_vals.getSize(); i++)
-        {
-            if (x_vals[i] > 1 - EPSILON)
+            std::vector<bool> itens(data.getNItems(), false);
+            for (int i = 0; i < x_values.getSize(); i++)
             {
-                itens.push_back(i);
+                if (x_values[i] > 1 - EPSILON)
+                {
+                    itens[i] = true;
+                }
             }
-        }
-
-        if (1 + pricing.getObjValue() < -EPSILON)
-        {
-
-            std::cout << "\n";
-
-            lastPricingSolution = itens;
-            lastPricingObj = pricing.getObjValue();
-            gerouColuna = true;
-
-            lambda.add(IloNumVar(masterObj(1) + masterRanges(x_vals), 0.0, IloInfinity));
 
             lambdaItens.push_back(itens);
-
-            master.setOut(env1.getNullStream());
 
             try
             {
@@ -215,180 +198,47 @@ std::pair<int, int> Problema::solve(Node &node)
             }
             catch (IloException &e)
             {
-                std::cout << e;
+                std::cout << e << "\n";
             }
 
-            std::cout << "lambda: ";
-            for (int i = 0; i < lambda.getSize(); i++)
-            {
-                std::cout << master.getValue(lambda[i]) << " ";
-            }
-            std::cout << "\n";
-
-            if (!node.is_root)
-            {
-                std::cout << "B\n";
-                IloNumArray lambdaVals(env1, lambda.getSize());
-                master.getValues(lambdaVals, lambda);
-
-                for (int i = 0; i < data.getNItems(); i++)
-                {
-                    if (lambdaVals[i] > EPSILON)
-                    {
-                        if (!node.is_root)
-                        {
-
-                            for (auto &k : colunasProibidas)
-                            {
-                                lambda[k].setUB(IloInfinity);
-                            }
-
-                            for (auto &parAtual : node.juntos)
-                            {
-                                int i = parAtual.first;
-                                int j = parAtual.second;
-
-                                x[i].setLB(0.0);
-                                x[j].setLB(0.0);
-                            }
-                        }
-
-                        pricingModel.end();
-                        env2.end();
-
-                        return {0, 0};
-                    }
-                }
-            }
-
-            std::cout << "valor obj do mestre: " << master.getObjValue() << "\n";
-
-            node.LB = master.getObjValue();
-            LB = master.getObjValue();
-
-            x_vals.end();
+            lambda_values.end();
         }
         else
         {
-            x_vals.end();
-
             break;
         }
+        x_values.end();
     }
 
-    if (std::ceil(master.getObjValue() - EPSILON) - bestInteger >= 0)
-    {
-        if (!node.is_root)
-        {
-
-            std::cout << "C\n";
-
-            for (auto &k : colunasProibidas)
-            {
-                lambda[k].setUB(IloInfinity);
-            }
-
-            for (auto &parAtual : node.juntos)
-            {
-                int i = parAtual.first;
-                int j = parAtual.second;
-
-                x[i].setLB(0.0);
-                x[j].setLB(0.0);
-            }
-        }
-
-        pricingModel.end();
-        env2.end();
-
-        return {0, 0};
-    }
-
-    std::cout << master.getObjValue() << "\n";
-
-    //branching rule
-
-    IloNumArray lambdaVals(env1, lambda.getSize());
-    master.getValues(lambdaVals, lambda);
+    // Regra de branching
+    IloNumArray lambda_values(env1, lambda.getSize());
+    master.getValues(lambda_values, lambda);
     double deltaFrac = std::numeric_limits<double>::infinity();
     double tempDeltaFrac;
-
-    std::vector<double> lambdaPares((data.getNItems() * data.getNItems() - data.getNItems()) / 2);
-
-    for (int i = data.getNItems(); i < lambdaItens.size(); i++)
-    {
-        for (int j = 0; j < lambdaItens[i].size() - 1; j++)
-        {
-            xPares[lambdaItens[i][j]][lambdaItens[i][j + 1]] = (xPares[lambdaItens[i][j + 1]][lambdaItens[i][j]] += lambdaVals[i]);
-        }
-    }
-
-    std::pair<int, int> branchingPair;
 
     for (int i = 0; i < data.getNItems(); i++)
     {
         for (int j = i + 1; j < data.getNItems(); j++)
         {
-            std::pair<int, int> bp = {i, j};
-            if (!node.is_root)
+            for (int k = data.getNItems(); k < lambdaItens.size(); k++)
             {
-                if ((std::find(node.juntos.begin(), node.juntos.end(), bp) != node.juntos.end()) || (std::find(node.separados.begin(), node.separados.end(), bp) != node.separados.end()))
+                //Soma lambda_k a z_ij se o par {i,j} está no padrão
+                if (lambdaItens[k][i] == true && lambdaItens[k][j] == true)
                 {
-                    continue;
-                }
-                else
-                {
+                    z[i][j] += lambda_values[k];
+                    z[j][i] += lambda_values[k];
                 }
             }
-
-            tempDeltaFrac = std::abs(0.5 - xPares[i][j]);
-            if (tempDeltaFrac < deltaFrac)
-            {
-                branchingPair = {i, j};
-
-                deltaFrac = tempDeltaFrac;
-            }
+            std::cout << i << ", " << j << ": " << z[i][j] << "\n";
         }
     }
 
-    lambdaVals.end();
+    
 
-    if (std::abs(0.5 - deltaFrac) < EPSILON)
-    {
-        {
-            if (master.getObjValue() < bestInteger)
-            {
-                bestInteger = master.getObjValue();
-            }
-        }
+    return {1, 1};
+}
 
-        if (!node.is_root)
-        {
-
-            std::cout << "D\n";
-            for (auto &k : colunasProibidas)
-            {
-                lambda[k].setUB(IloInfinity);
-            }
-
-            for (auto &parAtual : node.juntos)
-            {
-                int i = parAtual.first;
-                int j = parAtual.second;
-
-                x[i].setLB(0.0);
-                x[j].setLB(0.0);
-            }
-        }
-
-        pricingModel.end();
-        env2.end();
-
-        return {0, 0};
-    }
-
-    pricingModel.end();
-    env2.end();
-
-    return branchingPair;
+void Problema::prune()
+{
+    std::cout << "PODAR\n";
 }
