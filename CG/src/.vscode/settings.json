@@ -37,6 +37,13 @@
         "list": "cpp",
         "chrono": "cpp",
         "ctime": "cpp",
-        "ratio": "cpp"
+        "ratio": "cpp",
+        "cstddef": "cpp",
+        "cstring": "cpp",
+        "atomic": "cpp",
+        "strstream": "cpp",
+        "thread": "cpp",
+        "cinttypes": "cpp",
+        "typeindex": "cpp"
     }
 }

@@ -3,6 +3,7 @@
 Problema::Problema(Data &d, double UB)
 {
     this->data = d;
+    this->bestInteger = UB;
 
     //Construçao do mestre
 
@@ -68,6 +69,7 @@ std::pair<int, int> Problema::solve(Node &node)
 
     if (!node.is_root)
     {
+        std::cout << "juntos: \n";
         //Restriçoes dos itens juntos
         for (auto &p : node.juntos)
         {
@@ -90,8 +92,11 @@ std::pair<int, int> Problema::solve(Node &node)
                 }
                 //apenas um dos itens está no padrão
                 lambda[i].setUB(0.0);
+                std::cout << i << " " << p.first << ", " << p.second << "\n";
             }
         }
+
+        std::cout << "separados: \n";
         //Restriçoes dos itens separados
         for (auto &p : node.separados)
         {
@@ -104,9 +109,12 @@ std::pair<int, int> Problema::solve(Node &node)
                 if (lambdaItens[i][p.first] == true && lambdaItens[i][p.second] == true)
                 {
                     lambda[i].setUB(0.0);
+                    std::cout << i << " " << p.first << ", " << p.second << "\n";
                 }
             }
         }
+
+
     }
 
     z = std::vector<std::vector<double>>(data.getNItems(), std::vector<double>(data.getNItems(), 0));
@@ -148,6 +156,9 @@ std::pair<int, int> Problema::solve(Node &node)
         if (pricing.getStatus() == IloAlgorithm::Infeasible)
         {
             prune();
+            pricingModel.end();
+            env2.end();
+
             return {0, 0};
         }
 
@@ -169,6 +180,9 @@ std::pair<int, int> Problema::solve(Node &node)
                     if (lambda_values[i] > EPSILON)
                     {
                         prune();
+
+                        pricingModel.end();
+                        env2.end();
                         return {0, 0};
                     }
                 }
@@ -210,6 +224,11 @@ std::pair<int, int> Problema::solve(Node &node)
         x_values.end();
     }
 
+    for (int i = 0; i < lambda.getSize(); i++)
+    {
+        std::cout << master.getValue(lambda[i]) << "\n";
+    }
+
     // Regra de branching
     IloNumArray lambda_values(env1, lambda.getSize());
     master.getValues(lambda_values, lambda);
@@ -240,12 +259,35 @@ std::pair<int, int> Problema::solve(Node &node)
         }
     }
 
+    // Verifica se a soluçao obtida é inteira
 
+    if (std::abs(0.5 - deltaFrac) < EPSILON)
+    {
+        if (master.getObjValue() < bestInteger)
+        {
+            bestInteger = master.getObjValue();
+        }
+
+        prune();
+
+        pricingModel.end();
+        env2.end();
+        return {0, 0};
+    }
+
+    if (node.is_root)
+    {
+        master.exportModel("modelo.lp");
+    }
 
     return branchingPair;
 }
 
 void Problema::prune()
 {
+    for (int i = 0; i < lambda.getSize(); i++)
+    {
+        lambda[i].setUB(IloInfinity);
+    }
     std::cout << "PODAR\n";
 }
