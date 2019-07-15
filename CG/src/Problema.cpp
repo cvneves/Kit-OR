@@ -113,8 +113,6 @@ std::pair<int, int> Problema::solve(Node &node)
                 }
             }
         }
-
-
     }
 
     z = std::vector<std::vector<double>>(data.getNItems(), std::vector<double>(data.getNItems(), 0));
@@ -168,25 +166,25 @@ std::pair<int, int> Problema::solve(Node &node)
         if (1 + pricing.getObjValue() < -EPSILON)
         {
             // Verificar antes presença de variaveis artificiais na soluçao
-            IloNumArray lambda_values(env1, lambda.getSize());
-            master.getValues(lambda_values, lambda);
+            // IloNumArray lambda_values(env1, lambda.getSize());
+            // master.getValues(lambda_values, lambda);
 
-            std::cout << master.getObjValue() << "\n";
+            // std::cout << master.getObjValue() << "\n";
 
-            if (!node.is_root)
-            {
-                for (int i = 0; i < data.getNItems(); i++)
-                {
-                    if (lambda_values[i] > EPSILON)
-                    {
-                        prune();
+            // if (!node.is_root)
+            // {
+            //     for (int i = 0; i < data.getNItems(); i++)
+            //     {
+            //         if (lambda_values[i] > EPSILON)
+            //         {
+            //             prune();
 
-                        pricingModel.end();
-                        env2.end();
-                        return {0, 0};
-                    }
-                }
-            }
+            //             pricingModel.end();
+            //             env2.end();
+            //             return {0, 0};
+            //         }
+            //     }
+            // }
 
             // Adicionar nova coluna
 
@@ -214,13 +212,33 @@ std::pair<int, int> Problema::solve(Node &node)
             {
                 std::cout << e << "\n";
             }
-
-            lambda_values.end();
         }
         else
         {
             break;
         }
+        IloNumArray lambda_values(env1, lambda.getSize());
+        master.getValues(lambda_values, lambda);
+
+        std::cout << master.getObjValue() << "\n";
+
+        if (!node.is_root)
+        {
+            for (int i = 0; i < data.getNItems(); i++)
+            {
+                if (lambda_values[i] > EPSILON)
+                {
+                    prune();
+
+                    pricingModel.end();
+                    env2.end();
+                    return {0, 0};
+                }
+            }
+        }
+
+        lambda_values.end();
+
         x_values.end();
     }
 
