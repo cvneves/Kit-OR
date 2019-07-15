@@ -83,7 +83,7 @@ int main(int argc, char **argv)
         }
 
         // std::cout << "Num nodes: " << tree.size() << "\n";
-        // std::cout << "best integer: " << p.bestInteger << "\n";
+        std::cout << "best integer: " << p.bestInteger << "\n";
 
         tree.erase(node_it);
 
