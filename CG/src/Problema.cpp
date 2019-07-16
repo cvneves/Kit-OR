@@ -36,15 +36,16 @@ Problema::Problema(Data &d, double UB)
     }
 
     master.setOut(env1.getNullStream());
+    // master.setParam(IloCplex::EpOpt, 0.00000001);
 
-    try
-    {
-        master.solve();
-    }
-    catch (IloException &e)
-    {
-        std::cout << e << '\n';
-    }
+    // try
+    // {
+    //     master.solve();
+    // }
+    // catch (IloException &e)
+    // {
+    //     std::cout << e << '\n';
+    // }
 }
 
 std::pair<int, int> Problema::solve(Node &node)
@@ -67,46 +68,45 @@ std::pair<int, int> Problema::solve(Node &node)
     IloCplex pricing(pricingModel);
     pricing.setOut(env2.getNullStream());
 
-    if (!node.is_root)
+    //Restriçoes dos itens juntos
+    for (auto &p : node.juntos)
     {
-        //Restriçoes dos itens juntos
-        for (auto &p : node.juntos)
-        {
-            // x_i = x_j = 1
-            x[p.first].setLB(1.0);
-            x[p.second].setLB(1.0);
+        // // x_i = x_j = 1
+        // x[p.first].setLB(1.0);
+        // x[p.second].setLB(1.0);
 
-            // se lambda não contém o par, eliminá-lo
-            for (int i = data.getNItems(); i < lambdaItens.size(); i++)
+        pricingModel.add(x[p.first] == x[p.second]);
+
+        // se lambda não contém o par, eliminá-lo
+        for (int i = data.getNItems(); i < lambdaItens.size(); i++)
+        {
+            //nenhum dos itens está no padrão, ignorar
+            if (lambdaItens[i][p.first] == false && lambdaItens[i][p.second] == false)
             {
-                //nenhum dos itens está no padrão, ignorar
-                if (lambdaItens[i][p.first] == false && lambdaItens[i][p.second] == false)
-                {
-                    continue;
-                }
-                //os dois itens estão no padrão, ignorar
-                if (lambdaItens[i][p.first] == true && lambdaItens[i][p.second] == true)
-                {
-                    continue;
-                }
-                //apenas um dos itens está no padrão
-                lambda[i].setUB(0.0);
+                continue;
             }
-        }
-
-        //Restriçoes dos itens separados
-        for (auto &p : node.separados)
-        {
-            // adicionar restriçao x_i + x_j <= 1
-            pricingModel.add(x[p.first] + x[p.second] <= 1);
-
-            // se lambda contém o par, eliminá-lo
-            for (int i = data.getNItems(); i < lambdaItens.size(); i++)
+            //os dois itens estão no padrão, ignorar
+            if (lambdaItens[i][p.first] == true && lambdaItens[i][p.second] == true)
             {
-                if (lambdaItens[i][p.first] == true && lambdaItens[i][p.second] == true)
-                {
-                    lambda[i].setUB(0.0);
-                }
+                continue;
+            }
+            //apenas um dos itens está no padrão
+            lambda[i].setUB(0.0);
+        }
+    }
+
+    //Restriçoes dos itens separados
+    for (auto &p : node.separados)
+    {
+        // adicionar restriçao x_i + x_j <= 1
+        pricingModel.add(x[p.first] + x[p.second] <= 1);
+
+        // se lambda contém o par, eliminá-lo
+        for (int i = data.getNItems(); i < lambdaItens.size(); i++)
+        {
+            if (lambdaItens[i][p.first] == true && lambdaItens[i][p.second] == true)
+            {
+                lambda[i].setUB(0.0);
             }
         }
     }
@@ -132,10 +132,10 @@ std::pair<int, int> Problema::solve(Node &node)
 
         for (int i = 0; i < data.getNItems(); i++)
         {
-            somaPricing += -pi[i] * x[i];
+            somaPricing += pi[i] * x[i];
         }
 
-        pricingObj.setExpr(somaPricing);
+        pricingObj.setExpr(1.0 - somaPricing);
 
         try
         {
@@ -158,18 +158,16 @@ std::pair<int, int> Problema::solve(Node &node)
             return {0, 0};
         }
 
-        IloNumArray x_values(env2, data.getNItems());
-
         // Verificar se o custo reduzido é negativo
-        if (1 + pricing.getObjValue() < -EPSILON)
+        if (pricing.getObjValue() < -EPSILON)
         {
             // Adicionar nova coluna
+            IloNumArray x_values(env2, data.getNItems());
 
             pricing.getValues(x_values, x);
             lambda.add(IloNumVar(masterObj(1) + masterRanges(x_values), 0.0, IloInfinity));
 
             // Atualizar estrutura auxiliar
-
             std::vector<bool> itens(data.getNItems(), false);
             for (int i = 0; i < x_values.getSize(); i++)
             {
@@ -183,8 +181,11 @@ std::pair<int, int> Problema::solve(Node &node)
 
             lambdaItens.push_back(itens);
 
+            // master.exportModel("master2.lp");
+
             try
             {
+                std::cout << "AAAA\n\n";
                 master.solve();
             }
 
@@ -193,27 +194,26 @@ std::pair<int, int> Problema::solve(Node &node)
                 std::cout << e << "\n";
             }
 
-            std::cout << master.getObjValue() << "\n";
+            // std::cout << master.getObjValue() << "\n";
+            std::cout << pricing.getObjValue() << "\n";
+
+            x_values.end();
         }
         else
         {
             break;
         }
-
-        x_values.end();
     }
 
     // Verificar presença de variaveis artificiais na soluçao
-    IloNumArray lambda_values1(env1, lambda.getSize());
-    master.getValues(lambda_values1, lambda);
-
-    // std::cout << master.getObjValue() << "\n";
+    IloNumArray lambda_values(env1, lambda.getSize());
+    master.getValues(lambda_values, lambda);
 
     if (!node.is_root)
     {
         for (int i = 0; i < data.getNItems(); i++)
         {
-            if (lambda_values1[i] > EPSILON)
+            if (lambda_values[i] > EPSILON)
             {
 
                 prune();
@@ -221,12 +221,11 @@ std::pair<int, int> Problema::solve(Node &node)
 
                 pricingModel.end();
                 env2.end();
+                lambda_values.end();
                 return {0, 0};
             }
         }
     }
-
-    lambda_values1.end();
 
     // Se o LB é pior que a melhor solução inteira, podar
     if (std::ceil(master.getObjValue() - EPSILON) - bestInteger >= 0)
@@ -239,13 +238,13 @@ std::pair<int, int> Problema::solve(Node &node)
 
             pricingModel.end();
             env2.end();
+            lambda_values.end();
+
             return {0, 0};
         }
     }
 
     // Regra de branching
-    IloNumArray lambda_values(env1, lambda.getSize());
-    master.getValues(lambda_values, lambda);
     double deltaFrac = std::numeric_limits<double>::infinity();
     double tempDeltaFrac;
 
@@ -290,12 +289,17 @@ std::pair<int, int> Problema::solve(Node &node)
         return {0, 0};
     }
 
-    if (node.is_root)
+    master.exportModel("modelo.lp");
+
+    lambda_values.end();
+    std::cout << master.getObjValue() << "\n";
+
+    // Reverter UBs dos lambdas no fim do nó
+    for (int i = 0; i < lambda.getSize(); i++)
     {
-        master.exportModel("modelo.lp");
+        lambda[i].setUB(IloInfinity);
     }
 
-    std::cout << master.getObjValue() << "\n";
     return branchingPair;
 }
 
