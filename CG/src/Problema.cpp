@@ -150,6 +150,7 @@ std::pair<int, int> Problema::solve(Node &node)
         if (pricing.getStatus() == IloAlgorithm::Infeasible)
         {
             prune();
+
             pricingModel.end();
             env2.end();
 
@@ -161,6 +162,30 @@ std::pair<int, int> Problema::solve(Node &node)
         // Verificar se o custo reduzido é negativo
         if (1 + pricing.getObjValue() < -EPSILON)
         {
+            // Verificar presença de variaveis artificiais na soluçao
+            IloNumArray lambda_values(env1, lambda.getSize());
+            master.getValues(lambda_values, lambda);
+
+            // std::cout << master.getObjValue() << "\n";
+
+            if (!node.is_root)
+            {
+                for (int i = 0; i < data.getNItems(); i++)
+                {
+                    if (lambda_values[i] > EPSILON)
+                    {
+
+                        prune();
+
+                        pricingModel.end();
+                        env2.end();
+                        return {0, 0};
+                    }
+                }
+            }
+
+            lambda_values.end();
+
             // Adicionar nova coluna
 
             pricing.getValues(x_values, x);
@@ -193,43 +218,17 @@ std::pair<int, int> Problema::solve(Node &node)
             break;
         }
 
-        // Verificar antes presença de variaveis artificiais na soluçao
-        IloNumArray lambda_values(env1, lambda.getSize());
-        master.getValues(lambda_values, lambda);
-
-        std::cout << master.getObjValue() << "\n";
-
-        if (!node.is_root)
-        {
-            for (int i = 0; i < data.getNItems(); i++)
-            {
-                if (lambda_values[i] > EPSILON)
-                {
-                    prune();
-
-                    pricingModel.end();
-                    env2.end();
-                    return {0, 0};
-                }
-            }
-        }
-
-        lambda_values.end();
-
         x_values.end();
     }
-
-    // for (int i = 0; i < lambda.getSize(); i++)
-    // {
-    //     std::cout << master.getValue(lambda[i]) << "\n";
-    // }
 
     // Se o LB é pior que a melhor solução inteira, podar
     if (std::ceil(master.getObjValue() - EPSILON) - bestInteger >= 0)
     {
         if (!node.is_root)
         {
+
             prune();
+
             pricingModel.end();
             env2.end();
             return {0, 0};
@@ -287,6 +286,7 @@ std::pair<int, int> Problema::solve(Node &node)
         master.exportModel("modelo.lp");
     }
 
+    std::cout << master.getObjValue() << "\n";
     return branchingPair;
 }
 
