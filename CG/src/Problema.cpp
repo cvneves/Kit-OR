@@ -150,6 +150,7 @@ std::pair<int, int> Problema::solve(Node &node)
         if (pricing.getStatus() == IloAlgorithm::Infeasible)
         {
             prune();
+            std::cout << "\nPricing inviavel\n";
 
             pricingModel.end();
             env2.end();
@@ -175,7 +176,7 @@ std::pair<int, int> Problema::solve(Node &node)
                 if (x_values[i] > 1 - EPSILON)
                 {
                     itens[i] = true;
-                    std::cout << i << " " ;
+                    std::cout << i << " ";
                 }
             }
             std::cout << "\n";
@@ -199,32 +200,33 @@ std::pair<int, int> Problema::solve(Node &node)
             break;
         }
 
-        // Verificar presença de variaveis artificiais na soluçao
-        IloNumArray lambda_values(env1, lambda.getSize());
-        master.getValues(lambda_values, lambda);
-
-        // std::cout << master.getObjValue() << "\n";
-
-        if (!node.is_root)
-        {
-            for (int i = 0; i < data.getNItems(); i++)
-            {
-                if (lambda_values[i] > EPSILON)
-                {
-
-                    prune();
-
-                    pricingModel.end();
-                    env2.end();
-                    return {0, 0};
-                }
-            }
-        }
-
-        lambda_values.end();
-
         x_values.end();
     }
+
+    // Verificar presença de variaveis artificiais na soluçao
+    IloNumArray lambda_values1(env1, lambda.getSize());
+    master.getValues(lambda_values1, lambda);
+
+    // std::cout << master.getObjValue() << "\n";
+
+    if (!node.is_root)
+    {
+        for (int i = 0; i < data.getNItems(); i++)
+        {
+            if (lambda_values1[i] > EPSILON)
+            {
+
+                prune();
+                std::cout << "\nVariavel artificial na soluçao\n";
+
+                pricingModel.end();
+                env2.end();
+                return {0, 0};
+            }
+        }
+    }
+
+    lambda_values1.end();
 
     // Se o LB é pior que a melhor solução inteira, podar
     if (std::ceil(master.getObjValue() - EPSILON) - bestInteger >= 0)
@@ -233,6 +235,7 @@ std::pair<int, int> Problema::solve(Node &node)
         {
 
             prune();
+            std::cout << "\LB maior do que a melhor soluçao inteira\n";
 
             pricingModel.end();
             env2.end();
@@ -283,6 +286,7 @@ std::pair<int, int> Problema::solve(Node &node)
 
         pricingModel.end();
         env2.end();
+        std::cout << "\nSoluçao inteira encontrada\n";
         return {0, 0};
     }
 
