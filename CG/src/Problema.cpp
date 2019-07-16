@@ -146,7 +146,7 @@ std::pair<int, int> Problema::solve(Node &node)
             std::cout << e << '\n';
         }
 
-        // Primeiro caso de pricing inviavel
+        // podar no caso de pricing inviavel
         if (pricing.getStatus() == IloAlgorithm::Infeasible)
         {
             prune();
@@ -162,30 +162,6 @@ std::pair<int, int> Problema::solve(Node &node)
         // Verificar se o custo reduzido é negativo
         if (1 + pricing.getObjValue() < -EPSILON)
         {
-            // Verificar presença de variaveis artificiais na soluçao
-            IloNumArray lambda_values(env1, lambda.getSize());
-            master.getValues(lambda_values, lambda);
-
-            // std::cout << master.getObjValue() << "\n";
-
-            if (!node.is_root)
-            {
-                for (int i = 0; i < data.getNItems(); i++)
-                {
-                    if (lambda_values[i] > EPSILON)
-                    {
-
-                        prune();
-
-                        pricingModel.end();
-                        env2.end();
-                        return {0, 0};
-                    }
-                }
-            }
-
-            lambda_values.end();
-
             // Adicionar nova coluna
 
             pricing.getValues(x_values, x);
@@ -199,8 +175,10 @@ std::pair<int, int> Problema::solve(Node &node)
                 if (x_values[i] > 1 - EPSILON)
                 {
                     itens[i] = true;
+                    std::cout << i << " " ;
                 }
             }
+            std::cout << "\n";
 
             lambdaItens.push_back(itens);
 
@@ -208,15 +186,42 @@ std::pair<int, int> Problema::solve(Node &node)
             {
                 master.solve();
             }
+
             catch (IloException &e)
             {
                 std::cout << e << "\n";
             }
+
+            std::cout << master.getObjValue() << "\n";
         }
         else
         {
             break;
         }
+
+        // Verificar presença de variaveis artificiais na soluçao
+        IloNumArray lambda_values(env1, lambda.getSize());
+        master.getValues(lambda_values, lambda);
+
+        // std::cout << master.getObjValue() << "\n";
+
+        if (!node.is_root)
+        {
+            for (int i = 0; i < data.getNItems(); i++)
+            {
+                if (lambda_values[i] > EPSILON)
+                {
+
+                    prune();
+
+                    pricingModel.end();
+                    env2.end();
+                    return {0, 0};
+                }
+            }
+        }
+
+        lambda_values.end();
 
         x_values.end();
     }
