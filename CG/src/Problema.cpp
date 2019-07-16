@@ -35,17 +35,7 @@ Problema::Problema(Data &d, double UB)
         lambdaItens[i][i] = true;
     }
 
-    master.setOut(env1.getNullStream());
-    // master.setParam(IloCplex::EpOpt, 0.00000001);
-
-    // try
-    // {
-    //     master.solve();
-    // }
-    // catch (IloException &e)
-    // {
-    //     std::cout << e << '\n';
-    // }
+    // master.setOut(env1.getNullStream());
 }
 
 std::pair<int, int> Problema::solve(Node &node)
@@ -71,10 +61,7 @@ std::pair<int, int> Problema::solve(Node &node)
     //Restriçoes dos itens juntos
     for (auto &p : node.juntos)
     {
-        // // x_i = x_j = 1
-        // x[p.first].setLB(1.0);
-        // x[p.second].setLB(1.0);
-
+        // // x_i = x_j
         pricingModel.add(x[p.first] == x[p.second]);
 
         // se lambda não contém o par, eliminá-lo
@@ -183,9 +170,10 @@ std::pair<int, int> Problema::solve(Node &node)
 
             // master.exportModel("master2.lp");
 
+
+
             try
             {
-                std::cout << "AAAA\n\n";
                 master.solve();
             }
 
