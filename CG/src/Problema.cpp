@@ -170,8 +170,6 @@ std::pair<int, int> Problema::solve(Node &node)
 
             // master.exportModel("master2.lp");
 
-
-
             try
             {
                 master.solve();
