@@ -69,7 +69,6 @@ std::pair<int, int> Problema::solve(Node &node)
 
     if (!node.is_root)
     {
-        std::cout << "juntos: \n";
         //Restriçoes dos itens juntos
         for (auto &p : node.juntos)
         {
@@ -92,11 +91,9 @@ std::pair<int, int> Problema::solve(Node &node)
                 }
                 //apenas um dos itens está no padrão
                 lambda[i].setUB(0.0);
-                std::cout << i << " " << p.first << ", " << p.second << "\n";
             }
         }
 
-        std::cout << "separados: \n";
         //Restriçoes dos itens separados
         for (auto &p : node.separados)
         {
@@ -109,7 +106,6 @@ std::pair<int, int> Problema::solve(Node &node)
                 if (lambdaItens[i][p.first] == true && lambdaItens[i][p.second] == true)
                 {
                     lambda[i].setUB(0.0);
-                    std::cout << i << " " << p.first << ", " << p.second << "\n";
                 }
             }
         }
@@ -165,27 +161,6 @@ std::pair<int, int> Problema::solve(Node &node)
         // Verificar se o custo reduzido é negativo
         if (1 + pricing.getObjValue() < -EPSILON)
         {
-            // Verificar antes presença de variaveis artificiais na soluçao
-            // IloNumArray lambda_values(env1, lambda.getSize());
-            // master.getValues(lambda_values, lambda);
-
-            // std::cout << master.getObjValue() << "\n";
-
-            // if (!node.is_root)
-            // {
-            //     for (int i = 0; i < data.getNItems(); i++)
-            //     {
-            //         if (lambda_values[i] > EPSILON)
-            //         {
-            //             prune();
-
-            //             pricingModel.end();
-            //             env2.end();
-            //             return {0, 0};
-            //         }
-            //     }
-            // }
-
             // Adicionar nova coluna
 
             pricing.getValues(x_values, x);
@@ -217,6 +192,8 @@ std::pair<int, int> Problema::solve(Node &node)
         {
             break;
         }
+
+        // Verificar antes presença de variaveis artificiais na soluçao
         IloNumArray lambda_values(env1, lambda.getSize());
         master.getValues(lambda_values, lambda);
 
@@ -242,9 +219,21 @@ std::pair<int, int> Problema::solve(Node &node)
         x_values.end();
     }
 
-    for (int i = 0; i < lambda.getSize(); i++)
+    // for (int i = 0; i < lambda.getSize(); i++)
+    // {
+    //     std::cout << master.getValue(lambda[i]) << "\n";
+    // }
+
+    // Se o LB é pior que a melhor solução inteira, podar
+    if (std::ceil(master.getObjValue() - EPSILON) - bestInteger >= 0)
     {
-        std::cout << master.getValue(lambda[i]) << "\n";
+        if (!node.is_root)
+        {
+            prune();
+            pricingModel.end();
+            env2.end();
+            return {0, 0};
+        }
     }
 
     // Regra de branching
