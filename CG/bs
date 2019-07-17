@@ -1,0 +1,4 @@
+for file in instances/*
+do
+  ./bpp "$file"
+done

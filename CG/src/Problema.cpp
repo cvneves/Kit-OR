@@ -98,6 +98,8 @@ std::pair<int, int> Problema::solve(Node &node)
         }
     }
 
+    master.exportModel("modelo.lp");
+
     z = std::vector<std::vector<double>>(data.getNItems(), std::vector<double>(data.getNItems(), 0));
 
     //Resolver o mestre pela primeira vez
@@ -112,6 +114,10 @@ std::pair<int, int> Problema::solve(Node &node)
 
     while (1)
     {
+        if (master.getCplexStatus() == IloCplex::OptimalInfeas || master.getCplexStatus() == IloCplex::Infeasible)
+        {
+            break;
+        }
         master.getDuals(pi, masterRanges);
         IloExpr somaPricing(env2);
 
@@ -154,6 +160,19 @@ std::pair<int, int> Problema::solve(Node &node)
             IloNumArray x_values(env2, data.getNItems());
 
             pricing.getValues(x_values, x);
+
+            for (int i = 0; i < x_values.getSize(); i++)
+            {
+                if (x_values[i] > 0.9)
+                {
+                    x_values[i] = 1;
+                }
+                else
+                {
+                    x_values[i] = 0;
+                }
+            }
+
             lambda.add(IloNumVar(masterObj(1) + masterRanges(x_values), 0.0, IloInfinity));
 
             // Atualizar estrutura auxiliar
@@ -294,6 +313,8 @@ std::pair<int, int> Problema::solve(Node &node)
     {
         lambda[i].setUB(IloInfinity);
     }
+
+    std::cout << "\npar: " << branchingPair.first << ", " << branchingPair.second << "\n";
 
     return branchingPair;
 }

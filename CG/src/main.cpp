@@ -41,7 +41,7 @@ int main(int argc, char **argv)
     std::list<Node> tree = {n1, n2};
     auto node_it = tree.begin();
 
-    int k = 2;
+    int k = 0;
 
     // while(k--)
     while (!tree.empty())

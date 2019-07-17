@@ -1,270 +1,170 @@
 Tried aggregator 1 time.
-LP Presolve eliminated 50 rows and 50 columns.
+LP Presolve eliminated 8 rows and 8 columns.
 All rows and columns eliminated.
-Presolve time = 0.00 sec. (0.01 ticks)
-41 42 43 44 45 46 47 48 49 
+Presolve time = 0.00 sec. (0.00 ticks)
+0 1 2 5 6 
 Using devex.
 
 Iteration log . . .
-Iteration:     1    Objective     = 41000000000001.000000
-Status:
-Optimal
-
-
--9e+12
-41 42 43 44 45 46 47 48 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 41000000000001.000000
-Status:
-Optimal
-
-
--8e+12
-41 42 43 44 45 46 47 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 41000000000001.000000
-Status:
-Optimal
-
-
--7e+12
-41 42 43 44 45 46 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 41000000000001.000000
-Status:
-Optimal
-
-
--6e+12
-41 42 43 44 45 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 41000000000001.000000
-Status:
-Optimal
-
-
+Iteration:     1    Objective     = 3000000000001.000000
 -5e+12
-39 40 41 42 43 44 
+0 1 2 5 
 Using devex.
 
 Iteration log . . .
-Iteration:     1    Objective     = 41000000000001.000000
-Status:
-Optimal
-
-
--6e+12
-39 40 41 42 43 
+Iteration:     1    Objective     = 3000000000001.000000
+-4e+12
+0 1 2 
 Using devex.
 
 Iteration log . . .
-Iteration:     1    Objective     = 41000000000001.000000
-Status:
-Optimal
-
-
--5e+12
-39 40 41 42 45 46 
+Iteration:     1    Objective     = 3000000000001.000000
+-3e+12
+0 1 
 Using devex.
 
 Iteration log . . .
-Iteration:     1    Objective     = 41000000000001.000000
-Status:
-Optimal
-
-
--6e+12
-39 40 42 45 47 48 49 
+Iteration:     1    Objective     = 3000000000001.000000
+-2e+12
+0 3 4 
 Using devex.
 
 Iteration log . . .
-Iteration:     1    Objective     = 41000000000001.000000
-Status:
-Optimal
-
-
--7e+12
-39 40 41 43 45 46 47 48 
+Iteration:     1    Objective     = 3000000000001.000000
+-3e+12
+3 4 
 Using devex.
 
 Iteration log . . .
-Iteration:     1    Objective     = 41000000000001.000000
-Status:
-Optimal
-
-
--8e+12
-38 40 43 44 46 47 48 49 
+Iteration:     1    Objective     = 1000000000002.000000
+-2e+12
+1 3 
 Using devex.
 
 Iteration log . . .
-Iteration:     1    Objective     = 40000000000001.351562
-Removing shift (1).
-Status:
-Optimal
-
-
--8e+12
-38 39 41 44 45 47 49 
+Iteration:     1    Objective     = 1000000000002.000000
+-2e+12
+1 4 
 Using devex.
 
 Iteration log . . .
-Iteration:     1    Objective     = 39250000000001.500000
-Status:
-Optimal
-
-
--5.75e+12
-37 38 39 43 46 48 49 
+Iteration:     1    Objective     = 1000000000002.000000
+-2e+12
+1 7 
 Using devex.
 
 Iteration log . . .
-Iteration:     1    Objective     = 38800000000001.617188
-Removing shift (1).
-Status:
-Optimal
-
-
--6.2e+12
-37 38 41 42 48 
+Iteration:     1    Objective     = 1000000000002.000000
+-1e+12
+2 3 
 Using devex.
 
 Iteration log . . .
-Iteration:     1    Objective     = 38249950000001.671875
-Removing shift (1).
-Status:
-Optimal
-
-
--5e+12
-37 38 39 44 45 47 
+Iteration:     1    Objective     = 1000000000002.000000
+-2e+12
+3 5 6 
 Using devex.
 
 Iteration log . . .
-Iteration:     1    Objective     = 37800000000001.820312
-Status:
-Optimal
-
-
--4.7e+12
-35 36 37 45 49 
+Iteration:     1    Objective     = 1000000000002.000000
+-3e+12
+2 4 5 
 Using devex.
 
 Iteration log . . .
-Iteration:     1    Objective     = 37028846153848.101562
-Status:
-Optimal
-
-
--3.7619e+12
-33 36 39 46 47 48 
+Iteration:     1    Objective     = 1000000000002.000000
+-3e+12
+2 6 7 
 Using devex.
 
 Iteration log . . .
-Iteration:     1    Objective     = 36571428571430.718750
-Removing shift (1).
-Status:
-Optimal
-
-
--5.5e+12
-35 38 40 42 47 
+Iteration:     1    Objective     =             2.666626
+-2.4e+12
+0 4 5 6 
 Using devex.
 
 Iteration log . . .
-Iteration:     1    Objective     = 35363636363638.835938
-Removing shift (1).
-Status:
-Optimal
-
-
--4.45455e+12
-35 38 40 41 46 
+Iteration:     1    Objective     =             2.666667
+-4e+12
+0 1 5 7 
 Using devex.
 
 Iteration log . . .
-Iteration:     1    Objective     = 35049180327871.382812
-Status:
-Optimal
-
-
--4.87097e+12
-34 35 43 44 48 
+Iteration:     1    Objective     =             2.666667
+-1.66667
+1 2 3 5 
 Using devex.
 
 Iteration log . . .
-Iteration:     1    Objective     = 34597222222224.890625
-Status:
-Optimal
-
-
--3.125e+12
-33 34 38 49 
+Iteration:     1    Objective     =             2.500000
+-1.5
+1 3 6 
 Using devex.
 
 Iteration log . . .
-Iteration:     1    Objective     = 34520661157027.488281
-Removing shift (1).
-Status:
-Optimal
-
-
--2.62712e+12
-34 37 40 43 46 
+Iteration:     1    Objective     =             2.500000
+-1.5
+1 4 5 6 
 Using devex.
 
 Iteration log . . .
-Iteration:     1    Objective     = 33738095238098.281250
-Iteration:     7    Objective     = 33499996250003.117188
-Iteration:     8    Objective     = 33499996250003.117188
-Iteration:     9    Objective     = 33499996250003.117188
-Iteration:    10    Objective     = 33499996250003.117188
-Removing shift (1).
-Iteration:    11    Objective     = 33500000000003.125000
-Iteration:    12    Objective     = 33500000000003.125000
-Iteration:    13    Objective     = 33500000000003.125000
-Iteration:    14    Objective     = 33500000000003.125000
-Status:
-OptimalInfeas
-
-
--3.51485e+12
-3.35e+13
-
-
-
-Iteration log . . .
-Iteration:     1   Dual infeasibility =             0.000000
-Iteration:     2   Dual infeasibility =             0.000000
-Iteration:     3   Dual objective     = 33571428571431.820312
-32 34 38 49 
+Iteration:     1    Objective     =             2.333333
+-1.36364
+1 6 7 
 Using devex.
 
 Iteration log . . .
-Iteration:     1    Objective     = 34187500000002.812500
-Iteration:     9    Objective     = 33500000000003.128906
-Iteration:    10    Objective     = 33500000000003.128906
-Iteration:    11    Objective     = 33500000000003.128906
-Iteration:    12    Objective     = 33500000000003.125000
-Iteration:    13    Objective     = 33500000000003.125000
-Iteration:    14    Objective     = 33500000000003.125000
-Iteration:    15    Objective     = 33500000000003.125000
-Status:
-OptimalInfeas
+Iteration:     1    Objective     =             2.333333
+-1.16667
+1 2 4 
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =             2.333333
+-1.33333
+4 7 
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =             2.333333
+-1.22222
+0 1 4 6 
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =             2.333333
+-1.06667
+3 4 6 
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =             2.333333
+-1.11111
+0 2 4 5 
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =             2.307692
+-1.16667
+2.30769
 
 
--3.58824e+12
-PODAR
 
-Variavel artificial na soluçao
+Iteration log . . .
+Iteration:     1   Dual objective     =             2.400000
+0 2 7 
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =             2.333333
+-1.5
+1 5 6 7 
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =             2.333333
+-1.11111
+2.30769
 best integer: inf
 
 
@@ -272,655 +172,549 @@ best integer: inf
 
 
 Iteration log . . .
-Iteration:     1   Dual infeasibility =             0.000122
-Iteration:     3   Dual infeasibility =             0.000000
-Iteration:     4   Dual objective     = 33500000000003.125000
-Iteration:    18   Dual infeasibility =             0.000000
-Iteration:    19   Dual infeasibility =             0.000000
-Iteration:    20   Dual infeasibility =             0.000000
-Iteration:    21   Dual infeasibility =             0.000000
-Iteration:    22   Dual objective     = 36363636363638.640625
-Removing shift (1).
-33 34 44 46 47 48 
+Iteration:     1   Dual objective     =             2.400000
+1 2 3 
 Using devex.
 
 Iteration log . . .
-Iteration:     1    Objective     = 36363636363638.632812
-Removing shift (1).
-Status:
-Optimal
-
-
--6e+12
-36 38 40 43 45 48 
+Iteration:     1    Objective     =             2.500000
+-1.25
+2 7 
 Using devex.
 
 Iteration log . . .
-Iteration:     1    Objective     = 34000000000003.000000
-Removing shift (1).
-Status:
-Optimal
-
-
--5.5e+12
-36 37 39 42 46 
+Iteration:     1    Objective     =             2.500000
+-1.25
+0 3 5 6 
 Using devex.
 
 Iteration log . . .
-Iteration:     1    Objective     = 33500000000003.109375
-Status:
-Optimal
-
-
--4.5e+12
-35 36 41 43 47 
+Iteration:     1    Objective     =             2.428571
+-1.5
+0 2 3 5 
 Using devex.
 
 Iteration log . . .
-Iteration:     1    Objective     = 33386554621851.875000
-Status:
-Optimal
-
-
--3.98077e+12
-32 35 39 48 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 32939121756490.277344
-Status:
-Optimal
-
-
--3.35211e+12
-32 37 40 43 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 32881877022657.007812
-Status:
-Optimal
-
-
--2.6519e+12
-32 36 41 44 49 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 32373376623380.109375
-Status:
-Optimal
-
-
--2.92465e+12
-28 32 45 47 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 31992014196986.804688
-Status:
-Optimal
-
-
--3.28138e+12
-30 31 46 48 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 31529629629633.457031
-Status:
-Optimal
-
-
--2.21053e+12
-35 36 37 44 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 30502732240441.449219
-Removing shift (12).
-Status:
-Optimal
-
-
--3.1046e+12
-36 37 39 40 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 29000000000005.000000
-Iteration:     8    Objective     = 29000000000005.000000
-Status:
-Optimal
-
-
--3.75294e+12
-35 37 40 41 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 29000000000005.000000
-Iteration:     4    Objective     = 29000000000005.000000
-Status:
-Optimal
-
-
--4e+12
-35 37 42 43 45 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 29000000000005.000000
-Status:
-Optimal
-
-
--4e+12
-33 34 37 47 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 29000000000005.000000
-Status:
-Optimal
-
-
--3.39474e+12
-33 34 41 43 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 29000000000005.000000
-Removing shift (7).
-Status:
-Optimal
-
-
--3.15385e+12
-33 34 35 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 29000000000005.000000
-Status:
-Optimal
-
-
--3e+12
-29 32 42 49 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 29000000000005.000000
-Iteration:    10    Objective     = 29000000000005.000000
-Status:
-Optimal
-
-
--2.77778e+12
-36 38 39 42 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 29000000000005.000000
-Iteration:     3    Objective     = 29000000000005.000000
-Status:
-Optimal
-
-
--3e+12
-30 31 43 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 29000000000005.000000
-Iteration:     5    Objective     = 29000000000004.890625
-Status:
-Optimal
-
-
--2e+12
-28 31 44 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 29000000000004.847656
-Iteration:     2    Objective     = 29000000000004.847656
-Status:
-Optimal
-
-
--2e+12
-29 30 45 48 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 29000000000004.808594
-Iteration:    14    Objective     = 28000000000005.257812
-Status:
-Optimal
-
-
--2e+12
-27 28 47 49 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 28000000000005.261719
-Removing shift (1).
-Status:
-Optimal
-
-
--2e+12
-24 27 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 26390243902445.097656
-Iteration:     9    Objective     = 26000000000006.273438
-Status:
-Optimal
-
-
--2e+12
-24 30 47 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 26000000000006.265625
-Iteration:     3    Objective     = 26000000000006.265625
-Status:
-Optimal
-
-
--2e+12
-20 36 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 25773109243703.875000
-Status:
-Optimal
-
-
--1e+12
-30 38 39 46 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 25000000000006.992188
-Iteration:     2    Objective     = 25000000000006.968750
-Status:
-Optimal
-
-
--1.83133e+12
-20 35 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 25000000000006.953125
-Iteration:     2    Objective     = 25000000000006.949219
-Status:
-Optimal
-
-
--1e+12
-25 27 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 24758620689662.238281
-Removing shift (1).
-Status:
-Optimal
-
-
--1e+12
-26 31 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 24367112810714.746094
-Status:
-Optimal
-
-
--1.81128e+12
-26 28 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 24160305343518.871094
-Status:
-Optimal
-
-
--1.83882e+12
-25 29 48 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 23000000000008.101562
-Iteration:     3    Objective     = 23000000000008.093750
-Status:
-Optimal
-
-
--1.448e+12
-23 32 49 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 22915966386562.707031
-Removing shift (1).
-Status:
-Optimal
-
-
--1e+12
-23 40 44 45 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 22000000000008.699219
-Iteration:     6    Objective     = 22000000000008.609375
-Status:
-Optimal
-
-
--1.81818e+12
-21 40 45 46 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 21875706214697.953125
-Status:
-Optimal
-
-
--1e+12
-22 39 41 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 21352348993297.664062
-Removing shift (1).
-Status:
-Optimal
-
-
--1.4877e+12
-22 38 44 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 21025000000009.316406
-Status:
-Optimal
-
-
--2.125e+12
-21 42 44 47 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 20280487804887.761719
-Status:
-Optimal
-
-
--1.60163e+12
-11 41 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 19962962962972.894531
-Status:
-Optimal
-
-
--1e+12
-22 40 42 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 19407394285724.683594
-Removing shift (1).
-Status:
-Optimal
-
-
--2.2963e+12
-19 39 45 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 19250000000010.500000
-Removing shift (3).
-Status:
-Optimal
-
-
--1.56048e+12
-29 39 43 46 47 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 18850000000010.796875
-Status:
-Optimal
-
-
--2.7e+12
-18 43 46 47 48 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 18755555555566.441406
-Iteration:     4    Objective     = 18750000000010.886719
-Status:
-Optimal
-
-
--1.70248e+12
-23 32 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 18750000000010.890625
-Status:
-Optimal
-
-
--1.375e+12
-23 37 46 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 18718309859165.871094
-Status:
-Optimal
-
-
--1.28169e+12
-21 37 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 18437500000011.179688
-Status:
-Optimal
-
-
--1.3252e+12
-19 40 44 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 17777777777789.449219
-Status:
-Optimal
-
-
--1.59459e+12
-19 38 46 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 17637747336389.234375
-Status:
-Optimal
-
-
--1.39012e+12
-18 40 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 17480000000011.880859
-Removing shift (2).
-Status:
-Optimal
-
-
--1.11111e+12
-18 42 45 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 17143497757859.675781
-Iteration:     3    Objective     = 17000000000012.248047
-Status:
-Optimal
-
-
--1.53383e+12
-11 44 46 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 17000000000012.248047
-Iteration:     3    Objective     = 17000000000012.236328
-Status:
-Optimal
-
-
--1e+12
-17 39 47 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 16963636363648.621094
-Status:
-Optimal
-
-
--1e+12
-17 45 46 49 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 16351032448390.302734
-Status:
-Optimal
-
-
--1.55645e+12
-22 43 47 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 16000000000013.007812
-Iteration:     4    Objective     = 16000000000013.005859
-Status:
-Optimal
-
-
--1.225e+12
-16 40 47 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 15981132075484.716797
-Status:
-Optimal
-
-
--1e+12
-1 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 14969696969711.000000
-Status:
-Optimal
-
-
--1e+12
-0 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 13969696969712.000000
-Status:
-Optimal
-
-
--1e+12
-15 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 12969696969713.000000
-Status:
-Optimal
-
-
--1e+12
-2 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 11969696969714.000000
-Status:
-Optimal
-
-
--1e+12
-3 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 10969696969715.000000
-Status:
-Optimal
-
-
--1e+12
-16 
-Using devex.
-
-Iteration log . . .
-Iteration:     1    Objective     = 10000000000019.000000
-Iteration:     3    Objective     = 10000000000019.000000
-Iteration:     4    Objective     = 10000000000019.000000
-Iteration:     5    Objective     = 10000000000019.000000
-Iteration:     6    Objective     = 10000000000019.000000
-Iteration:     7    Objective     = 10000000000019.000000
-Iteration:     8    Objective     = 10000000000019.000000
-Status:
-OptimalInfeas
-
-
--1e+12
-PODAR
-
-Variavel artificial na soluçao
+Iteration:     1    Objective     =             2.400000
+-1.14286
+2.4
 best integer: inf
 
 
-Bins usados: inf
-Elapsed time (s): 0.579
 
+
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             2.500000
+0 1 3 5 6 
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =             2.500000
+-1.25
+2.5
+best integer: inf
+
+
+
+
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             2.500000
+3 7 
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     = 1000000000002.000000
+-1.5e+12
+6 7 
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =             2.666687
+-1.5e+12
+0 1 2 5 
+Using devex.
+-1.00012
+0 1 2 5 
+Using devex.
+-1.00012
+0 1 2 5 
+Using devex.
+-1.00012
+0 1 2 5 
+Using devex.
+-1.00012
+0 1 2 5 
+Using devex.
+-1.00012
+0 1 2 5 
+Using devex.
+-1.00012
+0 1 2 5 
+Using devex.
+-1.00012
+0 1 2 5 
+Using devex.
+-1.00012
+0 1 2 5 
+Using devex.
+-1.00012
+0 1 2 5 
+Using devex.
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0 1 2 5 
+-1.00012
+0
