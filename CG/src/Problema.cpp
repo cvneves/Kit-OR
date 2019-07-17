@@ -52,7 +52,7 @@ std::pair<int, int> Problema::solve(Node &node)
     }
 
     pricingModel.add(somaMochila <= data.getBinCapacity());
-    IloObjective pricingObj(env2);
+    IloObjective pricingObj(env2, IloObjective::Minimize);
     pricingModel.add(pricingObj);
 
     IloCplex pricing(pricingModel);
@@ -119,10 +119,10 @@ std::pair<int, int> Problema::solve(Node &node)
 
         for (int i = 0; i < data.getNItems(); i++)
         {
-            somaPricing += pi[i] * x[i];
+            somaPricing += -pi[i] * x[i];
         }
 
-        pricingObj.setExpr(1.0 - somaPricing);
+        pricingObj.setExpr(somaPricing);
 
         try
         {
@@ -146,7 +146,7 @@ std::pair<int, int> Problema::solve(Node &node)
         }
 
         // Verificar se o custo reduzido é negativo
-        if (pricing.getObjValue() < -EPSILON)
+        if (1 + pricing.getObjValue() < -EPSILON)
         {
             // Adicionar nova coluna
             IloNumArray x_values(env2, data.getNItems());
