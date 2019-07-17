@@ -18,7 +18,7 @@ class Problema
     IloNumVarArray lambda;
     IloRangeArray masterRanges;
     IloObjective masterObj;
-    IloCplex master;
+    // IloCplex master;
     IloNumArray pi;
 
     std::vector<std::vector<bool>> lambdaItens;

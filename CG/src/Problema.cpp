@@ -24,8 +24,6 @@ Problema::Problema(Data &d, double UB)
     masterObj = IloMinimize(env1, sum);
     masterModel.add(masterObj);
 
-    master = IloCplex(masterModel);
-
     pi = IloNumArray(env1, data.getNItems());
 
     lambdaItens = std::vector<std::vector<bool>>(data.getNItems(), std::vector<bool>(data.getNItems(), false));
@@ -40,6 +38,9 @@ Problema::Problema(Data &d, double UB)
 
 std::pair<int, int> Problema::solve(Node &node)
 {
+
+    IloCplex master = IloCplex(masterModel);
+
     //Construçao do subproblema
     IloEnv env2;
     IloModel pricingModel(env2);
@@ -114,7 +115,12 @@ std::pair<int, int> Problema::solve(Node &node)
 
     while (1)
     {
-        if (master.getCplexStatus() == IloCplex::OptimalInfeas || master.getCplexStatus() == IloCplex::Infeasible)
+        // if (master.getCplexStatus() == IloCplex::OptimalInfeas || master.getCplexStatus() == IloCplex::Infeasible)
+        // {
+        //     break;
+        // }
+
+        if (master.getCplexStatus() == IloCplex::Infeasible)
         {
             break;
         }
@@ -150,6 +156,9 @@ std::pair<int, int> Problema::solve(Node &node)
 
             pricing.clear();
             env2.end();
+
+            master.clear();
+            master.end();
 
             return {0, 0};
         }
@@ -233,6 +242,9 @@ std::pair<int, int> Problema::solve(Node &node)
                 pricing.clear();
                 env2.end();
                 lambda_values.end();
+
+                master.clear();
+                master.end();
                 return {0, 0};
             }
         }
@@ -252,6 +264,9 @@ std::pair<int, int> Problema::solve(Node &node)
             pricing.clear();
             env2.end();
             lambda_values.end();
+
+            master.clear();
+            master.end();
 
             return {0, 0};
         }
@@ -301,6 +316,10 @@ std::pair<int, int> Problema::solve(Node &node)
         pricing.clear();
         env2.end();
         std::cout << "\nSoluçao inteira encontrada\n";
+
+        master.clear();
+        master.end();
+
         return {0, 0};
     }
 
@@ -316,6 +335,9 @@ std::pair<int, int> Problema::solve(Node &node)
     }
 
     std::cout << "\npar: " << branchingPair.first << ", " << branchingPair.second << "\n";
+
+    master.clear();
+    master.end();
 
     return branchingPair;
 }
