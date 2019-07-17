@@ -401,7 +401,7 @@ best integer: 3
 
 
 Bins usados: 3
-Elapsed time (s): 0.126
+Elapsed time (s): 0.129
 
 Tried aggregator 1 time.
 LP Presolve eliminated 5 rows and 5 columns.
@@ -484,7 +484,7 @@ best integer: 4
 
 
 Bins usados: 4
-Elapsed time (s): 0.021
+Elapsed time (s): 0.023
 
 Tried aggregator 1 time.
 LP Presolve eliminated 50 rows and 50 columns.
@@ -2303,7 +2303,7 @@ best integer: 25
 
 
 Bins usados: 25
-Elapsed time (s): 1.572
+Elapsed time (s): 1.557
 
 Tried aggregator 1 time.
 LP Presolve eliminated 50 rows and 50 columns.
@@ -3517,7 +3517,7 @@ best integer: 31
 
 
 Bins usados: 31
-Elapsed time (s): 0.831
+Elapsed time (s): 0.802
 
 Tried aggregator 1 time.
 LP Presolve eliminated 50 rows and 50 columns.
@@ -5037,7 +5037,7 @@ best integer: 20
 
 
 Bins usados: 20
-Elapsed time (s): 1.66
+Elapsed time (s): 1.7
 
 Tried aggregator 1 time.
 LP Presolve eliminated 50 rows and 50 columns.
@@ -6318,7 +6318,7 @@ best integer: 28
 
 
 Bins usados: 28
-Elapsed time (s): 0.939
+Elapsed time (s): 0.946
 
 Tried aggregator 1 time.
 LP Presolve eliminated 50 rows and 50 columns.
@@ -7487,7 +7487,7 @@ best integer: 26
 
 
 Bins usados: 26
-Elapsed time (s): 1.087
+Elapsed time (s): 1.072
 
 Tried aggregator 1 time.
 LP Presolve eliminated 50 rows and 50 columns.
@@ -8974,7 +8974,7 @@ best integer: 27
 
 
 Bins usados: 27
-Elapsed time (s): 0.948
+Elapsed time (s): 0.945
 
 Tried aggregator 1 time.
 LP Presolve eliminated 50 rows and 50 columns.
@@ -10304,7 +10304,7 @@ best integer: 25
 
 
 Bins usados: 25
-Elapsed time (s): 1.049
+Elapsed time (s): 1.045
 
 Tried aggregator 1 time.
 LP Presolve eliminated 50 rows and 50 columns.
@@ -11035,7 +11035,7 @@ best integer: 31
 
 
 Bins usados: 31
-Elapsed time (s): 0.634
+Elapsed time (s): 0.646
 
 Tried aggregator 1 time.
 LP Presolve eliminated 50 rows and 50 columns.
@@ -13057,7 +13057,7 @@ best integer: 25
 
 
 Bins usados: 25
-Elapsed time (s): 1.546
+Elapsed time (s): 1.517
 
 Tried aggregator 1 time.
 LP Presolve eliminated 50 rows and 50 columns.
@@ -14762,7 +14762,7 @@ best integer: 26
 
 
 Bins usados: 26
-Elapsed time (s): 1.251
+Elapsed time (s): 1.258
 
 Tried aggregator 1 time.
 LP Presolve eliminated 50 rows and 50 columns.
@@ -16674,7 +16674,7 @@ best integer: 26
 
 
 Bins usados: 26
-Elapsed time (s): 1.366
+Elapsed time (s): 1.369
 
 Tried aggregator 1 time.
 LP Presolve eliminated 50 rows and 50 columns.
@@ -17473,7 +17473,7 @@ best integer: 33
 
 
 Bins usados: 33
-Elapsed time (s): 0.469
+Elapsed time (s): 0.48
 
 Tried aggregator 1 time.
 LP Presolve eliminated 50 rows and 50 columns.
@@ -18398,7 +18398,7 @@ best integer: 30
 
 
 Bins usados: 30
-Elapsed time (s): 0.756
+Elapsed time (s): 0.747
 
 Tried aggregator 1 time.
 LP Presolve eliminated 50 rows and 50 columns.
@@ -19693,7 +19693,7 @@ best integer: 25
 
 
 Bins usados: 25
-Elapsed time (s): 1.59
+Elapsed time (s): 1.58
 
 Tried aggregator 1 time.
 LP Presolve eliminated 50 rows and 50 columns.
@@ -20666,7 +20666,7 @@ best integer: 32
 
 
 Bins usados: 32
-Elapsed time (s): 0.626
+Elapsed time (s): 0.606
 
 Tried aggregator 1 time.
 LP Presolve eliminated 50 rows and 50 columns.
@@ -21570,7 +21570,7 @@ best integer: 26
 
 
 Bins usados: 26
-Elapsed time (s): 0.853
+Elapsed time (s): 0.896
 
 Tried aggregator 1 time.
 LP Presolve eliminated 50 rows and 50 columns.
@@ -22458,7 +22458,7 @@ best integer: 28
 
 
 Bins usados: 28
-Elapsed time (s): 0.75
+Elapsed time (s): 0.758
 
 Tried aggregator 1 time.
 LP Presolve eliminated 50 rows and 50 columns.
@@ -24346,7 +24346,7 @@ best integer: 25
 
 
 Bins usados: 25
-Elapsed time (s): 1.326
+Elapsed time (s): 1.351
 
 Tried aggregator 1 time.
 LP Presolve eliminated 50 rows and 50 columns.
@@ -25338,7 +25338,7 @@ best integer: 28
 
 
 Bins usados: 28
-Elapsed time (s): 0.857
+Elapsed time (s): 0.846
 
 Tried aggregator 1 time.
 LP Presolve eliminated 50 rows and 50 columns.
@@ -26664,7 +26664,7 @@ best integer: 28
 
 
 Bins usados: 28
-Elapsed time (s): 0.959
+Elapsed time (s): 0.938
 
 Tried aggregator 1 time.
 LP Presolve eliminated 50 rows and 50 columns.
@@ -28206,7 +28206,7 @@ best integer: 29
 
 
 Bins usados: 29
-Elapsed time (s): 0.799
+Elapsed time (s): 0.756
 
 Tried aggregator 1 time.
 LP Presolve eliminated 50 rows and 50 columns.

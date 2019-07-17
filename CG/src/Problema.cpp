@@ -260,8 +260,8 @@ std::pair<int, int> Problema::solve(Node &node)
             std::cout << "\LB maior do que a melhor soluçao inteira\n";
 
             pricingModel.end();
-
             pricing.clear();
+
             env2.end();
             lambda_values.end();
 
