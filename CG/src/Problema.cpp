@@ -115,15 +115,15 @@ std::pair<int, int> Problema::solve(Node &node)
 
     while (1)
     {
-        // if (master.getCplexStatus() == IloCplex::OptimalInfeas || master.getCplexStatus() == IloCplex::Infeasible)
-        // {
-        //     break;
-        // }
-
-        if (master.getCplexStatus() == IloCplex::Infeasible)
+        if (master.getCplexStatus() == IloCplex::OptimalInfeas || master.getCplexStatus() == IloCplex::Infeasible)
         {
             break;
         }
+
+        // if (master.getCplexStatus() == IloCplex::Infeasible)
+        // {
+        //     break;
+        // }
 
         master.getDuals(pi, masterRanges);
         IloExpr somaPricing(env2);
