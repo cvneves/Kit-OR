@@ -118,6 +118,7 @@ std::pair<int, int> Problema::solve(Node &node)
         {
             break;
         }
+
         master.getDuals(pi, masterRanges);
         IloExpr somaPricing(env2);
 
