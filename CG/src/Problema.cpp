@@ -140,6 +140,8 @@ std::pair<int, int> Problema::solve(Node &node)
             std::cout << "\nPricing inviavel\n";
 
             pricingModel.end();
+
+            pricing.clear();
             env2.end();
 
             return {0, 0};
@@ -173,6 +175,7 @@ std::pair<int, int> Problema::solve(Node &node)
             try
             {
                 master.solve();
+                // std::cout << "EEE??" << master.getCplexStatus() << "\n\n\n";
             }
 
             catch (IloException &e)
@@ -206,6 +209,8 @@ std::pair<int, int> Problema::solve(Node &node)
                 std::cout << "\nVariavel artificial na soluçao\n";
 
                 pricingModel.end();
+
+                pricing.clear();
                 env2.end();
                 lambda_values.end();
                 return {0, 0};
@@ -223,6 +228,8 @@ std::pair<int, int> Problema::solve(Node &node)
             std::cout << "\LB maior do que a melhor soluçao inteira\n";
 
             pricingModel.end();
+
+            pricing.clear();
             env2.end();
             lambda_values.end();
 
@@ -270,6 +277,8 @@ std::pair<int, int> Problema::solve(Node &node)
         prune();
 
         pricingModel.end();
+
+        pricing.clear();
         env2.end();
         std::cout << "\nSoluçao inteira encontrada\n";
         return {0, 0};

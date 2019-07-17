@@ -8,7 +8,7 @@
 #include <limits>
 #include <algorithm>
 
-#define EPSILON 1e-6
+#define EPSILON 1e-12
 #define M 1e12
 
 class Problema
