@@ -43,11 +43,12 @@ int main(int argc, char **argv)
 
     int k = 0;
 
-    
+    std::cout << "\n"
+              << std::string(argv[1]) << "\n";
     // while(k--)
     while (!tree.empty())
     {
-        std::cout << "\n\n";
+        // std::cout << "\n\n";
 
         // double maiorLB = -std::numeric_limits<double>::infinity();
         // for (auto it = tree.begin(); it != tree.end(); it++)
@@ -84,11 +85,11 @@ int main(int argc, char **argv)
         }
 
         // std::cout << "Num nodes: " << tree.size() << "\n";
-        std::cout << "best integer: " << p.bestInteger << "\n";
+        // std::cout << "best integer: " << p.bestInteger << "\n";
 
         tree.erase(node_it);
 
-        std::cout << "\n\n";
+        // std::cout << "\n\n";
     }
 
     std::cout << "Bins usados: " << p.bestInteger << "\n";

@@ -12,6 +12,7 @@ Problema::Problema(Data &d, double UB)
     lambda = IloNumVarArray(env1, data.getNItems(), 0.0, IloInfinity);
     masterRanges = IloRangeArray(env1);
 
+    //FO e nomes de lambda
     IloExpr sum(env1);
     for (int i = 0; i < data.getNItems(); i++)
     {
@@ -23,7 +24,6 @@ Problema::Problema(Data &d, double UB)
     }
 
     masterModel.add(masterRanges);
-    //masterObj = IloObjective(env1);
     masterObj = IloMinimize(env1, sum);
     masterModel.add(masterObj);
 
@@ -40,6 +40,7 @@ Problema::Problema(Data &d, double UB)
 std::pair<int, int> Problema::solve(Node &node)
 {
     IloCplex master = IloCplex(masterModel);
+    master.setOut(env1.getNullStream());
 
     //Construçao do subproblema
     IloEnv env2;
@@ -96,7 +97,7 @@ std::pair<int, int> Problema::solve(Node &node)
         }
     }
 
-    master.exportModel("modelo.lp");
+    // master.exportModel("modelo.lp");
 
     z = std::vector<std::vector<double>>(data.getNItems(), std::vector<double>(data.getNItems(), 0));
 
@@ -118,7 +119,7 @@ std::pair<int, int> Problema::solve(Node &node)
         }
 
         IloCplex pricing(pricingModel);
-        // pricing.setOut(env2.getNullStream());
+        pricing.setOut(env2.getNullStream());
 
         IloNumArray pi(env1, data.getNItems());
 
@@ -129,6 +130,7 @@ std::pair<int, int> Problema::solve(Node &node)
 
         for (int i = 0; i < data.getNItems(); i++)
         {
+            // std::cout << pi[i] << " ";
             somaPricing -= pi[i] * x[i];
         }
 
@@ -150,7 +152,7 @@ std::pair<int, int> Problema::solve(Node &node)
         if (pricing.getStatus() == IloAlgorithm::Infeasible)
         {
             prune();
-            std::cout << "\nPricing inviavel\n";
+            // std::cout << "\nPricing inviavel\n";
 
             pricingModel.end();
 
@@ -162,7 +164,7 @@ std::pair<int, int> Problema::solve(Node &node)
             return {0, 0};
         }
 
-        std::cout << 1 + pricing.getObjValue() << "\n\n\n\n\n\n";
+        // std::cout << 1 + pricing.getObjValue() << "\n\n\n\n\n\n";
 
         // Verificar se o custo reduzido é negativo
         if (1 + pricing.getObjValue() <= -EPSILON)
@@ -198,10 +200,10 @@ std::pair<int, int> Problema::solve(Node &node)
                 if (x_values[i] > 1 - EPSILON)
                 {
                     itens[i] = true;
-                    std::cout << i << " ";
+                    // std::cout << i << " ";
                 }
             }
-            std::cout << "\n";
+            // std::cout << "\n";
 
             lambdaItens.push_back(itens);
 
@@ -244,7 +246,7 @@ std::pair<int, int> Problema::solve(Node &node)
             if (lambda_values[i] > EPSILON)
             {
                 prune();
-                std::cout << "\nVariavel artificial na soluçao\n";
+                // std::cout << "\nVariavel artificial na soluçao\n";
 
                 pricingModel.end();
 
@@ -265,7 +267,7 @@ std::pair<int, int> Problema::solve(Node &node)
         {
 
             prune();
-            std::cout << "\LB maior do que a melhor soluçao inteira\n";
+            // std::cout << "\LB maior do que a melhor soluçao inteira\n";
 
             pricingModel.end();
 
@@ -309,10 +311,10 @@ std::pair<int, int> Problema::solve(Node &node)
 
     // Verifica se a soluçao obtida é inteira
 
-    for (int i = 0; i < data.getNItems(); i++)
-    {
-        std::cout << master.getValue(lambda[i]) << " ";
-    }
+    // for (int i = 0; i < data.getNItems(); i++)
+    // {
+    //     std::cout << master.getValue(lambda[i]) << " ";
+    // }
 
     if (std::abs(0.5 - deltaFrac) < EPSILON)
     {
@@ -326,7 +328,7 @@ std::pair<int, int> Problema::solve(Node &node)
         pricingModel.end();
 
         env2.end();
-        std::cout << "\nSoluçao inteira encontrada\n";
+        // std::cout << "\nSoluçao inteira encontrada\n";
 
         master.clear();
         master.end();
@@ -334,10 +336,10 @@ std::pair<int, int> Problema::solve(Node &node)
         return {0, 0};
     }
 
-    master.exportModel("modelo.lp");
+    // master.exportModel("modelo.lp");
 
     lambda_values.end();
-    std::cout << master.getObjValue() << "\n";
+    // std::cout << master.getObjValue() << "\n";
 
     // Reverter UBs dos lambdas no fim do nó
     for (int i = 0; i < lambda.getSize(); i++)
@@ -345,7 +347,7 @@ std::pair<int, int> Problema::solve(Node &node)
         lambda[i].setUB(IloInfinity);
     }
 
-    std::cout << "\npar: " << branchingPair.first << ", " << branchingPair.second << "\n";
+    // std::cout << "\npar: " << branchingPair.first << ", " << branchingPair.second << "\n";
 
     master.clear();
     master.end();
@@ -359,5 +361,5 @@ void Problema::prune()
     {
         lambda[i].setUB(IloInfinity);
     }
-    std::cout << "PODAR\n";
+    // std::cout << "PODAR\n";
 }

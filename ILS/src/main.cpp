@@ -8,6 +8,7 @@
 #include <time.h>
 #include <cmath>
 #include <limits>
+#include <chrono>
 
 void printData();
 
@@ -131,8 +132,10 @@ void RVND(std::vector<int> &solucao, double &valor_obj, double **m)
       buscaVizinhancaSwap(nova_solucao, novo_valor_obj, m);
       break;
     case 2:
+    {
       buscaVizinhanca2Opt(nova_solucao, novo_valor_obj, m);
       break;
+    }
     case 3:
       buscaVizinhancaReinsertion(nova_solucao, novo_valor_obj, m, 1);
       break;
@@ -140,8 +143,10 @@ void RVND(std::vector<int> &solucao, double &valor_obj, double **m)
       buscaVizinhancaReinsertion(nova_solucao, novo_valor_obj, m, 2);
       break;
     case 5:
+    {
       buscaVizinhancaReinsertion(nova_solucao, novo_valor_obj, m, 3);
       break;
+    }
     }
 
     if (novo_valor_obj < valor_obj)
@@ -435,8 +440,11 @@ std::vector<int> GILS_RVND()
     double valor_obj_b = valor_obj;
     int iter_ILS = 0;
 
+    // std::cout << "UAILE\n";
+
     while (iter_ILS < I_ils)
     {
+
       RVND(s, valor_obj, matrizAdj);
 
       //std::cout << valor_obj << ", " << valor_obj_b << "\n";
@@ -449,11 +457,15 @@ std::vector<int> GILS_RVND()
       }
 
       std::vector<int> temp_s = s_b;
+
       perturb(temp_s);
+
       s = temp_s;
       valor_obj = calcularValorObj(s, matrizAdj);
       iter_ILS++;
     }
+
+    // std::cout << "UAILE FIM\n";
 
     if (valor_obj_b < valor_obj_final)
     {
