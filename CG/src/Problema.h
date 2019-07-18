@@ -8,7 +8,7 @@
 #include <limits>
 #include <algorithm>
 
-#define EPSILON 1e-12
+#define EPSILON 1e-6
 #define M 1e12
 
 class Problema
@@ -18,8 +18,8 @@ class Problema
     IloNumVarArray lambda;
     IloRangeArray masterRanges;
     IloObjective masterObj;
-    IloCplex master;
-    IloNumArray pi;
+    // IloCplex master;
+    //IloNumArray pi;
 
     std::vector<std::vector<bool>> lambdaItens;
     std::vector<std::vector<double>> z;

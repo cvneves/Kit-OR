@@ -23,11 +23,9 @@ Problema::Problema(Data &d, double UB)
     }
 
     masterModel.add(masterRanges);
-    masterObj = IloObjective(env1);
+    //masterObj = IloObjective(env1);
     masterObj = IloMinimize(env1, sum);
     masterModel.add(masterObj);
-
-    pi = IloNumArray(env1, data.getNItems());
 
     lambdaItens = std::vector<std::vector<bool>>(data.getNItems(), std::vector<bool>(data.getNItems(), false));
 
@@ -41,7 +39,6 @@ Problema::Problema(Data &d, double UB)
 
 std::pair<int, int> Problema::solve(Node &node)
 {
-
     IloCplex master = IloCplex(masterModel);
 
     //Construçao do subproblema
@@ -56,7 +53,7 @@ std::pair<int, int> Problema::solve(Node &node)
     }
 
     pricingModel.add(somaMochila <= data.getBinCapacity());
-    IloObjective pricingObj(env2, IloObjective::Minimize);
+    IloObjective pricingObj = IloMinimize(env2);
     pricingModel.add(pricingObj);
 
     //Restriçoes dos itens juntos
@@ -65,7 +62,7 @@ std::pair<int, int> Problema::solve(Node &node)
         // // x_i = x_j
         pricingModel.add(x[p.first] == x[p.second]);
 
-        // se lambda não contém o par, eliminá-lo
+        // se lambda separa o par, eliminá-lo
         for (int i = data.getNItems(); i < lambdaItens.size(); i++)
         {
             //nenhum dos itens está no padrão, ignorar
@@ -115,10 +112,6 @@ std::pair<int, int> Problema::solve(Node &node)
 
     while (1)
     {
-        // if (master.getCplexStatus() == IloCplex::OptimalInfeas || master.getCplexStatus() == IloCplex::Infeasible)
-        // {
-        //     break;
-        // }
         if (master.getCplexStatus() == IloCplex::Infeasible)
         {
             break;
@@ -127,6 +120,8 @@ std::pair<int, int> Problema::solve(Node &node)
         IloCplex pricing(pricingModel);
         // pricing.setOut(env2.getNullStream());
 
+        IloNumArray pi(env1, data.getNItems());
+
         master.getDuals(pi, masterRanges);
         IloExpr somaPricing(env2);
 
@@ -134,7 +129,7 @@ std::pair<int, int> Problema::solve(Node &node)
 
         for (int i = 0; i < data.getNItems(); i++)
         {
-            somaPricing += -pi[i] * x[i];
+            somaPricing -= pi[i] * x[i];
         }
 
         pricingObj.setExpr(somaPricing);
@@ -147,6 +142,9 @@ std::pair<int, int> Problema::solve(Node &node)
         {
             std::cout << e << '\n';
         }
+
+        pi.clear();
+        pi.end();
 
         // podar no caso de pricing inviavel
         if (pricing.getStatus() == IloAlgorithm::Infeasible)
@@ -167,7 +165,7 @@ std::pair<int, int> Problema::solve(Node &node)
         std::cout << 1 + pricing.getObjValue() << "\n\n\n\n\n\n";
 
         // Verificar se o custo reduzido é negativo
-        if (1 + pricing.getObjValue() < -EPSILON)
+        if (1 + pricing.getObjValue() <= -EPSILON)
         {
             // Adicionar nova coluna
             IloNumArray x_values(env2, data.getNItems());
@@ -222,6 +220,7 @@ std::pair<int, int> Problema::solve(Node &node)
 
             // std::cout << master.getObjValue() << "\n";
 
+            x_values.clear();
             x_values.end();
             pricing.clear();
             pricing.end();
@@ -244,7 +243,6 @@ std::pair<int, int> Problema::solve(Node &node)
         {
             if (lambda_values[i] > EPSILON)
             {
-
                 prune();
                 std::cout << "\nVariavel artificial na soluçao\n";
 
