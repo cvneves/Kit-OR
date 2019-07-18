@@ -15,6 +15,9 @@ Problema::Problema(Data &d, double UB)
     IloExpr sum(env1);
     for (int i = 0; i < data.getNItems(); i++)
     {
+        char var_name[30];
+        sprintf(var_name, "l%d", i);
+        lambda[i].setName(var_name);
         sum += M * lambda[i];
         masterRanges.add(lambda[i] == 1);
     }
@@ -115,15 +118,14 @@ std::pair<int, int> Problema::solve(Node &node)
 
     while (1)
     {
-        if (master.getCplexStatus() == IloCplex::OptimalInfeas || master.getCplexStatus() == IloCplex::Infeasible)
-        {
-            break;
-        }
-
-        // if (master.getCplexStatus() == IloCplex::Infeasible)
+        // if (master.getCplexStatus() == IloCplex::OptimalInfeas || master.getCplexStatus() == IloCplex::Infeasible)
         // {
         //     break;
         // }
+        if (master.getCplexStatus() == IloCplex::Infeasible)
+        {
+            break;
+        }
 
         master.getDuals(pi, masterRanges);
         IloExpr somaPricing(env2);
@@ -163,6 +165,8 @@ std::pair<int, int> Problema::solve(Node &node)
             return {0, 0};
         }
 
+        std::cout << 1 + pricing.getObjValue() << "\n\n\n\n\n\n";
+
         // Verificar se o custo reduzido é negativo
         if (1 + pricing.getObjValue() < -EPSILON)
         {
@@ -183,7 +187,12 @@ std::pair<int, int> Problema::solve(Node &node)
                 }
             }
 
-            lambda.add(IloNumVar(masterObj(1) + masterRanges(x_values), 0.0, IloInfinity));
+            IloNumVar lambdaVar(masterObj(1) + masterRanges(x_values), 0.0, IloInfinity);
+            char var_name[30];
+            sprintf(var_name, "l%d", lambda.getSize());
+            lambdaVar.setName(var_name);
+
+            lambda.add(lambdaVar);
 
             // Atualizar estrutura auxiliar
             std::vector<bool> itens(data.getNItems(), false);
@@ -213,7 +222,6 @@ std::pair<int, int> Problema::solve(Node &node)
             }
 
             // std::cout << master.getObjValue() << "\n";
-            std::cout << pricing.getObjValue() << "\n";
 
             x_values.end();
         }
@@ -301,6 +309,11 @@ std::pair<int, int> Problema::solve(Node &node)
     }
 
     // Verifica se a soluçao obtida é inteira
+
+    for (int i = 0; i < data.getNItems(); i++)
+    {
+        std::cout << master.getValue(lambda[i]) << " ";
+    }
 
     if (std::abs(0.5 - deltaFrac) < EPSILON)
     {
