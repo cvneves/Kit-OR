@@ -200,10 +200,10 @@ std::pair<int, int> Problema::solve(Node &node)
                 if (x_values[i] > 1 - EPSILON)
                 {
                     itens[i] = true;
-                    // std::cout << i << " ";
+                    std::cout << i << " ";
                 }
             }
-            // std::cout << "\n";
+            std::cout << "\n";
 
             lambdaItens.push_back(itens);
 
