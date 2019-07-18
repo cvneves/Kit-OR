@@ -59,9 +59,6 @@ std::pair<int, int> Problema::solve(Node &node)
     IloObjective pricingObj(env2, IloObjective::Minimize);
     pricingModel.add(pricingObj);
 
-    IloCplex pricing(pricingModel);
-    pricing.setOut(env2.getNullStream());
-
     //Restriçoes dos itens juntos
     for (auto &p : node.juntos)
     {
@@ -127,6 +124,9 @@ std::pair<int, int> Problema::solve(Node &node)
             break;
         }
 
+        IloCplex pricing(pricingModel);
+        // pricing.setOut(env2.getNullStream());
+
         master.getDuals(pi, masterRanges);
         IloExpr somaPricing(env2);
 
@@ -156,7 +156,6 @@ std::pair<int, int> Problema::solve(Node &node)
 
             pricingModel.end();
 
-            pricing.clear();
             env2.end();
 
             master.clear();
@@ -224,9 +223,13 @@ std::pair<int, int> Problema::solve(Node &node)
             // std::cout << master.getObjValue() << "\n";
 
             x_values.end();
+            pricing.clear();
+            pricing.end();
         }
         else
         {
+            pricing.clear();
+            pricing.end();
             break;
         }
     }
@@ -247,7 +250,6 @@ std::pair<int, int> Problema::solve(Node &node)
 
                 pricingModel.end();
 
-                pricing.clear();
                 env2.end();
                 lambda_values.end();
 
@@ -268,7 +270,6 @@ std::pair<int, int> Problema::solve(Node &node)
             std::cout << "\LB maior do que a melhor soluçao inteira\n";
 
             pricingModel.end();
-            pricing.clear();
 
             env2.end();
             lambda_values.end();
@@ -326,7 +327,6 @@ std::pair<int, int> Problema::solve(Node &node)
 
         pricingModel.end();
 
-        pricing.clear();
         env2.end();
         std::cout << "\nSoluçao inteira encontrada\n";
 
