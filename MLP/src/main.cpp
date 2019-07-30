@@ -15,6 +15,8 @@ void printData();
 double **matrizAdj; // matriz de adjacencia
 int dimension;      // quantidade total de vertices
 
+double calculaCusto(std::vector<int> &s);
+
 int main(int argc, char **argv)
 {
   std::vector<std::pair<std::pair<int, int>, double>> custo_insercao;
@@ -26,9 +28,33 @@ int main(int argc, char **argv)
   readData(argc, argv, &dimension, &matrizAdj);
   printData();
 
-  
+  std::vector<int> s;
+  for(int i = 0; i < dimension; i++)
+  {
+    s.push_back(i+1);
+  }
+  s.push_back(1);
+
+  std::cout << "\n";
+  std::cout << calculaCusto(s);
 
   return 0;
+}
+
+double calculaCusto(std::vector<int> &s)
+{
+  double custo = 0;
+  for(int i = 1; i < s.size() - 1; i++)
+  {
+    for(int j = 0; j < i; j++)
+    {
+      std::cout << s[j] << " -> " << s[j+1] << "\n";
+      custo += matrizAdj[s[j]][s[j+1]];
+    }
+    std::cout << "\n";
+  }
+
+  return custo;
 }
 
 void printData()
