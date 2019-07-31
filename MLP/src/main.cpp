@@ -15,7 +15,9 @@ void printData();
 double **M; // matriz de adjacencia
 int N;      // quantidade total de vertices
 
-double calculaCusto(std::vector<int> &s);
+double calculaCustoAcumulado(std::vector<int> &s);
+double calculaCustoSubsequencia(std::vector<int> &s);
+
 
 int main(int argc, char **argv)
 {
@@ -28,23 +30,48 @@ int main(int argc, char **argv)
   readData(argc, argv, &N, &M);
   printData();
 
-  std::vector<int> s;
+  std::vector<int> s, s1, s2;
   for(int i = 0; i < N; i++)
   {
     s.push_back(i+1);
   }
   s.push_back(1);
 
+  for(int i = 0; i < 15; i++)
+  {
+    s1.push_back(i+1);
+  }
+  for(int i = 15; i < N; i++)
+  {
+    s2.push_back(i+1);
+  }
+  s2.push_back(1);
+
   std::cout << "\n";
-  std::cout << calculaCusto(s);
+  std::cout << calculaCustoAcumulado(s) << "\n";
+
+  std::cout << calculaCustoSubsequencia(s1) << "\n";
+  std::cout << calculaCustoSubsequencia(s2) << "\n";
+
+
 
   return 0;
 }
 
-double calculaCusto(std::vector<int> &s)
+double calculaCustoSubsequencia(std::vector<int> &s)
 {
   double custo = 0;
-  for(int i = 1; i < s.size() - 1; i++)
+  for(int i = 0; i < s.size()-1; i++)
+  {
+    custo +=  M[s[i]][s[i+1]];
+  }
+  return custo;
+}
+
+double calculaCustoAcumulado(std::vector<int> &s)
+{
+  double custo = 0;
+  for(int i = 1; i < s.size()-1; i++)
   {
     for(int j = 0; j < i; j++)
     {
