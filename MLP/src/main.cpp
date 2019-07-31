@@ -12,8 +12,8 @@
 
 void printData();
 
-double **matrizAdj; // matriz de adjacencia
-int dimension;      // quantidade total de vertices
+double **M; // matriz de adjacencia
+int N;      // quantidade total de vertices
 
 double calculaCusto(std::vector<int> &s);
 
@@ -25,11 +25,11 @@ int main(int argc, char **argv)
 
   srand(time(NULL));
 
-  readData(argc, argv, &dimension, &matrizAdj);
+  readData(argc, argv, &N, &M);
   printData();
 
   std::vector<int> s;
-  for(int i = 0; i < dimension; i++)
+  for(int i = 0; i < N; i++)
   {
     s.push_back(i+1);
   }
@@ -49,7 +49,7 @@ double calculaCusto(std::vector<int> &s)
     for(int j = 0; j < i; j++)
     {
       std::cout << s[j] << " -> " << s[j+1] << "\n";
-      custo += matrizAdj[s[j]][s[j+1]];
+      custo += M[s[j]][s[j+1]];
     }
     std::cout << "\n";
   }
@@ -59,12 +59,12 @@ double calculaCusto(std::vector<int> &s)
 
 void printData()
 {
-  std::cout << "dimension: " << dimension << std::endl;
-  for (size_t i = 1; i <= dimension; i++)
+  std::cout << "dimension: " << N << std::endl;
+  for (size_t i = 1; i <= N; i++)
   {
-    for (size_t j = 1; j <= dimension; j++)
+    for (size_t j = 1; j <= N; j++)
     {
-      std::cout << matrizAdj[i][j] << " ";
+      std::cout << M[i][j] << " ";
     }
     std::cout << std::endl;
   }
