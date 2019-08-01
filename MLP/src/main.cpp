@@ -18,6 +18,10 @@ int N;      // quantidade total de vertices
 double calculaCustoAcumulado(std::vector<int> &s);
 double calculaCustoSubsequencia(std::vector<int> &s);
 
+void printSolution(std::vector<int> &s);
+
+std::vector<int> construction(double alpha);
+
 int main(int argc, char **argv)
 {
   std::vector<std::pair<std::pair<int, int>, double>> custo_insercao;
@@ -29,54 +33,60 @@ int main(int argc, char **argv)
   readData(argc, argv, &N, &M);
   printData();
 
-  std::vector<int> s, s1, s2;
-  for (int i = 0; i < N; i++)
-  {
-    s.push_back(i + 1);
-  }
+  std::vector<int> s;
+  // for (int i = 0; i < N; i++)
+  // {
+  //   s.push_back(i + 1);
+  // }
   // s.push_back(1);
 
-  for (int i = 0; i < 7; i++)
-  {
-    s1.push_back(i + 1);
-    
-  }
-  for (int i = 7; i < N; i++)
-  {
-    s2.push_back(i + 1);
-  }
-  // s2.push_back(1);
+  s = construction(0.5);
 
-  for(int i = 0; i < s1.size(); i++)
-  {
-    std::cout << s1[i] << " ";
-  }
-  std::cout << "\n";
+  printSolution(s);
 
-  for(int i = 0; i < s2.size(); i++)
-  {
-    std::cout << s2[i] << " ";
-  }
-  std::cout << "\n";
-
-
-  std::cout << calculaCustoAcumulado(s) << "\n";
-
-  double T1 = calculaCustoSubsequencia(s1);
-  double T2 = calculaCustoSubsequencia(s2);
-
-  double C1 = calculaCustoAcumulado(s1);
-  double C2 = calculaCustoAcumulado(s2);
-
-  std::cout << C1 + (s2.size()) * (T1 + M[s1[6]][s2[0]]) + C2;
+  std::cout << calculaCustoAcumulado(s);
 
   return 0;
+}
+
+std::vector<int> construction(double alpha)
+{
+  int r = 1;
+  std::vector<int> s(N+1), CL(N - 1);
+  std::vector<double> distances(N - 1);  
+
+  s[0] = s[s.size()-1] = r;
+
+  for (int i = 2; i <= N; i++)
+  {
+    CL[i - 2] = i;
+  }
+
+  int c = 1;
+  while(!CL.empty())
+  {
+    for(int i = 0; i < CL.size(); i++)
+    {
+      distances[i] = M[r][CL[i]];
+    }
+    std::sort(distances.begin(), distances.end());
+
+    int a = rand() % (int) std::ceil(alpha * CL.size());
+    r = CL[a];
+    s[c] = r;
+    c++;
+
+    CL.erase(CL.begin() + a);
+    distances.erase(distances.begin());
+  }
+
+  return s;
 }
 
 double calculaCustoSubsequencia(std::vector<int> &s)
 {
   double custo = 0;
-  for (int i = 0; i < s.size()-1; i++)
+  for (int i = 0; i < s.size() - 1; i++)
   {
     custo += M[s[i]][s[i + 1]];
   }
@@ -86,8 +96,11 @@ double calculaCustoSubsequencia(std::vector<int> &s)
 double calculaCustoAcumulado(std::vector<int> &s)
 {
   double custo = 0;
+
   for (int i = 1; i < s.size(); i++)
   {
+    if (s[i] == 1)
+      continue;
     for (int j = 0; j < i; j++)
     {
       std::cout << s[j] << " -> " << s[j + 1] << "\n";
@@ -97,6 +110,15 @@ double calculaCustoAcumulado(std::vector<int> &s)
   }
 
   return custo;
+}
+
+void printSolution(std::vector<int> &s)
+{
+  for (int i = 0; i < s.size(); i++)
+  {
+    std::cout << s[i] << " ";
+  }
+  std::cout << "\n";
 }
 
 void printData()
