@@ -49,6 +49,9 @@ int main(int argc, char **argv)
   printData();
   std::cout << "\n\n";
 
+  std::chrono::time_point<std::chrono::system_clock> start, end;
+  start = std::chrono::system_clock::now();
+
   std::vector<int> solucao = GILS_RVND();
 
   std::cout << "\n\n";
@@ -56,7 +59,13 @@ int main(int argc, char **argv)
   printSolucao(solucao);
 
   std::cout << "\n\n"
-            << calcularValorObj(solucao, matrizAdj);
+            << calcularValorObj(solucao, matrizAdj) << "\n";
+
+  end = std::chrono::system_clock::now();
+
+  int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+
+  std::cout << "Elapsed time (s): " << elapsed_seconds / 1000.0 << "\n\n";
 
   return 0;
 }
