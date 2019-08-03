@@ -37,6 +37,9 @@ void perturb(std::vector<int> &s);
 double **matrizAdj; // matriz de adjacencia
 int dimension;      // quantidade total de vertices
 
+std::chrono::time_point<std::chrono::system_clock> start, end, temp1, temp2;
+std::vector<double> tempos(6, 0);
+
 int main(int argc, char **argv)
 {
   std::vector<std::pair<std::pair<int, int>, double>> custo_insercao;
@@ -49,7 +52,6 @@ int main(int argc, char **argv)
   printData();
   std::cout << "\n\n";
 
-  std::chrono::time_point<std::chrono::system_clock> start, end;
   start = std::chrono::system_clock::now();
 
   std::vector<int> solucao = GILS_RVND();
@@ -65,7 +67,13 @@ int main(int argc, char **argv)
 
   int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
-  std::cout << "Elapsed time (s): " << elapsed_seconds / 1000.0 << "\n\n";
+  std::cout << "Tempo total (s): " << elapsed_seconds / 1000.0 << "\n\n";
+  std::cout << "Tempo swap: " << tempos[0]/1000.0 << "\n";
+  std::cout << "Tempo 2-opt: " << tempos[1/1000.0] << "\n";
+  std::cout << "Tempo re-insertion: " << tempos[2]/1000.0 << "\n";
+  std::cout << "Tempo or-opt-2: " << tempos[3]/1000.0 << "\n";
+  std::cout << "Tempo or-opt-3: " << tempos[4]/1000.0 << "\n";
+  std::cout << "Tempo SI: " << tempos[5]/1000.0 << "\n";
 
   return 0;
 }
@@ -138,22 +146,37 @@ void RVND(std::vector<int> &solucao, double &valor_obj, double **m)
     switch (NL[n])
     {
     case 1:
+      temp1 = std::chrono::system_clock::now();
       buscaVizinhancaSwap(nova_solucao, novo_valor_obj, m);
+      temp2 = std::chrono::system_clock::now();
+      tempos[0] += std::chrono::duration_cast<std::chrono::milliseconds>(temp2 - temp1).count();
       break;
     case 2:
     {
+      temp1 = std::chrono::system_clock::now();
       buscaVizinhanca2Opt(nova_solucao, novo_valor_obj, m);
+      temp2 = std::chrono::system_clock::now();
+      tempos[1] += std::chrono::duration_cast<std::chrono::milliseconds>(temp2 - temp1).count();
       break;
     }
     case 3:
+      temp1 = std::chrono::system_clock::now();
       buscaVizinhancaReinsertion(nova_solucao, novo_valor_obj, m, 1);
+      temp2 = std::chrono::system_clock::now();
+      tempos[2] += std::chrono::duration_cast<std::chrono::milliseconds>(temp2 - temp1).count();
       break;
     case 4:
+      temp1 = std::chrono::system_clock::now();
       buscaVizinhancaReinsertion(nova_solucao, novo_valor_obj, m, 2);
+      temp2 = std::chrono::system_clock::now();
+      tempos[3] += std::chrono::duration_cast<std::chrono::milliseconds>(temp2 - temp1).count();
       break;
     case 5:
     {
+      temp1 = std::chrono::system_clock::now();
       buscaVizinhancaReinsertion(nova_solucao, novo_valor_obj, m, 3);
+      temp2 = std::chrono::system_clock::now();
+      tempos[4] += std::chrono::duration_cast<std::chrono::milliseconds>(temp2 - temp1).count();
       break;
     }
     }
@@ -443,7 +466,10 @@ std::vector<int> GILS_RVND()
     std::vector<std::pair<std::pair<int, int>, double>> custo_insercao;
     double valor_obj;
 
+    temp1 = std::chrono::system_clock::now();
     construcao(s, lista_candidatos, 3, custo_insercao, valor_obj, alpha, matrizAdj, dimension);
+    temp2 = std::chrono::system_clock::now();
+    tempos[5] += std::chrono::duration_cast<std::chrono::milliseconds>(temp2 - temp1).count();
 
     std::vector<int> s_b = s;
     double valor_obj_b = valor_obj;
