@@ -68,12 +68,12 @@ int main(int argc, char **argv)
   int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
   std::cout << "Tempo total (s): " << elapsed_seconds / 1000.0 << "\n\n";
-  std::cout << "Tempo swap: " << tempos[0]/1000.0 << "\n";
-  std::cout << "Tempo 2-opt: " << tempos[1/1000.0] << "\n";
-  std::cout << "Tempo re-insertion: " << tempos[2]/1000.0 << "\n";
-  std::cout << "Tempo or-opt-2: " << tempos[3]/1000.0 << "\n";
-  std::cout << "Tempo or-opt-3: " << tempos[4]/1000.0 << "\n";
-  std::cout << "Tempo SI: " << tempos[5]/1000.0 << "\n";
+  std::cout << "Tempo swap: " << tempos[0]/1000000.0 << "\n";
+  std::cout << "Tempo 2-opt: " << tempos[1]/1000000.0 << "\n";
+  std::cout << "Tempo re-insertion: " << tempos[2]/1000000.0 << "\n";
+  std::cout << "Tempo or-opt-2: " << tempos[3]/1000000.0 << "\n";
+  std::cout << "Tempo or-opt-3: " << tempos[4]/1000000.0 << "\n";
+  std::cout << "Tempo SI: " << tempos[5]/1000000.0 << "\n";
 
   return 0;
 }
@@ -149,34 +149,34 @@ void RVND(std::vector<int> &solucao, double &valor_obj, double **m)
       temp1 = std::chrono::system_clock::now();
       buscaVizinhancaSwap(nova_solucao, novo_valor_obj, m);
       temp2 = std::chrono::system_clock::now();
-      tempos[0] += std::chrono::duration_cast<std::chrono::milliseconds>(temp2 - temp1).count();
+      tempos[0] += std::chrono::duration_cast<std::chrono::microseconds>(temp2 - temp1).count();
       break;
     case 2:
     {
       temp1 = std::chrono::system_clock::now();
       buscaVizinhanca2Opt(nova_solucao, novo_valor_obj, m);
       temp2 = std::chrono::system_clock::now();
-      tempos[1] += std::chrono::duration_cast<std::chrono::milliseconds>(temp2 - temp1).count();
+      tempos[1] += std::chrono::duration_cast<std::chrono::microseconds>(temp2 - temp1).count();
       break;
     }
     case 3:
       temp1 = std::chrono::system_clock::now();
       buscaVizinhancaReinsertion(nova_solucao, novo_valor_obj, m, 1);
       temp2 = std::chrono::system_clock::now();
-      tempos[2] += std::chrono::duration_cast<std::chrono::milliseconds>(temp2 - temp1).count();
+      tempos[2] += std::chrono::duration_cast<std::chrono::microseconds>(temp2 - temp1).count();
       break;
     case 4:
       temp1 = std::chrono::system_clock::now();
       buscaVizinhancaReinsertion(nova_solucao, novo_valor_obj, m, 2);
       temp2 = std::chrono::system_clock::now();
-      tempos[3] += std::chrono::duration_cast<std::chrono::milliseconds>(temp2 - temp1).count();
+      tempos[3] += std::chrono::duration_cast<std::chrono::microseconds>(temp2 - temp1).count();
       break;
     case 5:
     {
       temp1 = std::chrono::system_clock::now();
       buscaVizinhancaReinsertion(nova_solucao, novo_valor_obj, m, 3);
       temp2 = std::chrono::system_clock::now();
-      tempos[4] += std::chrono::duration_cast<std::chrono::milliseconds>(temp2 - temp1).count();
+      tempos[4] += std::chrono::duration_cast<std::chrono::microseconds>(temp2 - temp1).count();
       break;
     }
     }
