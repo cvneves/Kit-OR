@@ -10,6 +10,8 @@
 #include <limits>
 #include <chrono>
 
+#define EPSILON 1e-6
+
 void printData();
 
 double **M; // matriz de adjacencia
@@ -24,10 +26,10 @@ void reinsertion(std::vector<int> &solucao, int i, int tamanho_subsequencia, int
 void swap(std::vector<int> &solucao, int i, int j);
 void twoOpt(std::vector<int> &solucao, int i, int j);
 
-void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> ReOpt, double &valor_obj);
+void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt, double &valor_obj);
 
 std::vector<int> construction(double alpha);
-std::vector<std::vector<std::vector<double>>> reOptPreProcessing(std::vector<int> &s);
+void reOptPreProcessing(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt);
 
 int main(int argc, char **argv)
 {
@@ -45,18 +47,29 @@ int main(int argc, char **argv)
   std::cout << "\n";
 
   printSolution(s);
-  std::cout << '\n'
-            << calculaCustoAcumulado(s) << '\n';
-  std::vector<std::vector<std::vector<double>>> reOpt = reOptPreProcessing(s);
+
+  std::vector<std::vector<std::vector<double>>> reOpt(3, std::vector<std::vector<double>>(N + 1, std::vector<double>(N + 1, 0)));
+  reOptPreProcessing(s, reOpt);
   double valor_obj = reOpt[1][0][N];
+  std::cout << valor_obj << "\n";
 
+  std::chrono::time_point<std::chrono::system_clock> start, end;
+  start = std::chrono::system_clock::now();
   buscaVizinhanca2Opt(s, reOpt, valor_obj);
+  end = std::chrono::system_clock::now();
+  int elapsed_seconds = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+  std::cout << "Tempo total (s): " << elapsed_seconds / 1000000.0 << "\n\n";
+
+  printSolution(s);
+
   // std::cout << "Custo " << calculaCustoSubsequencia(s, 0, N) << "\n";
-  twoOpt(s, 0, N);
+  // twoOpt(s, 0, N);
   // std::cout << "Custo " << calculaCustoSubsequencia(s, 0, N) << "\n";
 
-  std::cout << reOpt[1][N][0] << "\n";
+  // std::cout << reOpt[1][N][0] << "\n";
+  // twoOpt(s, 0, N);
   std::cout << calculaCustoAcumulado(s) << "\n";
+  // std::cout << reOpt[1][0][N] << "\n";
 
   return 0;
 }
@@ -95,11 +108,9 @@ std::vector<int> construction(double alpha)
   return s;
 }
 
-std::vector<std::vector<std::vector<double>>> reOptPreProcessing(std::vector<int> &s)
+void reOptPreProcessing(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt)
 {
   // T = 0, C = 1, W = 2
-  std::vector<std::vector<std::vector<double>>> reOpt(3, std::vector<std::vector<double>>(N + 1, std::vector<double>(N + 1, 0)));
-
   for (int i = 0; i < N; i++)
   {
     reOpt[0][i][i] = 0;
@@ -116,8 +127,9 @@ std::vector<std::vector<std::vector<double>>> reOptPreProcessing(std::vector<int
 
   for (int t = 2; t <= N + 1; t++)
   {
-    for (int i = 0; i < N - t + 2; i++)
+    for (int i = 0, j; i < N - t + 2; i++)
     {
+      
       reOpt[2][i][i + t - 1] = reOpt[2][i][i + t - 2] + reOpt[2][i + t - 1][i + t - 1];
       reOpt[0][i][i + t - 1] = reOpt[0][i][i + t - 2] + M[s[i + t - 2]][s[i + t - 1]];
       reOpt[1][i][i + t - 1] = reOpt[1][i][i + t - 2] + reOpt[2][i + t - 1][i + t - 1] * (reOpt[0][i][i + t - 2] + M[s[i + t - 2]][s[i + t - 1]]) + reOpt[1][i + t - 1][i + t - 1];
@@ -128,8 +140,6 @@ std::vector<std::vector<std::vector<double>>> reOptPreProcessing(std::vector<int
       reOpt[1][i + t - 1][i] = reOpt[1][i + t - 2][i] + reOpt[2][i + t - 2][i] * (reOpt[0][i + t - 1][i + t - 1] + M[s[i + t - 1]][s[i + t - 2]]) + reOpt[1][i + t - 1][i + t - 1];
     }
   }
-
-  return reOpt;
 }
 
 double calculaCustoSubsequencia(std::vector<int> &s, int i, int j)
@@ -190,9 +200,9 @@ void swap(std::vector<int> &solucao, int i, int j)
   std::swap(solucao[i], solucao[j]);
 }
 
-void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> reOpt, double &valor_obj)
+void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt, double &valor_obj)
 {
-  double T, C, W, melhor_valor_obj = std::numeric_limits<double>::infinity(), temp_obj;
+  double T, C, W, melhor_valor_obj = valor_obj, temp_obj;
   double T1, C1, W1, T2, C2, W2, T3, C3, W3;
   int melhor_i, melhor_j;
   bool improved = false;
@@ -208,22 +218,50 @@ void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vecto
 
       C = reOpt[1][0][i - 1] + W1 * (T1 + M[s[i - 1]][s[j]]) + reOpt[1][j][i] + W2 * (T2 + M[s[i]][s[j + 1]]) + reOpt[1][j + 1][N];
 
-      twoOpt(s, i, j);
-      std::cout << C << "\n";
+      // twoOpt(s, i, j);
+      // std::cout << C << "\n";
+      // std::cout << i << " " << j << "\n";
       // std::cout << calculaCustoSubsequencia(s, 0, N) << "\n";
-      std::cout << calculaCustoAcumulado(s) << "\n";
-      printSolution(s);
-      twoOpt(s, i, j);
+      // std::cout << calculaCustoAcumulado(s) << "\n";
+      // printSolution(s);
+      // twoOpt(s, i, j);
 
       // std::cout << T << "\n";
+      if (C + EPSILON < melhor_valor_obj)
+      {
+        improved = true;
+        melhor_valor_obj = C;
+        melhor_i = i;
+        melhor_j = j;
+      }
     }
   }
 
-  // if (improved == true)
-  // {
-  //   valor_obj = melhor_valor_obj;
-  //   swap(s, melhor_i, melhor_j);
-  // }
+  if (improved == true)
+  {
+    valor_obj = melhor_valor_obj;
+    // std::cout << valor_obj << "\n\n";
+    std::cout << melhor_valor_obj << "\n";
+    twoOpt(s, melhor_i, melhor_j);
+
+    for (int i = melhor_i; i <= melhor_j; i++)
+    {
+      for (int j = i - 1; j >= 0; j--)
+      {
+        reOpt[2][j][i] = reOpt[2][j][i - 1] + reOpt[2][i][i];
+        reOpt[0][j][i] = reOpt[0][j][i - 1] + M[s[i - 1]][s[i]];
+        reOpt[1][j][i] = reOpt[1][j][i - 1] + reOpt[2][i][i] * (reOpt[0][j][i - 1] + M[s[i - 1]][s[i]]) + reOpt[1][j][j];
+
+        std::cout << "W: " << reOpt[0][j][i] << "\n";
+        std::cout << "Porco "<< calculaCustoSubsequencia(s, j, i) << "\n";
+
+        reOpt[2][i][j] = reOpt[2][j][i];
+        reOpt[0][i][j] = reOpt[0][j][i];
+
+        reOpt[1][i][j] = reOpt[1][i-1][j] + reOpt[2][i-1][j] * (reOpt[0][i][i] + M[s[i]][s[i-1]]) + reOpt[1][i][i];
+      }
+    }
+  }
 }
 
 void printData()
