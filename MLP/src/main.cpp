@@ -70,9 +70,11 @@ int main(int argc, char **argv)
   // twoOpt(s, 0, N);
   std::cout << calculaCustoAcumulado(s) << "\n";
   std::cout << reOpt[1][0][N] << "\n";
+  std::cout << valor_obj << "\n";
   buscaVizinhanca2Opt(s, reOpt, valor_obj);
   std::cout << calculaCustoAcumulado(s) << "\n";
   std::cout << reOpt[1][0][N] << "\n";
+  std::cout << valor_obj << "\n";
 
   return 0;
 }
@@ -309,8 +311,6 @@ void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vecto
         // std::cout << "Porco " << calculaCustoSubsequencia(s, i, j) << "\n";
       }
     }
-
-    //concatenamento
   }
 }
 
