@@ -50,16 +50,13 @@ int main(int argc, char **argv)
   std::vector<std::vector<std::vector<double>>> reOpt = reOptPreProcessing(s);
   double valor_obj = reOpt[1][0][N];
 
-  // std::cout << valor_obj << '\n';
   buscaVizinhanca2Opt(s, reOpt, valor_obj);
-
+  // std::cout << "Custo " << calculaCustoSubsequencia(s, 0, N) << "\n";
   twoOpt(s, 0, N);
+  // std::cout << "Custo " << calculaCustoSubsequencia(s, 0, N) << "\n";
 
-  printSolution(s);
   std::cout << reOpt[1][N][0] << "\n";
   std::cout << calculaCustoAcumulado(s) << "\n";
-
-  // std::cout << calculaCustoSubsequencia(s, 0, 1);
 
   return 0;
 }
@@ -196,20 +193,27 @@ void swap(std::vector<int> &solucao, int i, int j)
 void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> reOpt, double &valor_obj)
 {
   double T, C, W, melhor_valor_obj = std::numeric_limits<double>::infinity(), temp_obj;
+  double T1, C1, W1, T2, C2, W2, T3, C3, W3;
   int melhor_i, melhor_j;
   bool improved = false;
   for (int i = 1; i < s.size() - 2; i++)
   {
-    for (int j = i + 2; j < s.size() - 1; j++)
+    for (int j = i + 1; j < s.size() - 1; j++)
     {
-      W = reOpt[2][0][i] + reOpt[2][j][j];
-      T = reOpt[0][0][i] + M[s[i]][s[j]] + reOpt[0][j][j];
-      // C = reOpt[1][0][i] + reOpt[2][0][i] * (reOpt[0][i][i] + M[i - 1][i]) + reOpt[1][i][i];
+      W1 = reOpt[2][j][i];
+      W2 = reOpt[2][j + 1][N];
 
-      // std::cout << i << " " << j << "\n";
-      // swap(s, i, j);
-      // std::cout << calculaCustoSubsequencia(s, 0, i) << "\n";
-      // swap(s, i, j);
+      T1 = reOpt[0][0][i - 1];
+      T2 = reOpt[0][0][i - 1] + M[s[i - 1]][s[j]] + reOpt[0][j][i];
+
+      C = reOpt[1][0][i - 1] + W1 * (T1 + M[s[i - 1]][s[j]]) + reOpt[1][j][i] + W2 * (T2 + M[s[i]][s[j + 1]]) + reOpt[1][j + 1][N];
+
+      // twoOpt(s, i, j);
+      std::cout << C << "\n";
+      // std::cout << calculaCustoSubsequencia(s, 0, N) << "\n";
+      // std::cout << calculaCustoAcumulado(s) << "\n";
+      // printSolution(s);
+      // twoOpt(s, i, j);
 
       // std::cout << T << "\n";
     }
