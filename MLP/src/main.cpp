@@ -24,7 +24,7 @@ void reinsertion(std::vector<int> &solucao, int i, int tamanho_subsequencia, int
 void swap(std::vector<int> &solucao, int i, int j);
 void twoOpt(std::vector<int> &solucao, int i, int j);
 
-void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> ReOpt, double &valor_obj);
+void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> ReOpt, double &valor_obj);
 
 std::vector<int> construction(double alpha);
 std::vector<std::vector<std::vector<double>>> reOptPreProcessing(std::vector<int> &s);
@@ -45,13 +45,19 @@ int main(int argc, char **argv)
   std::cout << "\n";
 
   printSolution(s);
-  // std::cout << '\n'
-  //           << calculaCustoAcumulado(s) << '\n';
+  std::cout << '\n'
+            << calculaCustoAcumulado(s) << '\n';
   std::vector<std::vector<std::vector<double>>> reOpt = reOptPreProcessing(s);
-  double valor_obj = reOpt[0][0][1];
+  double valor_obj = reOpt[1][0][N];
 
   // std::cout << valor_obj << '\n';
-  buscaVizinhancaSwap(s, reOpt, valor_obj);
+  buscaVizinhanca2Opt(s, reOpt, valor_obj);
+
+  twoOpt(s, 0, N);
+
+  printSolution(s);
+  std::cout << reOpt[1][N][0] << "\n";
+  std::cout << calculaCustoAcumulado(s) << "\n";
 
   // std::cout << calculaCustoSubsequencia(s, 0, 1);
 
@@ -118,15 +124,12 @@ std::vector<std::vector<std::vector<double>>> reOptPreProcessing(std::vector<int
       reOpt[2][i][i + t - 1] = reOpt[2][i][i + t - 2] + reOpt[2][i + t - 1][i + t - 1];
       reOpt[0][i][i + t - 1] = reOpt[0][i][i + t - 2] + M[s[i + t - 2]][s[i + t - 1]];
       reOpt[1][i][i + t - 1] = reOpt[1][i][i + t - 2] + reOpt[2][i + t - 1][i + t - 1] * (reOpt[0][i][i + t - 2] + M[s[i + t - 2]][s[i + t - 1]]) + reOpt[1][i + t - 1][i + t - 1];
-      // std::cout << reOpt[0][i][i + t - 1] << " ";
 
-      // for (int j = i; j < i + t; j++)
-      // {
-      //   std::cout << s[j] << " ";
-      // }
-      // std::cout << "\n";
+      reOpt[2][i + t - 1][i] = reOpt[2][i][i + t - 1];
+      reOpt[0][i + t - 1][i] = reOpt[0][i][i + t - 1];
+
+      reOpt[1][i + t - 1][i] = reOpt[1][i + t - 2][i] + reOpt[2][i + t - 2][i] * (reOpt[0][i + t - 1][i + t - 1] + M[s[i + t - 1]][s[i + t - 2]]) + reOpt[1][i + t - 1][i + t - 1];
     }
-    // std::cout << "\n";
   }
 
   return reOpt;
@@ -190,7 +193,7 @@ void swap(std::vector<int> &solucao, int i, int j)
   std::swap(solucao[i], solucao[j]);
 }
 
-void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> reOpt, double &valor_obj)
+void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> reOpt, double &valor_obj)
 {
   double T, C, W, melhor_valor_obj = std::numeric_limits<double>::infinity(), temp_obj;
   int melhor_i, melhor_j;
@@ -203,12 +206,12 @@ void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vecto
       T = reOpt[0][0][i] + M[s[i]][s[j]] + reOpt[0][j][j];
       // C = reOpt[1][0][i] + reOpt[2][0][i] * (reOpt[0][i][i] + M[i - 1][i]) + reOpt[1][i][i];
 
-      std::cout << i << " " << j << "\n";
+      // std::cout << i << " " << j << "\n";
       // swap(s, i, j);
       // std::cout << calculaCustoSubsequencia(s, 0, i) << "\n";
       // swap(s, i, j);
 
-      std::cout << T << "\n";
+      // std::cout << T << "\n";
     }
   }
 
