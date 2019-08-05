@@ -208,12 +208,12 @@ void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vecto
 
       C = reOpt[1][0][i - 1] + W1 * (T1 + M[s[i - 1]][s[j]]) + reOpt[1][j][i] + W2 * (T2 + M[s[i]][s[j + 1]]) + reOpt[1][j + 1][N];
 
-      // twoOpt(s, i, j);
+      twoOpt(s, i, j);
       std::cout << C << "\n";
       // std::cout << calculaCustoSubsequencia(s, 0, N) << "\n";
-      // std::cout << calculaCustoAcumulado(s) << "\n";
-      // printSolution(s);
-      // twoOpt(s, i, j);
+      std::cout << calculaCustoAcumulado(s) << "\n";
+      printSolution(s);
+      twoOpt(s, i, j);
 
       // std::cout << T << "\n";
     }
