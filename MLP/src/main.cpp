@@ -336,29 +336,29 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
         continue;
       if (i < j)
       {
-        // std::cout << i << " " << j << "\n";
-        // std::vector<int> copia = s;
-        // reinsertion(s, i, t, j);
-        // printSolution(s);
-        // s = copia;
-        // for (int k = 0; k <= i - 1; k++)
-        // {
-        //   std::cout << s[k] << " ";
-        // }
-        // for (int k = i + t; k <= j + t - 1; k++)
-        // {
-        //   std::cout << s[k] << " ";
-        // }
-        // for (int k = i; k <= i + t - 1; k++)
-        // {
-        //   std::cout << s[k] << " ";
-        // }
-        // for (int k = j + t; k <= N; k++)
-        // {
-        //   std::cout << s[k] << " ";
-        // }
+        std::cout << i << " " << j << "\n";
+        std::vector<int> copia = s;
+        reinsertion(s, i, t, j);
+        printSolution(s);
+        s = copia;
+        for (int k = 0; k <= i - 1; k++)
+        {
+          std::cout << s[k] << " ";
+        }
+        for (int k = i + t; k <= j + t - 1; k++)
+        {
+          std::cout << s[k] << " ";
+        }
+        for (int k = i; k <= i + t - 1; k++)
+        {
+          std::cout << s[k] << " ";
+        }
+        for (int k = j + t; k <= N; k++)
+        {
+          std::cout << s[k] << " ";
+        }
 
-        // std::cout << "\n";
+        std::cout << "\n";
 
         // // W1 = reOpt[2][0][i-1] + reOpt[2][i+t][j+1];
       }
