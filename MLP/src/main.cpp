@@ -53,6 +53,7 @@ int main(int argc, char **argv)
   reOptPreProcessing(s, reOpt);
   double valor_obj = reOpt[1][0][N];
   std::cout << valor_obj << "\n";
+  std::cout << calculaCustoAcumulado(s) << "\n";
 
   // std::chrono::time_point<std::chrono::system_clock> start, end;
   // start = std::chrono::system_clock::now();
@@ -72,20 +73,19 @@ int main(int argc, char **argv)
   // std::cout << calculaCustoAcumulado(s) << "\n";
   // std::cout << reOpt[1][0][N] << "\n";
   // std::cout << valor_obj << "\n";
-  buscaVizinhanca2Opt(s, reOpt, valor_obj);
   // std::cout << calculaCustoAcumulado(s) << "\n";
   // std::cout << reOpt[1][0][N] << "\n";
   // std::cout << valor_obj << "\n";
 
-  printSolution(s);
-
   // std::cout << "\n\n\n\n\n";
-
+  buscaVizinhanca2Opt(s, reOpt, valor_obj);
   buscaVizinhancaReinsertion(s, reOpt, valor_obj, 3);
+  // reOptPreProcessing(s, reOpt);
+  // buscaVizinhanca2Opt(s, reOpt, valor_obj);
 
   printSolution(s);
-  std::cout << "valor obj nao seboso " << valor_obj << "\n";
-  std::cout << "SEboso " << calculaCustoAcumulado(s) << "\n";
+  std::cout << valor_obj << "\n";
+  std::cout << calculaCustoAcumulado(s) << "\n";
 
   return 0;
 }
@@ -469,6 +469,21 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
     // std::cout << valor_obj << "\n\n";
     // std::cout << melhor_valor_obj << "\n";
     reinsertion(s, melhor_i, t, melhor_j);
+
+    std::cout << "\n";
+
+    if (melhor_i < melhor_j)
+    {
+      int i1, i2, i3, i4;
+      int j1, j2, j3, j4;
+
+      
+
+    }
+    else
+    {
+
+    }
   }
 }
 
