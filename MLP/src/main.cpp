@@ -54,12 +54,12 @@ int main(int argc, char **argv)
   double valor_obj = reOpt[1][0][N];
   std::cout << valor_obj << "\n";
 
-  std::chrono::time_point<std::chrono::system_clock> start, end;
-  start = std::chrono::system_clock::now();
-  buscaVizinhanca2Opt(s, reOpt, valor_obj);
-  end = std::chrono::system_clock::now();
-  int elapsed_seconds = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
-  std::cout << "Tempo total (s): " << elapsed_seconds / 1000000.0 << "\n\n";
+  // std::chrono::time_point<std::chrono::system_clock> start, end;
+  // start = std::chrono::system_clock::now();
+  // buscaVizinhanca2Opt(s, reOpt, valor_obj);
+  // end = std::chrono::system_clock::now();
+  // int elapsed_seconds = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+  // std::cout << "Tempo total (s): " << elapsed_seconds / 1000000.0 << "\n\n";
 
   // printSolution(s);
 
@@ -81,7 +81,7 @@ int main(int argc, char **argv)
 
   std::cout << "\n\n\n\n\n";
 
-  buscaVizinhancaReinsertion(s, reOpt, valor_obj, 3);
+  buscaVizinhancaReinsertion(s, reOpt, valor_obj, 1);
 
   return 0;
 }
@@ -327,6 +327,7 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
   double T1, C1, W1, T2, C2, W2, T3, C3, W3;
   int melhor_i, melhor_j;
   bool improved = false;
+  int i1, i2, j1, j2;
   for (int i = 1; i < N + 1 - t; i++)
   {
     std::cout << "\n";
@@ -336,57 +337,113 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
         continue;
       if (i < j)
       {
-        std::cout << i << " " << j << "\n";
+        std::cout << i << " " << j << ", ";
+
+        // // std::cout << i << " " << j << "\n";
         std::vector<int> copia = s;
         reinsertion(s, i, t, j);
-        printSolution(s);
+        // std::cout << calculaCustoSubsequencia(s, 0, N) << ", ";
+        std::cout << calculaCustoAcumulado(s) << ", ";
+        // printSolution(s);
         s = copia;
-        for (int k = 0; k <= i - 1; k++)
-        {
-          std::cout << s[k] << " ";
-        }
-        for (int k = i + t; k <= j + t - 1; k++)
-        {
-          std::cout << s[k] << " ";
-        }
-        for (int k = i; k <= i + t - 1; k++)
-        {
-          std::cout << s[k] << " ";
-        }
-        for (int k = j + t; k <= N; k++)
-        {
-          std::cout << s[k] << " ";
-        }
 
-        std::cout << "\n";
+        i1 = 0, j1 = i - 1;
+        i2 = i + t, j2 = j + t - 1;
+
+        W1 = reOpt[2][i1][j1] + reOpt[2][i2][j2];
+        T1 = reOpt[0][i1][j1] + M[s[j1]][s[i2]] + reOpt[0][i2][j2];
+        C1 = reOpt[1][i1][j1] + reOpt[2][i2][j2] * (reOpt[0][i1][j1] + M[s[j1]][s[i2]]) + reOpt[1][i2][j2];
+
+        // std::cout << i1 << " " << j1 << " " << i2 << " " << j2 << "\n";
+
+        i1 = i, j1 = i + t - 1;
+        i2 = j + t, j2 = N;
+
+        W2 = reOpt[2][i1][j1] + reOpt[2][i2][j2];
+        T2 = reOpt[0][i1][j1] + M[s[j1]][s[i2]] + reOpt[0][i2][j2];
+        C2 = reOpt[1][i1][j1] + reOpt[2][i2][j2] * (reOpt[0][i1][j1] + M[s[j1]][s[i2]]) + reOpt[1][i2][j2];
+
+        // std::cout << i1 << " " << j1 << ", " << i2 << " " << j2 << "\n";
+
+        std::cout << C1 + W2 * (T1 + M[s[j + t - 1]][s[i]]) + C2 << "\n";
+        // std::cout << T1 + M[s[j + t - 1]][s[i]] + T2 << "\n\n\n";
+
+        // for (int k = 0; k <= i - 1; k++)
+        // {
+        //   std::cout << s[k] << " ";
+        // }
+        // for (int k = i + t; k <= j + t - 1; k++)
+        // {
+        //   std::cout << s[k] << " ";
+        // }
+        // for (int k = i; k <= i + t - 1; k++)
+        // {
+        //   std::cout << s[k] << " ";
+        // }
+        // for (int k = j + t; k <= N; k++)
+        // {
+        //   std::cout << s[k] << " ";
+        // }
+
+        // std::cout << "\n";
 
         // // W1 = reOpt[2][0][i-1] + reOpt[2][i+t][j+1];
       }
       else
       {
-        std::cout << i << " " << j << "\n";
+        std::cout << i << " " << j << ", ";
+
+        // // std::cout << i << " " << j << "\n";
         std::vector<int> copia = s;
         reinsertion(s, i, t, j);
-        printSolution(s);
+        // std::cout << calculaCustoSubsequencia(s, 0, N) << ", ";
+        std::cout << calculaCustoAcumulado(s) << ", ";
+        // printSolution(s);
         s = copia;
-        for (int k = 0; k <= j - 1; k++)
-        {
-          std::cout << s[k] << " ";
-        }
-        for (int k = i; k <= i + t - 1; k++)
-        {
-          std::cout << s[k] << " ";
-        }
-        for (int k = j; k <= i-1; k++)
-        {
-          std::cout << s[k] << " ";
-        }
-        for (int k = i+t; k <= N; k++)
-        {
-          std::cout << s[k] << " ";
-        }
 
-        std::cout << "\n";
+        i1 = 0, j1 = j - 1;
+        i2 = i, j2 = i + t - 1;
+
+        W1 = reOpt[2][i1][j1] + reOpt[2][i2][j2];
+        T1 = reOpt[0][i1][j1] + M[s[j1]][s[i2]] + reOpt[0][i2][j2];
+        C1 = reOpt[1][i1][j1] + reOpt[2][i2][j2] * (reOpt[0][i1][j1] + M[s[j1]][s[i2]]) + reOpt[1][i2][j2];
+
+        // std::cout << i1 << " " << j1 << " " << i2 << " " << j2 << "\n";
+
+        i1 = j, j1 = i - 1;
+        i2 = i + t, j2 = N;
+
+        W2 = reOpt[2][i1][j1] + reOpt[2][i2][j2];
+        T2 = reOpt[0][i1][j1] + M[s[j1]][s[i2]] + reOpt[0][i2][j2];
+        C2 = reOpt[1][i1][j1] + reOpt[2][i2][j2] * (reOpt[0][i1][j1] + M[s[j1]][s[i2]]) + reOpt[1][i2][j2];
+
+        // std::cout << i1 << " " << j1 << ", " << i2 << " " << j2 << "\n";
+
+        std::cout << C1 + W2 * (T1 + M[s[i + t - 1]][s[j]]) + C2 << "\n";
+
+        // std::cout << i << " " << j << "\n";
+        // std::vector<int> copia = s;
+        // reinsertion(s, i, t, j);
+        // printSolution(s);
+        // s = copia;
+        // for (int k = 0; k <= j - 1; k++)
+        // {
+        //   std::cout << s[k] << " ";
+        // }
+        // for (int k = i; k <= i + t - 1; k++)
+        // {
+        //   std::cout << s[k] << " ";
+        // }
+        // for (int k = j; k <= i-1; k++)
+        // {
+        //   std::cout << s[k] << " ";
+        // }
+        // for (int k = i+t; k <= N; k++)
+        // {
+        //   std::cout << s[k] << " ";
+        // }
+
+        // std::cout << "\n";
       }
     }
     std::cout << "\n";
