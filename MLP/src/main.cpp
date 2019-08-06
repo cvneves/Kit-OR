@@ -72,9 +72,9 @@ int main(int argc, char **argv)
   // std::cout << calculaCustoAcumulado(s) << "\n";
   // std::cout << reOpt[1][0][N] << "\n";
   // std::cout << valor_obj << "\n";
-  // buscaVizinhanca2Opt(s, reOpt, valor_obj);
-  std::cout << calculaCustoAcumulado(s) << "\n";
-  std::cout << reOpt[1][0][N] << "\n";
+  buscaVizinhanca2Opt(s, reOpt, valor_obj);
+  // std::cout << calculaCustoAcumulado(s) << "\n";
+  // std::cout << reOpt[1][0][N] << "\n";
   // std::cout << valor_obj << "\n";
 
   printSolution(s);
