@@ -79,9 +79,11 @@ int main(int argc, char **argv)
 
   printSolution(s);
 
-  std::cout << "\n\n\n\n\n";
+  // std::cout << "\n\n\n\n\n";
 
-  buscaVizinhancaReinsertion(s, reOpt, valor_obj, 1);
+  buscaVizinhancaReinsertion(s, reOpt, valor_obj, 3);
+
+  printSolution(s);
 
   return 0;
 }
@@ -256,7 +258,7 @@ void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vecto
     // std::cout << melhor_valor_obj << "\n";
     twoOpt(s, melhor_i, melhor_j);
 
-    std::cout << "Melhor i, j: " << melhor_i << " " << melhor_j << "\n";
+    // std::cout << "Melhor i, j: " << melhor_i << " " << melhor_j << "\n";
 
     for (int j = melhor_i; j <= melhor_j; j++)
     {
@@ -277,7 +279,7 @@ void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vecto
       }
     }
 
-    std::cout << "\n\n";
+    // std::cout << "\n\n";
 
     for (int i = melhor_i; i <= melhor_j; i++)
     {
@@ -297,7 +299,7 @@ void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vecto
         // std::cout << "Porco " << calculaCustoSubsequencia(s, i, j) << "\n";
       }
     }
-    std::cout << "\n\n";
+    // std::cout << "\n\n";
 
     for (int i = melhor_i - 1, k = melhor_i, l; i >= 0; i--)
     {
@@ -330,22 +332,22 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
   int i1, i2, j1, j2;
   for (int i = 1; i < N + 1 - t; i++)
   {
-    std::cout << "\n";
+    // std::cout << "\n";
     for (int j = 1; j < N + 1 - t; j++)
     {
       if (i == j)
         continue;
       if (i < j)
       {
-        std::cout << i << " " << j << ", ";
+        // std::cout << i << " " << j << ", ";
 
         // // std::cout << i << " " << j << "\n";
-        std::vector<int> copia = s;
-        reinsertion(s, i, t, j);
+        // std::vector<int> copia = s;
+        // reinsertion(s, i, t, j);
         // std::cout << calculaCustoSubsequencia(s, 0, N) << ", ";
-        std::cout << calculaCustoAcumulado(s) << ", ";
+        // std::cout << calculaCustoAcumulado(s) << ", ";
         // printSolution(s);
-        s = copia;
+        // s = copia;
 
         i1 = 0, j1 = i - 1;
         i2 = i + t, j2 = j + t - 1;
@@ -365,7 +367,9 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
 
         // std::cout << i1 << " " << j1 << ", " << i2 << " " << j2 << "\n";
 
-        std::cout << C1 + W2 * (T1 + M[s[j + t - 1]][s[i]]) + C2 << "\n";
+        C = C1 + W2 * (T1 + M[s[j + t - 1]][s[i]]) + C2;
+
+        // std::cout << C1 + W2 * (T1 + M[s[j + t - 1]][s[i]]) + C2 << "\n";
         // std::cout << T1 + M[s[j + t - 1]][s[i]] + T2 << "\n\n\n";
 
         // for (int k = 0; k <= i - 1; k++)
@@ -391,15 +395,15 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
       }
       else
       {
-        std::cout << i << " " << j << ", ";
+        // std::cout << i << " " << j << ", ";
 
         // // std::cout << i << " " << j << "\n";
-        std::vector<int> copia = s;
-        reinsertion(s, i, t, j);
+        // std::vector<int> copia = s;
+        // reinsertion(s, i, t, j);
         // std::cout << calculaCustoSubsequencia(s, 0, N) << ", ";
-        std::cout << calculaCustoAcumulado(s) << ", ";
+        // std::cout << calculaCustoAcumulado(s) << ", ";
         // printSolution(s);
-        s = copia;
+        // s = copia;
 
         i1 = 0, j1 = j - 1;
         i2 = i, j2 = i + t - 1;
@@ -419,7 +423,9 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
 
         // std::cout << i1 << " " << j1 << ", " << i2 << " " << j2 << "\n";
 
-        std::cout << C1 + W2 * (T1 + M[s[i + t - 1]][s[j]]) + C2 << "\n";
+        C = C1 + W2 * (T1 + M[s[i + t - 1]][s[j]]) + C2;
+
+        // std::cout << C1 + W2 * (T1 + M[s[i + t - 1]][s[j]]) + C2 << "\n";
 
         // std::cout << i << " " << j << "\n";
         // std::vector<int> copia = s;
@@ -445,8 +451,22 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
 
         // std::cout << "\n";
       }
+      if (C + EPSILON < melhor_valor_obj)
+      {
+        improved = true;
+        melhor_valor_obj = C;
+        melhor_i = i;
+        melhor_j = j;
+      }
     }
-    std::cout << "\n";
+    // std::cout << "\n";
+  }
+  if (improved == true)
+  {
+    valor_obj = melhor_valor_obj;
+    // std::cout << valor_obj << "\n\n";
+    // std::cout << melhor_valor_obj << "\n";
+    reinsertion(s, melhor_i, t, melhor_j);
   }
 }
 
