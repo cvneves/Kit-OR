@@ -27,6 +27,7 @@ void swap(std::vector<int> &solucao, int i, int j);
 void twoOpt(std::vector<int> &solucao, int i, int j);
 
 void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt, double &valor_obj);
+void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt, double &valor_obj, int t);
 
 std::vector<int> construction(double alpha);
 void reOptPreProcessing(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt);
@@ -60,7 +61,7 @@ int main(int argc, char **argv)
   int elapsed_seconds = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
   std::cout << "Tempo total (s): " << elapsed_seconds / 1000000.0 << "\n\n";
 
-  printSolution(s);
+  // printSolution(s);
 
   // std::cout << "Custo " << calculaCustoSubsequencia(s, 0, N) << "\n";
   // twoOpt(s, 0, N);
@@ -68,13 +69,19 @@ int main(int argc, char **argv)
 
   // std::cout << reOpt[1][N][0] << "\n";
   // twoOpt(s, 0, N);
+  // std::cout << calculaCustoAcumulado(s) << "\n";
+  // std::cout << reOpt[1][0][N] << "\n";
+  // std::cout << valor_obj << "\n";
+  // buscaVizinhanca2Opt(s, reOpt, valor_obj);
   std::cout << calculaCustoAcumulado(s) << "\n";
   std::cout << reOpt[1][0][N] << "\n";
-  std::cout << valor_obj << "\n";
-  buscaVizinhanca2Opt(s, reOpt, valor_obj);
-  std::cout << calculaCustoAcumulado(s) << "\n";
-  std::cout << reOpt[1][0][N] << "\n";
-  std::cout << valor_obj << "\n";
+  // std::cout << valor_obj << "\n";
+
+  printSolution(s);
+
+  std::cout << "\n\n\n\n\n";
+
+  buscaVizinhancaReinsertion(s, reOpt, valor_obj, 3);
 
   return 0;
 }
@@ -311,6 +318,78 @@ void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vecto
         // std::cout << "Porco " << calculaCustoSubsequencia(s, i, j) << "\n";
       }
     }
+  }
+}
+
+void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt, double &valor_obj, int t)
+{
+  double T, C, W, melhor_valor_obj = valor_obj, temp_obj;
+  double T1, C1, W1, T2, C2, W2, T3, C3, W3;
+  int melhor_i, melhor_j;
+  bool improved = false;
+  for (int i = 1; i < N + 1 - t; i++)
+  {
+    std::cout << "\n";
+    for (int j = 1; j < N + 1 - t; j++)
+    {
+      if (i == j)
+        continue;
+      if (i < j)
+      {
+        // std::cout << i << " " << j << "\n";
+        // std::vector<int> copia = s;
+        // reinsertion(s, i, t, j);
+        // printSolution(s);
+        // s = copia;
+        // for (int k = 0; k <= i - 1; k++)
+        // {
+        //   std::cout << s[k] << " ";
+        // }
+        // for (int k = i + t; k <= j + t - 1; k++)
+        // {
+        //   std::cout << s[k] << " ";
+        // }
+        // for (int k = i; k <= i + t - 1; k++)
+        // {
+        //   std::cout << s[k] << " ";
+        // }
+        // for (int k = j + t; k <= N; k++)
+        // {
+        //   std::cout << s[k] << " ";
+        // }
+
+        // std::cout << "\n";
+
+        // // W1 = reOpt[2][0][i-1] + reOpt[2][i+t][j+1];
+      }
+      else
+      {
+        std::cout << i << " " << j << "\n";
+        std::vector<int> copia = s;
+        reinsertion(s, i, t, j);
+        printSolution(s);
+        s = copia;
+        for (int k = 0; k <= j - 1; k++)
+        {
+          std::cout << s[k] << " ";
+        }
+        for (int k = i; k <= i + t - 1; k++)
+        {
+          std::cout << s[k] << " ";
+        }
+        for (int k = j; k <= i-1; k++)
+        {
+          std::cout << s[k] << " ";
+        }
+        for (int k = i+t; k <= N; k++)
+        {
+          std::cout << s[k] << " ";
+        }
+
+        std::cout << "\n";
+      }
+    }
+    std::cout << "\n";
   }
 }
 
