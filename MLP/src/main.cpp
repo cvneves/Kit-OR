@@ -84,6 +84,8 @@ int main(int argc, char **argv)
   buscaVizinhancaReinsertion(s, reOpt, valor_obj, 3);
 
   printSolution(s);
+  std::cout << "valor obj nao seboso " << valor_obj << "\n";
+  std::cout << "SEboso " << calculaCustoAcumulado(s) << "\n";
 
   return 0;
 }
