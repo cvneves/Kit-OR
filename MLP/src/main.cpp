@@ -87,6 +87,11 @@ int main(int argc, char **argv)
   std::cout << valor_obj << "\n";
   std::cout << calculaCustoAcumulado(s) << "\n";
 
+  buscaVizinhancaReinsertion(s, reOpt, valor_obj, 3);
+  printSolution(s);
+  std::cout << valor_obj << "\n";
+  std::cout << calculaCustoAcumulado(s) << "\n";
+
   return 0;
 }
 
@@ -468,22 +473,46 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
     valor_obj = melhor_valor_obj;
     // std::cout << valor_obj << "\n\n";
     // std::cout << melhor_valor_obj << "\n";
-    reinsertion(s, melhor_i, t, melhor_j);
 
-    std::cout << "\n";
+    int i1, i2, i3, i4;
+    int j1, j2, j3, j4;
 
     if (melhor_i < melhor_j)
     {
-      int i1, i2, i3, i4;
-      int j1, j2, j3, j4;
 
-      
-
+      i1 = 0, j1 = melhor_i - 1;
+      i2 = melhor_i + t, j2 = melhor_j + t - 1;
+      i3 = melhor_i, j3 = melhor_i + t - 1;
+      i4 = melhor_j + t, j4 = N;
     }
     else
     {
-
+      i1 = 0, j1 = melhor_j - 1;
+      i2 = melhor_i, j2 = melhor_i + t - 1;
+      i3 = melhor_j, j3 = melhor_i - 1;
+      i4 = melhor_i + t, j4 = N;
     }
+
+    
+
+    // for (int i = i1; i <= j1; i++)
+    // {
+    //   std::cout << s[i] << " ";
+    // }
+    // for (int i = i2; i <= j2; i++)
+    // {
+    //   std::cout << s[i] << " ";
+    // }
+    // for (int i = i3; i <= j3; i++)
+    // {
+    //   std::cout << s[i] << " ";
+    // }
+    // for (int i = i4; i <= j4; i++)
+    // {
+    //   std::cout << s[i] << " ";
+    // }
+
+    reinsertion(s, melhor_i, t, melhor_j);
   }
 }
 
