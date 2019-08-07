@@ -58,7 +58,8 @@ int main(int argc, char **argv)
 
   printSolution(s);
 
-  std::cout << reOpt[1][0][N] << "\n";
+  std::cout << reOpt[0][0][N] << "\n";
+  std::cout << calculaCustoSubsequencia(s, 0, N) << "\n";
   std::cout << calculaCustoAcumulado(s) << "\n";
 
   return 0;
@@ -448,7 +449,6 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
 
     if (melhor_i < melhor_j)
     {
-
       i1 = 0, j1 = melhor_i - 1;
       i2 = melhor_i + t, j2 = melhor_j + t - 1;
       i3 = melhor_i, j3 = melhor_i + t - 1;
@@ -470,12 +470,12 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
     {
       for (int s2 = s1 + 1; s2 < subseqIndex.size(); s2++)
       {
-        std::cout << s1 << " " << s2 << "\n";
+        // std::cout << s1 << " " << s2 << "\n";
         for (int i = subseqIndex[s1].first; i <= subseqIndex[s1].second; i++)
         {
           for (int j = subseqIndex[s2].first; j <= subseqIndex[s2].second; j++)
           {
-            // std::cout << i << ", " << j << "\n";
+            std::cout << i << ", " << j << "\n";
             reOpt[2][i][j] = reOpt[2][i][j - 1] + reOpt[2][j][j];
             reOpt[0][i][j] = reOpt[0][i][j - 1] + M[s[j - 1]][s[j]];
             reOpt[1][i][j] = reOpt[1][i][j - 1] + reOpt[2][j][j] * (reOpt[0][i][j - 1] + M[s[j - 1]][s[j]]) + reOpt[1][j][j];
