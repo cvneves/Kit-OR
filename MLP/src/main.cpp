@@ -52,44 +52,13 @@ int main(int argc, char **argv)
   std::vector<std::vector<std::vector<double>>> reOpt(3, std::vector<std::vector<double>>(N + 1, std::vector<double>(N + 1, 0)));
   reOptPreProcessing(s, reOpt);
   double valor_obj = reOpt[1][0][N];
-  std::cout << valor_obj << "\n";
-  std::cout << calculaCustoAcumulado(s) << "\n";
 
-  // std::chrono::time_point<std::chrono::system_clock> start, end;
-  // start = std::chrono::system_clock::now();
-  // buscaVizinhanca2Opt(s, reOpt, valor_obj);
-  // end = std::chrono::system_clock::now();
-  // int elapsed_seconds = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
-  // std::cout << "Tempo total (s): " << elapsed_seconds / 1000000.0 << "\n\n";
-
-  // printSolution(s);
-
-  // std::cout << "Custo " << calculaCustoSubsequencia(s, 0, N) << "\n";
-  // twoOpt(s, 0, N);
-  // std::cout << "Custo " << calculaCustoSubsequencia(s, 0, N) << "\n";
-
-  // std::cout << reOpt[1][N][0] << "\n";
-  // twoOpt(s, 0, N);
-  // std::cout << calculaCustoAcumulado(s) << "\n";
-  // std::cout << reOpt[1][0][N] << "\n";
-  // std::cout << valor_obj << "\n";
-  // std::cout << calculaCustoAcumulado(s) << "\n";
-  // std::cout << reOpt[1][0][N] << "\n";
-  // std::cout << valor_obj << "\n";
-
-  // std::cout << "\n\n\n\n\n";
-  buscaVizinhanca2Opt(s, reOpt, valor_obj);
   buscaVizinhancaReinsertion(s, reOpt, valor_obj, 3);
-  // reOptPreProcessing(s, reOpt);
   // buscaVizinhanca2Opt(s, reOpt, valor_obj);
 
   printSolution(s);
-  std::cout << valor_obj << "\n";
-  std::cout << calculaCustoAcumulado(s) << "\n";
 
-  buscaVizinhancaReinsertion(s, reOpt, valor_obj, 3);
-  printSolution(s);
-  std::cout << valor_obj << "\n";
+  std::cout << reOpt[1][0][N] << "\n";
   std::cout << calculaCustoAcumulado(s) << "\n";
 
   return 0;
@@ -493,7 +462,36 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
       i4 = melhor_i + t, j4 = N;
     }
 
-    
+    std::vector<std::pair<int, int>> subseqIndex = {{i1, j1}, {i2, j2}, {i3, j3}, {i4, j4}};
+
+    std::cout << "\n";
+
+    for (int s1 = 0; s1 < subseqIndex.size(); s1++)
+    {
+      for (int s2 = s1 + 1; s2 < subseqIndex.size(); s2++)
+      {
+        std::cout << s1 << " " << s2 << "\n";
+        for (int i = subseqIndex[s1].first; i <= subseqIndex[s1].second; i++)
+        {
+          for (int j = subseqIndex[s2].first; j <= subseqIndex[s2].second; j++)
+          {
+            // std::cout << i << ", " << j << "\n";
+            reOpt[2][i][j] = reOpt[2][i][j - 1] + reOpt[2][j][j];
+            reOpt[0][i][j] = reOpt[0][i][j - 1] + M[s[j - 1]][s[j]];
+            reOpt[1][i][j] = reOpt[1][i][j - 1] + reOpt[2][j][j] * (reOpt[0][i][j - 1] + M[s[j - 1]][s[j]]) + reOpt[1][j][j];
+
+            reOpt[2][j][i] = reOpt[2][i][j];
+            reOpt[0][j][i] = reOpt[0][i][j];
+
+            reOpt[1][j][i] = reOpt[1][j - 1][i] + reOpt[2][j - 1][i] * (reOpt[0][j][j] + M[s[j]][s[j - 1]]) + reOpt[1][j][j];
+          }
+        }
+      }
+    }
+
+    reinsertion(s, melhor_i, t, melhor_j);
+
+    std::cout << "\n";  
 
     // for (int i = i1; i <= j1; i++)
     // {
@@ -511,8 +509,6 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
     // {
     //   std::cout << s[i] << " ";
     // }
-
-    reinsertion(s, melhor_i, t, melhor_j);
   }
 }
 
