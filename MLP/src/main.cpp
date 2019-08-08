@@ -17,7 +17,7 @@ void printData();
 double **M; // matriz de adjacencia
 int N;      // quantidade total de vertices
 
-double calculaCustoAcumulado(std::vector<int> &s);
+long long int calculaCustoAcumulado(std::vector<int> &s);
 double calculaCustoSubsequencia(std::vector<int> &s, int i, int j);
 
 void printSolution(std::vector<int> &s);
@@ -49,22 +49,15 @@ int main(int argc, char **argv)
   std::vector<int> s;
   double valor_obj;
 
+  std::chrono::time_point<std::chrono::system_clock> start, end;
+  start = std::chrono::system_clock::now();
   s = GILS_RVND();
+  end = std::chrono::system_clock::now();
 
-  //s = {1, 30, 13, 40, 25, 32, 9, 18, 44, 58, 24, 57, 12, 23, 5, 27, 43, 49, 47, 51, 10, 35, 52, 17, 36, 26, 19, 6, 28, 14, 37, 15, 34, 46, 56, 45, 33, 29, 3, 41, 2, 54, 55, 8, 22, 48, 39, 21, 11, 16, 38, 42, 31, 7, 4, 50, 53, 20, 1};
+  std::cout << calculaCustoAcumulado(s) + (int) calculaCustoSubsequencia(s, 0, N) << "\n";
 
-  // std::vector<std::vector<std::vector<double>>> reOpt(3, std::vector<std::vector<double>>(N + 1, std::vector<double>(N + 1, 0)));
-  // reOptPreProcessing(s, reOpt);
-  // valor_obj = reOpt[1][0][N];
-  // std::cout << valor_obj << "\n";
-
-  // RVND(s, reOpt, valor_obj);
-
-  std::cout << calculaCustoAcumulado(s) << "\n";
-  // std::cout << reOpt[1][0][N] << "\n";
-  // std::cout << valor_obj + reOpt[0][0][N] << "\n";
-
-  // printSolution(s);
+  int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+  std::cout << "Tempo total (s): " << elapsed_seconds / 1000.0 << "\n\n";
 
   return 0;
 }
@@ -72,7 +65,7 @@ int main(int argc, char **argv)
 std::vector<int> GILS_RVND()
 {
   double melhor_valor_obj = std::numeric_limits<double>::infinity(), valor_obj, valor_obj_b;
-  std::vector<int> melhor_s, s, s_b;
+  std::vector<int> melhor_s, s, s_b, s_copia;
   double I_max = 10, I_ils;
 
   std::vector<double> R(26);
@@ -91,36 +84,37 @@ std::vector<int> GILS_RVND()
   }
 
   std::vector<std::vector<std::vector<double>>> reOpt(3, std::vector<std::vector<double>>(N + 1, std::vector<double>(N + 1, 0)));
+  std::vector<std::vector<std::vector<double>>> reOpt_b(3, std::vector<std::vector<double>>(N + 1, std::vector<double>(N + 1, 0)));
 
   for (int i = 0; i < I_max; i++)
   {
     double alpha = R[rand() % 26];
     s = construction(alpha);
     reOptPreProcessing(s, reOpt);
+    valor_obj = reOpt[1][0][N];
 
     s_b = s;
-    double valor_obj_b = valor_obj;
-    int iter_ILS = 0;
+    valor_obj_b = valor_obj;
 
-    while (iter_ILS < I_ils)
+    int iterIls = 0;
+
+    while (iterIls < I_ils)
     {
       RVND(s, reOpt, valor_obj);
 
-      if (valor_obj < valor_obj_b - std::numeric_limits<double>::epsilon())
+      if (valor_obj < valor_obj_b)
       {
         s_b = s;
         valor_obj_b = valor_obj;
-        iter_ILS = 0;
+        iterIls = 0;
       }
-
-      std::vector<int> temp_s = s_b;
-
-      perturb(temp_s);
-
-      s = temp_s;
+      s_copia = s_b;
+      perturb(s_copia);
+      s = s_copia;
       reOptPreProcessing(s, reOpt);
-      valor_obj = calculaCustoAcumulado(s);
-      iter_ILS++;
+      valor_obj = reOpt[1][0][N];
+
+      iterIls++;
     }
 
     if (valor_obj_b < melhor_valor_obj)
@@ -313,9 +307,9 @@ double calculaCustoSubsequencia(std::vector<int> &s, int i, int j)
   return custo;
 }
 
-double calculaCustoAcumulado(std::vector<int> &s)
+long long int calculaCustoAcumulado(std::vector<int> &s)
 {
-  double custo = 0;
+  long long int custo = 0;
 
   for (int i = 1; i < s.size(); i++)
   {
