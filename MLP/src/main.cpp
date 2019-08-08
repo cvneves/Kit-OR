@@ -28,6 +28,7 @@ void twoOpt(std::vector<int> &solucao, int i, int j);
 
 void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt, double &valor_obj);
 void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt, double &valor_obj, int t);
+void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt, double &valor_obj);
 
 std::vector<int> construction(double alpha);
 void reOptPreProcessing(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt);
@@ -48,18 +49,20 @@ int main(int argc, char **argv)
   std::cout << "\n";
 
   printSolution(s);
+  std::cout << "\n\n";
 
   std::vector<std::vector<std::vector<double>>> reOpt(3, std::vector<std::vector<double>>(N + 1, std::vector<double>(N + 1, 0)));
   reOptPreProcessing(s, reOpt);
   double valor_obj = reOpt[1][0][N];
 
-  buscaVizinhancaReinsertion(s, reOpt, valor_obj, 3);
+  // buscaVizinhancaReinsertion(s, reOpt, valor_obj, 3);
   // buscaVizinhanca2Opt(s, reOpt, valor_obj);
+  buscaVizinhancaSwap(s, reOpt, valor_obj);
 
   printSolution(s);
 
-  std::cout << reOpt[0][0][N] << "\n";
-  std::cout << calculaCustoSubsequencia(s, 0, N) << "\n";
+  // std::cout << reOpt[1][0][N] << "\n";
+  // std::cout << calculaCustoSubsequencia(s, 0, N) << "\n";
   std::cout << calculaCustoAcumulado(s) << "\n";
 
   return 0;
@@ -153,10 +156,8 @@ double calculaCustoAcumulado(std::vector<int> &s)
       continue;
     for (int j = 0; j < i; j++)
     {
-      // std::cout << s[j] << " -> " << s[j + 1] << "\n";
       custo += M[s[j]][s[j + 1]];
     }
-    // std::cout << "\n";
   }
 
   return custo;
@@ -209,15 +210,6 @@ void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vecto
 
       C = reOpt[1][0][i - 1] + W1 * (T1 + M[s[i - 1]][s[j]]) + reOpt[1][j][i] + W2 * (T2 + M[s[i]][s[j + 1]]) + reOpt[1][j + 1][N];
 
-      // twoOpt(s, i, j);
-      // std::cout << C << "\n";
-      // std::cout << i << " " << j << "\n";
-      // std::cout << calculaCustoSubsequencia(s, 0, N) << "\n";
-      // std::cout << calculaCustoAcumulado(s) << "\n";
-      // printSolution(s);
-      // twoOpt(s, i, j);
-
-      // std::cout << T << "\n";
       if (C + EPSILON < melhor_valor_obj)
       {
         improved = true;
@@ -231,11 +223,7 @@ void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vecto
   if (improved == true)
   {
     valor_obj = melhor_valor_obj;
-    // std::cout << valor_obj << "\n\n";
-    // std::cout << melhor_valor_obj << "\n";
     twoOpt(s, melhor_i, melhor_j);
-
-    // std::cout << "Melhor i, j: " << melhor_i << " " << melhor_j << "\n";
 
     for (int j = melhor_i; j <= melhor_j; j++)
     {
@@ -249,14 +237,8 @@ void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vecto
         reOpt[0][j][i] = reOpt[0][i][j];
 
         reOpt[1][j][i] = reOpt[1][j - 1][i] + reOpt[2][j - 1][i] * (reOpt[0][j][j] + M[s[j]][s[j - 1]]) + reOpt[1][j][j];
-
-        // std::cout << i << " " << j << "\n";
-        // std::cout << "W: " << reOpt[0][j][i] << "\n";
-        // std::cout << "Porco " << calculaCustoSubsequencia(s, i, j) << "\n";
       }
     }
-
-    // std::cout << "\n\n";
 
     for (int i = melhor_i; i <= melhor_j; i++)
     {
@@ -270,13 +252,8 @@ void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vecto
         reOpt[0][j][i] = reOpt[0][i][j];
 
         reOpt[1][j][i] = reOpt[1][j - 1][i] + reOpt[2][j - 1][i] * (reOpt[0][j][j] + M[s[j]][s[j - 1]]) + reOpt[1][j][j];
-
-        // std::cout << i << " " << j << "\n";
-        // std::cout << "W: " << reOpt[0][j][i] << "\n";
-        // std::cout << "Porco " << calculaCustoSubsequencia(s, i, j) << "\n";
       }
     }
-    // std::cout << "\n\n";
 
     for (int i = melhor_i - 1, k = melhor_i, l; i >= 0; i--)
     {
@@ -291,10 +268,6 @@ void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vecto
         reOpt[0][j][i] = reOpt[0][i][j];
 
         reOpt[1][j][i] = reOpt[1][k][i] + reOpt[2][k][i] * (reOpt[0][j][k + 1] + M[s[k + 1]][s[k]]) + reOpt[1][j][k + 1];
-
-        // std::cout << i << " " << j << "\n";
-        // std::cout << "W: " << reOpt[0][i][j] << "\n";
-        // std::cout << "Porco " << calculaCustoSubsequencia(s, i, j) << "\n";
       }
     }
   }
@@ -309,31 +282,18 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
   int i1, i2, j1, j2;
   for (int i = 1; i < N + 1 - t; i++)
   {
-    // std::cout << "\n";
     for (int j = 1; j < N + 1 - t; j++)
     {
       if (i == j)
         continue;
       if (i < j)
       {
-        // std::cout << i << " " << j << ", ";
-
-        // // std::cout << i << " " << j << "\n";
-        // std::vector<int> copia = s;
-        // reinsertion(s, i, t, j);
-        // std::cout << calculaCustoSubsequencia(s, 0, N) << ", ";
-        // std::cout << calculaCustoAcumulado(s) << ", ";
-        // printSolution(s);
-        // s = copia;
-
         i1 = 0, j1 = i - 1;
         i2 = i + t, j2 = j + t - 1;
 
         W1 = reOpt[2][i1][j1] + reOpt[2][i2][j2];
         T1 = reOpt[0][i1][j1] + M[s[j1]][s[i2]] + reOpt[0][i2][j2];
         C1 = reOpt[1][i1][j1] + reOpt[2][i2][j2] * (reOpt[0][i1][j1] + M[s[j1]][s[i2]]) + reOpt[1][i2][j2];
-
-        // std::cout << i1 << " " << j1 << " " << i2 << " " << j2 << "\n";
 
         i1 = i, j1 = i + t - 1;
         i2 = j + t, j2 = N;
@@ -342,54 +302,16 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
         T2 = reOpt[0][i1][j1] + M[s[j1]][s[i2]] + reOpt[0][i2][j2];
         C2 = reOpt[1][i1][j1] + reOpt[2][i2][j2] * (reOpt[0][i1][j1] + M[s[j1]][s[i2]]) + reOpt[1][i2][j2];
 
-        // std::cout << i1 << " " << j1 << ", " << i2 << " " << j2 << "\n";
-
         C = C1 + W2 * (T1 + M[s[j + t - 1]][s[i]]) + C2;
-
-        // std::cout << C1 + W2 * (T1 + M[s[j + t - 1]][s[i]]) + C2 << "\n";
-        // std::cout << T1 + M[s[j + t - 1]][s[i]] + T2 << "\n\n\n";
-
-        // for (int k = 0; k <= i - 1; k++)
-        // {
-        //   std::cout << s[k] << " ";
-        // }
-        // for (int k = i + t; k <= j + t - 1; k++)
-        // {
-        //   std::cout << s[k] << " ";
-        // }
-        // for (int k = i; k <= i + t - 1; k++)
-        // {
-        //   std::cout << s[k] << " ";
-        // }
-        // for (int k = j + t; k <= N; k++)
-        // {
-        //   std::cout << s[k] << " ";
-        // }
-
-        // std::cout << "\n";
-
-        // // W1 = reOpt[2][0][i-1] + reOpt[2][i+t][j+1];
       }
       else
       {
-        // std::cout << i << " " << j << ", ";
-
-        // // std::cout << i << " " << j << "\n";
-        // std::vector<int> copia = s;
-        // reinsertion(s, i, t, j);
-        // std::cout << calculaCustoSubsequencia(s, 0, N) << ", ";
-        // std::cout << calculaCustoAcumulado(s) << ", ";
-        // printSolution(s);
-        // s = copia;
-
         i1 = 0, j1 = j - 1;
         i2 = i, j2 = i + t - 1;
 
         W1 = reOpt[2][i1][j1] + reOpt[2][i2][j2];
         T1 = reOpt[0][i1][j1] + M[s[j1]][s[i2]] + reOpt[0][i2][j2];
         C1 = reOpt[1][i1][j1] + reOpt[2][i2][j2] * (reOpt[0][i1][j1] + M[s[j1]][s[i2]]) + reOpt[1][i2][j2];
-
-        // std::cout << i1 << " " << j1 << " " << i2 << " " << j2 << "\n";
 
         i1 = j, j1 = i - 1;
         i2 = i + t, j2 = N;
@@ -398,35 +320,7 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
         T2 = reOpt[0][i1][j1] + M[s[j1]][s[i2]] + reOpt[0][i2][j2];
         C2 = reOpt[1][i1][j1] + reOpt[2][i2][j2] * (reOpt[0][i1][j1] + M[s[j1]][s[i2]]) + reOpt[1][i2][j2];
 
-        // std::cout << i1 << " " << j1 << ", " << i2 << " " << j2 << "\n";
-
         C = C1 + W2 * (T1 + M[s[i + t - 1]][s[j]]) + C2;
-
-        // std::cout << C1 + W2 * (T1 + M[s[i + t - 1]][s[j]]) + C2 << "\n";
-
-        // std::cout << i << " " << j << "\n";
-        // std::vector<int> copia = s;
-        // reinsertion(s, i, t, j);
-        // printSolution(s);
-        // s = copia;
-        // for (int k = 0; k <= j - 1; k++)
-        // {
-        //   std::cout << s[k] << " ";
-        // }
-        // for (int k = i; k <= i + t - 1; k++)
-        // {
-        //   std::cout << s[k] << " ";
-        // }
-        // for (int k = j; k <= i-1; k++)
-        // {
-        //   std::cout << s[k] << " ";
-        // }
-        // for (int k = i+t; k <= N; k++)
-        // {
-        //   std::cout << s[k] << " ";
-        // }
-
-        // std::cout << "\n";
       }
       if (C + EPSILON < melhor_valor_obj)
       {
@@ -436,13 +330,10 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
         melhor_j = j;
       }
     }
-    // std::cout << "\n";
   }
   if (improved == true)
   {
     valor_obj = melhor_valor_obj;
-    // std::cout << valor_obj << "\n\n";
-    // std::cout << melhor_valor_obj << "\n";
 
     int i1, i2, i3, i4;
     int j1, j2, j3, j4;
@@ -462,53 +353,103 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
       i4 = melhor_i + t, j4 = N;
     }
 
-    std::vector<std::pair<int, int>> subseqIndex = {{i1, j1}, {i2, j2}, {i3, j3}, {i4, j4}};
+    reinsertion(s, melhor_i, t, melhor_j);
 
-    std::cout << "\n";
-
-    for (int s1 = 0; s1 < subseqIndex.size(); s1++)
+    for (int j = j1 + 1; j <= i4 - 1; j++)
     {
-      for (int s2 = s1 + 1; s2 < subseqIndex.size(); s2++)
+      for (int i = j - 1; i >= 0; i--)
       {
-        // std::cout << s1 << " " << s2 << "\n";
-        for (int i = subseqIndex[s1].first; i <= subseqIndex[s1].second; i++)
-        {
-          for (int j = subseqIndex[s2].first; j <= subseqIndex[s2].second; j++)
-          {
-            std::cout << i << ", " << j << "\n";
-            reOpt[2][i][j] = reOpt[2][i][j - 1] + reOpt[2][j][j];
-            reOpt[0][i][j] = reOpt[0][i][j - 1] + M[s[j - 1]][s[j]];
-            reOpt[1][i][j] = reOpt[1][i][j - 1] + reOpt[2][j][j] * (reOpt[0][i][j - 1] + M[s[j - 1]][s[j]]) + reOpt[1][j][j];
+        reOpt[2][i][j] = reOpt[2][i][j - 1] + reOpt[2][j][j];
+        reOpt[0][i][j] = reOpt[0][i][j - 1] + M[s[j - 1]][s[j]];
+        reOpt[1][i][j] = reOpt[1][i][j - 1] + reOpt[2][j][j] * (reOpt[0][i][j - 1] + M[s[j - 1]][s[j]]) + reOpt[1][j][j];
 
-            reOpt[2][j][i] = reOpt[2][i][j];
-            reOpt[0][j][i] = reOpt[0][i][j];
+        reOpt[2][j][i] = reOpt[2][i][j];
+        reOpt[0][j][i] = reOpt[0][i][j];
 
-            reOpt[1][j][i] = reOpt[1][j - 1][i] + reOpt[2][j - 1][i] * (reOpt[0][j][j] + M[s[j]][s[j - 1]]) + reOpt[1][j][j];
-          }
-        }
+        reOpt[1][j][i] = reOpt[1][j - 1][i] + reOpt[2][j - 1][i] * (reOpt[0][j][j] + M[s[j]][s[j - 1]]) + reOpt[1][j][j];
       }
     }
 
-    reinsertion(s, melhor_i, t, melhor_j);
+    for (int i = j1 + 1; i <= i4 - 1; i++)
+    {
+      for (int j = i4 - 1 + 1; j <= N; j++)
+      {
+        reOpt[2][i][j] = reOpt[2][i][j - 1] + reOpt[2][j][j];
+        reOpt[0][i][j] = reOpt[0][i][j - 1] + M[s[j - 1]][s[j]];
+        reOpt[1][i][j] = reOpt[1][i][j - 1] + reOpt[2][j][j] * (reOpt[0][i][j - 1] + M[s[j - 1]][s[j]]) + reOpt[1][j][j];
 
-    std::cout << "\n";  
+        reOpt[2][j][i] = reOpt[2][i][j];
+        reOpt[0][j][i] = reOpt[0][i][j];
 
-    // for (int i = i1; i <= j1; i++)
-    // {
-    //   std::cout << s[i] << " ";
-    // }
-    // for (int i = i2; i <= j2; i++)
-    // {
-    //   std::cout << s[i] << " ";
-    // }
-    // for (int i = i3; i <= j3; i++)
-    // {
-    //   std::cout << s[i] << " ";
-    // }
-    // for (int i = i4; i <= j4; i++)
-    // {
-    //   std::cout << s[i] << " ";
-    // }
+        reOpt[1][j][i] = reOpt[1][j - 1][i] + reOpt[2][j - 1][i] * (reOpt[0][j][j] + M[s[j]][s[j - 1]]) + reOpt[1][j][j];
+      }
+    }
+
+    for (int i = j1 + 1 - 1, k = j1 + 1, l; i >= 0; i--)
+    {
+      for (int j = i4 - 1 + 1; j <= N; j++)
+      {
+
+        reOpt[2][i][j] = reOpt[2][i][k] + reOpt[2][k + 1][j];
+        reOpt[0][i][j] = reOpt[0][i][k] + M[s[k]][s[k + 1]] + reOpt[0][k + 1][j];
+        reOpt[1][i][j] = reOpt[1][i][k] + reOpt[2][k + 1][j] * (reOpt[0][i][k] + M[s[k]][s[k + 1]]) + reOpt[1][k + 1][j];
+
+        reOpt[2][j][i] = reOpt[2][i][j];
+        reOpt[0][j][i] = reOpt[0][i][j];
+
+        reOpt[1][j][i] = reOpt[1][k][i] + reOpt[2][k][i] * (reOpt[0][j][k + 1] + M[s[k + 1]][s[k]]) + reOpt[1][j][k + 1];
+      }
+    }
+  }
+}
+
+void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt, double &valor_obj)
+{
+  double T, C, W, melhor_valor_obj = valor_obj, temp_obj;
+  double T1, C1, W1, T2, C2, W2, T3, C3, W3;
+  int melhor_i, melhor_j;
+  bool improved = false;
+  for (int i = 1; i < s.size() - 2; i++)
+  {
+    for (int j = i + 2; j < s.size() - 1; j++)
+    {
+      W1 = reOpt[2][0][i - 1] + reOpt[2][j][j];
+      W3 = reOpt[2][i][i] + reOpt[2][j + 1][N];
+
+      T1 = reOpt[0][0][i - 1] + M[s[i - 1]][s[j]] + reOpt[0][j][j];
+      T3 = reOpt[0][i][i] + M[s[i]][s[j + 1]] + reOpt[0][j + 1][N];
+
+      C1 = reOpt[1][0][i - 1] + reOpt[2][i][i] * (reOpt[1][0][i - 1] + M[s[i - 1]][s[j]]) + reOpt[1][j][j];
+      C3 = reOpt[1][i][i] + reOpt[1][j + 1][N] * (reOpt[1][i][i] + M[s[i]][s[j + 1]]) + reOpt[1][j + 1][N];
+
+      W2 = reOpt[2][i + 1][j - 1];
+      T2 = reOpt[0][i + 1][j - 1];
+      C2 = reOpt[1][i + 1][j - 1];
+
+      C = (C1 + W2 * (T1 + M[s[j]][s[i + 1]]) + C2) + W3 * (T1 + M[s[j]][s[i + 1]] + T2 + M[s[j - 1]][s[i]]) + C3;
+
+      swap(s, i, j);
+      std::cout << i << " " << j << "\n";
+      // std::cout << calculaCustoSubsequencia(s, j, N) << "\n";
+      // std::cout << T3 << "\n\n";
+      std::cout << calculaCustoAcumulado(s) << "\n";
+      std::cout << C << "\n\n";
+      swap(s, i, j);
+
+      if (C + EPSILON < melhor_valor_obj)
+      {
+        improved = true;
+        melhor_valor_obj = C;
+        melhor_i = i;
+        melhor_j = j;
+      }
+    }
+  }
+
+  if (improved == true)
+  {
+    valor_obj = melhor_valor_obj;
+    swap(s, melhor_i, melhor_j);
   }
 }
 
