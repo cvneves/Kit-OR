@@ -444,12 +444,60 @@ void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vecto
     valor_obj = melhor_valor_obj;
     swap(s, melhor_i, melhor_j);
 
-    for (int i = 0; i <= N; i++)
+    for (int j = melhor_i; j <= melhor_j; j++)
     {
-      if (melhor_i == i)
-        continue;
-      
+      for (int i = j - 1; i >= 0; i--)
+      {
+        std::cout << i << " " << j << "\n";
+
+        reOpt[2][i][j] = reOpt[2][i][j - 1] + reOpt[2][j][j];
+        reOpt[0][i][j] = reOpt[0][i][j - 1] + M[s[j - 1]][s[j]];
+        reOpt[1][i][j] = reOpt[1][i][j - 1] + reOpt[2][j][j] * (reOpt[0][i][j - 1] + M[s[j - 1]][s[j]]) + reOpt[1][j][j];
+
+        reOpt[2][j][i] = reOpt[2][i][j];
+        reOpt[0][j][i] = reOpt[0][i][j];
+
+        reOpt[1][j][i] = reOpt[1][j - 1][i] + reOpt[2][j - 1][i] * (reOpt[0][j][j] + M[s[j]][s[j - 1]]) + reOpt[1][j][j];
+      }
+      std::cout << "\n";
     }
+
+    for (int i = melhor_i; i <= melhor_j; i++)
+    {
+      for (int j = melhor_j + 1; j <= N; j++)
+      {
+        std::cout << i << " " << j << "\n";
+
+        reOpt[2][i][j] = reOpt[2][i][j - 1] + reOpt[2][j][j];
+        reOpt[0][i][j] = reOpt[0][i][j - 1] + M[s[j - 1]][s[j]];
+        reOpt[1][i][j] = reOpt[1][i][j - 1] + reOpt[2][j][j] * (reOpt[0][i][j - 1] + M[s[j - 1]][s[j]]) + reOpt[1][j][j];
+
+        reOpt[2][j][i] = reOpt[2][i][j];
+        reOpt[0][j][i] = reOpt[0][i][j];
+
+        reOpt[1][j][i] = reOpt[1][j - 1][i] + reOpt[2][j - 1][i] * (reOpt[0][j][j] + M[s[j]][s[j - 1]]) + reOpt[1][j][j];
+
+        // std::cout << "\n";
+      }
+    }
+
+    for (int i = 0, j = melhor_j + 1; j <= N; j++)
+    {
+      std::cout << i << " " << j << "\n";
+
+      reOpt[2][i][j] = reOpt[2][i][j - 1] + reOpt[2][j][j];
+      reOpt[0][i][j] = reOpt[0][i][j - 1] + M[s[j - 1]][s[j]];
+      reOpt[1][i][j] = reOpt[1][i][j - 1] + reOpt[2][j][j] * (reOpt[0][i][j - 1] + M[s[j - 1]][s[j]]) + reOpt[1][j][j];
+
+      reOpt[2][j][i] = reOpt[2][i][j];
+      reOpt[0][j][i] = reOpt[0][i][j];
+
+      reOpt[1][j][i] = reOpt[1][j - 1][i] + reOpt[2][j - 1][i] * (reOpt[0][j][j] + M[s[j]][s[j - 1]]) + reOpt[1][j][j];
+
+      // std::cout << "\n";
+    }
+
+    // reOptPreProcessing(s, reOpt);
   }
 }
 
