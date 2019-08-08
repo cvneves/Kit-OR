@@ -17,7 +17,7 @@ void printData();
 double **M; // matriz de adjacencia
 int N;      // quantidade total de vertices
 
-long long int calculaCustoAcumulado(std::vector<int> &s);
+double calculaCustoAcumulado(std::vector<int> &s);
 double calculaCustoSubsequencia(std::vector<int> &s, int i, int j);
 
 void printSolution(std::vector<int> &s);
@@ -49,12 +49,12 @@ int main(int argc, char **argv)
   std::vector<int> s;
   double valor_obj;
 
-  std::chrono::time_point<std::chrono::system_clock> start, end;
+std::chrono::time_point<std::chrono::system_clock> start, end;
   start = std::chrono::system_clock::now();
   s = GILS_RVND();
   end = std::chrono::system_clock::now();
 
-  std::cout << calculaCustoAcumulado(s) + (int) calculaCustoSubsequencia(s, 0, N) << "\n";
+  std::cout << calculaCustoAcumulado(s) + calculaCustoSubsequencia(s, 0, N) << "\n";
 
   int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
   std::cout << "Tempo total (s): " << elapsed_seconds / 1000.0 << "\n\n";
@@ -307,9 +307,9 @@ double calculaCustoSubsequencia(std::vector<int> &s, int i, int j)
   return custo;
 }
 
-long long int calculaCustoAcumulado(std::vector<int> &s)
+double calculaCustoAcumulado(std::vector<int> &s)
 {
-  long long int custo = 0;
+  double custo = 0;
 
   for (int i = 1; i < s.size(); i++)
   {
