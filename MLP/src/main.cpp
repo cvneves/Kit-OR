@@ -30,6 +30,8 @@ void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vecto
 void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt, double &valor_obj, int t);
 void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt, double &valor_obj);
 
+void perturb(std::vector<int> &s);
+
 std::vector<int> construction(double alpha);
 void reOptPreProcessing(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt);
 
@@ -61,12 +63,67 @@ int main(int argc, char **argv)
   buscaVizinhancaSwap(s, reOpt, valor_obj);
 
   printSolution(s);
+  perturb(s);
+  printSolution(s);
 
   std::cout << calculaCustoAcumulado(s) << "\n";
   std::cout << valor_obj << "\n";
   std::cout << reOpt[1][0][N] << "\n";
 
   return 0;
+}
+
+void perturb(std::vector<int> &s)
+{
+  int n_min = 2, n_max = std::ceil(s.size() / 10.0);
+  n_max = n_max >= n_min ? n_max : n_min;
+
+  int t1 = n_min == n_max ? n_min : rand() % (n_max - n_min) + n_min;
+  int i = rand() % (s.size() - 1 - t1) + 1;
+
+  int j, t2;
+
+  if (i < 1 + n_min)
+  {
+    j = rand() % ((s.size() - n_min - 1) - (i + t1) + 1) + (i + t1);
+    t2 = rand() % (std::min((int)(s.size() - j - 1), n_max) - n_min + 1) + n_min;
+  }
+  else if (i + t1 >= s.size() - n_min)
+  {
+    j = rand() % (i - n_min) + 1;
+    t2 = rand() % (std::min((i - j), n_max) - n_min + 1) + n_min;
+  }
+  else
+  {
+    if (rand() % 2 == 1)
+    {
+      j = rand() % ((s.size() - n_min - 1) - (i + t1) + 1) + (i + t1);
+      t2 = rand() % (std::min((int)(s.size() - j - 1), n_max) - n_min + 1) + n_min;
+    }
+    else
+    {
+      j = rand() % (i - n_min) + 1;
+      t2 = rand() % (std::min((i - j), n_max) - n_min + 1) + n_min;
+    }
+  }
+
+  std::vector<int> subsequencia_i(s.begin() + i, s.begin() + i + t1);
+  std::vector<int> subsequencia_j(s.begin() + j, s.begin() + j + t2);
+
+  if (i < j)
+  {
+    s.erase(s.begin() + j, s.begin() + j + t2);
+    s.insert(s.begin() + j, subsequencia_i.begin(), subsequencia_i.end());
+    s.erase(s.begin() + i, s.begin() + i + t1);
+    s.insert(s.begin() + i, subsequencia_j.begin(), subsequencia_j.end());
+  }
+  else
+  {
+    s.erase(s.begin() + i, s.begin() + i + t1);
+    s.insert(s.begin() + i, subsequencia_j.begin(), subsequencia_j.end());
+    s.erase(s.begin() + j, s.begin() + j + t2);
+    s.insert(s.begin() + j, subsequencia_i.begin(), subsequencia_i.end());
+  }
 }
 
 std::vector<int> construction(double alpha)
