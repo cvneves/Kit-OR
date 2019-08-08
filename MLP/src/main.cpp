@@ -55,8 +55,8 @@ int main(int argc, char **argv)
   reOptPreProcessing(s, reOpt);
   double valor_obj = reOpt[1][0][N];
 
-  // buscaVizinhancaReinsertion(s, reOpt, valor_obj, 3);
-  // buscaVizinhanca2Opt(s, reOpt, valor_obj);
+  buscaVizinhancaReinsertion(s, reOpt, valor_obj, 3);
+  buscaVizinhanca2Opt(s, reOpt, valor_obj);
   buscaVizinhancaSwap(s, reOpt, valor_obj);
 
   printSolution(s);
