@@ -74,13 +74,13 @@ std::vector<int> GILS_RVND()
     R[i] = i / 100.0;
   }
 
-  if (N > 100)
+  if (N+1 > 100)
   {
     I_ils = 100;
   }
   else
   {
-    I_ils = N;
+    I_ils = N+1;
   }
 
   std::vector<std::vector<std::vector<long double>>> reOpt(3, std::vector<std::vector<long double>>(N + 1, std::vector<long double>(N + 1, 0)));
