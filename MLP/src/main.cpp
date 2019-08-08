@@ -44,6 +44,7 @@ int main(int argc, char **argv)
   printData();
 
   std::vector<int> s;
+
   s = construction(0.5);
 
   std::cout << "\n";
@@ -55,17 +56,16 @@ int main(int argc, char **argv)
   reOptPreProcessing(s, reOpt);
   double valor_obj = reOpt[1][0][N];
 
-  buscaVizinhancaReinsertion(s, reOpt, valor_obj, 3);
+  buscaVizinhancaReinsertion(s, reOpt, valor_obj, 2);
   buscaVizinhanca2Opt(s, reOpt, valor_obj);
   buscaVizinhancaSwap(s, reOpt, valor_obj);
 
   printSolution(s);
 
-  // std::cout << reOpt[1][0][N] << "\n";
-  // std::cout << calculaCustoSubsequencia(s, 0, N) << "\n";
   std::cout << calculaCustoAcumulado(s) << "\n";
   std::cout << valor_obj << "\n";
-  std::cout << reOpt[1][0][N];
+  std::cout << reOpt[1][0][N] << "\n";
+
   return 0;
 }
 
@@ -448,7 +448,6 @@ void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vecto
     {
       for (int i = j - 1; i >= 0; i--)
       {
-        std::cout << i << " " << j << "\n";
 
         reOpt[2][i][j] = reOpt[2][i][j - 1] + reOpt[2][j][j];
         reOpt[0][i][j] = reOpt[0][i][j - 1] + M[s[j - 1]][s[j]];
@@ -459,14 +458,12 @@ void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vecto
 
         reOpt[1][j][i] = reOpt[1][j - 1][i] + reOpt[2][j - 1][i] * (reOpt[0][j][j] + M[s[j]][s[j - 1]]) + reOpt[1][j][j];
       }
-      std::cout << "\n";
     }
 
     for (int i = melhor_i; i <= melhor_j; i++)
     {
       for (int j = melhor_j + 1; j <= N; j++)
       {
-        std::cout << i << " " << j << "\n";
 
         reOpt[2][i][j] = reOpt[2][i][j - 1] + reOpt[2][j][j];
         reOpt[0][i][j] = reOpt[0][i][j - 1] + M[s[j - 1]][s[j]];
@@ -476,14 +473,11 @@ void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vecto
         reOpt[0][j][i] = reOpt[0][i][j];
 
         reOpt[1][j][i] = reOpt[1][j - 1][i] + reOpt[2][j - 1][i] * (reOpt[0][j][j] + M[s[j]][s[j - 1]]) + reOpt[1][j][j];
-
-        // std::cout << "\n";
       }
     }
 
     for (int i = 0, j = melhor_j + 1; j <= N; j++)
     {
-      std::cout << i << " " << j << "\n";
 
       reOpt[2][i][j] = reOpt[2][i][j - 1] + reOpt[2][j][j];
       reOpt[0][i][j] = reOpt[0][i][j - 1] + M[s[j - 1]][s[j]];
@@ -493,11 +487,7 @@ void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vecto
       reOpt[0][j][i] = reOpt[0][i][j];
 
       reOpt[1][j][i] = reOpt[1][j - 1][i] + reOpt[2][j - 1][i] * (reOpt[0][j][j] + M[s[j]][s[j - 1]]) + reOpt[1][j][j];
-
-      // std::cout << "\n";
     }
-
-    // reOptPreProcessing(s, reOpt);
   }
 }
 
