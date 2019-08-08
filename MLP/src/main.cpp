@@ -60,11 +60,11 @@ int main(int argc, char **argv)
 
   // RVND(s, reOpt, valor_obj);
 
-  // std::cout << calculaCustoAcumulado(s) << "\n";
+  std::cout << calculaCustoAcumulado(s) << "\n";
   // std::cout << reOpt[1][0][N] << "\n";
   // std::cout << valor_obj + reOpt[0][0][N] << "\n";
 
-  printSolution(s);
+  // printSolution(s);
 
   return 0;
 }
@@ -95,7 +95,6 @@ std::vector<int> GILS_RVND()
   for (int i = 0; i < I_max; i++)
   {
     double alpha = R[rand() % 26];
-
     s = construction(alpha);
     reOptPreProcessing(s, reOpt);
 
@@ -124,14 +123,14 @@ std::vector<int> GILS_RVND()
       iter_ILS++;
     }
 
-    // std::cout << "UAILE FIM\n";
-
     if (valor_obj_b < melhor_valor_obj)
     {
       melhor_s = s_b;
       melhor_valor_obj = valor_obj_b;
     }
   }
+
+  return melhor_s;
 }
 
 void RVND(std::vector<int> &solucao, std::vector<std::vector<std::vector<double>>> &reOpt, double &valor_obj)
