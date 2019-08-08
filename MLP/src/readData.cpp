@@ -5,12 +5,12 @@
 
 using namespace std;
 
-double CalcDistEuc ( double *X, double *Y, int I, int J );
-double CalcDistAtt ( double *X, double *Y, int I, int J );
-void CalcLatLong ( double *X, double *Y, int n, double *latit, double* longit );
-double CalcDistGeo ( double *latit, double *longit, int I, int J );
+long double CalcDistEuc ( long double *X, long double *Y, int I, int J );
+long double CalcDistAtt ( long double *X, long double *Y, int I, int J );
+void CalcLatLong ( long double *X, long double *Y, int n, long double *latit, long double* longit );
+long double CalcDistGeo ( long double *latit, long double *longit, int I, int J );
 
-void readData( int argc, char** argv, int* Dimension, double ***Mdist )
+void readData( int argc, char** argv, int* Dimension, long double ***Mdist )
 {
 
      if (argc < 2) {
@@ -56,14 +56,14 @@ void readData( int argc, char** argv, int* Dimension, double ***Mdist )
 
     in >> ewt;
 
-    double *x = new double [N+1];
-    double *y = new double [N+1];
+    long double *x = new long double [N+1];
+    long double *y = new long double [N+1];
 
     // Alocar matriz 2D
-    double **dist = new double*[N+1];
+    long double **dist = new long double*[N+1];
 
     for ( int i = 0; i < N+1; i++ ) {
-        dist [i] = new double [N+1];
+        dist [i] = new long double [N+1];
     }
 
     if ( ewt == "EXPLICIT" ) {
@@ -298,8 +298,8 @@ void readData( int argc, char** argv, int* Dimension, double ***Mdist )
             in >> tempCity >> x[i] >> y[i];
         }
 
-        double *latitude = new double [N+1];
-        double *longitude = new double [N+1];
+        long double *latitude = new long double [N+1];
+        long double *longitude = new long double [N+1];
 
         CalcLatLong ( x, y, N, latitude, longitude );
 
@@ -351,16 +351,16 @@ void readData( int argc, char** argv, int* Dimension, double ***Mdist )
     *Mdist = dist;
 }
 
-double CalcDistEuc ( double *X, double *Y, int I, int J )
+long double CalcDistEuc ( long double *X, long double *Y, int I, int J )
 {
     return
     sqrt ( pow ( X[I] - X[J], 2 ) + pow ( Y[I] - Y[J], 2 ) );
 }
 
-double CalcDistAtt ( double *X, double *Y, int I, int J )
+long double CalcDistAtt ( long double *X, long double *Y, int I, int J )
 {
     // Calcula Pseudo Distancia Euclidiana
-    double rij, tij, dij;
+    long double rij, tij, dij;
 
     rij = sqrt ( ( pow ( X[I] - X[J], 2 ) + pow ( Y[I] - Y[J], 2 ) ) / 10 );
     tij = floor ( rij + 0.5 );
@@ -373,9 +373,9 @@ double CalcDistAtt ( double *X, double *Y, int I, int J )
     return dij;
 }
 
-void CalcLatLong ( double *X, double *Y, int n, double *latit, double* longit )
+void CalcLatLong ( long double *X, long double *Y, int n, long double *latit, long double* longit )
 {
-    double PI = 3.141592, min;
+    long double PI = 3.141592, min;
     int deg;
 
     for ( int i = 1; i < n+1; i++ ) {
@@ -391,9 +391,9 @@ void CalcLatLong ( double *X, double *Y, int n, double *latit, double* longit )
     }
 }
 
-double CalcDistGeo ( double *latit, double *longit, int I, int J )
+long double CalcDistGeo ( long double *latit, long double *longit, int I, int J )
 {
-    double q1, q2, q3, RRR = 6378.388;
+    long double q1, q2, q3, RRR = 6378.388;
 
     q1 = cos( longit[I] - longit[J] );
     q2 = cos( latit[I] - latit[J] );

@@ -14,11 +14,11 @@
 
 void printData();
 
-double **M; // matriz de adjacencia
+long double **M; // matriz de adjacencia
 int N;      // quantidade total de vertices
 
-double calculaCustoAcumulado(std::vector<int> &s);
-double calculaCustoSubsequencia(std::vector<int> &s, int i, int j);
+long double calculaCustoAcumulado(std::vector<int> &s);
+long double calculaCustoSubsequencia(std::vector<int> &s, int i, int j);
 
 void printSolution(std::vector<int> &s);
 
@@ -26,28 +26,28 @@ void reinsertion(std::vector<int> &solucao, int i, int tamanho_subsequencia, int
 void swap(std::vector<int> &solucao, int i, int j);
 void twoOpt(std::vector<int> &solucao, int i, int j);
 
-void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt, double &valor_obj);
-void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt, double &valor_obj, int t);
-void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt, double &valor_obj);
+void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vector<long double>>> &reOpt, long double &valor_obj);
+void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std::vector<long double>>> &reOpt, long double &valor_obj, int t);
+void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vector<long double>>> &reOpt, long double &valor_obj);
 
 void perturb(std::vector<int> &s);
 
-std::vector<int> construction(double alpha);
-void reOptPreProcessing(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt);
+std::vector<int> construction(long double alpha);
+void reOptPreProcessing(std::vector<int> &s, std::vector<std::vector<std::vector<long double>>> &reOpt);
 
-void RVND(std::vector<int> &solucao, std::vector<std::vector<std::vector<double>>> &reOpt, double &valor_obj);
+void RVND(std::vector<int> &solucao, std::vector<std::vector<std::vector<long double>>> &reOpt, long double &valor_obj);
 std::vector<int> GILS_RVND();
 
 int main(int argc, char **argv)
 {
-  std::vector<std::pair<std::pair<int, int>, double>> custo_insercao;
+  std::vector<std::pair<std::pair<int, int>, long double>> custo_insercao;
   srand(time(NULL));
 
   readData(argc, argv, &N, &M);
   // printData();
 
   std::vector<int> s;
-  double valor_obj;
+  long double valor_obj;
 
 std::chrono::time_point<std::chrono::system_clock> start, end;
   start = std::chrono::system_clock::now();
@@ -64,11 +64,11 @@ std::chrono::time_point<std::chrono::system_clock> start, end;
 
 std::vector<int> GILS_RVND()
 {
-  double melhor_valor_obj = std::numeric_limits<double>::infinity(), valor_obj, valor_obj_b;
+  long double melhor_valor_obj = std::numeric_limits<long double>::infinity(), valor_obj, valor_obj_b;
   std::vector<int> melhor_s, s, s_b, s_copia;
-  double I_max = 10, I_ils;
+  long double I_max = 10, I_ils;
 
-  std::vector<double> R(26);
+  std::vector<long double> R(26);
   for (int i = 0; i < 26; i++)
   {
     R[i] = i / 100.0;
@@ -83,12 +83,12 @@ std::vector<int> GILS_RVND()
     I_ils = N;
   }
 
-  std::vector<std::vector<std::vector<double>>> reOpt(3, std::vector<std::vector<double>>(N + 1, std::vector<double>(N + 1, 0)));
-  std::vector<std::vector<std::vector<double>>> reOpt_b(3, std::vector<std::vector<double>>(N + 1, std::vector<double>(N + 1, 0)));
+  std::vector<std::vector<std::vector<long double>>> reOpt(3, std::vector<std::vector<long double>>(N + 1, std::vector<long double>(N + 1, 0)));
+  std::vector<std::vector<std::vector<long double>>> reOpt_b(3, std::vector<std::vector<long double>>(N + 1, std::vector<long double>(N + 1, 0)));
 
   for (int i = 0; i < I_max; i++)
   {
-    double alpha = R[rand() % 26];
+    long double alpha = R[rand() % 26];
     s = construction(alpha);
     reOptPreProcessing(s, reOpt);
     valor_obj = reOpt[1][0][N];
@@ -127,13 +127,13 @@ std::vector<int> GILS_RVND()
   return melhor_s;
 }
 
-void RVND(std::vector<int> &solucao, std::vector<std::vector<std::vector<double>>> &reOpt, double &valor_obj)
+void RVND(std::vector<int> &solucao, std::vector<std::vector<std::vector<long double>>> &reOpt, long double &valor_obj)
 {
   std::vector<int> NL = {1, 2, 3, 4, 5};
   int n;
 
   std::vector<int> nova_solucao = solucao;
-  double novo_valor_obj = valor_obj;
+  long double novo_valor_obj = valor_obj;
 
   int i = 0;
   while (NL.empty() == false)
@@ -229,11 +229,11 @@ void perturb(std::vector<int> &s)
   }
 }
 
-std::vector<int> construction(double alpha)
+std::vector<int> construction(long double alpha)
 {
   int r = 1;
   std::vector<int> s(N + 1), CL(N - 1);
-  std::vector<double> distances(N - 1);
+  std::vector<long double> distances(N - 1);
 
   s[0] = s[s.size() - 1] = r;
 
@@ -263,7 +263,7 @@ std::vector<int> construction(double alpha)
   return s;
 }
 
-void reOptPreProcessing(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt)
+void reOptPreProcessing(std::vector<int> &s, std::vector<std::vector<std::vector<long double>>> &reOpt)
 {
   // T = 0, C = 1, W = 2
   for (int i = 0; i < N; i++)
@@ -297,9 +297,9 @@ void reOptPreProcessing(std::vector<int> &s, std::vector<std::vector<std::vector
   }
 }
 
-double calculaCustoSubsequencia(std::vector<int> &s, int i, int j)
+long double calculaCustoSubsequencia(std::vector<int> &s, int i, int j)
 {
-  double custo = 0;
+  long double custo = 0;
   for (int u = i; u < j; u++)
   {
     custo += M[s[u]][s[u + 1]];
@@ -307,9 +307,9 @@ double calculaCustoSubsequencia(std::vector<int> &s, int i, int j)
   return custo;
 }
 
-double calculaCustoAcumulado(std::vector<int> &s)
+long double calculaCustoAcumulado(std::vector<int> &s)
 {
-  double custo = 0;
+  long double custo = 0;
 
   for (int i = 1; i < s.size(); i++)
   {
@@ -355,10 +355,10 @@ void swap(std::vector<int> &solucao, int i, int j)
   std::swap(solucao[i], solucao[j]);
 }
 
-void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt, double &valor_obj)
+void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vector<long double>>> &reOpt, long double &valor_obj)
 {
-  double T, C, W, melhor_valor_obj = valor_obj, temp_obj;
-  double T1, C1, W1, T2, C2, W2, T3, C3, W3;
+  long double T, C, W, melhor_valor_obj = valor_obj, temp_obj;
+  long double T1, C1, W1, T2, C2, W2, T3, C3, W3;
   int melhor_i, melhor_j;
   bool improved = false;
   for (int i = 1; i < s.size() - 2; i++)
@@ -436,10 +436,10 @@ void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vecto
   }
 }
 
-void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt, double &valor_obj, int t)
+void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std::vector<long double>>> &reOpt, long double &valor_obj, int t)
 {
-  double T, C, W, melhor_valor_obj = valor_obj, temp_obj;
-  double T1, C1, W1, T2, C2, W2, T3, C3, W3;
+  long double T, C, W, melhor_valor_obj = valor_obj, temp_obj;
+  long double T1, C1, W1, T2, C2, W2, T3, C3, W3;
   int melhor_i, melhor_j;
   bool improved = false;
   int i1, i2, j1, j2;
@@ -566,10 +566,10 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
   }
 }
 
-void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt, double &valor_obj)
+void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vector<long double>>> &reOpt, long double &valor_obj)
 {
-  double T, C, W, melhor_valor_obj = valor_obj, temp_obj;
-  double T1, C1, W1, T2, C2, W2, T3, C3, W3;
+  long double T, C, W, melhor_valor_obj = valor_obj, temp_obj;
+  long double T1, C1, W1, T2, C2, W2, T3, C3, W3;
   int melhor_i, melhor_j;
   bool improved = false;
   for (int i = 1; i < s.size() - 2; i++)
