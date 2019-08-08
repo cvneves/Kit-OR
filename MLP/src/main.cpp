@@ -35,42 +35,152 @@ void perturb(std::vector<int> &s);
 std::vector<int> construction(double alpha);
 void reOptPreProcessing(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt);
 
+void RVND(std::vector<int> &solucao, std::vector<std::vector<std::vector<double>>> &reOpt, double &valor_obj);
+std::vector<int> GILS_RVND();
+
 int main(int argc, char **argv)
 {
   std::vector<std::pair<std::pair<int, int>, double>> custo_insercao;
-  double alpha = 0.5;
-
   srand(time(NULL));
 
   readData(argc, argv, &N, &M);
-  printData();
+  // printData();
 
   std::vector<int> s;
+  double valor_obj;
 
-  s = construction(0.5);
+  s = GILS_RVND();
 
-  std::cout << "\n";
+  //s = {1, 30, 13, 40, 25, 32, 9, 18, 44, 58, 24, 57, 12, 23, 5, 27, 43, 49, 47, 51, 10, 35, 52, 17, 36, 26, 19, 6, 28, 14, 37, 15, 34, 46, 56, 45, 33, 29, 3, 41, 2, 54, 55, 8, 22, 48, 39, 21, 11, 16, 38, 42, 31, 7, 4, 50, 53, 20, 1};
+
+  // std::vector<std::vector<std::vector<double>>> reOpt(3, std::vector<std::vector<double>>(N + 1, std::vector<double>(N + 1, 0)));
+  // reOptPreProcessing(s, reOpt);
+  // valor_obj = reOpt[1][0][N];
+  // std::cout << valor_obj << "\n";
+
+  // RVND(s, reOpt, valor_obj);
+
+  // std::cout << calculaCustoAcumulado(s) << "\n";
+  // std::cout << reOpt[1][0][N] << "\n";
+  // std::cout << valor_obj + reOpt[0][0][N] << "\n";
 
   printSolution(s);
-  std::cout << "\n\n";
-
-  std::vector<std::vector<std::vector<double>>> reOpt(3, std::vector<std::vector<double>>(N + 1, std::vector<double>(N + 1, 0)));
-  reOptPreProcessing(s, reOpt);
-  double valor_obj = reOpt[1][0][N];
-
-  buscaVizinhancaReinsertion(s, reOpt, valor_obj, 2);
-  buscaVizinhanca2Opt(s, reOpt, valor_obj);
-  buscaVizinhancaSwap(s, reOpt, valor_obj);
-
-  printSolution(s);
-  perturb(s);
-  printSolution(s);
-
-  std::cout << calculaCustoAcumulado(s) << "\n";
-  std::cout << valor_obj << "\n";
-  std::cout << reOpt[1][0][N] << "\n";
 
   return 0;
+}
+
+std::vector<int> GILS_RVND()
+{
+  double melhor_valor_obj = std::numeric_limits<double>::infinity(), valor_obj, valor_obj_b;
+  std::vector<int> melhor_s, s, s_b;
+  double I_max = 10, I_ils;
+
+  std::vector<double> R(26);
+  for (int i = 0; i < 26; i++)
+  {
+    R[i] = i / 100.0;
+  }
+
+  if (N > 100)
+  {
+    I_ils = 100;
+  }
+  else
+  {
+    I_ils = N;
+  }
+
+  std::vector<std::vector<std::vector<double>>> reOpt(3, std::vector<std::vector<double>>(N + 1, std::vector<double>(N + 1, 0)));
+
+  for (int i = 0; i < I_max; i++)
+  {
+    double alpha = R[rand() % 26];
+
+    s = construction(alpha);
+    reOptPreProcessing(s, reOpt);
+
+    s_b = s;
+    double valor_obj_b = valor_obj;
+    int iter_ILS = 0;
+
+    while (iter_ILS < I_ils)
+    {
+      RVND(s, reOpt, valor_obj);
+
+      if (valor_obj < valor_obj_b - std::numeric_limits<double>::epsilon())
+      {
+        s_b = s;
+        valor_obj_b = valor_obj;
+        iter_ILS = 0;
+      }
+
+      std::vector<int> temp_s = s_b;
+
+      perturb(temp_s);
+
+      s = temp_s;
+      reOptPreProcessing(s, reOpt);
+      valor_obj = calculaCustoAcumulado(s);
+      iter_ILS++;
+    }
+
+    // std::cout << "UAILE FIM\n";
+
+    if (valor_obj_b < melhor_valor_obj)
+    {
+      melhor_s = s_b;
+      melhor_valor_obj = valor_obj_b;
+    }
+  }
+}
+
+void RVND(std::vector<int> &solucao, std::vector<std::vector<std::vector<double>>> &reOpt, double &valor_obj)
+{
+  std::vector<int> NL = {1, 2, 3, 4, 5};
+  int n;
+
+  std::vector<int> nova_solucao = solucao;
+  double novo_valor_obj = valor_obj;
+
+  int i = 0;
+  while (NL.empty() == false)
+  {
+    n = rand() % NL.size();
+    switch (NL[n])
+    {
+    case 1:
+      buscaVizinhancaSwap(nova_solucao, reOpt, novo_valor_obj);
+      break;
+    case 2:
+    {
+      buscaVizinhanca2Opt(nova_solucao, reOpt, novo_valor_obj);
+      break;
+    }
+    case 3:
+      buscaVizinhancaReinsertion(nova_solucao, reOpt, novo_valor_obj, 1);
+      break;
+    case 4:
+      buscaVizinhancaReinsertion(nova_solucao, reOpt, novo_valor_obj, 2);
+      break;
+    case 5:
+    {
+      buscaVizinhancaReinsertion(nova_solucao, reOpt, novo_valor_obj, 3);
+      break;
+    }
+    }
+
+    if (novo_valor_obj < valor_obj)
+    {
+      valor_obj = novo_valor_obj;
+      solucao = nova_solucao;
+    }
+    else
+    {
+      NL.erase(NL.begin() + n);
+      nova_solucao = solucao;
+      novo_valor_obj = valor_obj;
+    }
+  }
 }
 
 void perturb(std::vector<int> &s)
@@ -214,8 +324,10 @@ double calculaCustoAcumulado(std::vector<int> &s)
       continue;
     for (int j = 0; j < i; j++)
     {
+      // std::cout << j << " " << i << "\n";
       custo += M[s[j]][s[j + 1]];
     }
+    // std::cout << "\n";
   }
 
   return custo;
