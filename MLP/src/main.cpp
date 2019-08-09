@@ -48,13 +48,14 @@ int main(int argc, char **argv)
 
   readData(argc, argv, &N, &M);
 
-  std::vector<int> s = {1, 36, 29, 13, 70, 31, 69, 59, 63, 66, 22, 38, 23, 16, 47, 37, 58, 50, 10, 52, 60, 12, 34, 21, 17, 43, 41, 6, 42, 18, 4, 2, 7, 32, 3, 8, 28, 14, 20, 30, 44, 68, 9, 27, 46, 40, 61, 45, 25, 39, 62, 54, 33, 67, 48, 11, 56, 65, 51, 5, 53, 57, 15, 24, 19, 26, 49, 55, 35, 64, 1};
-  // long double valor_obj;
+  // std::vector<int> s = {1, 36, 29, 13, 70, 31, 69, 59, 63, 66, 22, 38, 23, 16, 47, 37, 58, 50, 10, 52, 60, 12, 34, 21, 17, 43, 41, 6, 42, 18, 4, 2, 7, 32, 3, 8, 28, 14, 20, 30, 44, 68, 9, 27, 46, 40, 61, 45, 25, 39, 62, 54, 33, 67, 48, 11, 56, 65, 51, 5, 53, 57, 15, 24, 19, 26, 49, 55, 35, 64, 1};
+  std::vector<int> s;
+  long double valor_obj;
 
-  // std::chrono::time_point<std::chrono::system_clock> start, end;
-  // start = std::chrono::system_clock::now();
-  // s = GILS_RVND();
-  // end = std::chrono::system_clock::now();
+  std::chrono::time_point<std::chrono::system_clock> start, end;
+  start = std::chrono::system_clock::now();
+  s = GILS_RVND();
+  end = std::chrono::system_clock::now();
 
   // std::cout << s.size() << "\n";
   printSolution(s);
