@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 {
   std::vector<std::pair<std::pair<int, int>, long double>> custo_insercao;
 
-  int x = 1565385225;
+  int x = time(NULL);
   srand(x);
   std::cout << x << "\n";
 
@@ -326,7 +326,7 @@ long double calculaCustoSubsequencia(std::vector<int> &s, int i, int j)
 long double calculaCustoAcumulado(std::vector<int> &s)
 {
   long double custo = 0;
-  for (int u = 0; u <= N; u++)
+  for (int u = 0; u < N; u++)
   {
     custo += (N - u) * M[s[u]][s[u + 1]];
   }
