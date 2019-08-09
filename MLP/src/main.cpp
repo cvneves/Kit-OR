@@ -41,23 +41,36 @@ std::vector<int> GILS_RVND();
 int main(int argc, char **argv)
 {
   std::vector<std::pair<std::pair<int, int>, long double>> custo_insercao;
-  srand(time(NULL));
+
+  int x = 1565385225;
+  srand(x);
+  std::cout << x << "\n";
 
   readData(argc, argv, &N, &M);
-  // printData();
 
-  std::vector<int> s;
-  long double valor_obj;
+  std::vector<int> s = {1,2,3};
+  // long double valor_obj;
 
-  std::chrono::time_point<std::chrono::system_clock> start, end;
-  start = std::chrono::system_clock::now();
-  s = GILS_RVND();
-  end = std::chrono::system_clock::now();
+  // std::chrono::time_point<std::chrono::system_clock> start, end;
+  // start = std::chrono::system_clock::now();
+  // s = GILS_RVND();
+  // end = std::chrono::system_clock::now();
 
-  std::cout << calculaCustoAcumulado(s) << "\n";
+  // std::cout << s.size() << "\n";
+  printSolution(s);
+  std::cout << N;
+  // std::cout << calculaCustoAcumulado(s) << "\n";
 
-  int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-  std::cout << "Tempo total (s): " << elapsed_seconds / 1000.0 << "\n\n";
+  // int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+  // std::cout << "Tempo total (s): " << elapsed_seconds / 1000.0 << "\n\n";
+
+  // std::vector<int> s = construction(0.1);
+  // long double valor_obj = calculaCustoAcumulado(s);
+  // std::vector<std::vector<std::vector<long double>>> reOpt(3, std::vector<std::vector<long double>>(N + 1, std::vector<long double>(N + 1, 0)));
+
+  // reOptPreProcessing(s, reOpt);
+
+  // RVND(s, reOpt, valor_obj);
 
   return 0;
 }
@@ -91,7 +104,7 @@ std::vector<int> GILS_RVND()
     long double alpha = R[rand() % 26];
     s = construction(alpha);
     reOptPreProcessing(s, reOpt);
-    valor_obj = reOpt[1][0][N];
+    valor_obj = reOpt[1][0][N] + reOpt[0][0][N];
 
     s_b = s;
     valor_obj_b = valor_obj;
@@ -108,6 +121,7 @@ std::vector<int> GILS_RVND()
         valor_obj_b = valor_obj;
         iterIls = 0;
       }
+
       s_copia = s_b;
       perturb(s_copia);
       s = s_copia;
@@ -350,7 +364,7 @@ void swap(std::vector<int> &solucao, int i, int j)
 
 void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vector<long double>>> &reOpt, long double &valor_obj)
 {
-  long double T, C, W, melhor_valor_obj = valor_obj, temp_obj;
+  long double T = 0, C, W, melhor_valor_obj = valor_obj, temp_obj;
   long double T1, C1, W1, T2, C2, W2, T3, C3, W3;
   long double fs;
   int melhor_i, melhor_j;
@@ -369,6 +383,22 @@ void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vecto
       T = T2 + M[s[i]][s[j + 1]] + reOpt[0][j + 1][N];
 
       fs = C + T;
+      // twoOpt(s, i, j);
+
+      // if (fs != calculaCustoAcumulado(s))
+      // {
+      //   std::cout << i << " " << j << "A" << "\n";
+      //   std::cout << fs << "\n";
+      //   std::cout << calculaCustoAcumulado(s) << "\n\n";
+      // }
+      // else
+      // {
+      //   std::cout << i << " " << j << "\n";
+      //   std::cout << fs << "\n";
+      //   std::cout << calculaCustoAcumulado(s) << "\n\n";
+      // }
+
+      // twoOpt(s, i, j);
 
       if (fs + EPSILON < melhor_valor_obj)
       {
@@ -435,7 +465,7 @@ void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vecto
 
 void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std::vector<long double>>> &reOpt, long double &valor_obj, int t)
 {
-  long double T, C, W, melhor_valor_obj = valor_obj, temp_obj;
+  long double T = 0, C, W, melhor_valor_obj = valor_obj, temp_obj;
   long double T1, C1, W1, T2, C2, W2, T3, C3, W3;
   long double fs;
   int melhor_i, melhor_j;
@@ -468,6 +498,19 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
         C = C1 + W2 * (T1 + M[s[j + t - 1]][s[i]]) + C2;
         T = T1 + M[s[j + t - 1]][s[i]] + T2;
 
+        // COPIA = s;
+        // reinsertion(COPIA, i, t, j);
+        // if (T != calculaCustoSubsequencia(COPIA, 0, N))
+        // {
+        //   std::cout << T << "\n";
+        //   std::cout << calculaCustoSubsequencia(COPIA, 0, N) << "\n\n";
+        // }
+        // else
+        // {
+        //   std::cout << T << "\n";
+        //   std::cout << calculaCustoSubsequencia(COPIA, 0, N) << "\n\n";
+        // }
+
         fs = C + T;
       }
       else
@@ -488,6 +531,19 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
 
         C = C1 + W2 * (T1 + M[s[i + t - 1]][s[j]]) + C2;
         T = T1 + M[s[i + t - 1]][s[j]] + T2;
+
+        // COPIA = s;
+        // reinsertion(COPIA, i, t, j);
+        // if (T != calculaCustoSubsequencia(COPIA, 0, N))
+        // {
+        //   std::cout << T << "\n";
+        //   std::cout << calculaCustoSubsequencia(COPIA, 0, N) << "\n\n";
+        // }
+        // else
+        // {
+        //   std::cout << T << "\n";
+        //   std::cout << calculaCustoSubsequencia(COPIA, 0, N) << "\n\n";
+        // }
 
         fs = C + T;
       }
@@ -574,7 +630,7 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
 
 void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vector<long double>>> &reOpt, long double &valor_obj)
 {
-  long double T, C, W, melhor_valor_obj = valor_obj, temp_obj;
+  long double T = 0, C, W, melhor_valor_obj = valor_obj, temp_obj;
   long double T1, C1, W1, T2, C2, W2, T3, C3, W3;
   long double fs;
   int melhor_i, melhor_j;
@@ -600,6 +656,17 @@ void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vecto
       T = T1 + M[s[j]][s[i + 1]] + T2 + M[s[j - 1]][s[i]] + T3;
 
       fs = C + T;
+
+      // swap(s, i, j);
+      // if (fs != calculaCustoAcumulado(s))
+      // {
+      // std::cout << "A\n";
+      // }
+      // else
+      // {
+      //   std::cout << "E\n";
+      // }
+      // swap(s, i, j);
 
       if (fs + EPSILON < melhor_valor_obj)
       {
@@ -660,6 +727,7 @@ void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vecto
 
       reOpt[1][j][i] = reOpt[1][j - 1][i] + reOpt[2][j - 1][i] * (reOpt[0][j][j] + M[s[j]][s[j - 1]]) + reOpt[1][j][j];
     }
+    reOptPreProcessing(s, reOpt);
   }
 }
 
