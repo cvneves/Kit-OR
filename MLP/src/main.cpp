@@ -15,7 +15,7 @@
 void printData();
 
 long double **M; // matriz de adjacencia
-int N;      // quantidade total de vertices
+int N;           // quantidade total de vertices
 
 long double calculaCustoAcumulado(std::vector<int> &s);
 long double calculaCustoSubsequencia(std::vector<int> &s, int i, int j);
@@ -49,12 +49,12 @@ int main(int argc, char **argv)
   std::vector<int> s;
   long double valor_obj;
 
-std::chrono::time_point<std::chrono::system_clock> start, end;
+  std::chrono::time_point<std::chrono::system_clock> start, end;
   start = std::chrono::system_clock::now();
   s = GILS_RVND();
   end = std::chrono::system_clock::now();
 
-  std::cout << calculaCustoAcumulado(s) + calculaCustoSubsequencia(s, 0, N) << "\n";
+  std::cout << calculaCustoAcumulado(s) << "\n";
 
   int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
   std::cout << "Tempo total (s): " << elapsed_seconds / 1000.0 << "\n\n";
@@ -74,13 +74,13 @@ std::vector<int> GILS_RVND()
     R[i] = i / 100.0;
   }
 
-  if (N+1 > 100)
+  if (N + 1 > 100)
   {
     I_ils = 100;
   }
   else
   {
-    I_ils = N+1;
+    I_ils = N + 1;
   }
 
   std::vector<std::vector<std::vector<long double>>> reOpt(3, std::vector<std::vector<long double>>(N + 1, std::vector<long double>(N + 1, 0)));
@@ -91,7 +91,7 @@ std::vector<int> GILS_RVND()
     long double alpha = R[rand() % 26];
     s = construction(alpha);
     reOptPreProcessing(s, reOpt);
-    valor_obj = reOpt[1][0][N];
+    valor_obj = reOpt[1][0][N] ;
 
     s_b = s;
     valor_obj_b = valor_obj;
@@ -310,17 +310,9 @@ long double calculaCustoSubsequencia(std::vector<int> &s, int i, int j)
 long double calculaCustoAcumulado(std::vector<int> &s)
 {
   long double custo = 0;
-
-  for (int i = 1; i < s.size(); i++)
+  for (int u = 0; u <= N; u++)
   {
-    if (s[i] == 1)
-      continue;
-    for (int j = 0; j < i; j++)
-    {
-      // std::cout << j << " " << i << "\n";
-      custo += M[s[j]][s[j + 1]];
-    }
-    // std::cout << "\n";
+    custo += (N - u) * M[s[u]][s[u + 1]];
   }
 
   return custo;
