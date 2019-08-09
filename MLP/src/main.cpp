@@ -441,6 +441,8 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
   int melhor_i, melhor_j;
   bool improved = false;
   int i1, i2, j1, j2;
+
+  std::vector<int> COPIA;
   for (int i = 1; i < N + 1 - t; i++)
   {
     for (int j = 1; j < N + 1 - t; j++)
@@ -464,7 +466,8 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
         C2 = reOpt[1][i1][j1] + reOpt[2][i2][j2] * (reOpt[0][i1][j1] + M[s[j1]][s[i2]]) + reOpt[1][i2][j2];
 
         C = C1 + W2 * (T1 + M[s[j + t - 1]][s[i]]) + C2;
-        T = T1 + M[j2][i1] + T2;
+        T = T1 + M[s[j + t - 1]][s[i]] + T2;
+
         fs = C + T;
       }
       else
@@ -484,7 +487,7 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
         C2 = reOpt[1][i1][j1] + reOpt[2][i2][j2] * (reOpt[0][i1][j1] + M[s[j1]][s[i2]]) + reOpt[1][i2][j2];
 
         C = C1 + W2 * (T1 + M[s[i + t - 1]][s[j]]) + C2;
-        T = T1 + M[j2][i1] + T2;
+        T = T1 + M[s[i + t - 1]][s[j]] + T2;
 
         fs = C + T;
       }
@@ -594,7 +597,8 @@ void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vecto
       C2 = reOpt[1][i + 1][j - 1];
 
       C = (C1 + W2 * (T1 + M[s[j]][s[i + 1]]) + C2) + W3 * (T1 + M[s[j]][s[i + 1]] + T2 + M[s[j - 1]][s[i]]) + C3;
-      T = T1 + M[s[j]][s[i+1]] + T2 + M[s[j-1]][s[i]] + T3;
+      T = T1 + M[s[j]][s[i + 1]] + T2 + M[s[j - 1]][s[i]] + T3;
+
       fs = C + T;
 
       if (fs + EPSILON < melhor_valor_obj)
