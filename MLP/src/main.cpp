@@ -58,12 +58,12 @@ int main(int argc, char **argv)
   end = std::chrono::system_clock::now();
 
   // std::cout << s.size() << "\n";
-  printSolution(s);
-  std::cout << N << "\n";
+  // printSolution(s);
+  // std::cout << N << "\n";
   std::cout << calculaCustoAcumulado(s) << "\n";
 
-  // int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-  // std::cout << "Tempo total (s): " << elapsed_seconds / 1000.0 << "\n\n";
+  int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+  std::cout << "Tempo total (s): " << elapsed_seconds / 1000.0 << "\n\n";
 
   // std::vector<int> s = construction(0.1);
   // long double valor_obj = calculaCustoAcumulado(s);
