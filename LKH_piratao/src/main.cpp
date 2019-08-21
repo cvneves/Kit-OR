@@ -43,6 +43,8 @@ void buscaVizinhancaReinsertion(std::vector<int> &solucao, double &valor_obj, do
 
 void perturb(std::vector<int> &s);
 
+void transformarMatriz(std::vector<std::vector<double>> &C);
+
 int main(int argc, char **argv)
 {
   srand(time(0));
@@ -61,6 +63,53 @@ int main(int argc, char **argv)
     }
   }
 
+  // std::vector<int> solucao(dimension + 1, 1);
+  // std::vector<int> lista_candidatos = std::vector<int>(dimension - 1);
+
+  // for (int i = 2; i <= dimension; i++)
+  // {
+  //   lista_candidatos[i - 2] = i;
+  // }
+
+  // int n_cidades = lista_candidatos.size();
+
+  // double UB = 0;
+
+  // for (int i = 1; i < dimension; i++)
+  // {
+  //   int n = rand() % lista_candidatos.size();
+  //   solucao[i] = lista_candidatos[n];
+  //   lista_candidatos.erase(lista_candidatos.begin() + n);
+  //   UB += matrizAdj[solucao[i - 1]][solucao[i]];
+  // }
+  // UB += matrizAdj[solucao[dimension - 1]][solucao[dimension]];
+
+  // std::cout << UB << "\n";
+
+  // std::chrono::time_point<std::chrono::system_clock> start, end;
+
+  // std::vector<double> lambda(dimension, 0);
+  // Node root;
+  // root.lambda = lambda;
+
+  // root.isFeasible = false;
+
+  // start = std::chrono::system_clock::now();
+  // root.calculateLB(dimension, matrizDistancia, UB);
+  transformarMatriz(matrizDistancia);
+  // end = std::chrono::system_clock::now();
+
+  // int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+
+  // std::cout << "LB: " << root.LB << "\n";
+  // std::cout << "Tempo total (s): " << elapsed_seconds / 1000.0 << "\n\n";
+
+  return 0;
+}
+
+void transformarMatriz(std::vector<std::vector<double>> &C)
+{
+  // Construçao
   std::vector<int> solucao(dimension + 1, 1);
   std::vector<int> lista_candidatos = std::vector<int>(dimension - 1);
 
@@ -78,30 +127,108 @@ int main(int argc, char **argv)
     int n = rand() % lista_candidatos.size();
     solucao[i] = lista_candidatos[n];
     lista_candidatos.erase(lista_candidatos.begin() + n);
-    UB += matrizAdj[solucao[i - 1]][solucao[i]];
+    UB += C[solucao[i - 1]-1][solucao[i]-1];
   }
-  UB += matrizAdj[solucao[dimension - 1]][solucao[dimension]];
-
-  std::cout << UB << "\n";
-
-  std::chrono::time_point<std::chrono::system_clock> start, end;
+  UB += C[solucao[dimension - 1]-1][solucao[dimension]-1];
 
   std::vector<double> lambda(dimension, 0);
-  Node root;
-  root.lambda = lambda;
 
-  root.isFeasible = false;
+  std::cout << UB << "\n";
+  std::cout << calcularValorObj(solucao, matrizAdj);
 
-  start = std::chrono::system_clock::now();
-  root.calculateLB(dimension, matrizDistancia, UB);
-  end = std::chrono::system_clock::now();
+  // // gerar LB
 
-  int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+  // double e_k = 1;
+  // double lastZ = 0;
+  // double deltaZ;
+  // int p = 0;
+  // double e_k_lim = 1.0 / 16364.0;
+  // Kruskal kr(C);
+  // bool isFeasible = false, pruning;
+  // double LB;
+  // std::vector<std::pair<int, int>> s;
+  // std::vector<int> penalizacao;
 
-  std::cout << "LB: " << root.LB << "\n";
-  std::cout << "Tempo total (s): " << elapsed_seconds / 1000.0 << "\n\n";
+  // while (1)
+  // {
+  //   for (int i = 0; i < dimension; i++)
+  //   {
+  //     for (int j = 0; j < dimension; j++)
+  //     {
+  //       C[i][j] = C[i][j] - lambda[i] - lambda[j];
+  //     }
+  //   }
 
-  return 0;
+  //   kr = Kruskal(C);
+
+  //   LB = kr.MST(dimension);
+
+  //   for (int i = 1; i < dimension; i++)
+  //   {
+  //     LB += 2 * lambda[i];
+  //   }
+
+  //   deltaZ = LB - lastZ;
+
+  //   if (deltaZ <= std::numeric_limits<double>::epsilon())
+  //   {
+  //     p++;
+  //   }
+  //   if (p == 30)
+  //   {
+  //     e_k = e_k / 2;
+  //     p = 0;
+  //   }
+
+  //   penalizacao = std::vector<int>(dimension, 2);
+
+  //   isFeasible = true;
+
+  //   double sumPenalizacoes = 0;
+
+  //   for (int v = 0; v < dimension; v++)
+  //   {
+  //     for (const auto &arco : kr.getEdges())
+  //     {
+  //       if (arco.first == v || arco.second == v)
+  //       {
+  //         penalizacao[v]--;
+  //       }
+  //     }
+  //     if (std::abs(penalizacao[v]) > 0.000001)
+  //     {
+  //       isFeasible = false;
+  //     }
+  //     sumPenalizacoes += penalizacao[v] * penalizacao[v];
+  //   }
+
+  //   if (isFeasible || std::abs(LB - UB) <= 0.000001)
+  //   {
+  //     pruning = true;
+  //     s = kr.getEdges();
+  //     break;
+  //   }
+
+  //   double stepSize = e_k * (UB - LB);
+
+  //   stepSize = stepSize / sumPenalizacoes;
+
+  //   for (int i = 0; i < dimension; i++)
+  //   {
+  //     lambda[i] += stepSize * penalizacao[i];
+  //   }
+
+  //   lastZ = LB;
+
+  //   if (e_k < e_k_lim)
+  //   {
+  //     pruning = false;
+  //     isFeasible = false;
+  //     s = kr.getEdges();
+
+  //     break;
+  //   }
+  // }
 }
 
 void printData()
