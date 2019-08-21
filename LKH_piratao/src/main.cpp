@@ -43,7 +43,7 @@ void buscaVizinhancaReinsertion(std::vector<int> &solucao, double &valor_obj, do
 
 void perturb(std::vector<int> &s);
 
-void transformarMatriz(std::vector<std::vector<double>> &C);
+void transformarMatriz(std::vector<std::vector<double>> &C, std::vector<std::vector<double>> &D);
 
 int main(int argc, char **argv)
 {
@@ -53,7 +53,7 @@ int main(int argc, char **argv)
   printData();
   std::cout << "\n\n";
 
-  std::vector<std::vector<double>> matrizDistancia(dimension, std::vector<double>(dimension));
+  std::vector<std::vector<double>> matrizDistancia(dimension, std::vector<double>(dimension)), D(dimension, std::vector<double>(dimension));
 
   for (int i = 0; i < dimension; i++)
   {
@@ -86,7 +86,7 @@ int main(int argc, char **argv)
 
   // std::cout << UB << "\n";
 
-  // std::chrono::time_point<std::chrono::system_clock> start, end;
+  std::chrono::time_point<std::chrono::system_clock> start, end;
 
   // std::vector<double> lambda(dimension, 0);
   // Node root;
@@ -94,20 +94,29 @@ int main(int argc, char **argv)
 
   // root.isFeasible = false;
 
-  // start = std::chrono::system_clock::now();
+  start = std::chrono::system_clock::now();
   // root.calculateLB(dimension, matrizDistancia, UB);
-  transformarMatriz(matrizDistancia);
-  // end = std::chrono::system_clock::now();
+  transformarMatriz(matrizDistancia, D);
+  end = std::chrono::system_clock::now();
 
-  // int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+  int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+
+  for (int i = 0; i < dimension; i++)
+  {
+    for (int j = 0; j < dimension; j++)
+    {
+      std::cout << D[i][j] << " ";
+    }
+    std::cout << "\n";
+  }
 
   // std::cout << "LB: " << root.LB << "\n";
-  // std::cout << "Tempo total (s): " << elapsed_seconds / 1000.0 << "\n\n";
+  std::cout << "Tempo total (s): " << elapsed_seconds / 1000.0 << "\n\n";
 
   return 0;
 }
 
-void transformarMatriz(std::vector<std::vector<double>> &C)
+void transformarMatriz(std::vector<std::vector<double>> &C, std::vector<std::vector<double>> &D)
 {
   // Construçao
   std::vector<int> solucao(dimension + 1, 1);
@@ -127,108 +136,114 @@ void transformarMatriz(std::vector<std::vector<double>> &C)
     int n = rand() % lista_candidatos.size();
     solucao[i] = lista_candidatos[n];
     lista_candidatos.erase(lista_candidatos.begin() + n);
-    UB += C[solucao[i - 1]-1][solucao[i]-1];
+    UB += C[solucao[i - 1] - 1][solucao[i] - 1];
   }
-  UB += C[solucao[dimension - 1]-1][solucao[dimension]-1];
+  UB += C[solucao[dimension - 1] - 1][solucao[dimension] - 1];
 
   std::vector<double> lambda(dimension, 0);
 
   std::cout << UB << "\n";
-  std::cout << calcularValorObj(solucao, matrizAdj);
 
-  // // gerar LB
+  // gerar LB
 
-  // double e_k = 1;
-  // double lastZ = 0;
-  // double deltaZ;
-  // int p = 0;
-  // double e_k_lim = 1.0 / 16364.0;
-  // Kruskal kr(C);
-  // bool isFeasible = false, pruning;
-  // double LB;
-  // std::vector<std::pair<int, int>> s;
-  // std::vector<int> penalizacao;
+  double e_k = 1;
+  double lastZ = 0;
+  double deltaZ;
+  int p = 0;
+  double e_k_lim = 1.0 / 16364.0;
+  Kruskal kr(C);
+  bool isFeasible = false, pruning;
+  double LB;
+  std::vector<std::pair<int, int>> s;
+  std::vector<int> penalizacao;
 
-  // while (1)
-  // {
-  //   for (int i = 0; i < dimension; i++)
-  //   {
-  //     for (int j = 0; j < dimension; j++)
-  //     {
-  //       C[i][j] = C[i][j] - lambda[i] - lambda[j];
-  //     }
-  //   }
+  Node root;
+  root.lambda = lambda;
 
-  //   kr = Kruskal(C);
+  root.isFeasible = false;
 
-  //   LB = kr.MST(dimension);
+  while (1)
+  {
+    for (int i = 0; i < dimension; i++)
+    {
+      for (int j = 0; j < dimension; j++)
+      {
+        D[i][j] = C[i][j] - lambda[i] - lambda[j];
+      }
+    }
 
-  //   for (int i = 1; i < dimension; i++)
-  //   {
-  //     LB += 2 * lambda[i];
-  //   }
+    kr = Kruskal(D);
 
-  //   deltaZ = LB - lastZ;
+    LB = kr.MST(dimension);
 
-  //   if (deltaZ <= std::numeric_limits<double>::epsilon())
-  //   {
-  //     p++;
-  //   }
-  //   if (p == 30)
-  //   {
-  //     e_k = e_k / 2;
-  //     p = 0;
-  //   }
+    for (int i = 1; i < dimension; i++)
+    {
+      LB += 2 * lambda[i];
+    }
 
-  //   penalizacao = std::vector<int>(dimension, 2);
+    deltaZ = LB - lastZ;
 
-  //   isFeasible = true;
+    if (deltaZ <= std::numeric_limits<double>::epsilon())
+    {
+      p++;
+    }
+    if (p == 30)
+    {
+      e_k = e_k / 2;
+      p = 0;
+    }
 
-  //   double sumPenalizacoes = 0;
+    penalizacao = std::vector<int>(dimension, 2);
 
-  //   for (int v = 0; v < dimension; v++)
-  //   {
-  //     for (const auto &arco : kr.getEdges())
-  //     {
-  //       if (arco.first == v || arco.second == v)
-  //       {
-  //         penalizacao[v]--;
-  //       }
-  //     }
-  //     if (std::abs(penalizacao[v]) > 0.000001)
-  //     {
-  //       isFeasible = false;
-  //     }
-  //     sumPenalizacoes += penalizacao[v] * penalizacao[v];
-  //   }
+    isFeasible = true;
 
-  //   if (isFeasible || std::abs(LB - UB) <= 0.000001)
-  //   {
-  //     pruning = true;
-  //     s = kr.getEdges();
-  //     break;
-  //   }
+    double sumPenalizacoes = 0;
 
-  //   double stepSize = e_k * (UB - LB);
+    for (int v = 0; v < dimension; v++)
+    {
+      for (const auto &arco : kr.getEdges())
+      {
+        if (arco.first == v || arco.second == v)
+        {
+          penalizacao[v]--;
+        }
+      }
+      if (std::abs(penalizacao[v]) > 0.000001)
+      {
+        isFeasible = false;
+      }
+      sumPenalizacoes += penalizacao[v] * penalizacao[v];
+    }
 
-  //   stepSize = stepSize / sumPenalizacoes;
+    if (isFeasible || std::abs(LB - UB) <= 0.000001)
+    {
+      pruning = true;
+      s = kr.getEdges();
+      break;
+    }
 
-  //   for (int i = 0; i < dimension; i++)
-  //   {
-  //     lambda[i] += stepSize * penalizacao[i];
-  //   }
+    double stepSize = e_k * (UB - LB);
 
-  //   lastZ = LB;
+    stepSize = stepSize / sumPenalizacoes;
 
-  //   if (e_k < e_k_lim)
-  //   {
-  //     pruning = false;
-  //     isFeasible = false;
-  //     s = kr.getEdges();
+    for (int i = 0; i < dimension; i++)
+    {
+      lambda[i] += stepSize * penalizacao[i];
+    }
 
-  //     break;
-  //   }
-  // }
+    lastZ = LB;
+
+    if (e_k < e_k_lim)
+    {
+      pruning = false;
+      isFeasible = false;
+      s = kr.getEdges();
+
+      break;
+    }
+  }
+
+  // std::cout << LB << "\n";
 }
 
 void printData()
