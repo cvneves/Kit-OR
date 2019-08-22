@@ -94,6 +94,7 @@ int main(int argc, char **argv)
   {
     std::cout << arco.first + 1 << " " << arco.second + 1 << "\n";
   }
+  std::cout << "\n\n";
 
   calcularAlphaNearness(D, alpha, dimension, kr);
 
@@ -107,6 +108,7 @@ void calcularAlphaNearness(std::vector<std::vector<double>> &C, std::vector<std:
   for (auto &arco : kr.getEdges())
   {
     alpha[arco.first + 1][arco.second + 1] = alpha[arco.second + 1][arco.first + 1] = 0;
+    std::cout << arco.first + 1 << " " << arco.second + 1 << "\n";
   }
 
   {
@@ -115,7 +117,6 @@ void calcularAlphaNearness(std::vector<std::vector<double>> &C, std::vector<std:
     arco2 = kr.getEdges()[kr.getEdges().size() - 2];
 
     double cArestaRemovida = std::max(C[0][arco1.second], C[0][arco2.second]);
-    std::cout << cArestaRemovida << "\n\n\n";
 
     for (int i = 1; i < dimension; i++)
     {
@@ -123,8 +124,8 @@ void calcularAlphaNearness(std::vector<std::vector<double>> &C, std::vector<std:
       {
         continue;
       }
-      alpha[1][i+1] = alpha[i+1][1] = C[0][i] - cArestaRemovida;
-      std::cout << alpha[1][i+1] << "\n";
+      alpha[1][i + 1] = alpha[i + 1][1] = C[0][i] - cArestaRemovida;
+      std::cout << 1 << " " << i + 1 << "\n";
     }
   }
 }
