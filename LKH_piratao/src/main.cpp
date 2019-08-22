@@ -128,6 +128,9 @@ void calcularAlphaNearness(std::vector<std::vector<double>> &C, std::vector<std:
       std::cout << 1 << " " << i + 1 << "\n";
     }
   }
+
+  
+
 }
 
 void transformarMatriz(std::vector<std::vector<double>> &C, std::vector<std::vector<double>> &D)
