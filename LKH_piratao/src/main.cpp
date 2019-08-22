@@ -45,6 +45,8 @@ void perturb(std::vector<int> &s);
 
 void transformarMatriz(std::vector<std::vector<double>> &C, std::vector<std::vector<double>> &D);
 
+void calcularAlphaNearness(std::vector<std::vector<double>> &C, std::vector<std::vector<double>> &alpha, int N, Kruskal &kr);
+
 int main(int argc, char **argv)
 {
   srand(time(0));
@@ -63,57 +65,68 @@ int main(int argc, char **argv)
     }
   }
 
-  // std::vector<int> solucao(dimension + 1, 1);
-  // std::vector<int> lista_candidatos = std::vector<int>(dimension - 1);
-
-  // for (int i = 2; i <= dimension; i++)
-  // {
-  //   lista_candidatos[i - 2] = i;
-  // }
-
-  // int n_cidades = lista_candidatos.size();
-
-  // double UB = 0;
-
-  // for (int i = 1; i < dimension; i++)
-  // {
-  //   int n = rand() % lista_candidatos.size();
-  //   solucao[i] = lista_candidatos[n];
-  //   lista_candidatos.erase(lista_candidatos.begin() + n);
-  //   UB += matrizAdj[solucao[i - 1]][solucao[i]];
-  // }
-  // UB += matrizAdj[solucao[dimension - 1]][solucao[dimension]];
-
-  // std::cout << UB << "\n";
-
   std::chrono::time_point<std::chrono::system_clock> start, end;
 
-  // std::vector<double> lambda(dimension, 0);
-  // Node root;
-  // root.lambda = lambda;
-
-  // root.isFeasible = false;
-
   start = std::chrono::system_clock::now();
-  // root.calculateLB(dimension, matrizDistancia, UB);
   transformarMatriz(matrizDistancia, D);
   end = std::chrono::system_clock::now();
 
   int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
-  for (int i = 0; i < dimension; i++)
+  for (int i = 1; i <= dimension; i++)
   {
-    for (int j = 0; j < dimension; j++)
+    for (int j = 1; j <= dimension; j++)
     {
-      std::cout << D[i][j] << " ";
+      matrizAdj[i][j] = matrizDistancia[i - 1][j - 1] = D[i - 1][j - 1];
     }
-    std::cout << "\n";
   }
 
-  // std::cout << "LB: " << root.LB << "\n";
-  std::cout << "Tempo total (s): " << elapsed_seconds / 1000.0 << "\n\n";
+  printData();
+
+  //calcular alpha-nearness
+  std::vector<std::vector<double>> alpha(dimension + 1, std::vector<double>(dimension + 1));
+  // std::vector<std::pair<int, int>>
+
+  Kruskal kr(matrizDistancia);
+  kr.MST(dimension);
+
+  for (auto &arco : kr.getEdges())
+  {
+    std::cout << arco.first + 1 << " " << arco.second + 1 << "\n";
+  }
+
+  calcularAlphaNearness(D, alpha, dimension, kr);
+
+  // std::cout << "Tempo total (s): " << elapsed_seconds / 1000.0 << "\n\n";
 
   return 0;
+}
+
+void calcularAlphaNearness(std::vector<std::vector<double>> &C, std::vector<std::vector<double>> &alpha, int N, Kruskal &kr)
+{
+  for (auto &arco : kr.getEdges())
+  {
+    alpha[arco.first + 1][arco.second + 1] = alpha[arco.second + 1][arco.first + 1] = 0;
+  }
+
+  {
+    std::pair<int, int> arco1, arco2;
+    arco1 = kr.getEdges()[kr.getEdges().size() - 1];
+    arco2 = kr.getEdges()[kr.getEdges().size() - 2];
+
+    double cArestaRemovida = std::max(C[0][arco1.second], C[0][arco2.second]);
+    std::cout << cArestaRemovida << "\n\n\n";
+
+    for (int i = 1; i < dimension; i++)
+    {
+      if (i == arco1.second || i == arco2.second)
+      {
+        continue;
+      }
+      alpha[1][i+1] = alpha[i+1][1] = C[0][i] - cArestaRemovida;
+      std::cout << alpha[1][i+1] << "\n";
+    }
+  }
 }
 
 void transformarMatriz(std::vector<std::vector<double>> &C, std::vector<std::vector<double>> &D)
@@ -141,8 +154,6 @@ void transformarMatriz(std::vector<std::vector<double>> &C, std::vector<std::vec
   UB += C[solucao[dimension - 1] - 1][solucao[dimension] - 1];
 
   std::vector<double> lambda(dimension, 0);
-
-  std::cout << UB << "\n";
 
   // gerar LB
 
@@ -243,7 +254,7 @@ void transformarMatriz(std::vector<std::vector<double>> &C, std::vector<std::vec
     }
   }
 
-  // std::cout << LB << "\n";
+  std::cout << LB << "\n";
 }
 
 void printData()

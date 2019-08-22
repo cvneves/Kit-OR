@@ -1,6 +1,6 @@
 #include "Kruskal.h"
 
-Kruskal::Kruskal(vvi dist)
+Kruskal::Kruskal(vvi &dist)
 {
 	for (int i = 1; i < dist.size(); ++i)
 	{
