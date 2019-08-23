@@ -32,7 +32,6 @@ private:
 	int findSet(int i);
 	void unionSet(int i, int j);
 	bool isSameSet(int i, int j);
-
 };
 
 #endif

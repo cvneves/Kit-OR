@@ -45,8 +45,6 @@ void perturb(std::vector<int> &s);
 
 void transformarMatriz(std::vector<std::vector<double>> &C, std::vector<std::vector<double>> &D);
 
-void calcularAlphaNearness(std::vector<std::vector<double>> &C, std::vector<std::vector<double>> &alpha, int N, Kruskal &kr);
-
 int main(int argc, char **argv)
 {
   srand(time(0));
@@ -85,52 +83,8 @@ int main(int argc, char **argv)
 
   //calcular alpha-nearness
   std::vector<std::vector<double>> alpha(dimension + 1, std::vector<double>(dimension + 1));
-  // std::vector<std::pair<int, int>>
-
-  Kruskal kr(matrizDistancia);
-  kr.MST(dimension);
-
-  for (auto &arco : kr.getEdges())
-  {
-    std::cout << arco.first + 1 << " " << arco.second + 1 << "\n";
-  }
-  std::cout << "\n\n";
-
-  calcularAlphaNearness(D, alpha, dimension, kr);
-
-  // std::cout << "Tempo total (s): " << elapsed_seconds / 1000.0 << "\n\n";
 
   return 0;
-}
-
-void calcularAlphaNearness(std::vector<std::vector<double>> &C, std::vector<std::vector<double>> &alpha, int N, Kruskal &kr)
-{
-  for (auto &arco : kr.getEdges())
-  {
-    alpha[arco.first + 1][arco.second + 1] = alpha[arco.second + 1][arco.first + 1] = 0;
-    std::cout << arco.first + 1 << " " << arco.second + 1 << "\n";
-  }
-
-  {
-    std::pair<int, int> arco1, arco2;
-    arco1 = kr.getEdges()[kr.getEdges().size() - 1];
-    arco2 = kr.getEdges()[kr.getEdges().size() - 2];
-
-    double cArestaRemovida = std::max(C[0][arco1.second], C[0][arco2.second]);
-
-    for (int i = 1; i < dimension; i++)
-    {
-      if (i == arco1.second || i == arco2.second)
-      {
-        continue;
-      }
-      alpha[1][i + 1] = alpha[i + 1][1] = C[0][i] - cArestaRemovida;
-      std::cout << 1 << " " << i + 1 << "\n";
-    }
-  }
-
-  
-
 }
 
 void transformarMatriz(std::vector<std::vector<double>> &C, std::vector<std::vector<double>> &D)
@@ -172,10 +126,7 @@ void transformarMatriz(std::vector<std::vector<double>> &C, std::vector<std::vec
   std::vector<std::pair<int, int>> s;
   std::vector<int> penalizacao;
 
-  Node root;
-  root.lambda = lambda;
 
-  root.isFeasible = false;
 
   while (1)
   {
