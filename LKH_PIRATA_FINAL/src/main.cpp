@@ -32,6 +32,8 @@ int main(int argc, char **argv)
   std::cout << "\n\n";
 
   double **graph = new double *[dimension];
+  std::vector<std::vector<double>> matrizDistancia(dimension, std::vector<double>(dimension));
+
   for (int i = 0; i < dimension; i++)
   {
     graph[i] = new double[dimension];
@@ -46,6 +48,9 @@ int main(int argc, char **argv)
   }
 
   primMST(graph, dimension);
+
+  Kruskal kr(matrizDistancia);
+
 
   return 0;
 }
@@ -75,6 +80,9 @@ void calcularAlphaNearness(std::vector<std::vector<double>> &C, std::vector<std:
       std::cout << 1 << " " << i + 1 << "\n";
     }
   }
+
+
+
 }
 
 void transformarMatriz(std::vector<std::vector<double>> &C, std::vector<std::vector<double>> &D)

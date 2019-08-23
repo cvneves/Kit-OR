@@ -44,10 +44,14 @@ void buscaVizinhancaReinsertion(std::vector<int> &solucao, double &valor_obj, do
 void perturb(std::vector<int> &s);
 
 void transformarMatriz(std::vector<std::vector<double>> &C, std::vector<std::vector<double>> &D);
+void topological(std::vector<std::pair<int, int>> &edges, int N);
 
 int main(int argc, char **argv)
 {
-  srand(time(0));
+  // int SEED = time(0);
+  int SEED = 1566599913;
+  std::cout << SEED << "\n";
+  srand(SEED);
 
   readData(argc, argv, &dimension, &matrizAdj);
   printData();
@@ -84,7 +88,55 @@ int main(int argc, char **argv)
   //calcular alpha-nearness
   std::vector<std::vector<double>> alpha(dimension + 1, std::vector<double>(dimension + 1));
 
+  Kruskal kr(D);
+
+  kr.MST(dimension);
+
+  std::vector<std::pair<int, int>> edges = kr.getEdges();
+
+  for (auto &arco : edges)
+  {
+    std::cout << arco.first << " " << arco.second << "\n";
+  }
+  std::cout << "\n\n";
+
+  topological(edges, dimension);
+
   return 0;
+}
+
+void topological(std::vector<std::pair<int, int>> &edges, int N)
+{
+  std::vector<int> parent(N, -1);
+
+  int a = edges[edges.size() - 1].second, b = edges[edges.size() - 2].second;
+
+  parent[a] = 0;
+  parent[b] = 0;
+
+  int k = a;
+
+  while(1)
+  {
+    for (int i = 0; i < N; i++)
+    {
+      if (edges[i].first == k)
+      {
+        parent[edges[i].second] = k;
+        k = edges[i].second;
+      }
+
+      else if (edges[i].second == k)
+      {
+        parent[edges[i].first] = k;
+        k = edges[i].first;
+      }
+    }
+  }
+  for (int i = 0; i < N; i++)
+  {
+    std::cout << i << ": " << parent[i] << "\n";
+  }
 }
 
 void transformarMatriz(std::vector<std::vector<double>> &C, std::vector<std::vector<double>> &D)
@@ -125,8 +177,6 @@ void transformarMatriz(std::vector<std::vector<double>> &C, std::vector<std::vec
   double LB;
   std::vector<std::pair<int, int>> s;
   std::vector<int> penalizacao;
-
-
 
   while (1)
   {
