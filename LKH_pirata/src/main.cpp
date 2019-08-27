@@ -1,5 +1,5 @@
 #include "readData.h"
-#include "Prim.h"
+#include "MinSpanningTree.h"
 
 #include <fstream>
 #include <iostream>
@@ -21,28 +21,12 @@ using namespace std;
 int dimension;
 double **matrizAdj;
 
-typedef pair<double, std::pair<int, int>> dii;
-typedef vector<vector<double>> vvi;
-typedef vector<dii> vii;
-typedef vector<int> vi;
-
 vi taken;               // global boolean flag to avoid cycle
 priority_queue<dii> pq; // priority queue to help choose shorter edges
                         // note: default setting for C++ STL priority_queue is a max heap
 
 int V;
 std::vector<std::vector<dii>> AdjList;
-
-void process(int vtx)
-{ // so, we use -ve sign to reverse the sort order
-  taken[vtx] = 1;
-  for (int j = 0; j < (int)AdjList[vtx].size(); j++)
-  {
-    dii v = AdjList[vtx][j];
-    if (!taken[v.second.first])
-      pq.push({-v.first, {-v.second.first, -v.second.second}});
-  }
-} // sort by (inc) weight then by (inc) id
 
 int main(int argc, char **argv)
 {
@@ -64,50 +48,48 @@ int main(int argc, char **argv)
     {
       AdjList[i][j].first = matrizAdj[i + 1][j + 1];
       AdjList[i][j].second = {j, i};
-
-      // std::cout << AdjList[i][j].first << " ";
     }
-    // std::cout << "\n";
   }
 
-  start = std::chrono::system_clock::now();
+  double tempomedio = 0;
+  vii edges;
+  edges.assign(V - 1, {-1, -1});
   vi parent;
 
-  // inside int main()---assume the graph is stored in AdjList, pq is empty
-  taken.assign(V, 0); // no vertex is taken at the beginning
-  parent.assign(V, -1);
-  process(0); // take vertex 0 and process all edges incident to vertex 0
-  int previous = 0;
-  double mst_cost = 0;
-  int u, v, w;
-  while (!pq.empty())
-  { // repeat until V vertices (E=V-1 edges) are taken
-    dii front = pq.top();
-
-    pq.pop();
-    u = -front.second.first, v = -front.second.second, w = -front.first; // negate the id and weight again
-
-    if (!taken[u])
-    {                            // we have not connected this vertex yet
-      mst_cost += w, process(u); // take u, process all edges incident to u
-      parent[u] = v;
-    }
-  } // each edge is in pq only once!
-
-  end = std::chrono::system_clock::now();
-
-  int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-  std::cout << "Tempo total (s): " << elapsed_seconds / 1000.0 << "\n\n";
-  std::cout << mst_cost << "\n";
-
-  double CUSTOTOTAL = 0;
-  for (int i = 0; i < parent.size(); i++)
+  for (int A = 0; A < 100; A++)
   {
-    CUSTOTOTAL += matrizAdj[i + 1][parent[i] + 1];
-    // std::cout << i + 1 << " " << parent[i] + 1 << "\n";
+    parent.assign(V, -1);
+
+    start = std::chrono::system_clock::now();
+
+    MST(V, AdjList, taken, parent, edges, 1);
+
+    end = std::chrono::system_clock::now();
+
+    int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    tempomedio += elapsed_seconds / 1000.0;
+  }
+  tempomedio /= 100.0;
+
+  std::cout << tempomedio << "\n";
+
+  double custototal = 0;
+
+  for (int i = 0; i < edges.size(); i++)
+  {
+    custototal += matrizAdj[edges[i].first + 1][edges[i].second + 1];
+    std::cout << edges[i].first + 1 << ", " << edges[i].second + 1 << "\n";
+  }
+  std::cout <<custototal << "\n\n\n";
+
+  std::cout << "\n\n";
+
+  for (int i = 0; i < V; i++)
+  {
+    std::cout << i << ", " << parent[i] << "\n";
   }
 
-  std::cout << CUSTOTOTAL << "\n";
+  std::cout << tempomedio << "\n";
 
   return 0;
 }
