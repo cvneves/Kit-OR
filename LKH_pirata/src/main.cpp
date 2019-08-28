@@ -53,43 +53,21 @@ int main(int argc, char **argv)
 
   double tempomedio = 0;
   vii edges;
-  edges.assign(V - 1, {-1, -1});
+  edges.assign(V, {-3, -3});
   vi parent;
 
-  for (int A = 0; A < 100; A++)
+  for (int A = 0; A < 1; A++)
   {
     parent.assign(V, -1);
 
     start = std::chrono::system_clock::now();
 
-    MST(V, AdjList, taken, parent, edges, 1);
+    // std::cout << MS1T(V, AdjList, taken, parent, edges) << "\n";
+
+    Ascent(V, AdjList, taken, parent, edges);
 
     end = std::chrono::system_clock::now();
-
-    int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-    tempomedio += elapsed_seconds / 1000.0;
   }
-  tempomedio /= 100.0;
-
-  std::cout << tempomedio << "\n";
-
-  double custototal = 0;
-
-  for (int i = 0; i < edges.size(); i++)
-  {
-    custototal += matrizAdj[edges[i].first + 1][edges[i].second + 1];
-    std::cout << edges[i].first + 1 << ", " << edges[i].second + 1 << "\n";
-  }
-  std::cout <<custototal << "\n\n\n";
-
-  std::cout << "\n\n";
-
-  for (int i = 0; i < V; i++)
-  {
-    std::cout << i << ", " << parent[i] << "\n";
-  }
-
-  std::cout << tempomedio << "\n";
 
   return 0;
 }
