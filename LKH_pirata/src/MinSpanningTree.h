@@ -12,9 +12,9 @@ typedef vector<vector<double>> vvi;
 typedef std::vector<ii> vii;
 typedef vector<int> vi;
 
-void process(int vtx, std::vector<std::vector<dii>> &AdjList, vi &taken, priority_queue<dii> &pq, bool skip);
+void process(int vtx, std::vector<std::vector<dii>> &AdjList, vi &taken, priority_queue<dii> &pq, bool skip, std::vector<std::vector<int>> &rankedNodes);
 
-double MST(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent, vii &s, bool skip);
-double MS1T(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent, vii &s);
+double MST(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent, vii &s, bool skip, std::vector<std::vector<int>> &rankedNodes);
+double MS1T(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent, vii &s, std::vector<std::vector<int>> &rankedNodes);
 
-void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent, vii &s);
+void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent, vii &s, std::vector<std::vector<int>> &rankedNodes);

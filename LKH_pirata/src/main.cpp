@@ -41,6 +41,8 @@ int main(int argc, char **argv)
   std::chrono::time_point<std::chrono::system_clock> start, end;
 
   AdjList = std::vector<std::vector<dii>>(V, std::vector<dii>(V));
+  std::vector<std::vector<int>> rankedNodes;
+  rankedNodes.assign(V, std::vector<int>());
 
   for (int i = 0, c = 0; i < V; i++)
   {
@@ -49,6 +51,40 @@ int main(int argc, char **argv)
       AdjList[i][j].first = matrizAdj[i + 1][j + 1];
       AdjList[i][j].second = {j, i};
     }
+  }
+
+  std::vector<std::vector<dii>> sortedAdjList = AdjList;
+
+  for (int i = 0; i < V; i++)
+  {
+    std::sort(sortedAdjList[i].begin(), sortedAdjList[i].end());
+    rankedNodes[i].assign(V, 0);
+    for (int j = 0; j < V; j++)
+    {
+      rankedNodes[i][j] = sortedAdjList[i][j].second.first;
+      // rankedNodes[i][j] = j;
+   
+    }
+  }
+
+  for (int i = 0; i < V; i++)
+  {
+    for (int j = 0; j < V; j++)
+    {
+      std::cout << rankedNodes[i][j] << " ";
+    }
+    std::cout << "\n";
+  }
+
+  std::cout << "\n\n";
+
+  for (int i = 0, c = 0; i < V; i++)
+  {
+    for (int j = 0; j < V; j++, c++)
+    {
+      std::cout << AdjList[i][j].first << " ";
+    }
+    std::cout << "\n";
   }
 
   double tempomedio = 0;
@@ -64,26 +100,26 @@ int main(int argc, char **argv)
 
     // std::cout << MS1T(V, AdjList, taken, parent, edges) << "\n";
 
-    Ascent(V, AdjList, taken, parent, edges);
+    Ascent(V, AdjList, taken, parent, edges, rankedNodes);
 
     end = std::chrono::system_clock::now();
   }
 
   int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
-  for(int i = 0; i < edges.size(); i++)
+  for (int i = 0; i < edges.size(); i++)
   {
     std::cout << edges[i].first << " " << edges[i].second << "\n";
   }
 
-  for (int i = 0, c = 0; i < V; i++)
-  {
-    for (int j = 0; j < V; j++, c++)
-    {
-      std::cout << AdjList[i][j].first << " ";
-    }
-    std::cout << "\n";
-  }
+  // for (int i = 0, c = 0; i < V; i++)
+  // {
+  //   for (int j = 0; j < V; j++, c++)
+  //   {
+  //     std::cout << AdjList[i][j].first << " ";
+  //   }
+  //   std::cout << "\n";
+  // }
 
   std::cout << "Tempo total (s): " << elapsed_seconds / 1000.0 << "\n\n";
 

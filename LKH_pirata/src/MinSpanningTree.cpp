@@ -4,19 +4,27 @@
 #include "MinSpanningTree.h"
 using namespace std;
 
-void process(int vtx, std::vector<std::vector<dii>> &AdjList, vi &taken, priority_queue<dii> &pq, bool skipFirstNode)
+void process(int vtx, std::vector<std::vector<dii>> &AdjList, vi &taken, priority_queue<dii> &pq, bool skipFirstNode, std::vector<std::vector<int>> &rankedNodes)
 { // so, we use -ve sign to reverse the sort order
     taken[vtx] = 1;
     int start = (int)skipFirstNode;
-    for (int j = start; j < (int)AdjList[vtx].size(); j++)
+
+    int max_iterations = std::min((int)AdjList[vtx].size(), 50);
+
+    for (int j = start; j < max_iterations; j++)
     {
-        dii v = AdjList[vtx][j];
+        if (skipFirstNode && rankedNodes[vtx][j] == 0)
+        {
+            continue;
+        }
+
+        dii v = AdjList[vtx][rankedNodes[vtx][j]];
         if (!taken[v.second.first])
             pq.push({-v.first, {-v.second.first, -v.second.second}});
     }
 } // sort by (inc) weight then by (inc) id
 
-double MST(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent, vii &s, bool skipFirstNode)
+double MST(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent, vii &s, bool skipFirstNode, std::vector<std::vector<int>> &rankedNodes)
 {
     priority_queue<dii> pq;
 
@@ -25,7 +33,7 @@ double MST(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent,
     // inside int main()---assume the graph is stored in AdjList, pq is empty
     taken.assign(V, 0); // no vertex is taken at the beginning
     parent.assign(V, -1);
-    process(start, AdjList, taken, pq, 1); // take vertex 0 and process all edges incident to vertex 0
+    process(start, AdjList, taken, pq, 1, rankedNodes); // take vertex 0 and process all edges incident to vertex 0
     int previous = start;
     double mst_cost = 0;
     int u, v, w, k = start;
@@ -37,8 +45,8 @@ double MST(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent,
         u = -front.second.first, v = -front.second.second, w = -front.first; // negate the id and weight again
 
         if (!taken[u])
-        {                                                                 // we have not connected this vertex yet
-            mst_cost += w, process(u, AdjList, taken, pq, skipFirstNode); // take u, process all edges incident to u
+        {                                                                              // we have not connected this vertex yet
+            mst_cost += w, process(u, AdjList, taken, pq, skipFirstNode, rankedNodes); // take u, process all edges incident to u
             parent[u] = v;
             s[k++ + start] = {v, u};
         }
@@ -47,9 +55,9 @@ double MST(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent,
     return mst_cost;
 }
 
-double MS1T(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent, vii &s)
+double MS1T(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent, vii &s, std::vector<std::vector<int>> &rankedNodes)
 {
-    double cost = MST(V, AdjList, taken, parent, s, true);
+    double cost = MST(V, AdjList, taken, parent, s, true, rankedNodes);
     double c1, c2, a;
     dii e1, e2;
     auto min1 = std::min_element(AdjList[0].begin() + 1, AdjList[0].end());
@@ -80,7 +88,7 @@ double MS1T(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
     return cost;
 }
 
-void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent, vii &edges)
+void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent, vii &edges, std::vector<std::vector<int>> &rankedNodes)
 {
     // int k = 0;
     double W = -std::numeric_limits<double>::infinity(), prev_W;
@@ -99,7 +107,7 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
         v.assign(V, 2);
         edges.assign(V, {-3, -3});
 
-        double T = MS1T(V, AdjList, taken, parent, edges);
+        double T = MS1T(V, AdjList, taken, parent, edges, rankedNodes);
         double PI_SUM = 0;
         for (int i = 0; i < V; i++)
         {
@@ -110,7 +118,7 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
         prev_W = W;
         W = std::max(W, T);
 
-        // std::cout << W << "\n";
+        std::cout << W << "\n";
 
         double SUM_V = 0;
         for (int i = 1; i < V; i++)
@@ -176,8 +184,8 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
         iter++;
     }
 
-    for (int i = 0; i < V; i++)
-    {
-        std::cout << v[i] << "\n";
-    }
+    // for (int i = 0; i < V; i++)
+    // {
+        // std::cout << v[i] << "\n";
+    // }
 }
