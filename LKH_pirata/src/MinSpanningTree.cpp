@@ -83,16 +83,19 @@ double MS1T(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
 void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent, vii &edges)
 {
     // int k = 0;
-    double W = -std::numeric_limits<double>::infinity();
+    double W = -std::numeric_limits<double>::infinity(), prev_W;
     std::vector<double> lambda, v;
+    int period = V / 2, iter = 0;
+    bool firstPeriod = true;
 
     lambda.assign(V, 0);
 
-    double t0 = 0.00001;
+    double t0 = 1;
 
     int k = 1;
     while (1)
     {
+
         v.assign(V, 2);
         edges.assign(V, {-3, -3});
 
@@ -104,7 +107,10 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
         }
         T += 2 * PI_SUM;
 
-        std::cout << T << "\n";
+        prev_W = W;
+        W = std::max(W, T);
+
+        // std::cout << W << "\n";
 
         double SUM_V = 0;
         for (int i = 1; i < V; i++)
@@ -126,26 +132,52 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
 
         if (isFeasible)
         {
-            std::cout << "Is feasible\n";
+            break;
+            // std::cout << "Is feasible\n";
         }
 
-        double t = (double) t0 / k;
+        if (firstPeriod && iter > 0 && prev_W < W - 0.0001)
+        {
+            t0 = 2 * t0;
+        }
+
+        double t = t0;
 
         for (int i = 0; i < V; i++)
         {
             lambda[i] += t * v[i];
-            // std::cout << lambda[i] << "\n";
         }
 
-        for (int i = 0; i < V; i++)
+        for (int i = 0; i < V - 1; i++)
         {
-            for (int j = 0; j < V; j++)
+            for (int j = i + 1; j < V; j++)
             {
-                AdjList[i][j].first -= lambda[i] + lambda[j];
+                AdjList[j][i].first = (AdjList[i][j].first -= lambda[i] + lambda[j]);
             }
         }
+
+        if (iter == period)
+        {
+            firstPeriod = false;
+            period = period / 2;
+            iter = 0;
+            t0 = t0 / 2.0;
+            // std::cout << t0 << "\n";
+            if (prev_W < W - 0.0001)
+            {
+                period = period * 2;
+            }
+        }
+        if (period == 0)
+        {
+            break;
+        }
+
+        iter++;
     }
 
-    
-
+    for (int i = 0; i < V; i++)
+    {
+        std::cout << v[i] << "\n";
+    }
 }

@@ -69,6 +69,24 @@ int main(int argc, char **argv)
     end = std::chrono::system_clock::now();
   }
 
+  int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+
+  for(int i = 0; i < edges.size(); i++)
+  {
+    std::cout << edges[i].first << " " << edges[i].second << "\n";
+  }
+
+  for (int i = 0, c = 0; i < V; i++)
+  {
+    for (int j = 0; j < V; j++, c++)
+    {
+      std::cout << AdjList[i][j].first << " ";
+    }
+    std::cout << "\n";
+  }
+
+  std::cout << "Tempo total (s): " << elapsed_seconds / 1000.0 << "\n\n";
+
   return 0;
 }
 
