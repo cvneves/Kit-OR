@@ -9,7 +9,7 @@ void process(int vtx, std::vector<std::vector<dii>> &AdjList, vi &taken, priorit
     taken[vtx] = 1;
     int start = (int)skipFirstNode;
 
-    int max_iterations = std::min((int)AdjList[vtx].size(), 50);
+    int max_iterations = std::min((int)AdjList[vtx].size(), 55);
 
     for (int j = start; j < max_iterations; j++)
     {
@@ -160,7 +160,7 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
         {
             for (int j = i + 1; j < V; j++)
             {
-                AdjList[j][i].first = (AdjList[i][j].first -= lambda[i] + lambda[j]);
+                AdjList[j][i].first = (AdjList[i][j].first -= t * (v[i] + v[j]));
             }
         }
 
@@ -186,6 +186,6 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
 
     // for (int i = 0; i < V; i++)
     // {
-        // std::cout << v[i] << "\n";
+    // std::cout << v[i] << "\n";
     // }
 }
