@@ -157,8 +157,6 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
             lambda[i] += t * v[i];
         }
 
-
-
         for (int i = 0; i < V - 1; i++)
         {
             for (int j = i + 1; j < V; j++)
@@ -186,6 +184,9 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
 
         iter++;
     }
+
+    edges.assign(V-1, {0,0});
+    MST(V, AdjList, taken, parent, edges, false, rankedNodes);
 
     // for (int i = 0; i < V; i++)
     // {

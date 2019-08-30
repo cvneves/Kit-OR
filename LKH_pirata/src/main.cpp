@@ -1,5 +1,6 @@
 #include "readData.h"
 #include "MinSpanningTree.h"
+#include "CandidateList.h"
 
 #include <fstream>
 #include <iostream>
@@ -162,7 +163,7 @@ int main(int argc, char **argv)
   {
     for (int j = 0; j < V; j++, c++)
     {
-      matrizAdj[i + 1][j + 1] = matrizAdj2[i+1][j+1];
+      matrizAdj[i + 1][j + 1] = matrizAdj2[i + 1][j + 1];
     }
   }
 
@@ -170,6 +171,10 @@ int main(int argc, char **argv)
   std::cout << "Valor obj: " << calcularValorObj(solucao, matrizAdj) << "\n";
 
   printSolucao(solucao);
+
+  std::cout << "\n\n";
+  std::vector<std::vector<double>> alpha, beta;
+  computeAlpha(alpha, beta, edges, V, parent, AdjList);
 
   return 0;
 }

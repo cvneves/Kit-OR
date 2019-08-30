@@ -1,3 +1,7 @@
+#ifndef MINSPANNINGTREE_H
+#define MINSPANNINGTREE_H
+
+
 #include <bits/stdc++.h>
 #include <algorithm>
 #include <limits>
@@ -18,3 +22,5 @@ double MST(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent,
 double MS1T(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent, vii &s, std::vector<std::vector<int>> &rankedNodes);
 
 void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent, vii &s, std::vector<std::vector<int>> &rankedNodes);
+
+#endif
