@@ -92,7 +92,7 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
 {
     // int k = 0;
     double W = -std::numeric_limits<double>::infinity(), prev_W;
-    std::vector<double> lambda, v;
+    std::vector<double> lambda, v, u;
     int period = V / 2, iter = 0;
     bool firstPeriod = true;
 
@@ -100,11 +100,11 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
 
     double t0 = 1;
 
-    int k = 1;
     while (1)
     {
 
         v.assign(V, 2);
+        u.assign(V, 0);
         edges.assign(V, {-3, -3});
 
         double T = MS1T(V, AdjList, taken, parent, edges, rankedNodes);
@@ -112,13 +112,14 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
         for (int i = 0; i < V; i++)
         {
             PI_SUM += lambda[i];
+            u[i] = v[i];
         }
         T += 2 * PI_SUM;
 
         prev_W = W;
         W = std::max(W, T);
 
-        std::cout << W << "\n";
+        // std::cout << W << "\n";
 
         double SUM_V = 0;
         for (int i = 1; i < V; i++)
@@ -156,11 +157,13 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
             lambda[i] += t * v[i];
         }
 
+
+
         for (int i = 0; i < V - 1; i++)
         {
             for (int j = i + 1; j < V; j++)
             {
-                AdjList[j][i].first = (AdjList[i][j].first -= t * (v[i] + v[j]));
+                AdjList[j][i].first = (AdjList[i][j].first -= (double)t * (1 * v[i] + 1 * v[j]));
             }
         }
 
