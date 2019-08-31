@@ -24,10 +24,6 @@ void computeBeta(std::vector<std::vector<double>> &beta, int V, std::vector<int>
         }
     }
 
-    for (int i = 0; i < node.size(); i++)
-        std::cout << node[i] << " ";
-    std::cout << "\n";
-
     beta = std::vector<std::vector<double>>(V, std::vector<double>(V, std::numeric_limits<double>::infinity()));
     {
         int k = 0;
@@ -37,14 +33,15 @@ void computeBeta(std::vector<std::vector<double>> &beta, int V, std::vector<int>
             for (int n = m + 1; n < V; n++)
             {
                 int i = node[m], j = node[n];
-                if(i == parent[j])
+                if (i == parent[j])
                 {
                     beta[i][j] = beta[j][i] = AdjList[i][j].first;
                     continue;
                 }
                 beta[i][j] = beta[j][i] = std::max(beta[i][parent[j]], AdjList[j][parent[j]].first);
-                cout << i << " "  << j << ": " << beta[i][j] << "\n";
+                cout << beta[i][j] << " ";
             }
+            cout << "\n";
         }
     }
 }
@@ -52,19 +49,6 @@ void computeBeta(std::vector<std::vector<double>> &beta, int V, std::vector<int>
 void computeAlpha(std::vector<std::vector<double>> &alpha, std::vector<std::vector<double>> &beta, vector<pair<int, int>> &edges, int V, std::vector<int> &parent, std::vector<std::vector<dii>> &AdjList)
 {
     alpha = std::vector<std::vector<double>>(V, std::vector<double>(V, -1));
-
-    // edges that require computing beta
-    computeBeta(beta, V, parent, AdjList);
-
-    alpha[0][0] = -std::numeric_limits<double>::infinity();
-    for (int i = 1; i < V; i++)
-    {
-        for (int j = i + 1; j < V; j++)
-        {
-            alpha[i][j] = alpha[j][i] = (AdjList[i][j].first - beta[i][j]);
-        }
-        alpha[i][i] = -std::numeric_limits<double>::infinity();
-    }
 
     //edges that are adjacent to node 0
     {
@@ -86,6 +70,19 @@ void computeAlpha(std::vector<std::vector<double>> &alpha, std::vector<std::vect
         {
             alpha[0][i] = alpha[i][0] = (AdjList[0][i].first - removedCost);
         }
+    }
+
+    // edges that require computing beta
+    computeBeta(beta, V, parent, AdjList);
+
+    alpha[0][0] = -std::numeric_limits<double>::infinity();
+    for (int i = 0; i < V; i++)
+    {
+        for (int j = i + 1; j < V; j++)
+        {
+            alpha[i][j] = alpha[j][i] = (AdjList[i][j].first - beta[i][j]);
+        }
+        alpha[i][i] = -std::numeric_limits<double>::infinity();
     }
 
     //edges that are already on the MST

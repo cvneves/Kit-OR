@@ -117,7 +117,7 @@ int main(int argc, char **argv)
   cout << "Edges\n";
   for (int i = 0; i < edges.size(); i++)
   {
-    std::cout << edges[i].first << " " << edges[i].second << "\n";
+    std::cout << edges[i].first << " " << edges[i].second << ": " << AdjList[edges[i].first][edges[i].second].first << "\n";
   }
   cout << "Parents\n";
   for(int i = 0; i < parent.size(); i++)
