@@ -103,7 +103,7 @@ int main(int argc, char **argv)
 
     // std::cout << MS1T(V, AdjList, taken, parent, edges) << "\n";
 
-    // Ascent(V, AdjList, taken, parent, edges, rankedNodes);
+    Ascent(V, AdjList, taken, parent, edges, rankedNodes);
 
     end = std::chrono::system_clock::now();
   }

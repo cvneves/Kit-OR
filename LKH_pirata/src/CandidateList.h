@@ -6,6 +6,7 @@
 #include <limits>
 #include <vector>
 #include <map>
+#include <stack>
 
 void computeBeta(std::vector<std::vector<double>> &beta, int V,std::vector<int> &parent, std::vector<std::vector<dii>> &AdjList);
 

@@ -2,13 +2,49 @@
 
 void computeBeta(std::vector<std::vector<double>> &beta, int V, std::vector<int> &parent, std::vector<std::vector<dii>> &AdjList)
 {
-    beta = std::vector<std::vector<double>>(V, std::vector<double>(V, std::numeric_limits<double>::infinity()));
+    vector<stack<int>> children;
+    children.assign(V, stack<int>());
+
+    std::cout << "\n\n";
     for (int i = 1; i < V; i++)
+        children[parent[i]].push(i);
+
+    vector<int> node; //nodes in topological order
+    node.assign(V, 0);
     {
-        beta[i][i] = -std::numeric_limits<double>::infinity();
-        for (int j = i + 1; j < V; j++)
+        int i = 0, k = 0, j = 0;
+        while (k < V - 1)
         {
-            beta[i][j] = beta[j][i] = std::max(beta[i][parent[j]], AdjList[j][parent[j]].first);
+            while (!children[i].empty())
+            {
+                node[k++ + 1] = children[i].top();
+                children[i].pop();
+            }
+            i = node[j++ + 1];
+        }
+    }
+
+    for (int i = 0; i < node.size(); i++)
+        std::cout << node[i] << " ";
+    std::cout << "\n";
+
+    beta = std::vector<std::vector<double>>(V, std::vector<double>(V, std::numeric_limits<double>::infinity()));
+    {
+        int k = 0;
+        for (int m = 0; m < V - 1; m++)
+        {
+            beta[m][m] = -std::numeric_limits<double>::infinity();
+            for (int n = m + 1; n < V; n++)
+            {
+                int i = node[m], j = node[n];
+                if(i == parent[j])
+                {
+                    beta[i][j] = beta[j][i] = AdjList[i][j].first;
+                    continue;
+                }
+                beta[i][j] = beta[j][i] = std::max(beta[i][parent[j]], AdjList[j][parent[j]].first);
+                cout << i << " "  << j << ": " << beta[i][j] << "\n";
+            }
         }
     }
 }
@@ -23,10 +59,9 @@ void computeAlpha(std::vector<std::vector<double>> &alpha, std::vector<std::vect
     alpha[0][0] = -std::numeric_limits<double>::infinity();
     for (int i = 1; i < V; i++)
     {
-        for (int j = i+1; j < V; j++)
+        for (int j = i + 1; j < V; j++)
         {
             alpha[i][j] = alpha[j][i] = (AdjList[i][j].first - beta[i][j]);
-            
         }
         alpha[i][i] = -std::numeric_limits<double>::infinity();
     }
