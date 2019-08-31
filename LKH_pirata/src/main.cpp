@@ -59,8 +59,6 @@ int main(int argc, char **argv)
   srand(time(NULL));
 
   readData(argc, argv, &dimension, &matrizAdj);
-  printData();
-  std::cout << "\n\n";
 
   V = dimension;
 
@@ -92,29 +90,9 @@ int main(int argc, char **argv)
     }
   }
 
-  for (int i = 0; i < V; i++)
-  {
-    for (int j = 0; j < V; j++)
-    {
-      std::cout << rankedNodes[i][j] << " ";
-    }
-    std::cout << "\n";
-  }
-
-  std::cout << "\n\n";
-
-  for (int i = 0, c = 0; i < V; i++)
-  {
-    for (int j = 0; j < V; j++, c++)
-    {
-      std::cout << AdjList[i][j].first << " ";
-    }
-    std::cout << "\n";
-  }
-
   double tempomedio = 0;
   vii edges;
-  edges.assign(V, {-3, -3});
+  edges.assign(V-1, {-3, -3});
   vi parent;
 
   for (int A = 0; A < 1; A++)
@@ -125,16 +103,26 @@ int main(int argc, char **argv)
 
     // std::cout << MS1T(V, AdjList, taken, parent, edges) << "\n";
 
-    Ascent(V, AdjList, taken, parent, edges, rankedNodes);
+    // Ascent(V, AdjList, taken, parent, edges, rankedNodes);
 
     end = std::chrono::system_clock::now();
   }
 
+  std::cout << "MST cost " << MST(V, AdjList, taken, parent, edges, false, rankedNodes) << "\n";
+
+
   int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
+
+  cout << "Edges\n";
   for (int i = 0; i < edges.size(); i++)
   {
     std::cout << edges[i].first << " " << edges[i].second << "\n";
+  }
+  cout << "Parents\n";
+  for(int i = 0; i < parent.size(); i++)
+  {
+    std::cout << i << " " << parent[i] << "\n";
   }
 
   for (int i = 0, c = 0; i < V; i++)
