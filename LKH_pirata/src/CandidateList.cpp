@@ -5,7 +5,7 @@ void computeBeta(std::vector<std::vector<double>> &beta, int V, std::vector<int>
     vector<stack<int>> children;
     children.assign(V, stack<int>());
 
-    std::cout << "\n\n";
+    // std::cout << "\n\n";
     for (int i = 1; i < V; i++)
         children[parent[i]].push(i);
 
@@ -39,9 +39,9 @@ void computeBeta(std::vector<std::vector<double>> &beta, int V, std::vector<int>
                     continue;
                 }
                 beta[i][j] = beta[j][i] = std::max(beta[i][parent[j]], AdjList[j][parent[j]].first);
-                cout << beta[i][j] << " ";
+                // cout << beta[i][j] << " ";
             }
-            cout << "\n";
+            // cout << "\n";
         }
     }
 }
@@ -59,12 +59,12 @@ void computeAlpha(std::vector<std::vector<double>> &alpha, std::vector<std::vect
             if (edges[i].first == 0 || edges[i].second == 0)
             {
                 longestEdge = std::max(longestEdge, {AdjList[edges[i].first][edges[i].second].first, edges[i]});
-                std::cout << edges[i].first << " " << edges[i].second << "\n";
+                // std::cout << edges[i].first << " " << edges[i].second << "\n";
             }
         }
         // std::cout << longestEdge.second.second << " " << longestEdge.second.first << "\n";
         double removedCost = longestEdge.first;
-        std::cout << removedCost << "\n";
+        // std::cout << removedCost << "\n";
 
         for (int i = 1; i < V; i++)
         {
@@ -95,9 +95,9 @@ void computeAlpha(std::vector<std::vector<double>> &alpha, std::vector<std::vect
     {
         for (int j = 0; j < V; j++)
         {
-            std::cout << alpha[i][j] << " ";
+            // std::cout << alpha[i][j] << " ";
         }
-        std::cout << "\n";
+        // std::cout << "\n";
     }
 }
 
@@ -133,11 +133,16 @@ void generateCandidateList(std::vector<std::vector<int>> &rankedNodes, double **
 
     vi taken;
 
-    for (int A = 0; A < 1; A++)
-    {
-        parent.assign(V, -1);
-        Ascent(V, AdjList, taken, parent, edges, rankedNodes);
-    }
+    parent.assign(V, -1);
+
+    std::chrono::time_point<std::chrono::system_clock> start, end;
+
+    start = std::chrono::system_clock::now();
+    Ascent(V, AdjList, taken, parent, edges, rankedNodes);
+    end = std::chrono::system_clock::now();
+
+    int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    std::cout << "Ascent time (s): " << elapsed_seconds / 1000.0 << "\n";
 
     std::vector<std::vector<double>> alpha, beta;
     computeAlpha(alpha, beta, edges, V, parent, AdjList);

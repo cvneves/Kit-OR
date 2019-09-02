@@ -102,7 +102,6 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
 
     while (1)
     {
-
         v.assign(V, 2);
         u.assign(V, 0);
         edges.assign(V, {-3, -3});
@@ -119,7 +118,7 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
         prev_W = W;
         W = std::max(W, T);
 
-        // std::cout << W << "\n";
+        std::cout << W << "\n";
 
         double SUM_V = 0;
         for (int i = 1; i < V; i++)
@@ -185,7 +184,7 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
         iter++;
     }
 
-    edges.assign(V-1, {0,0});
+    edges.assign(V - 1, {0, 0});
     MST(V, AdjList, taken, parent, edges, false, rankedNodes);
 
     // for (int i = 0; i < V; i++)

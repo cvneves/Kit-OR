@@ -165,15 +165,15 @@ int main(int argc, char **argv)
   // std::vector<std::vector<double>> alpha, beta;
   // computeAlpha(alpha, beta, edges, V, parent, AdjList);
 
-  cout << "\n\n\n";
+  cout << "\n";
 
   for(int i = 0; i < rankedNodes.size(); i++)
   {
     for(int j = 0; j < rankedNodes[i].size(); j++)
     {
-      std::cout << rankedNodes[i][j] << " ";
+      // std::cout << rankedNodes[i][j] << " ";
     }
-    std::cout << "\n";
+    // std::cout << "\n";
   }
 
   return 0;
