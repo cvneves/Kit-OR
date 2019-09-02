@@ -100,3 +100,63 @@ void computeAlpha(std::vector<std::vector<double>> &alpha, std::vector<std::vect
         std::cout << "\n";
     }
 }
+
+void generateCandidateList(std::vector<std::vector<int>> &rankedNodes, double **matrizAdj, int V)
+{
+    std::vector<std::vector<dii>> AdjList(V, std::vector<dii>(V));
+    rankedNodes.assign(V, std::vector<int>());
+
+    for (int i = 0, c = 0; i < V; i++)
+    {
+        for (int j = 0; j < V; j++, c++)
+        {
+            AdjList[i][j].first = matrizAdj[i + 1][j + 1];
+            AdjList[i][j].second = {j, i};
+        }
+    }
+
+    std::vector<std::vector<dii>> sortedAdjList = AdjList;
+
+    for (int i = 0; i < V; i++)
+    {
+        std::sort(sortedAdjList[i].begin(), sortedAdjList[i].end());
+        rankedNodes[i].assign(V, 0);
+        for (int j = 0; j < V; j++)
+        {
+            rankedNodes[i][j] = sortedAdjList[i][j].second.first;
+        }
+    }
+
+    vii edges;
+    edges.assign(V - 1, {-3, -3});
+    vi parent;
+
+    vi taken;
+
+    for (int A = 0; A < 1; A++)
+    {
+        parent.assign(V, -1);
+        Ascent(V, AdjList, taken, parent, edges, rankedNodes);
+    }
+
+    std::vector<std::vector<double>> alpha, beta;
+    computeAlpha(alpha, beta, edges, V, parent, AdjList);
+
+    for (int i = 0; i < V; i++)
+    {
+        for (int j = 0; j < V; j++)
+        {
+            sortedAdjList[i][j] = {alpha[i][j], {i, j}};
+        }
+    }
+
+    for (int i = 0; i < V; i++)
+    {
+        std::sort(sortedAdjList[i].begin(), sortedAdjList[i].end());
+        rankedNodes[i].assign(V, 0);
+        for (int j = 0; j < V; j++)
+        {
+            rankedNodes[i][j] = sortedAdjList[i][j].second.first;
+        }
+    }
+}

@@ -92,7 +92,7 @@ int main(int argc, char **argv)
 
   double tempomedio = 0;
   vii edges;
-  edges.assign(V-1, {-3, -3});
+  edges.assign(V - 1, {-3, -3});
   vi parent;
 
   for (int A = 0; A < 1; A++)
@@ -110,9 +110,7 @@ int main(int argc, char **argv)
 
   std::cout << "MST cost " << MST(V, AdjList, taken, parent, edges, false, rankedNodes) << "\n";
 
-
   int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-
 
   cout << "Edges\n";
   for (int i = 0; i < edges.size(); i++)
@@ -120,7 +118,7 @@ int main(int argc, char **argv)
     std::cout << edges[i].first << " " << edges[i].second << ": " << AdjList[edges[i].first][edges[i].second].first << "\n";
   }
   cout << "Parents\n";
-  for(int i = 0; i < parent.size(); i++)
+  for (int i = 0; i < parent.size(); i++)
   {
     std::cout << i << " " << parent[i] << "\n";
   }

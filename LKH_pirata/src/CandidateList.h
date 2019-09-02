@@ -12,4 +12,6 @@ void computeBeta(std::vector<std::vector<double>> &beta, int V,std::vector<int> 
 
 void computeAlpha(std::vector<std::vector<double>> &alpha, std::vector<std::vector<double>> &beta, vector<pair<int, int>> &edges, int V, std::vector<int> &parent, std::vector<std::vector<dii>> &AdjList);
 
+void generateCandidateList(std::vector<std::vector<int>> &rankedNodes, double **matrizAdj, int V);
+
 #endif
