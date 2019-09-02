@@ -60,107 +60,121 @@ int main(int argc, char **argv)
 
   readData(argc, argv, &dimension, &matrizAdj);
 
-  V = dimension;
+  vector<vector<int>> rankedNodes;
+  generateCandidateList(rankedNodes, matrizAdj, dimension);
 
-  std::chrono::time_point<std::chrono::system_clock> start, end;
+  // V = dimension;
 
-  AdjList = std::vector<std::vector<dii>>(V, std::vector<dii>(V));
-  std::vector<std::vector<int>> rankedNodes;
-  rankedNodes.assign(V, std::vector<int>());
+  // std::chrono::time_point<std::chrono::system_clock> start, end;
 
-  for (int i = 0, c = 0; i < V; i++)
+  // AdjList = std::vector<std::vector<dii>>(V, std::vector<dii>(V));
+  // std::vector<std::vector<int>> rankedNodes;
+  // rankedNodes.assign(V, std::vector<int>());
+
+  // for (int i = 0, c = 0; i < V; i++)
+  // {
+  //   for (int j = 0; j < V; j++, c++)
+  //   {
+  //     AdjList[i][j].first = matrizAdj[i + 1][j + 1];
+  //     AdjList[i][j].second = {j, i};
+  //   }
+  // }
+
+  // std::vector<std::vector<dii>> sortedAdjList = AdjList;
+
+  // for (int i = 0; i < V; i++)
+  // {
+  //   std::sort(sortedAdjList[i].begin(), sortedAdjList[i].end());
+  //   rankedNodes[i].assign(V, 0);
+  //   for (int j = 0; j < V; j++)
+  //   {
+  //     rankedNodes[i][j] = sortedAdjList[i][j].second.first;
+  //     // rankedNodes[i][j] = j;
+  //   }
+  // }
+
+  // double tempomedio = 0;
+  // vii edges;
+  // edges.assign(V - 1, {-3, -3});
+  // vi parent;
+
+  // for (int A = 0; A < 1; A++)
+  // {
+  //   parent.assign(V, -1);
+
+  //   start = std::chrono::system_clock::now();
+
+  //   // std::cout << MS1T(V, AdjList, taken, parent, edges) << "\n";
+
+  //   Ascent(V, AdjList, taken, parent, edges, rankedNodes);
+
+  //   end = std::chrono::system_clock::now();
+  // }
+
+  // std::cout << "MST cost " << MST(V, AdjList, taken, parent, edges, false, rankedNodes) << "\n";
+
+  // int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+
+  // cout << "Edges\n";
+  // for (int i = 0; i < edges.size(); i++)
+  // {
+  //   std::cout << edges[i].first << " " << edges[i].second << ": " << AdjList[edges[i].first][edges[i].second].first << "\n";
+  // }
+  // cout << "Parents\n";
+  // for (int i = 0; i < parent.size(); i++)
+  // {
+  //   std::cout << i << " " << parent[i] << "\n";
+  // }
+
+  // for (int i = 0, c = 0; i < V; i++)
+  // {
+  //   for (int j = 0; j < V; j++, c++)
+  //   {
+  //     std::cout << AdjList[i][j].first << " ";
+  //   }
+  //   std::cout << "\n";
+  // }
+
+  // std::vector<std::vector<double>> matrizAdj2(V + 1, std::vector<double>(V + 1));
+
+  // for (int i = 0, c = 0; i < V; i++)
+  // {
+  //   for (int j = 0; j < V; j++, c++)
+  //   {
+  //     matrizAdj2[i + 1][j + 1] = matrizAdj[i + 1][j + 1];
+  //     matrizAdj[i + 1][j + 1] = AdjList[i][j].first;
+  //   }
+  // }
+
+  // std::vector<int> solucao = GILS_RVND();
+
+  // for (int i = 0, c = 0; i < V; i++)
+  // {
+  //   for (int j = 0; j < V; j++, c++)
+  //   {
+  //     matrizAdj[i + 1][j + 1] = matrizAdj2[i + 1][j + 1];
+  //   }
+  // }
+
+  // std::cout << "Tempo total (s): " << elapsed_seconds / 1000.0 << "\n";
+  // std::cout << "Valor obj: " << calcularValorObj(solucao, matrizAdj) << "\n";
+
+  // printSolucao(solucao);
+
+  // std::cout << "\n\n";
+  // std::vector<std::vector<double>> alpha, beta;
+  // computeAlpha(alpha, beta, edges, V, parent, AdjList);
+
+  cout << "\n\n\n";
+
+  for(int i = 0; i < rankedNodes.size(); i++)
   {
-    for (int j = 0; j < V; j++, c++)
+    for(int j = 0; j < rankedNodes[i].size(); j++)
     {
-      AdjList[i][j].first = matrizAdj[i + 1][j + 1];
-      AdjList[i][j].second = {j, i};
-    }
-  }
-
-  std::vector<std::vector<dii>> sortedAdjList = AdjList;
-
-  for (int i = 0; i < V; i++)
-  {
-    std::sort(sortedAdjList[i].begin(), sortedAdjList[i].end());
-    rankedNodes[i].assign(V, 0);
-    for (int j = 0; j < V; j++)
-    {
-      rankedNodes[i][j] = sortedAdjList[i][j].second.first;
-      // rankedNodes[i][j] = j;
-    }
-  }
-
-  double tempomedio = 0;
-  vii edges;
-  edges.assign(V - 1, {-3, -3});
-  vi parent;
-
-  for (int A = 0; A < 1; A++)
-  {
-    parent.assign(V, -1);
-
-    start = std::chrono::system_clock::now();
-
-    // std::cout << MS1T(V, AdjList, taken, parent, edges) << "\n";
-
-    Ascent(V, AdjList, taken, parent, edges, rankedNodes);
-
-    end = std::chrono::system_clock::now();
-  }
-
-  std::cout << "MST cost " << MST(V, AdjList, taken, parent, edges, false, rankedNodes) << "\n";
-
-  int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-
-  cout << "Edges\n";
-  for (int i = 0; i < edges.size(); i++)
-  {
-    std::cout << edges[i].first << " " << edges[i].second << ": " << AdjList[edges[i].first][edges[i].second].first << "\n";
-  }
-  cout << "Parents\n";
-  for (int i = 0; i < parent.size(); i++)
-  {
-    std::cout << i << " " << parent[i] << "\n";
-  }
-
-  for (int i = 0, c = 0; i < V; i++)
-  {
-    for (int j = 0; j < V; j++, c++)
-    {
-      std::cout << AdjList[i][j].first << " ";
+      std::cout << rankedNodes[i][j] << " ";
     }
     std::cout << "\n";
   }
-
-  std::vector<std::vector<double>> matrizAdj2(V + 1, std::vector<double>(V + 1));
-
-  for (int i = 0, c = 0; i < V; i++)
-  {
-    for (int j = 0; j < V; j++, c++)
-    {
-      matrizAdj2[i + 1][j + 1] = matrizAdj[i + 1][j + 1];
-      matrizAdj[i + 1][j + 1] = AdjList[i][j].first;
-    }
-  }
-
-  std::vector<int> solucao = GILS_RVND();
-
-  for (int i = 0, c = 0; i < V; i++)
-  {
-    for (int j = 0; j < V; j++, c++)
-    {
-      matrizAdj[i + 1][j + 1] = matrizAdj2[i + 1][j + 1];
-    }
-  }
-
-  std::cout << "Tempo total (s): " << elapsed_seconds / 1000.0 << "\n";
-  std::cout << "Valor obj: " << calcularValorObj(solucao, matrizAdj) << "\n";
-
-  printSolucao(solucao);
-
-  std::cout << "\n\n";
-  std::vector<std::vector<double>> alpha, beta;
-  computeAlpha(alpha, beta, edges, V, parent, AdjList);
 
   return 0;
 }

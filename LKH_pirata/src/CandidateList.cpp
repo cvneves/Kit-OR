@@ -153,10 +153,10 @@ void generateCandidateList(std::vector<std::vector<int>> &rankedNodes, double **
     for (int i = 0; i < V; i++)
     {
         std::sort(sortedAdjList[i].begin(), sortedAdjList[i].end());
-        rankedNodes[i].assign(V, 0);
-        for (int j = 0; j < V; j++)
+        for (int j = 0; j < V - 1; j++)
         {
-            rankedNodes[i][j] = sortedAdjList[i][j].second.first;
+            rankedNodes[i][j] = sortedAdjList[i][j + 1].second.second;
         }
+        rankedNodes[i].pop_back();
     }
 }
