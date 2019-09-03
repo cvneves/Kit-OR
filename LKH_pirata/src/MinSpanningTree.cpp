@@ -121,7 +121,6 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
 
         prev_W = W;
 
-
         double SUM_V = 0;
         for (int i = 1; i < V; i++)
         {
@@ -133,7 +132,7 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
         bool isFeasible = true;
         for (int i = 0; i < V; i++)
         {
-            if (v[i] > std::numeric_limits<double>::epsilon())
+            if (v[i] > 0.0001)
             {
                 isFeasible = false;
                 break;
@@ -165,6 +164,8 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
         if (T > W)
         {
             W = T;
+            std::cout << W << "\n";
+
             if (firstPeriod)
                 t0 *= 2;
             if (iter == period)
@@ -179,8 +180,6 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
 
         iter++;
 
-        std::cout << W << "\n";
-
         if (iter > period)
         {
             iter = 0;
@@ -188,12 +187,22 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
             period /= 2;
         }
 
-        if (period == 0 || t0 < 0.001)
+        if (period == 0 || t0 < 0.01)
             break;
     }
 
     edges.assign(V - 1, {0, 0});
-    MST(V, AdjList, taken, parent, edges, false, rankedNodes);
+
+    // for (int i = 0; i < V; i++)
+    // {
+    //     for (int j = 0; j < V; j++)
+    //     {
+    //         std::cout << AdjList[i][j].first << " ";
+    //     }
+    //     std::cout << "\n";
+    // }
+
+    // std::cout << "LB: " << MST(V, AdjList, taken, parent, edges, false, rankedNodes);
 
     // for (int i = 0; i < V; i++)
     // {
