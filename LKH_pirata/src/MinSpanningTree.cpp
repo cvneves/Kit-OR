@@ -96,161 +96,101 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
     int period = V / 2, iter = 0;
     bool firstPeriod = true;
 
+    std::vector<std::vector<dii>> AdjListCopy = AdjList;
+
     pi.assign(V, 0);
     best_pi.assign(V, 0);
 
     v.assign(V, 2);
+    last_v.assign(V, 0);
 
-    double t0 = 1;
+    double t0 = 1.0;
 
-    W = MS1T(V, AdjList, taken, parent, edges, rankedNodes);
-    bestW = W;
-
-    for (int i = 1; i < V; i++)
+    while (1)
     {
-        v[parent[i]]--;
-    }
+        v.assign(V, 2);
+        edges.assign(V, {-3, -3});
 
-    for (int i = 0; i < V; i++)
-    {
-        last_v[i] = v[i];
-    }
-    v[0] = last_v[0] = 0;
-
-    int InitialPeriod = V / 2;
-    int InitialPhase = 1;
-    int Period = InitialPeriod;
-    bool initialPhase = true;
-
-    for (double T = 1; T > 0; Period /= 2, T /= 2.0)
-    {
-        for (int P = 1; T > 0 && P <= Period; P++)
+        double T = MS1T(V, AdjList, taken, parent, edges, rankedNodes);
+        double PI_SUM = 0;
+        for (int i = 0; i < V; i++)
         {
-            for (int i = 0; i < V; i++)
-            {
-                pi[i] += T * (7 * v[i] + 3 * last_v[i]) / 10.0;
-                last_v[i] = v[i];
-            }
+            PI_SUM += pi[i];
+        }
+        T += 2 * PI_SUM;
 
-            W = MS1T(V, AdjList, taken, parent, edges, rankedNodes);
-            v.assign(V, 2);
-            
-            for (int i = 1; i < V; i++)
-            {
-                v[parent[i]]--;
-            }
-            for (int i = 0; i < V; i++)
-            {
-                last_v[i] = v[i];
-            }
-            v[0] = last_v[0] = 0;
+        prev_W = W;
 
-            if (W > bestW)
-            {
-                bestW = W;
-                for (int i = 0; i < V; i++)
-                {
-                    best_pi[i] = pi[i];
-                }
-                if (initialPhase)
-                {
-                    T *= 2.0;
-                }
 
-                if (P == Period)
-                    Period *= 2;
-            }
-            else if (initialPhase && P > InitialPeriod / 2)
+        double SUM_V = 0;
+        for (int i = 1; i < V; i++)
+        {
+            v[parent[i]]--;
+            SUM_V += v[i]--;
+        }
+        // v[0] = 0;
+
+        bool isFeasible = true;
+        for (int i = 0; i < V; i++)
+        {
+            if (v[i] > std::numeric_limits<double>::epsilon())
             {
-                InitialPhase = 0;
-                P = 0;
-                T = 3 * T / 4.0;
+                isFeasible = false;
+                break;
             }
         }
+
+        if (isFeasible)
+        {
+            break;
+            // std::cout << "Is feasible\n";
+        }
+
+        double t = t0;
+
+        for (int i = 0; i < V; i++)
+        {
+            pi[i] += 0.7 * t * v[i] + 0.3 * t * last_v[i];
+        }
+
+        for (int i = 0; i < V - 1; i++)
+        {
+            last_v[i] = v[i];
+            for (int j = i + 1; j < V; j++)
+            {
+                AdjList[j][i].first = (AdjList[i][j].first = AdjListCopy[i][j].first - pi[i] - pi[j]);
+            }
+        }
+
+        if (T > W)
+        {
+            W = T;
+            if (firstPeriod)
+                t0 *= 2;
+            if (iter == period)
+                period *= 2;
+        }
+        else if (firstPeriod && iter > V / 4)
+        {
+            firstPeriod = false;
+            iter = 0;
+            t0 = 3 * t0 / 4.0;
+        }
+
+        iter++;
+
+        std::cout << W << "\n";
+
+        if (iter > period)
+        {
+            iter = 0;
+            t0 /= 2.0;
+            period /= 2;
+        }
+
+        if (period == 0 || t0 < 0.001)
+            break;
     }
-    // while (1)
-    // {
-    //     v.assign(V, 2);
-    //     u.assign(V, 0);
-    //     edges.assign(V, {-3, -3});
-
-    //     double T = MS1T(V, AdjList, taken, parent, edges, rankedNodes);
-    //     double PI_SUM = 0;
-    //     for (int i = 0; i < V; i++)
-    //     {
-    //         PI_SUM += lambda[i];
-    //         u[i] = v[i];
-    //     }
-    //     T += 2 * PI_SUM;
-
-    //     prev_W = W;
-    //     W = std::max(W, T);
-
-    //     std::cout << W << "\n";
-
-    //     double SUM_V = 0;
-    //     for (int i = 1; i < V; i++)
-    //     {
-    //         v[parent[i]]--;
-    //         SUM_V += v[i]--;
-    //     }
-    //     v[0] = 0;
-
-    //     bool isFeasible = true;
-    //     for (int i = 0; i < V; i++)
-    //     {
-    //         if (v[i] > std::numeric_limits<double>::epsilon())
-    //         {
-    //             isFeasible = false;
-    //             break;
-    //         }
-    //     }
-
-    //     if (isFeasible)
-    //     {
-    //         break;
-    //         // std::cout << "Is feasible\n";
-    //     }
-
-    //     if (firstPeriod && iter > 0 && prev_W < W - 0.0001)
-    //     {
-    //         t0 = 2 * t0;
-    //     }
-
-    //     double t = t0;
-
-    //     for (int i = 0; i < V; i++)
-    //     {
-    //         lambda[i] += t * v[i];
-    //     }
-
-    //     for (int i = 0; i < V - 1; i++)
-    //     {
-    //         for (int j = i + 1; j < V; j++)
-    //         {
-    //             AdjList[j][i].first = (AdjList[i][j].first -= (double)t * (1 * v[i] + 1 * v[j]));
-    //         }
-    //     }
-
-    //     if (iter == period)
-    //     {
-    //         firstPeriod = false;
-    //         period = period / 2;
-    //         iter = 0;
-    //         t0 = t0 / 2.0;
-    //         // std::cout << t0 << "\n";
-    //         if (prev_W < W - 0.0001)
-    //         {
-    //             period = period * 2;
-    //         }
-    //     }
-    //     if (period == 0)
-    //     {
-    //         break;
-    //     }
-
-    //     iter++;
-    // }
 
     edges.assign(V - 1, {0, 0});
     MST(V, AdjList, taken, parent, edges, false, rankedNodes);
