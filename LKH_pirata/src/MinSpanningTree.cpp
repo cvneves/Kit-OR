@@ -24,11 +24,12 @@ void process(int vtx, std::vector<std::vector<dii>> &AdjList, vi &taken, priorit
     }
 } // sort by (inc) weight then by (inc) id
 
-double MST(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent, vii &s, bool skipFirstNode, std::vector<std::vector<int>> &rankedNodes)
+double MST(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent, vii &s, bool skipFirstNode, std::vector<std::vector<int>> &rankedNodes, std::vector<int> &v)
 {
     priority_queue<dii> pq;
 
     int start = (int)skipFirstNode;
+    v.assign(V, -2);
 
     // inside int main()---assume the graph is stored in AdjList, pq is empty
     taken.assign(V, 0); // no vertex is taken at the beginning
@@ -36,54 +37,76 @@ double MST(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent,
     process(start, AdjList, taken, pq, 1, rankedNodes); // take vertex 0 and process all edges incident to vertex 0
     int previous = start;
     double mst_cost = 0;
-    int u, v, w, k = start;
+    int u, a, w, k = start;
     while (!pq.empty())
     { // repeat until V vertices (E=V-1 edges) are taken
         dii front = pq.top();
 
         pq.pop();
-        u = -front.second.first, v = -front.second.second, w = -front.first; // negate the id and weight again
+        u = -front.second.first, a = -front.second.second, w = -front.first; // negate the id and weight again
 
         if (!taken[u])
         {                                                                              // we have not connected this vertex yet
             mst_cost += w, process(u, AdjList, taken, pq, skipFirstNode, rankedNodes); // take u, process all edges incident to u
-            parent[u] = v;
-            s[k++ + start] = {v, u};
+            parent[u] = a;
+            v[u]++;
+            v[a]++;
+            s[k++ + start] = {a, u};
         }
     } // each edge is in pq only once!
 
     return mst_cost;
 }
 
-double MS1T(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent, vii &s, std::vector<std::vector<int>> &rankedNodes)
+double MS1T(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent, vii &s, std::vector<std::vector<int>> &rankedNodes, std::vector<int> &v)
 {
-    double cost = MST(V, AdjList, taken, parent, s, true, rankedNodes);
-    double c1, c2, a;
-    dii e1, e2;
-    auto min1 = std::min_element(AdjList[0].begin() + 1, AdjList[0].end());
-    auto min2 = min1;
+    double cost = MST(V, AdjList, taken, parent, s, false, rankedNodes, v);
 
-    if (min1 == AdjList[0].end() - 1)
+    dii secondNeighbour = {-std::numeric_limits<double>::infinity(), {V, V}};
+    for (int i = 0; i < V; i++)
     {
-        min2 = std::min_element(AdjList[0].begin() + 1, AdjList[0].end() - 1);
-    }
-    else if (min1 == AdjList[0].begin() + 1)
-    {
-        min2 = std::min_element(AdjList[0].begin() + 2, AdjList[0].end());
-    }
-    else
-    {
-        auto min22 = std::min_element(AdjList[0].begin() + 1, min1);
-        auto min23 = std::min_element(min1 + 1, AdjList[0].end());
-        min2 = (min22->first < min23->first) ? min22 : min23;
+        if(v[i] == -1)
+        secondNeighbour = std::max(AdjList[rankedNodes[i][2]][i], secondNeighbour);
     }
 
-    parent[1] = 0;
+    s[V - 1] = {secondNeighbour.second.first, secondNeighbour.second.second};
+    v[secondNeighbour.second.first]++;
+    v[secondNeighbour.second.second]++;
 
-    s[0] = {min1->second.second, min1->second.first};
-    s[1] = {min2->second.second, min2->second.first};
+    cost+=secondNeighbour.first;
 
-    cost += min1->first + min2->first;
+    for(int i = 0; i < s.size(); i++)
+    {
+        cout << s[i].first << " " << s[i].second << "\n";
+    }
+    cout << "\n";
+
+    // double c1, c2, a;
+    // dii e1, e2;
+    // auto min1 = std::min_element(AdjList[0].begin() + 1, AdjList[0].end());
+    // auto min2 = min1;
+
+    // if (min1 == AdjList[0].end() - 1)
+    // {
+    //     min2 = std::min_element(AdjList[0].begin() + 1, AdjList[0].end() - 1);
+    // }
+    // else if (min1 == AdjList[0].begin() + 1)
+    // {
+    //     min2 = std::min_element(AdjList[0].begin() + 2, AdjList[0].end());
+    // }
+    // else
+    // {
+    //     auto min22 = std::min_element(AdjList[0].begin() + 1, min1);
+    //     auto min23 = std::min_element(min1 + 1, AdjList[0].end());
+    //     min2 = (min22->first < min23->first) ? min22 : min23;
+    // }
+
+    // parent[1] = 0;
+
+    // s[0] = {min1->second.second, min1->second.first};
+    // s[1] = {min2->second.second, min2->second.first};
+
+    // cost += min1->first + min2->first;
 
     return cost;
 }
@@ -92,7 +115,8 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
 {
     // int k = 0;
     double W = -std::numeric_limits<double>::infinity(), prev_W, bestW;
-    std::vector<double> pi, best_pi, v, last_v;
+    std::vector<double> pi, best_pi;
+    vi v, last_v;
     int period = V / 2, iter = 0;
     bool firstPeriod = true;
 
@@ -101,38 +125,31 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
     pi.assign(V, 0);
     best_pi.assign(V, 0);
 
-    v.assign(V, 2);
+    // v.assign(V, 2);
     last_v.assign(V, 0);
 
     double t0 = 1.0;
 
     while (1)
     {
-        v.assign(V, 2);
         edges.assign(V, {-3, -3});
 
-        double T = MS1T(V, AdjList, taken, parent, edges, rankedNodes);
+        double T = MS1T(V, AdjList, taken, parent, edges, rankedNodes, v);
         double PI_SUM = 0;
         for (int i = 0; i < V; i++)
         {
             PI_SUM += pi[i];
         }
-        T += 2 * PI_SUM;
+        T -= 2 * PI_SUM;
 
         prev_W = W;
 
-        double SUM_V = 0;
-        for (int i = 1; i < V; i++)
-        {
-            v[parent[i]]--;
-            SUM_V += v[i]--;
-        }
-        // v[0] = 0;
+        // std::cout << T << "\n";
 
         bool isFeasible = true;
         for (int i = 0; i < V; i++)
         {
-            if (v[i] > 0.0001)
+            if (v[i] > 0)
             {
                 isFeasible = false;
                 break;
@@ -142,7 +159,6 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
         if (isFeasible)
         {
             break;
-            // std::cout << "Is feasible\n";
         }
 
         double t = t0;
@@ -164,8 +180,6 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
         if (T > W)
         {
             W = T;
-            std::cout << W << "\n";
-
             if (firstPeriod)
                 t0 *= 2;
             if (iter == period)
@@ -202,7 +216,7 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
     //     std::cout << "\n";
     // }
 
-    // std::cout << "LB: " << MST(V, AdjList, taken, parent, edges, false, rankedNodes);
+    MST(V, AdjList, taken, parent, edges, false, rankedNodes, v);
 
     // for (int i = 0; i < V; i++)
     // {

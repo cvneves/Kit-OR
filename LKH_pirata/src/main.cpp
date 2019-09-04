@@ -59,6 +59,7 @@ int main(int argc, char **argv)
   srand(time(NULL));
 
   readData(argc, argv, &dimension, &matrizAdj);
+  printData();
 
   vector<vector<int>> rankedNodes;
   generateCandidateList(rankedNodes, matrizAdj, dimension);

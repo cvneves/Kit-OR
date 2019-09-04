@@ -128,12 +128,25 @@ void generateCandidateList(std::vector<std::vector<int>> &rankedNodes, double **
     }
 
     vii edges;
-    edges.assign(V - 1, {-3, -3});
+    edges.assign(V, {-3, -3});
     vi parent;
-
     vi taken;
 
     parent.assign(V, -1);
+
+    // std::cout << MST(V, AdjList, taken, parent, edges, false, rankedNodes) << "\n";
+
+    // std::cout << MS1T(V, AdjList, taken, parent, edges, rankedNodes, v) << "\n";
+
+    // for (int i = 0; i < edges.size(); i++)
+    // {
+    //     std::cout << edges[i].first << ", " << edges[i].second << "\n";
+    // }
+
+    // for(int i = 0; i < V; i++)
+    // {
+    //     std::cout << i << " " << v[i] << "\n";
+    // }
 
     std::chrono::time_point<std::chrono::system_clock> start, end;
 
