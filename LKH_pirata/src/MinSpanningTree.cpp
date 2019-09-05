@@ -77,9 +77,9 @@ double MS1T(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
 
     for(int i = 0; i < s.size(); i++)
     {
-        cout << s[i].first << " " << s[i].second << "\n";
+        // cout << s[i].first << " " << s[i].second << "\n";
     }
-    cout << "\n";
+    // cout << "\n";
 
     // double c1, c2, a;
     // dii e1, e2;
@@ -173,7 +173,7 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
             last_v[i] = v[i];
             for (int j = i + 1; j < V; j++)
             {
-                AdjList[j][i].first = (AdjList[i][j].first = AdjListCopy[i][j].first - pi[i] - pi[j]);
+                AdjList[j][i].first = (AdjList[i][j].first = AdjListCopy[i][j].first + pi[i] + pi[j]);
             }
         }
 
