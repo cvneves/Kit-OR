@@ -1,0 +1,63 @@
+carlosvinicius@q3:~/Documents/Kit-OR/CG$ ./bpp instances/cvrp1.txt 
+
+instances/cvrp1.txt
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Bins usados: 66
+Elapsed time (s): 1132.66
+
+carlosvinicius@q3:~/Documents/Kit-OR/CG$ ./bpp instances/cvrp2.txt 
+
+instances/cvrp2.txt
+Bins usados: 136
+Elapsed time (s): 664.229
+
+carlosvinicius@q3:~/Documents/Kit-OR/CG$ ./bpp instances/cvrp3.txt 
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+
+instances/cvrp3.txt
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Markowitz threshold set to 0.1
+Bins usados: 41
+Elapsed time (s): 12348.1
+
