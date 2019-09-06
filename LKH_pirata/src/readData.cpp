@@ -402,3 +402,17 @@ double CalcDistGeo ( double *latit, double *longit, int I, int J )
     return
     (int) ( RRR * acos( 0.5*((1.0+q1)*q2 - (1.0-q1)*q3) ) + 1.0);
 }
+
+
+void printData(double **matrizAdj, int dimension)
+{
+  std::cout << "dimension: " << dimension << std::endl;
+  for (size_t i = 1; i <= dimension; i++)
+  {
+    for (size_t j = 1; j <= dimension; j++)
+    {
+      std::cout << matrizAdj[i][j] << " ";
+    }
+    std::cout << std::endl;
+  }
+}
