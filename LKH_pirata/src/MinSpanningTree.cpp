@@ -128,7 +128,7 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
     // v.assign(V, 2);
     last_v.assign(V, 0);
 
-    double t0 = 1.0;
+    double t0 = 1;
 
     while (1)
     {
