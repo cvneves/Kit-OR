@@ -3,6 +3,7 @@
 #include "CandidateList.h"
 #include "SolutionUtils.h"
 #include "Construction.h"
+#include "linKOpt.h"
 
 #include <fstream>
 #include <iostream>
@@ -28,14 +29,16 @@ int main(int argc, char **argv)
   readData(argc, argv, &dimension, &matrizAdj);
   // printData(matrizAdj, dimension);
 
-  vector<vector<int>> rankedNodes;
-  generateCandidateList(rankedNodes, matrizAdj, dimension);
+  vector<vector<int>> neighbourSet;
+  generateCandidateList(neighbourSet, matrizAdj, dimension);
 
   std::vector<int> s = construction(0.5, dimension, matrizAdj);
+  double objValue = calcularValorObj(s, matrizAdj);
 
   printSolucao(s);
+  std::cout << objValue << "\n";
 
-  std::cout << calcularValorObj(s, matrizAdj);
+  lkStep(s, dimension, objValue, matrizAdj);
 
   return 0;
 }
