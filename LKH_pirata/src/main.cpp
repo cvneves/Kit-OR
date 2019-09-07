@@ -40,6 +40,16 @@ int main(int argc, char **argv)
 
   lkStep(s, dimension, objValue, matrizAdj);
 
+  std::list<double> a;
+
+  for(int i = 0; i < 5000; i++)
+  {
+    a.push_back(i);
+  }
+
+  std::cout << a.size()*sizeof(double) << "\n";
+
+
   return 0;
 }
 

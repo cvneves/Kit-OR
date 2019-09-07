@@ -8,6 +8,8 @@
 #include <vector>
 #include <map>
 
+#define EPSILON 0.00001
+
 using namespace std;
 
 typedef pair<double, std::pair<int, int>> dii;

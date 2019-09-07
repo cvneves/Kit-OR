@@ -144,12 +144,12 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
 
         prev_W = W;
 
-        // std::cout << T << "\n";
+         std::cout << T << ", " << t0 << "\n";
 
         bool isFeasible = true;
         for (int i = 0; i < V; i++)
         {
-            if (v[i] > 0)
+            if (v[i] != 0)
             {
                 isFeasible = false;
                 break;
@@ -165,7 +165,7 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
 
         for (int i = 0; i < V; i++)
         {
-            pi[i] += 0.7 * t * v[i] + 0.3 * t * last_v[i];
+            pi[i] += (7 * t * v[i] + 3 * t * last_v[i])/10.0;
         }
 
         for (int i = 0; i < V - 1; i++)
@@ -177,7 +177,7 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
             }
         }
 
-        if (T > W)
+        if (T > W + EPSILON)
         {
             W = T;
             if (firstPeriod)
@@ -201,7 +201,7 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
             period /= 2;
         }
 
-        if (period == 0 || t0 < 0.01)
+        if (period == 0 || t0 < EPSILON)
             break;
     }
 
