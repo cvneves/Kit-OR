@@ -3,7 +3,7 @@
 #include "CandidateList.h"
 #include "SolutionUtils.h"
 #include "Construction.h"
-#include "linKOpt.h"
+#include "LinKerninghan.h"
 
 #include <fstream>
 #include <iostream>
@@ -15,7 +15,6 @@
 #include <cmath>
 #include <limits>
 #include <chrono>
-
 
 using namespace std;
 
@@ -35,21 +34,13 @@ int main(int argc, char **argv)
   std::vector<int> s = construction(0.5, dimension, matrizAdj);
   double objValue = calcularValorObj(s, matrizAdj);
 
-  printSolucao(s);
-  std::cout << objValue << "\n";
+  // printSolucao(s);
+  // std::cout << objValue << "\n";
 
-  lkStep(s, dimension, objValue, matrizAdj);
+  Tour T(s, dimension, objValue);
+
+  lkStep(T, matrizAdj);
 
   std::list<double> a;
-
-  for(int i = 0; i < 5000; i++)
-  {
-    a.push_back(i);
-  }
-
-  std::cout << a.size()*sizeof(double) << "\n";
-
-
   return 0;
 }
-

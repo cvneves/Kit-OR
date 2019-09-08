@@ -155,7 +155,7 @@ void generateCandidateList(std::vector<std::vector<int>> &rankedNodes, double **
     end = std::chrono::system_clock::now();
 
     int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-    // std::cout << "Ascent time (s): " << elapsed_seconds / 1000.0 << "\n";
+    std::cout << "Ascent time (s): " << elapsed_seconds / 1000.0 << "\n";
 
     std::vector<std::vector<double>> alpha, beta;
     computeAlpha(alpha, beta, edges, V, parent, AdjList);

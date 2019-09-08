@@ -26,7 +26,6 @@ double MST(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent,
 
     // inside int main()---assume the graph is stored in AdjList, pq is empty
     taken.assign(V, 0); // no vertex is taken at the beginning
-    parent.assign(V, -1);
     process(0, AdjList, taken, pq, false, rankedNodes); // take vertex 0 and process all edges incident to vertex 0
     double mst_cost = 0;
     int u, a, w, k = 0;
@@ -91,7 +90,7 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
 
     while (1)
     {
-        edges.assign(V, {-3, -3});
+        // edges.assign(V, {-3, -3});
 
         double T = MS1T(V, AdjList, taken, parent, edges, rankedNodes, v);
         double PI_SUM = 0;
@@ -103,7 +102,7 @@ void Ascent(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
 
         prev_W = W;
 
-         std::cout << T << ", " << t0 << "\n";
+        //  std::cout << T << ", " << t0 << "\n";
 
         bool isFeasible = true;
         for (int i = 0; i < V; i++)

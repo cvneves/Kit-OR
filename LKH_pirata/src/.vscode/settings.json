@@ -59,6 +59,12 @@
         "utility": "cpp",
         "typeindex": "cpp",
         "typeinfo": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "stack": "cpp",
+        "codecvt": "cpp",
+        "cuchar": "cpp",
+        "optional": "cpp",
+        "shared_mutex": "cpp",
+        "string_view": "cpp"
     }
 }
