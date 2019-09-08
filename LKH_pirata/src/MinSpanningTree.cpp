@@ -7,17 +7,11 @@ using namespace std;
 void process(int vtx, std::vector<std::vector<dii>> &AdjList, vi &taken, priority_queue<dii> &pq, bool skipFirstNode, std::vector<std::vector<int>> &rankedNodes)
 { // so, we use -ve sign to reverse the sort order
     taken[vtx] = 1;
-    int start = (int)skipFirstNode;
 
     int max_iterations = std::min((int)AdjList[vtx].size(), 55);
 
-    for (int j = start; j < max_iterations; j++)
+    for (int j = 0; j < max_iterations; j++)
     {
-        if (skipFirstNode && rankedNodes[vtx][j] == 0)
-        {
-            continue;
-        }
-
         dii v = AdjList[vtx][rankedNodes[vtx][j]];
         if (!taken[v.second.first])
             pq.push({-v.first, {-v.second.first, -v.second.second}});
@@ -28,16 +22,14 @@ double MST(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent,
 {
     priority_queue<dii> pq;
 
-    int start = (int)skipFirstNode;
     v.assign(V, -2);
 
     // inside int main()---assume the graph is stored in AdjList, pq is empty
     taken.assign(V, 0); // no vertex is taken at the beginning
     parent.assign(V, -1);
-    process(start, AdjList, taken, pq, 1, rankedNodes); // take vertex 0 and process all edges incident to vertex 0
-    int previous = start;
+    process(0, AdjList, taken, pq, false, rankedNodes); // take vertex 0 and process all edges incident to vertex 0
     double mst_cost = 0;
-    int u, a, w, k = start;
+    int u, a, w, k = 0;
     while (!pq.empty())
     { // repeat until V vertices (E=V-1 edges) are taken
         dii front = pq.top();
@@ -51,7 +43,7 @@ double MST(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent,
             parent[u] = a;
             v[u]++;
             v[a]++;
-            s[k++ + start] = {a, u};
+            s[k++] = {a, u};
         }
     } // each edge is in pq only once!
 
@@ -74,39 +66,6 @@ double MS1T(int V, std::vector<std::vector<dii>> &AdjList, vi &taken, vi &parent
     v[secondNeighbour.second.second]++;
 
     cost+=secondNeighbour.first;
-
-    for(int i = 0; i < s.size(); i++)
-    {
-        // cout << s[i].first << " " << s[i].second << "\n";
-    }
-    // cout << "\n";
-
-    // double c1, c2, a;
-    // dii e1, e2;
-    // auto min1 = std::min_element(AdjList[0].begin() + 1, AdjList[0].end());
-    // auto min2 = min1;
-
-    // if (min1 == AdjList[0].end() - 1)
-    // {
-    //     min2 = std::min_element(AdjList[0].begin() + 1, AdjList[0].end() - 1);
-    // }
-    // else if (min1 == AdjList[0].begin() + 1)
-    // {
-    //     min2 = std::min_element(AdjList[0].begin() + 2, AdjList[0].end());
-    // }
-    // else
-    // {
-    //     auto min22 = std::min_element(AdjList[0].begin() + 1, min1);
-    //     auto min23 = std::min_element(min1 + 1, AdjList[0].end());
-    //     min2 = (min22->first < min23->first) ? min22 : min23;
-    // }
-
-    // parent[1] = 0;
-
-    // s[0] = {min1->second.second, min1->second.first};
-    // s[1] = {min2->second.second, min2->second.first};
-
-    // cost += min1->first + min2->first;
 
     return cost;
 }
