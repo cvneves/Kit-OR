@@ -6,6 +6,7 @@
 #include <iostream>
 #include <stack>
 #include <list>
+#include "SolutionUtils.h"
 
 using namespace std;
 
@@ -30,9 +31,11 @@ class Tour
     int prev(int node);
     void flip(int a, int b);
     bool sequence(int a, int b, int c);
+    vi getTour();
+
 };
 
 void lkStep(Tour &T, double **c);
-int findPromisingVertex(Tour &T, double **c, int base, double delta);
+int findPromisingVertex(Tour &T, double **c, int base, double delta, vector<bool> &taken);
 
 #endif

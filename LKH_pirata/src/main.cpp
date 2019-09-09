@@ -23,16 +23,19 @@ double **matrizAdj;
 
 int main(int argc, char **argv)
 {
-  srand(time(NULL));
+  int x = time(NULL);
+  // std::cout << x;
+  srand(1568068984);
 
   readData(argc, argv, &dimension, &matrizAdj);
-  // printData(matrizAdj, dimension);
+  printData(matrizAdj, dimension);
 
   vector<vector<int>> neighbourSet;
-  generateCandidateList(neighbourSet, matrizAdj, dimension);
+  // generateCandidateList(neighbourSet, matrizAdj, dimension);
 
-  std::vector<int> s = construction(0.5, dimension, matrizAdj);
+  std::vector<int> s = construction(0.1, dimension, matrizAdj);
   double objValue = calcularValorObj(s, matrizAdj);
+  std::cout << "Initial obj value: " << objValue << "\n";
 
   // printSolucao(s);
   // std::cout << objValue << "\n";
