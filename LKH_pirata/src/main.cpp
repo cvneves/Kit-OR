@@ -25,7 +25,8 @@ int main(int argc, char **argv)
 {
   int x = time(NULL);
   // std::cout << x;
-  srand(1568068984);
+  // srand(1568068984);
+  srand(x);
 
   readData(argc, argv, &dimension, &matrizAdj);
   printData(matrizAdj, dimension);
@@ -45,6 +46,10 @@ int main(int argc, char **argv)
   // std::cout << objValue << "\n";
 
   Tour T(s, dimension, objValue);
+
+  // T.print();
+  // T.flip(10, 6);
+  // T.print();
 
   lkStep(T, matrizAdj);
 

@@ -22,7 +22,7 @@ class Tour
 
   public:
     Tour(vi &s, int V, double objValue);
-    void Print();
+    void print();
 
     double getCost();
     int getN();
