@@ -35,7 +35,7 @@ int main(int argc, char **argv)
   // generateCandidateList(neighbourSet, matrizAdj, dimension);
 
   std::vector<int> s = construction(0.1, dimension, matrizAdj);
-  double objValue = calcularValorObj(s, matrizAdj);
+  double objValue = calcularValorObj(s, matrizAdj) + matrizAdj[s[s.size()-1]][1];
   std::cout << "Initial obj value: " << objValue << "\n\n";
   for(int i = 0; i < s.size() - 1; i++)
   {
