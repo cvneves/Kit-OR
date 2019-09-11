@@ -35,7 +35,11 @@ int main(int argc, char **argv)
 
   std::vector<int> s = construction(0.1, dimension, matrizAdj);
   double objValue = calcularValorObj(s, matrizAdj);
-  std::cout << "Initial obj value: " << objValue << "\n";
+  std::cout << "Initial obj value: " << objValue << "\n\n";
+  for(int i = 0; i < s.size() - 1; i++)
+  {
+    std::cout << s[i] << " " << s[i+1] << ": "  << matrizAdj[s[i]][s[i+1]] << "\n";
+  }
 
   // printSolucao(s);
   // std::cout << objValue << "\n";

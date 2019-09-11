@@ -65,6 +65,7 @@ void lkStep(Tour &T, double **c)
     {
         delta += c[base][T.next(base)] - c[T.next(base)][T.next(probe)] + c[probe][T.next(probe)] - c[probe][base];
         cout << "\n" << T.next(base) << " " << probe << " " << T.getCost() - delta << "\n";
+        cout << base << " " << T.next(base) << " " << probe << " " << T.next(probe) << "\n";
         T.flip(T.next(base), probe);
         T.Print();
 
