@@ -95,13 +95,31 @@ void lkStep(Tour &T, double **c)
 int findPromisingVertex(Tour &T, double **c, int base, double delta, vector<bool> &taken)
 {
     double A = delta + c[base][T.next(base)];
-    for (int probe = 2; probe <= T.getN(); probe++)
+
+    pair<double, int> best_a = {-INF, -1};
+
+    for (int a = 1; a <= T.getN(); a++)
     {
-        if (taken[probe] == false && A > c[T.next(base)][T.next(probe)] && probe != base && probe != T.next(base) && probe != T.prev(base))
+        pair<double, int> cost = {c[T.prev(a)][a] - c[T.next(base)][a], a};
+        if (taken[a] == false && cost > best_a && a != base && a != T.next(base) && a != T.prev(base))
         {
-            taken[probe] = true;
-            return probe;
+            best_a = cost;
         }
     }
-    return -1;
+    if (best_a.second != -1)
+    {
+        taken[best_a.second] = true;
+    }
+
+    return best_a.second;
+
+    // for (int probe = 1; probe <= T.getN(); probe++)
+    // {
+    //     if (taken[probe] == false && A > c[T.next(base)][T.next(probe)] && probe != base && probe != T.next(base) && probe != T.prev(base))
+    //     {
+    //         taken[probe] = true;
+    //         return probe;
+    //     }
+    // }
+    // return -1;
 }

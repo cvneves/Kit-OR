@@ -34,8 +34,9 @@ int main(int argc, char **argv)
   vector<vector<int>> neighbourSet;
   // generateCandidateList(neighbourSet, matrizAdj, dimension);
 
+  double alpha = (double) rand() / RAND_MAX;
   std::vector<int> s = construction(0.1, dimension, matrizAdj);
-  double objValue = calcularValorObj(s, matrizAdj) + matrizAdj[s[s.size()-1]][1];
+  double objValue = calcularValorObj(s, matrizAdj);
   std::cout << "Initial obj value: " << objValue << "\n\n";
   for(int i = 0; i < s.size() - 1; i++)
   {
@@ -48,7 +49,7 @@ int main(int argc, char **argv)
   Tour T(s, dimension, objValue);
 
   // T.print();
-  // T.flip(10, 6);
+  // T.flip(1, 6);
   // T.print();
 
   lkStep(T, matrizAdj);
