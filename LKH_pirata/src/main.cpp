@@ -32,10 +32,10 @@ int main(int argc, char **argv)
   printData(matrizAdj, dimension);
 
   vector<vector<int>> neighbourSet;
-  // generateCandidateList(neighbourSet, matrizAdj, dimension);
+  generateCandidateList(neighbourSet, matrizAdj, dimension);
 
   double alpha = (double) rand() / RAND_MAX;
-  std::vector<int> s = construction(0.1, dimension, matrizAdj);
+  std::vector<int> s = construction(alpha, dimension, matrizAdj);
   double objValue = calcularValorObj(s, matrizAdj);
   std::cout << "Initial obj value: " << objValue << "\n\n";
   for(int i = 0; i < s.size() - 1; i++)
@@ -52,7 +52,7 @@ int main(int argc, char **argv)
   // T.flip(1, 6);
   // T.print();
 
-  lkStep(T, matrizAdj);
+  lkStep(T, matrizAdj, neighbourSet);
 
   std::list<double> a;
   return 0;

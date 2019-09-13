@@ -67,23 +67,23 @@ bool Tour::sequence(int a, int b, int c)
     return false;
 }
 
-void lkStep(Tour &T, double **c)
+void lkStep(Tour &T, double **c, vector<vector<int>> neighbourSet)
 {
     double delta = 0;
 
     T.print();
 
-    int base = 2, probe;
+    int base = 2, a;
     vector<bool> taken;
     taken.assign(T.getN() + 1, false);
 
-    while ((probe = findPromisingVertex(T, c, base, delta, taken)) != -1)
+    while ((a = findPromisingVertex(T, c, base, delta, taken, neighbourSet)) != -1)
     {
-        delta += c[base][T.next(base)] - c[T.next(base)][T.next(probe)] + c[probe][T.next(probe)] - c[probe][base];
+        delta += c[base][T.next(base)] - c[T.next(base)][a] + c[T.prev(a)][a] - c[T.prev(a)][base];
         cout << "\n"
-             << T.next(base) << " " << probe << " " << T.getCost() - delta << "\n";
-        cout << base << " " << T.next(base) << " " << probe << " " << T.next(probe) << "\n";
-        T.flip(T.next(base), probe);
+             << T.next(base) << " " << a << " " << T.getCost() - delta << "\n";
+        cout << base << " " << T.next(base) << " " << a << " " << T.next(a) << "\n";
+        T.flip(T.next(base), T.prev(a));
         T.print();
 
         vi s = T.getTour();
@@ -92,20 +92,24 @@ void lkStep(Tour &T, double **c)
     }
 }
 
-int findPromisingVertex(Tour &T, double **c, int base, double delta, vector<bool> &taken)
+int findPromisingVertex(Tour &T, double **c, int base, double delta, vector<bool> &taken, vector<vector<int>> neighbourSet)
 {
     double A = delta + c[base][T.next(base)];
 
     pair<double, int> best_a = {-INF, -1};
 
-    for (int a = 1; a <= T.getN(); a++)
+    int k = 5;
+
+    for (int i = 1; i <= k; i++)
     {
+        int a = neighbourSet[T.next(base) - 1][i];
         pair<double, int> cost = {c[T.prev(a)][a] - c[T.next(base)][a], a};
         if (taken[a] == false && cost > best_a && a != base && a != T.next(base) && a != T.prev(base))
         {
             best_a = cost;
         }
     }
+    
     if (best_a.second != -1)
     {
         taken[best_a.second] = true;
