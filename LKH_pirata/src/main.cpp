@@ -25,8 +25,8 @@ int main(int argc, char **argv)
 {
   int x = time(NULL);
   // std::cout << x;
-  // srand(1568068984);
-  srand(x);
+  srand(1568068984);
+  // srand(x);
 
   readData(argc, argv, &dimension, &matrizAdj);
   printData(matrizAdj, dimension);
@@ -34,13 +34,13 @@ int main(int argc, char **argv)
   vector<vector<int>> neighbourSet;
   generateCandidateList(neighbourSet, matrizAdj, dimension);
 
-  double alpha = (double) rand() / RAND_MAX;
+  double alpha = (double)rand() / RAND_MAX;
   std::vector<int> s = construction(alpha, dimension, matrizAdj);
   double objValue = calcularValorObj(s, matrizAdj);
   std::cout << "Initial obj value: " << objValue << "\n\n";
-  for(int i = 0; i < s.size() - 1; i++)
+  for (int i = 0; i < s.size() - 1; i++)
   {
-    std::cout << s[i] << " " << s[i+1] << ": "  << matrizAdj[s[i]][s[i+1]] << "\n";
+    std::cout << s[i] << " " << s[i + 1] << ": " << matrizAdj[s[i]][s[i + 1]] << "\n";
   }
 
   // printSolucao(s);
@@ -48,11 +48,17 @@ int main(int argc, char **argv)
 
   Tour T(s, dimension, objValue);
 
+  T.print();
+  T.flip(4, 12);
+  T.print();
+  // cout << T.next(6) << "\n";
+  // cout << T.prev(6) << "\n";
+  // T.flip(6, 9);
   // T.print();
-  // T.flip(1, 6);
-  // T.print();
+  // cout << T.next(6) << "\n";
+  // cout << T.prev(6) << "\n";
 
-  lkStep(T, matrizAdj, neighbourSet);
+  // lkStep(T, matrizAdj, neighbourSet);
 
   std::list<double> a;
   return 0;

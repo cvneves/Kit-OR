@@ -26,8 +26,18 @@ void Tour::print()
 
 double Tour::getCost() { return cost; }
 int Tour::inverse(int node) { return inv[node]; }
-int Tour::next(int node) { return tour[(inv[node] + 1) % N]; }
-int Tour::prev(int node) { return tour[((inv[node] - 1) % N + N) % N]; }
+int Tour::next(int node)
+{
+    if (!reversed)
+        return tour[(inv[node] + 1) % N];
+    return tour[((inv[node] - 1) % N + N) % N];
+}
+int Tour::prev(int node)
+{
+    if (!reversed)
+        return tour[((inv[node] - 1) % N + N) % N];
+    return tour[(inv[node] + 1) % N];
+}
 int Tour::getN() { return N; }
 vi Tour::getTour()
 {
@@ -36,28 +46,46 @@ vi Tour::getTour()
 
 void Tour::flip(int a, int b)
 {
-    int x = inv[a];
-    int y = inv[b];
-    int restart1 = 0, restart2 = 0;
+    int x = inv[a], y = inv[b];
+    if (x > y)
+        swap(x, y);
 
-    if (x < y)
+    if (y - x > N / 2)
     {
-        for (int i = x, j = y; i < j; i++, j--)
-        {
-            swap(tour[i], tour[j]);
-            swap(inv[tour[i]], inv[tour[j]]);
-        }
-    }
-    else
-    {
-        x = inv[next(b)], y = inv[prev(a)];
-        for (int i = x, j = y; i < j; i++, j--)
-        {
-            swap(tour[i], tour[j]);
-            swap(inv[tour[i]], inv[tour[j]]);
-        }
+        x = inv[prev(a)];
+        y = inv[next(b)];
+        if (x > y)
+            swap(x, y);
         reversed = !reversed;
     }
+
+    for (int i = x, j = y; i < j; i++, j--)
+    {
+        swap(tour[i], tour[j]);
+        swap(inv[tour[i]], inv[tour[j]]);
+    }
+
+    // int restart1 = 0, restart2 = 0;
+
+    // if (x < y && a != 1)
+    // {
+    //     for (int i = x, j = y; i < j; i++, j--)
+    //     {
+    //         swap(tour[i], tour[j]);
+    //         swap(inv[tour[i]], inv[tour[j]]);
+    //     }
+    // }
+
+    // else
+    // {
+    //     x = inv[next(b)], y = inv[prev(a)];
+    //     for (int i = x, j = y; i < j; i++, j--)
+    //     {
+    //         swap(tour[i], tour[j]);
+    //         swap(inv[tour[i]], inv[tour[j]]);
+    //     }
+    //     reversed = !reversed;
+    // }
 }
 bool Tour::sequence(int a, int b, int c)
 {
@@ -73,7 +101,7 @@ void lkStep(Tour &T, double **c, vector<vector<int>> neighbourSet)
 
     T.print();
 
-    int base = 2, a;
+    int base = 14, a;
     vector<bool> taken;
     taken.assign(T.getN() + 1, false);
 
@@ -109,7 +137,7 @@ int findPromisingVertex(Tour &T, double **c, int base, double delta, vector<bool
             best_a = cost;
         }
     }
-    
+
     if (best_a.second != -1)
     {
         taken[best_a.second] = true;
