@@ -46,45 +46,53 @@ vi Tour::getTour()
 
 void Tour::flip(int a, int b)
 {
-    int x = inv[a], y = inv[b];
-    if (x > y)
-        swap(x, y);
-
-    if (y - x > N / 2)
+    int segment_size = abs(inv[b] - inv[a]) + 1;
+    cout << segment_size << "\n";
+    if (segment_size > N / 2)
     {
-        x = inv[prev(a)];
-        y = inv[next(b)];
-        if (x > y)
-            swap(x, y);
+        a = prev(a);
+        b = next(b);
         reversed = !reversed;
+        segment_size = N - segment_size;
     }
 
-    for (int i = x, j = y; i < j; i++, j--)
+    for (int i = 0; i < segment_size / 2; i++)
     {
-        swap(tour[i], tour[j]);
-        swap(inv[tour[i]], inv[tour[j]]);
+        // cout << tour[inv[a]] << " " << tour[inv[b]] << "\n";
+        swap(tour[inv[a]], tour[inv[b]]);
+        int x = a, y = b;
+
+        a = next(a);
+        b = prev(b);
+
+        swap(inv[x], inv[y]);
     }
 
-    // int restart1 = 0, restart2 = 0;
+    // if (x > y)
+    //     swap(x, y);
 
-    // if (x < y && a != 1)
+    // if (abs(y - x) > N / 2)
     // {
-    //     for (int i = x, j = y; i < j; i++, j--)
-    //     {
-    //         swap(tour[i], tour[j]);
-    //         swap(inv[tour[i]], inv[tour[j]]);
-    //     }
-    // }
-
-    // else
-    // {
-    //     x = inv[next(b)], y = inv[prev(a)];
-    //     for (int i = x, j = y; i < j; i++, j--)
-    //     {
-    //         swap(tour[i], tour[j]);
-    //         swap(inv[tour[i]], inv[tour[j]]);
-    //     }
+    //     x = inv[prev(a)];
+    //     y = inv[next(b)];
+    //     if (x > y)
+    //         swap(x, y);
     //     reversed = !reversed;
+
+    //     for (int i = x, j = y; i >= 0 && j < N; i--, j++)
+    //     {
+    //         swap(tour[i], tour[j]);
+    //         swap(inv[tour[i]], inv[tour[j]]);
+    //     }
+
+    //     return;
+    // }
+    // cout << x << " " << y << "\n";
+
+    // for (int i = x, j = y; i < j; i++, j--)
+    // {
+    //     swap(tour[i], tour[j]);
+    //     swap(inv[tour[i]], inv[tour[j]]);
     // }
 }
 bool Tour::sequence(int a, int b, int c)
@@ -101,7 +109,7 @@ void lkStep(Tour &T, double **c, vector<vector<int>> neighbourSet)
 
     T.print();
 
-    int base = 14, a;
+    int base = 1, a;
     vector<bool> taken;
     taken.assign(T.getN() + 1, false);
 
@@ -116,7 +124,7 @@ void lkStep(Tour &T, double **c, vector<vector<int>> neighbourSet)
 
         vi s = T.getTour();
         printSolucao(s);
-        cout << calcularValorObj(s, c) + c[s[s.size() - 1]][1] << "\n";
+        cout << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << "\n";
     }
 }
 

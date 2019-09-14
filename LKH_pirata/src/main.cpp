@@ -49,7 +49,10 @@ int main(int argc, char **argv)
   Tour T(s, dimension, objValue);
 
   T.print();
-  T.flip(4, 12);
+  // T.flip(4, 12);
+  // T.print();
+  T.flip(4, 9);
+  // T.flip(4,12);
   T.print();
   // cout << T.next(6) << "\n";
   // cout << T.prev(6) << "\n";
