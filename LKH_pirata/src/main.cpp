@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 {
   int x = time(NULL);
   // std::cout << x;
-  srand(1568068984);
+  srand(1568068983);
   // srand(x);
 
   readData(argc, argv, &dimension, &matrizAdj);
@@ -46,14 +46,15 @@ int main(int argc, char **argv)
   // printSolucao(s);
   // std::cout << objValue << "\n";
 
+
   Tour T(s, dimension, objValue);
 
-  T.print();
-  // T.flip(4, 12);
   // T.print();
-  T.flip(4, 9);
+  // T.flip(10, 13);
+  // T.print();
+  // T.flip(4, 9);
   // T.flip(4,12);
-  T.print();
+  // T.print();
   // cout << T.next(6) << "\n";
   // cout << T.prev(6) << "\n";
   // T.flip(6, 9);
@@ -61,7 +62,7 @@ int main(int argc, char **argv)
   // cout << T.next(6) << "\n";
   // cout << T.prev(6) << "\n";
 
-  // lkStep(T, matrizAdj, neighbourSet);
+  lkStep(T, matrizAdj, neighbourSet);
 
   std::list<double> a;
   return 0;

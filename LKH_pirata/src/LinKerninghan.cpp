@@ -117,13 +117,18 @@ void lkStep(Tour &T, double **c, vector<vector<int>> neighbourSet)
     {
         delta += c[base][T.next(base)] - c[T.next(base)][a] + c[T.prev(a)][a] - c[T.prev(a)][base];
         cout << "\n"
-             << T.next(base) << " " << a << " " << T.getCost() - delta << "\n";
-        cout << base << " " << T.next(base) << " " << a << " " << T.next(a) << "\n";
+             << T.next(base) << " " << T.prev(a) << " " << T.getCost() - delta << "\n";
+
         T.flip(T.next(base), T.prev(a));
         T.print();
 
         vi s = T.getTour();
-        printSolucao(s);
+        for(int i = 1; i <=T.getN();i++)
+        {
+            cout << T.inverse(i) << " ";
+        }
+        std::cout << "\n";
+        // printSolucao(s);
         cout << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << "\n";
     }
 }
