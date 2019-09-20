@@ -50,9 +50,9 @@ int main(int argc, char **argv)
 
   Tour T(s, dimension, objValue);
 
-  // T.print();
-  // T.flip(14, 13);
-  // T.print();
+  T.print();
+  T.flip(2, 8);
+  T.print();
   // T.flip(10, 13);
   // T.flip(4,12);
   // T.print();
@@ -63,7 +63,7 @@ int main(int argc, char **argv)
   // cout << T.next(6) << "\n";
   // cout << T.prev(6) << "\n";
 
-  lkStep(T, matrizAdj, neighbourSet);
+  // lkStep(T, matrizAdj, neighbourSet);
 
   std::list<double> a;
   return 0;
