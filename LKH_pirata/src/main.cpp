@@ -65,12 +65,10 @@ int main(int argc, char **argv)
   // cout << T.prev(6) << "\n";
 
   // lkStep(T, matrizAdj, neighbourSet);
-  
+
   stack<pair<int, int>> flipSequence;
 
   step(T, matrizAdj, 1, 1, 0, neighbourSet, flipSequence);
-
-
 
   std::list<double> a;
   return 0;

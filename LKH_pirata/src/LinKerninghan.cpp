@@ -212,9 +212,12 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
         }
         else
         {
-            pair<int, int> fl = flipSequence.top();
-            T.flip(fl.second, fl.first);
-            flipSequence.pop();
+            if (flipSequence.size() > 0)
+            {
+                pair<int, int> fl = flipSequence.top();
+                T.flip(fl.second, fl.first);
+                flipSequence.pop();
+            }
             i++;
         }
     }
