@@ -44,6 +44,11 @@ vi Tour::getTour()
     return tour;
 }
 
+int breadth(int k)
+{
+    return (k <= 2) ? 5 : 1;
+}
+
 void Tour::flip(int a, int b)
 {
     int segment_size = abs(inv[a] - inv[b]) + 1;
@@ -54,7 +59,6 @@ void Tour::flip(int a, int b)
         b = next(b);
         segment_size = abs(inv[a] - inv[b]) + 1;
         reversed = !reversed;
-
     }
 
     if (segment_size > N / 2)
@@ -83,7 +87,7 @@ bool Tour::sequence(int a, int b, int c)
     return false;
 }
 
-void lkStep(Tour &T, double **c, vector<vector<int>> neighbourSet)
+void lkStep(Tour &T, double **c, vector<vector<int>> &neighbourSet)
 {
     double delta = 0;
 
@@ -113,7 +117,7 @@ void lkStep(Tour &T, double **c, vector<vector<int>> neighbourSet)
     }
 }
 
-int findPromisingVertex(Tour &T, double **c, int base, double delta, vector<bool> &taken, vector<vector<int>> neighbourSet)
+int findPromisingVertex(Tour &T, double **c, int base, double delta, vector<bool> &taken, vector<vector<int>> &neighbourSet)
 {
     double A = delta + c[base][T.next(base)];
 
@@ -147,4 +151,71 @@ int findPromisingVertex(Tour &T, double **c, int base, double delta, vector<bool
     //     }
     // }
     // return -1;
+}
+
+void step(Tour &T, double **c, int base, int level, float delta, vector<vector<int>> &neighbourSet, stack<pair<int, int>> &flipSequence)
+{
+    // create lk ordering
+    double best_a;
+
+    int k = breadth(level);
+
+    cout << k << "\n";
+
+    vector<pair<pair<double, int>, bool>> lk_ordering(2 * k); //true if Mak-Morton
+    {
+        int cont = 0;
+        for (int i = 1; i <= k; i++, cont++)
+        {
+            int a = neighbourSet[T.next(base) - 1][i];
+            pair<double, int> cost = {c[T.prev(a)][a] - c[T.next(base)][a], a};
+            lk_ordering[cont] = {cost, false};
+        }
+
+        for (int i = 1; i <= k; i++, cont++)
+        {
+            int a = neighbourSet[T.next(base) - 1][i];
+            pair<double, int> cost = {c[a][T.next(a)] - c[base][a], a};
+            lk_ordering[cont] = {cost, true};
+        }
+    }
+
+    sort(lk_ordering.begin(), lk_ordering.end());
+
+    for (int i = 0; i < lk_ordering.size();)
+    {
+        // cout << lk_ordering[i].first.first << " " << lk_ordering[i].first.second << " " << lk_ordering[i].second << "\n";
+        int a = lk_ordering[i].first.second;
+
+        if (lk_ordering[i].second == true) // if a is specified as a mak-morton move
+        {
+            double g = c[base][T.next(base)] - c[base][a] + c[a][T.next(a)] - c[T.next(a)][T.next(base)];
+            int newbase = T.next(a);
+            int oldbase = base;
+
+            flipSequence.push({newbase, base});
+            T.flip(newbase, base);
+            base = newbase;
+            step(T, c, level + 1, base, delta + g, neighbourSet, flipSequence);
+            base = oldbase;
+        }
+        else
+        {
+            double g = c[base][T.next(base)] - c[T.next(base)][a] + c[T.prev(a)][a] - c[T.prev(a)][base];
+            flipSequence.push({T.next(base), T.prev(a)});
+            T.flip(T.next(base), T.prev(a));
+            step(T, c, level + 1, base, delta + g, neighbourSet, flipSequence);
+        }
+        if (delta > 0)
+        {
+            return;
+        }
+        else
+        {
+            pair<int, int> fl = flipSequence.top();
+            T.flip(fl.second, fl.first);
+            flipSequence.pop();
+            i++;
+        }
+    }
 }

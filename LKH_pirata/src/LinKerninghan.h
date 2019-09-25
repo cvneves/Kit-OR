@@ -38,7 +38,11 @@ class Tour
 
 };
 
-void lkStep(Tour &T, double **c, vector<vector<int>> neighbourSet);
-int findPromisingVertex(Tour &T, double **c, int base, double delta, vector<bool> &taken, vector<vector<int>> neighbourSet);
+void lkStep(Tour &T, double **c, vector<vector<int>> &neighbourSet);
+int findPromisingVertex(Tour &T, double **c, int base, double delta, vector<bool> &taken, vector<vector<int>> &neighbourSet);
+
+int breadth(int k);
+
+void step(Tour &T, double **c, int base, int level, float delta, vector<vector<int>> &neighbourSet, stack<pair<int, int>> &flipSequence);
 
 #endif

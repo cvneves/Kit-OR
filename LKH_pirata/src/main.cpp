@@ -38,10 +38,10 @@ int main(int argc, char **argv)
   std::vector<int> s = construction(alpha, dimension, matrizAdj);
   double objValue = calcularValorObj(s, matrizAdj);
   std::cout << "Initial obj value: " << objValue << "\n\n";
-  for (int i = 0; i < s.size() - 1; i++)
-  {
-    std::cout << s[i] << " " << s[i + 1] << ": " << matrizAdj[s[i]][s[i + 1]] << "\n";
-  }
+  // for (int i = 0; i < s.size() - 1; i++)
+  // {
+  //   std::cout << s[i] << " " << s[i + 1] << ": " << matrizAdj[s[i]][s[i + 1]] << "\n";
+  // }
 
   // printSolucao(s);
   // std::cout << objValue << "\n";
@@ -49,10 +49,11 @@ int main(int argc, char **argv)
   // s = {1, 8, 5, 6, 3, 4, 11, 2, 10, 7, 13, 9, 12, 14, 1};
 
   Tour T(s, dimension, objValue);
+  T.print();
 
-  T.print();
-  T.flip(2, 8);
-  T.print();
+  // T.print();
+  // T.flip(2, 8);
+  // T.print();
   // T.flip(10, 13);
   // T.flip(4,12);
   // T.print();
@@ -64,6 +65,12 @@ int main(int argc, char **argv)
   // cout << T.prev(6) << "\n";
 
   // lkStep(T, matrizAdj, neighbourSet);
+  
+  stack<pair<int, int>> flipSequence;
+
+  step(T, matrizAdj, 1, 1, 0, neighbourSet, flipSequence);
+
+
 
   std::list<double> a;
   return 0;
