@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 {
   int x = time(NULL);
   // std::cout << x;
-  // srand(1568068983);
+  srand(1568068985);
   srand(x);
 
   readData(argc, argv, &dimension, &matrizAdj);
@@ -49,7 +49,7 @@ int main(int argc, char **argv)
   // s = {1, 8, 5, 6, 3, 4, 11, 2, 10, 7, 13, 9, 12, 14, 1};
 
   Tour T(s, dimension, objValue);
-  T.print();
+  // T.print();
 
   // T.print();
   // T.flip(2, 8);
@@ -67,8 +67,10 @@ int main(int argc, char **argv)
   // lkStep(T, matrizAdj, neighbourSet);
 
   stack<pair<int, int>> flipSequence;
+  vector<bool> taken;
+  taken.assign(T.getN() + 1, false);
 
-  step(T, matrizAdj, 1, 1, 0, neighbourSet, flipSequence);
+  step(T, matrizAdj, 1, 1, 0, neighbourSet, flipSequence, taken);
 
   std::list<double> a;
   return 0;
