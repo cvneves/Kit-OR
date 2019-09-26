@@ -153,7 +153,7 @@ int findPromisingVertex(Tour &T, double **c, int base, double delta, vector<bool
     // return -1;
 }
 
-void step(Tour &T, double **c, int base, int level, float delta, vector<vector<int>> &neighbourSet, stack<pair<int, int>> &flipSequence, vector<bool> &taken)
+void step(Tour &T, double **c, int base, int level, float delta, vector<vector<int>> &neighbourSet, deque<pair<int, int>> &flipSequence, vector<bool> &taken)
 {
     // create lk ordering
     double best_a;
@@ -195,13 +195,15 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
         if (taken[a] == false)
         {
             // cout << a << "\n";
+            cout << "level: " << level << " ";
             if (lk_ordering[i].second == true) // if a is specified as a mak-morton move
             {
+                cout << "Mak-Morton \n";
                 double g = c[base][T.next(base)] - c[base][a] + c[a][T.next(a)] - c[T.next(a)][T.next(base)];
                 int newbase = T.next(a);
                 int oldbase = base;
 
-                flipSequence.push({newbase, base});
+                flipSequence.push_back({newbase, base});
                 T.flip(newbase, base);
 
                 base = newbase;
@@ -211,9 +213,10 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
             }
             else
             {
+                cout << "default \n";
                 double g = c[base][T.next(base)] - c[T.next(base)][a] + c[T.prev(a)][a] - c[T.prev(a)][base];
 
-                flipSequence.push({T.next(base), T.prev(a)});
+                flipSequence.push_back({T.next(base), T.prev(a)});
                 T.flip(T.next(base), T.prev(a));
 
                 taken[a] = true;
@@ -229,9 +232,9 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
         {
             if (flipSequence.size() > 0)
             {
-                pair<int, int> fl = flipSequence.top();
-                // T.flip(fl.second, fl.first);
-                flipSequence.pop();
+                pair<int, int> fl = flipSequence.back();
+                T.flip(fl.second, fl.first);
+                flipSequence.pop_back();
             }
         }
     }
