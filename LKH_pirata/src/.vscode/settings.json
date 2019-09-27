@@ -65,6 +65,7 @@
         "cuchar": "cpp",
         "optional": "cpp",
         "shared_mutex": "cpp",
-        "string_view": "cpp"
+        "string_view": "cpp",
+        "random": "cpp"
     }
 }

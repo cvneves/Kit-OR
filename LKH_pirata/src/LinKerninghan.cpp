@@ -153,7 +153,7 @@ int findPromisingVertex(Tour &T, double **c, int base, double delta, vector<bool
     // return -1;
 }
 
-void step(Tour &T, double **c, int base, int level, float delta, vector<vector<int>> &neighbourSet, deque<pair<int, int>> &flipSequence, vector<bool> &taken)
+void step(Tour &T, double **c, int base, int level, float delta, vector<vector<int>> &neighbourSet, deque<pair<int, int>> &flipSequence, vector<bool> taken)
 {
     // create lk ordering
     double best_a;
@@ -165,7 +165,7 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
     // T.print();
 
     vector<pair<pair<double, int>, bool>> lk_ordering; //true if Mak-Morton
-    lk_ordering.assign(2 * k, {{0,0},0});
+    lk_ordering.assign(2 * k, {{0, 0}, 0});
 
     // taken.assign(T.getN() + 1, false);
     {
@@ -187,33 +187,14 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
 
     sort(lk_ordering.begin(), lk_ordering.end());
 
-    for (int i = 0; i < lk_ordering.size(); i++)
+    for (int i = 0; i < k; i++)
     {
         // cout << -lk_ordering[i].first.first << " " << lk_ordering[i].first.second << " " << lk_ordering[i].second << "\n";
         int a = lk_ordering[i].first.second;
-        // cout << a << " " << base << "\n";
         if (taken[a] == false)
         {
-            // cout << a << "\n";
-            cout << "level: " << level << " ";
-            if (lk_ordering[i].second == true) // if a is specified as a mak-morton move
+            if (lk_ordering[i].second == false) // if a is specified as a mak-morton move
             {
-                cout << "Mak-Morton \n";
-                double g = c[base][T.next(base)] - c[base][a] + c[a][T.next(a)] - c[T.next(a)][T.next(base)];
-                int newbase = T.next(a);
-                int oldbase = base;
-
-                flipSequence.push_back({newbase, base});
-                T.flip(newbase, base);
-
-                base = newbase;
-                taken[a] = true;
-                step(T, c, base, level + 1, delta + g, neighbourSet, flipSequence, taken);
-                base = oldbase;
-            }
-            else
-            {
-                cout << "default \n";
                 double g = c[base][T.next(base)] - c[T.next(base)][a] + c[T.prev(a)][a] - c[T.prev(a)][base];
 
                 flipSequence.push_back({T.next(base), T.prev(a)});
@@ -221,6 +202,21 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
 
                 taken[a] = true;
                 step(T, c, base, level + 1, delta + g, neighbourSet, flipSequence, taken);
+            }
+            else
+            {
+                double g = c[base][T.next(base)] - c[base][a] + c[a][T.next(a)] - c[T.next(a)][T.next(base)];
+                int newbase = T.next(a);
+                int oldbase = base;
+
+                flipSequence.push_back({newbase, base});
+                T.flip(newbase, base);
+
+                taken[a] = true;
+
+                base = newbase;
+                step(T, c, base, level + 1, delta + g, neighbourSet, flipSequence, taken);
+                base = oldbase;
             }
         }
         if (delta > 0)

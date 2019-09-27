@@ -43,6 +43,6 @@ int findPromisingVertex(Tour &T, double **c, int base, double delta, vector<bool
 
 int breadth(int k);
 
-void step(Tour &T, double **c, int base, int level, float delta, vector<vector<int>> &neighbourSet, deque<pair<int, int>> &flipSequence, vector<bool> &taken);
+void step(Tour &T, double **c, int base, int level, float delta, vector<vector<int>> &neighbourSet, deque<pair<int, int>> &flipSequence, vector<bool> taken);
 
 #endif
