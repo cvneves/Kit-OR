@@ -153,7 +153,7 @@ int findPromisingVertex(Tour &T, double **c, int base, double delta, vector<bool
     // return -1;
 }
 
-void step(Tour &T, double **c, int base, int level, float delta, vector<vector<int>> &neighbourSet, deque<pair<int, int>> &flipSequence, vector<bool> taken)
+void step(Tour T, double **c, int base, int level, float delta, vector<vector<int>> &neighbourSet, deque<pair<int, int>> &flipSequence, vector<bool> taken)
 {
     // create lk ordering
     double best_a;
@@ -173,21 +173,27 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
         for (int i = 1; i <= k; i++, cont++)
         {
             int a = neighbourSet[T.next(base) - 1][i];
-            pair<double, int> cost = {-(c[T.prev(a)][a] - c[T.next(base)][a]), a};
-            lk_ordering[cont] = {cost, false};
+            if (T.prev(a) != base && T.prev(a) != T.next(base) && T.prev(a) != T.prev(base))
+            {
+                pair<double, int> cost = {-(c[T.prev(a)][a] - c[T.next(base)][a]), a};
+                lk_ordering[cont] = {cost, false};
+            }
         }
 
         for (int i = 1; i <= k; i++, cont++)
         {
-            int a = neighbourSet[T.next(base) - 1][i];
-            pair<double, int> cost = {-(c[a][T.next(a)] - c[base][a]), a};
-            lk_ordering[cont] = {cost, true};
+            int a = neighbourSet[base - 1][i];
+            if (T.prev(a) != base && T.prev(a) != T.next(base) && T.prev(a) != T.prev(base))
+            {
+                pair<double, int> cost = {-(c[a][T.next(a)] - c[base][a]), a};
+                lk_ordering[cont] = {cost, true};
+            }
         }
     }
 
     sort(lk_ordering.begin(), lk_ordering.end());
 
-    for (int i = 0; i < k; i++)
+    for (int i = 0; i < lk_ordering.size(); i++)
     {
         // cout << -lk_ordering[i].first.first << " " << lk_ordering[i].first.second << " " << lk_ordering[i].second << "\n";
         int a = lk_ordering[i].first.second;
@@ -197,7 +203,7 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
             {
                 double g = c[base][T.next(base)] - c[T.next(base)][a] + c[T.prev(a)][a] - c[T.prev(a)][base];
 
-                flipSequence.push_back({T.next(base), T.prev(a)});
+                // flipSequence.push_back({T.next(base), T.prev(a)});
                 T.flip(T.next(base), T.prev(a));
 
                 taken[a] = true;
@@ -209,7 +215,7 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
                 int newbase = T.next(a);
                 int oldbase = base;
 
-                flipSequence.push_back({newbase, base});
+                // flipSequence.push_back({newbase, base});
                 T.flip(newbase, base);
 
                 taken[a] = true;
@@ -226,12 +232,12 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
         }
         else
         {
-            if (flipSequence.size() > 0)
-            {
-                pair<int, int> fl = flipSequence.back();
-                T.flip(fl.second, fl.first);
-                flipSequence.pop_back();
-            }
+            // if (flipSequence.size() > 0)
+            // {
+            // pair<int, int> fl = flipSequence.back();
+            // T.flip(fl.second, fl.first);
+            // flipSequence.pop_back();
+            // }
         }
     }
 }
