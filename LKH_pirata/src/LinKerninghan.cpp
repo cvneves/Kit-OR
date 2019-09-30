@@ -141,103 +141,46 @@ int findPromisingVertex(Tour &T, double **c, int base, double delta, vector<bool
     }
 
     return best_a.second;
-
-    // for (int probe = 1; probe <= T.getN(); probe++)
-    // {
-    //     if (taken[probe] == false && A > c[T.next(base)][T.next(probe)] && probe != base && probe != T.next(base) && probe != T.prev(base))
-    //     {
-    //         taken[probe] = true;
-    //         return probe;
-    //     }
-    // }
-    // return -1;
 }
 
 void step(Tour T, double **c, int base, int level, float delta, vector<vector<int>> &neighbourSet, deque<pair<int, int>> &flipSequence, vector<bool> taken)
 {
-    // create lk ordering
-    double best_a;
+    // Create lk-ordering for next(base)
 
-    int k = breadth(level);
+    vector<pair<pair<double, int>, bool>> lk_ordering;
+    int lk_ordering_size = T.getN() - 3;
+    lk_ordering.assign(lk_ordering_size, {{0, 0}, 0});
 
-    // cout << k << "\n";
-    // cout << delta << "\n";
-    // T.print();
-
-    vector<pair<pair<double, int>, bool>> lk_ordering; //true if Mak-Morton
-    lk_ordering.assign(2 * k, {{0, 0}, 0});
-
-    // taken.assign(T.getN() + 1, false);
+    for (int i = 0, a = T.next(T.next(base)); i < lk_ordering_size; i++)
     {
-        int cont = 0;
-        for (int i = 1; i <= k; i++, cont++)
-        {
-            int a = neighbourSet[T.next(base) - 1][i];
-            if (T.prev(a) != base && T.prev(a) != T.next(base) && T.prev(a) != T.prev(base))
-            {
-                pair<double, int> cost = {-(c[T.prev(a)][a] - c[T.next(base)][a]), a};
-                lk_ordering[cont] = {cost, false};
-            }
-        }
-
-        for (int i = 1; i <= k; i++, cont++)
-        {
-            int a = neighbourSet[base - 1][i];
-            if (T.prev(a) != base && T.prev(a) != T.next(base) && T.prev(a) != T.prev(base))
-            {
-                pair<double, int> cost = {-(c[a][T.next(a)] - c[base][a]), a};
-                lk_ordering[cont] = {cost, true};
-            }
-        }
+        // cout << a << "\n";
+        double greedy_cost = c[T.prev(a)][a] - c[T.next(base)][a];
+        lk_ordering[i] = {{-greedy_cost, a}, false};
+        a = T.next(a);
     }
 
     sort(lk_ordering.begin(), lk_ordering.end());
 
     for (int i = 0; i < lk_ordering.size(); i++)
     {
-        // cout << -lk_ordering[i].first.first << " " << lk_ordering[i].first.second << " " << lk_ordering[i].second << "\n";
+        // cout << lk_ordering[i].first.second << " " << -lk_ordering[i].first.first << "\n";
         int a = lk_ordering[i].first.second;
+
         if (taken[a] == false)
         {
-            if (lk_ordering[i].second == false) // if a is specified as a mak-morton move
-            {
-                double g = c[base][T.next(base)] - c[T.next(base)][a] + c[T.prev(a)][a] - c[T.prev(a)][base];
+            taken[a] = true;
+            // cout << a << "\n";
 
-                // flipSequence.push_back({T.next(base), T.prev(a)});
-                T.flip(T.next(base), T.prev(a));
+            double g = c[base][T.next(base)] - c[T.next(base)][a] + c[T.prev(a)][a] - c[T.prev(a)][base];
+            T.flip(T.next(base), T.prev(a));
 
-                taken[a] = true;
-                step(T, c, base, level + 1, delta + g, neighbourSet, flipSequence, taken);
-            }
-            else
-            {
-                double g = c[base][T.next(base)] - c[base][a] + c[a][T.next(a)] - c[T.next(a)][T.next(base)];
-                int newbase = T.next(a);
-                int oldbase = base;
-
-                // flipSequence.push_back({newbase, base});
-                T.flip(newbase, base);
-
-                taken[a] = true;
-
-                base = newbase;
-                step(T, c, base, level + 1, delta + g, neighbourSet, flipSequence, taken);
-                base = oldbase;
-            }
+            step(T, c, base, level + 1, delta + g, neighbourSet, flipSequence, taken);
         }
+
         if (delta > 0)
         {
-            cout << T.getCost() - delta << "\n";
+            cout << T.getCost() + delta << "\n";
             return;
-        }
-        else
-        {
-            // if (flipSequence.size() > 0)
-            // {
-            // pair<int, int> fl = flipSequence.back();
-            // T.flip(fl.second, fl.first);
-            // flipSequence.pop_back();
-            // }
         }
     }
 }

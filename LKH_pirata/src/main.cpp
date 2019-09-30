@@ -50,7 +50,7 @@ int main(int argc, char **argv)
 
   Tour T(s, dimension, objValue);
   Tour T2 = T;
-  // T.print();
+  T.print();
 
   // T.print();
   // T.flip(2, 8);
