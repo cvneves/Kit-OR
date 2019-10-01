@@ -165,9 +165,9 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
     for (int i = 0; i < lk_ordering.size(); i++)
     {
         // T.print();
-        cout << "level: " << level << "\n";
-        cout << T.next(base) << " " << T.prev(lk_ordering[i].first.second) << " " << -lk_ordering[i].first.first << "\n";
-        cout << T.getCost() - delta << "\n\n";
+        // cout << "level: " << level << "\n";
+        // cout << T.next(base) << " " << T.prev(lk_ordering[i].first.second) << " " << -lk_ordering[i].first.first << "\n";
+        // cout << T.getCost() - delta << "\n\n";
         int a = lk_ordering[i].first.second;
 
         if (taken[a] == true)

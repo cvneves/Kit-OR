@@ -26,7 +26,7 @@ int main(int argc, char **argv)
   int x = time(NULL);
   std::cout << x;
   srand(1569893900);
-  // srand(x);
+  srand(x);
 
   readData(argc, argv, &dimension, &matrizAdj);
   printData(matrizAdj, dimension);
@@ -73,7 +73,7 @@ int main(int argc, char **argv)
 
   while (!flipSequence.empty())
   {
-    cout << flipSequence.front().first << " " << flipSequence.front().second << "\n";
+    // cout << flipSequence.front().first << " " << flipSequence.front().second << "\n";
 
     T2.flip(flipSequence.front().first, flipSequence.front().second);
 
