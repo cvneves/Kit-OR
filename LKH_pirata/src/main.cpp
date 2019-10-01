@@ -46,7 +46,6 @@ int main(int argc, char **argv)
   // printSolucao(s);
   // std::cout << objValue << "\n";
 
-
   Tour T(s, dimension, objValue);
   Tour T2 = T;
   // T.print();
@@ -71,6 +70,19 @@ int main(int argc, char **argv)
   taken.assign(T.getN() + 1, false);
 
   step(T, matrizAdj, 1, 1, 0, neighbourSet, flipSequence, taken);
+
+  while (!flipSequence.empty())
+  {
+    cout << flipSequence.front().first << " " << flipSequence.front().second << "\n";
+
+    T2.flip(flipSequence.front().first, flipSequence.front().second);
+
+    flipSequence.pop_front();
+  }
+
+  s = T.getTour();
+
+  cout << calcularValorObj(s, matrizAdj) + matrizAdj[s[s.size() - 1]][s[0]];
 
   return 0;
 }

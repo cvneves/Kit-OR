@@ -164,9 +164,9 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
 
     for (int i = 0; i < lk_ordering.size(); i++)
     {
-        T.print();
+        // T.print();
         cout << "level: " << level << "\n";
-        cout << T.next(base) << " " << lk_ordering[i].first.second << " " << -lk_ordering[i].first.first << "\n";
+        cout << T.next(base) << " " << T.prev(lk_ordering[i].first.second) << " " << -lk_ordering[i].first.first << "\n";
         cout << T.getCost() - delta << "\n\n";
         int a = lk_ordering[i].first.second;
 
@@ -181,8 +181,8 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
             double g = c[base][T.next(base)] - c[T.next(base)][a] + c[T.prev(a)][a] - c[T.prev(a)][base];
             // T.print();
             // cout << a << " " << base << "g: " << g << "\n";
-            T.flip(T.next(base), T.prev(a));
             flipSequence.push_back({T.next(base), T.prev(a)});
+            T.flip(T.next(base), T.prev(a));
 
             step(T, c, base, level + 1, delta + g, neighbourSet, flipSequence, taken);
         }
