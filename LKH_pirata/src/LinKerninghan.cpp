@@ -175,6 +175,7 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
             continue;
         }
 
+        if (lk_ordering[i].second == false)
         {
             taken[a] = true;
 
@@ -185,6 +186,10 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
             T.flip(T.next(base), T.prev(a));
 
             step(T, c, base, level + 1, delta + g, neighbourSet, flipSequence, taken);
+        }
+        else
+        {
+            
         }
 
         if (delta > 0)
