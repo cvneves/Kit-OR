@@ -160,40 +160,45 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
         a = T.next(a);
     }
 
-    // sort(lk_ordering.begin(), lk_ordering.end());
+    sort(lk_ordering.begin(), lk_ordering.end());
 
     for (int i = 0; i < lk_ordering.size(); i++)
     {
-        // T.print();
+        T.print();
+        cout << "level: " << level << "\n";
         cout << T.next(base) << " " << lk_ordering[i].first.second << " " << -lk_ordering[i].first.first << "\n";
-        // cout << T.getCost() - delta << "\n";
-        // int a = lk_ordering[i].first.second;
+        cout << T.getCost() - delta << "\n\n";
+        int a = lk_ordering[i].first.second;
 
-        // if (taken[a] == false)
-        // {
-        //     taken[a] = true;
+        if (taken[a] == true)
+        {
+            continue;
+        }
 
-        //     double g = c[base][T.next(base)] - c[T.next(base)][a] + c[T.prev(a)][a] - c[T.prev(a)][base];
-        //     // T.print();
-        //     // cout << a << " " << base << "g: " << g << "\n";
-        //     T.flip(T.next(base), T.prev(a));
-        //     flipSequence.push_back({T.next(base), T.prev(a)});
+        {
+            taken[a] = true;
 
-        //     step(T, c, base, level + 1, delta + g, neighbourSet, flipSequence, taken);
-        // }
+            double g = c[base][T.next(base)] - c[T.next(base)][a] + c[T.prev(a)][a] - c[T.prev(a)][base];
+            // T.print();
+            // cout << a << " " << base << "g: " << g << "\n";
+            T.flip(T.next(base), T.prev(a));
+            flipSequence.push_back({T.next(base), T.prev(a)});
 
-        // if (delta > 0)
-        // {
-        //     return;
-        // }
-        // else
-        // {
-        //     if (!flipSequence.empty())
-        //     {
-        //         pair<int, int> fl = flipSequence.back();
-        //         T.flip(fl.second, fl.first);
-        //         flipSequence.pop_back();
-        //     }
-        // }
+            step(T, c, base, level + 1, delta + g, neighbourSet, flipSequence, taken);
+        }
+
+        if (delta > 0)
+        {
+            return;
+        }
+        else
+        {
+            if (!flipSequence.empty())
+            {
+                pair<int, int> fl = flipSequence.back();
+                T.flip(fl.second, fl.first);
+                flipSequence.pop_back();
+            }
+        }
     }
 }
