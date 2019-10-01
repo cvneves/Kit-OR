@@ -101,7 +101,7 @@ void lkStep(Tour &T, double **c, vector<vector<int>> &neighbourSet)
     {
         delta += c[base][T.next(base)] - c[T.next(base)][a] + c[T.prev(a)][a] - c[T.prev(a)][base];
         cout << "\n"
-             << T.next(base) << " " << T.prev(a) << " " << T.getCost() - delta << "\n";
+             << T.next(base) << " " << a << " " << T.getCost() - delta << "\n";
 
         T.flip(T.next(base), T.prev(a));
         // T.print();
@@ -123,7 +123,7 @@ int findPromisingVertex(Tour &T, double **c, int base, double delta, vector<bool
 
     pair<double, int> best_a = {-INF, -1};
 
-    int k = 5;
+    int k = 13;
 
     for (int i = 1; i <= k; i++)
     {
@@ -143,10 +143,11 @@ int findPromisingVertex(Tour &T, double **c, int base, double delta, vector<bool
     return best_a.second;
 }
 
-void step(Tour T, double **c, int base, int level, float delta, vector<vector<int>> &neighbourSet, deque<pair<int, int>> &flipSequence, vector<bool> taken)
+void step(Tour &T, double **c, int base, int level, float delta, vector<vector<int>> &neighbourSet, deque<pair<int, int>> &flipSequence, vector<bool> &taken)
 {
-    // Create lk-ordering for next(base)
+    // cout << T.getCost() - delta << " " << level << "\n";
 
+    // Create lk-ordering for next(base)
     vector<pair<pair<double, int>, bool>> lk_ordering;
     int lk_ordering_size = T.getN() - 3;
     lk_ordering.assign(lk_ordering_size, {{0, 0}, 0});
@@ -163,24 +164,36 @@ void step(Tour T, double **c, int base, int level, float delta, vector<vector<in
 
     for (int i = 0; i < lk_ordering.size(); i++)
     {
-        // cout << lk_ordering[i].first.second << " " << -lk_ordering[i].first.first << "\n";
+        T.print();
+        cout << T.next(base) << " " << lk_ordering[i].first.second << " " << -lk_ordering[i].first.first << "\n";
+        cout << T.getCost() - delta << "\n";
         int a = lk_ordering[i].first.second;
 
         if (taken[a] == false)
         {
             taken[a] = true;
-            // cout << a << "\n";
 
             double g = c[base][T.next(base)] - c[T.next(base)][a] + c[T.prev(a)][a] - c[T.prev(a)][base];
+            // T.print();
+            // cout << a << " " << base << "g: " << g << "\n";
             T.flip(T.next(base), T.prev(a));
+            flipSequence.push_back({T.next(base), T.prev(a)});
 
             step(T, c, base, level + 1, delta + g, neighbourSet, flipSequence, taken);
         }
 
         if (delta > 0)
         {
-            cout << T.getCost() + delta << "\n";
             return;
+        }
+        else
+        {
+            if (!flipSequence.empty())
+            {
+                pair<int, int> fl = flipSequence.back();
+                T.flip(fl.second, fl.first);
+                flipSequence.pop_back();
+            }
         }
     }
 }
