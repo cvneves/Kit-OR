@@ -46,7 +46,7 @@ vi Tour::getTour()
 
 int breadth(int k)
 {
-    return (k <= 2) ? 5 : 1;
+    return (k <= 2) ? 5 : 5;
 }
 
 void Tour::flip(int a, int b)
@@ -171,7 +171,7 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
 
     sort(lk_ordering.begin(), lk_ordering.end());
 
-    for (int i = 0; i < lk_ordering.size(); i++)
+    for (int i = 0; i < k; i++)
     {
         // T.print();
         // cout << "level: " << level << "\n";
