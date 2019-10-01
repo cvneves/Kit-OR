@@ -152,7 +152,7 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
     int lk_ordering_size = T.getN() - 3;
     lk_ordering.assign(lk_ordering_size, {{0, 0}, 0});
 
-    for (int i = 0, a = T.next(T.next(base)); i < lk_ordering_size; i++)
+    for (int i = 0, a = T.next(T.next(T.next(base))); i < lk_ordering_size; i++)
     {
         // cout << a << "\n";
         double greedy_cost = c[T.prev(a)][a] - c[T.next(base)][a];
@@ -160,40 +160,40 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
         a = T.next(a);
     }
 
-    sort(lk_ordering.begin(), lk_ordering.end());
+    // sort(lk_ordering.begin(), lk_ordering.end());
 
     for (int i = 0; i < lk_ordering.size(); i++)
     {
-        T.print();
+        // T.print();
         cout << T.next(base) << " " << lk_ordering[i].first.second << " " << -lk_ordering[i].first.first << "\n";
-        cout << T.getCost() - delta << "\n";
-        int a = lk_ordering[i].first.second;
+        // cout << T.getCost() - delta << "\n";
+        // int a = lk_ordering[i].first.second;
 
-        if (taken[a] == false)
-        {
-            taken[a] = true;
+        // if (taken[a] == false)
+        // {
+        //     taken[a] = true;
 
-            double g = c[base][T.next(base)] - c[T.next(base)][a] + c[T.prev(a)][a] - c[T.prev(a)][base];
-            // T.print();
-            // cout << a << " " << base << "g: " << g << "\n";
-            T.flip(T.next(base), T.prev(a));
-            flipSequence.push_back({T.next(base), T.prev(a)});
+        //     double g = c[base][T.next(base)] - c[T.next(base)][a] + c[T.prev(a)][a] - c[T.prev(a)][base];
+        //     // T.print();
+        //     // cout << a << " " << base << "g: " << g << "\n";
+        //     T.flip(T.next(base), T.prev(a));
+        //     flipSequence.push_back({T.next(base), T.prev(a)});
 
-            step(T, c, base, level + 1, delta + g, neighbourSet, flipSequence, taken);
-        }
+        //     step(T, c, base, level + 1, delta + g, neighbourSet, flipSequence, taken);
+        // }
 
-        if (delta > 0)
-        {
-            return;
-        }
-        else
-        {
-            if (!flipSequence.empty())
-            {
-                pair<int, int> fl = flipSequence.back();
-                T.flip(fl.second, fl.first);
-                flipSequence.pop_back();
-            }
-        }
+        // if (delta > 0)
+        // {
+        //     return;
+        // }
+        // else
+        // {
+        //     if (!flipSequence.empty())
+        //     {
+        //         pair<int, int> fl = flipSequence.back();
+        //         T.flip(fl.second, fl.first);
+        //         flipSequence.pop_back();
+        //     }
+        // }
     }
 }
