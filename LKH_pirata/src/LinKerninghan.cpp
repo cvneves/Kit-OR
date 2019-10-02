@@ -21,6 +21,7 @@ void Tour::print()
         std::cout << tour[i] << " ";
     }
     std::cout << "\n";
+    cout << reversed << "\n";
     // std::cout << tour[0] << " \n";
 }
 
@@ -173,10 +174,6 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
 
     for (int i = 0; i < k; i++)
     {
-        // T.print();
-        // cout << "level: " << level << "\n";
-        // cout << T.next(base) << " " << T.prev(lk_ordering[i].first.second) << " " << -lk_ordering[i].first.first << "\n";
-        // cout << T.getCost() - delta << "\n\n";
         int a = lk_ordering[i].first.second;
 
         if (taken[a] == true)
@@ -221,4 +218,22 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
             }
         }
     }
+}
+
+void alternate_step(Tour &T, double **c, int base, int level, float delta, vector<vector<int>> &neighbourSet, deque<pair<int, int>> &flipSequence, vector<bool> &taken)
+{
+    T.print();
+
+    int a = 10, b = 6;
+    int b1 = T.next(b);
+    int s1 = T.next(base);
+
+    T.flip(s1, b);
+    T.flip(b, a);
+
+    // T.flip(s1, a);
+    // T.flip(b, s1);
+    // T.flip(a, b1);
+
+    T.print();
 }
