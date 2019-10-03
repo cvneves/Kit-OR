@@ -82,9 +82,16 @@ void Tour::flip(int a, int b)
 }
 bool Tour::sequence(int a, int b, int c)
 {
-    if (inv[a] < inv[b] && inv[b] < inv[c] || inv[c] < inv[b] && inv[b] < inv[a])
-        return true;
-
+    if (!reversed)
+    {
+        if (inv[a] <= inv[b] && inv[b] <= inv[c])
+            return true;
+    }
+    else
+    {
+        if (inv[c] <= inv[b] && inv[b] <= inv[a])
+            return true;
+    }
     return false;
 }
 
@@ -230,6 +237,14 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, vecto
 
     T.flip(s1, b);
     T.flip(b, a);
+
+    for (int i = 1; i <= 14; i++)
+    {
+        cout << i << " " << T.sequence(T.next(base), i, 5) << "\n";
+    }
+
+    // b1 = T.prev(b);
+    // s1 = T.next(base);
 
     // T.flip(s1, a);
     // T.flip(b, s1);
