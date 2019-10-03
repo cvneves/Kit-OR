@@ -229,26 +229,32 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
 
 void alternate_step(Tour &T, double **c, int base, int level, float delta, vector<vector<int>> &neighbourSet, deque<pair<int, int>> &flipSequence, vector<bool> &taken)
 {
-    T.print();
+    // Create lk-ordering for base and next(base)
+    vector<pair<double, int>> A_ordering;
+    int A_ordering_size = T.getN() - 3;
+    A_ordering.assign(2 * A_ordering_size, {0, 0});
 
-    int a = 10, b = 6;
-    int b1 = T.next(b);
-    int s1 = T.next(base);
+    // for (int i = 0, a = T.next(T.next(T.next(base))); i < A_ordering_size; i++)
+    // {
+    //     // cout << a << "\n";
+    //     double greedy_cost = c[T.prev(a)][a] - c[T.next(base)][a];
+    //     A_ordering[i] = {{-greedy_cost, a}, false};
+    //     a = T.next(a);
+    // }
 
-    T.flip(s1, b);
-    T.flip(b, a);
+    int breadthA = 5;
 
-    for (int i = 1; i <= 14; i++)
+    for(int i = 1, j = 0; i <= breadthA; i++)
     {
-        cout << i << " " << T.sequence(T.next(base), i, 5) << "\n";
+        int a = neighbourSet[T.next(base) - 1][i];
+        double cost = delta + c[base][T.next(base)] - c[T.next(base)][a];
+        if (cost > 0)
+        {
+            A_ordering[j] = {-cost,a};
+            j++;
+        }
     }
+    sort(A_ordering.begin(), A_ordering.end());
 
-    // b1 = T.prev(b);
-    // s1 = T.next(base);
 
-    // T.flip(s1, a);
-    // T.flip(b, s1);
-    // T.flip(a, b1);
-
-    T.print();
 }
