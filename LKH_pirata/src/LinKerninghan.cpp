@@ -82,6 +82,8 @@ void Tour::flip(int a, int b)
         swap(inv[x], inv[y]);
     }
 }
+bool Tour::isReversed() { return reversed; }
+
 bool Tour::sequence(int a, int b, int c)
 {
     if (!reversed)
@@ -346,7 +348,34 @@ void lin_kerninghan(Tour &T, Tour &lk_tour, double **c, vector<vector<int>> &nei
     return;
 }
 
-void kick(Tour &T)
+void kick(Tour &T, double **c, double &delta, vector<pair<int, pair<int, int>>> t, deque<pair<int, int>> &kickFlips)
 {
-    int t1, t2, t3, t4;
+
+    vector<int> s = T.getTour();
+    int reversed = (T.isReversed() == true) ? -1 : 1;
+
+    for (int i = 0; i < 4; i++)
+    {
+        int index = rand() % T.getN();
+        while (s[index] == -1)
+        {
+            index = (index == T.getN() - 1) ? 0 : index + 1;
+        }
+        int a = s[index];
+        s[T.inverse(a)] = s[T.inverse(T.prev(a))] = s[T.inverse(T.next(a))] = -1;
+        t[i] = {reversed * index, {a, T.next(a)}};
+    }
+
+    sort(t.begin(), t.end());
+
+    T.flip(t[0].second.second, t[2].second.first);
+    kickFlips.push_back({t[0].second.second, t[2].second.first});
+    T.flip(t[3].second.second, t[1].second.second);
+    kickFlips.push_back({t[3].second.second, t[1].second.second});
+    T.flip(t[0].second.first, t[0].second.second);
+    kickFlips.push_back({t[0].second.first, t[0].second.second});
+
+    double delta1 = c[t[0].second.first][t[0].second.second] + c[t[1].second.first][t[1].second.second] + c[t[2].second.first][t[2].second.second] + c[t[3].second.first][t[3].second.second];
+    double delta2 = c[t[0].second.first][t[2].second.second] + c[t[0].second.second][t[2].second.first] + c[t[3].second.second][t[1].second.first] + c[t[3].second.first][t[1].second.second];
+    delta = delta1 - delta2;
 }

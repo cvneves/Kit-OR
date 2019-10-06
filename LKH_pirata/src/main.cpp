@@ -26,7 +26,7 @@ int main(int argc, char **argv)
   int x = time(NULL);
   std::cout << x;
   srand(1570344553);
-  // srand(x);
+  srand(x);
 
   readData(argc, argv, &dimension, &matrizAdj);
   printData(matrizAdj, dimension);
@@ -43,8 +43,22 @@ int main(int argc, char **argv)
   Tour T2 = T;
 
   deque<pair<pair<int, int>, double>> flipSequence;
+  deque<pair<int, int>> kickFlips;
   vector<bool> taken;
   taken.assign(T.getN() + 1, false);
+
+  T.print();
+  vector<pair<int, pair<int, int>>> t;
+  t.assign(4, {0, {0, 0}});
+
+  double delta = 0;
+
+  kick(T, matrizAdj, delta, t, kickFlips);
+  // T.flip(9, 5);
+  // T.flip(11,13);
+  // T.flip(7,9);
+
+  T.print();
 
   // alternate_step(T, matrizAdj, 1, 1, 0, neighbourSet, flipSequence, taken);
 
@@ -52,7 +66,7 @@ int main(int argc, char **argv)
 
   // lk_search(T, 1, matrizAdj, neighbourSet, flipSequence);
 
-  lin_kerninghan(T, T2, matrizAdj, neighbourSet);
+  // lin_kerninghan(T, T2, matrizAdj, neighbourSet);
 
   // while (!flipSequence.empty())
   // {
@@ -61,10 +75,30 @@ int main(int argc, char **argv)
   //   flipSequence.pop_front();
   // }
 
-  s = T2.getTour();
+  s = T.getTour();
+
+  T.setCost(T.getCost() - delta);
+
+  cout << T.getCost() << "\n";
 
   cout << calcularValorObj(s, matrizAdj) + matrizAdj[s[s.size() - 1]][s[0]] << "\n";
-  cout << "\n"
-       << T.getCost() << "\n";
+
+  while (!kickFlips.empty())
+  {
+    pair<int, int> flip = kickFlips.back();
+    kickFlips.pop_back();
+
+    T.flip(flip.second, flip.first);
+  }
+
+  T.print();
+
+  T.setCost(T.getCost() + delta);
+  s = T.getTour();
+
+  cout << T.getCost() << "\n";
+
+  cout << calcularValorObj(s, matrizAdj) + matrizAdj[s[s.size() - 1]][s[0]] << "\n";
+
   return 0;
 }
