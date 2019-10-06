@@ -26,6 +26,8 @@ void Tour::print()
 }
 
 double Tour::getCost() { return cost; }
+void Tour::setCost(double c) { cost = c; }
+
 int Tour::inverse(int node) { return inv[node]; }
 int Tour::next(int node)
 {
@@ -151,7 +153,7 @@ int findPromisingVertex(Tour &T, double **c, int base, double delta, vector<bool
     return best_a.second;
 }
 
-void step(Tour &T, double **c, int base, int level, float delta, vector<vector<int>> &neighbourSet, deque<pair<int, int>> &flipSequence, vector<bool> &taken)
+void step(Tour &T, double **c, int base, int level, float delta, double &final_delta, vector<vector<int>> &neighbourSet, deque<pair<pair<int, int>, double>> &flipSequence, vector<bool> &taken)
 {
     // cout << T.getCost() - delta << " " << level << "\n";
 
@@ -188,27 +190,31 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
             continue;
         }
 
+        double g = 0;
+
         if (lk_ordering[i].second == false)
         {
             taken[a] = true;
 
-            double g = c[base][T.next(base)] - c[T.next(base)][a] + c[T.prev(a)][a] - c[T.prev(a)][base];
+            g = c[base][T.next(base)] - c[T.next(base)][a] + c[T.prev(a)][a] - c[T.prev(a)][base];
 
-            flipSequence.push_back({T.next(base), T.prev(a)});
+            flipSequence.push_back({{T.next(base), T.prev(a)}, g});
+            final_delta += g;
             T.flip(T.next(base), T.prev(a));
 
-            step(T, c, base, level + 1, delta + g, neighbourSet, flipSequence, taken);
+            step(T, c, base, level + 1, delta + g, final_delta, neighbourSet, flipSequence, taken);
         }
         else
         {
             taken[a] = true;
 
-            double g = c[base][T.next(base)] - c[base][a] + c[a][T.next(a)] - c[T.next(a)][T.next(base)];
+            g = c[base][T.next(base)] - c[base][a] + c[a][T.next(a)] - c[T.next(a)][T.next(base)];
 
-            flipSequence.push_back({T.next(a), base});
+            flipSequence.push_back({{T.next(a), base}, g});
+            final_delta += g;
             T.flip(T.next(a), base);
 
-            step(T, c, base, level + 1, delta + g, neighbourSet, flipSequence, taken);
+            step(T, c, base, level + 1, delta + g, final_delta, neighbourSet, flipSequence, taken);
         }
 
         if (delta > 0)
@@ -219,8 +225,9 @@ void step(Tour &T, double **c, int base, int level, float delta, vector<vector<i
         {
             if (!flipSequence.empty())
             {
-                pair<int, int> fl = flipSequence.back();
-                T.flip(fl.second, fl.first);
+                pair<pair<int, int>, double> fl = flipSequence.back();
+                T.flip(fl.first.second, fl.first.first);
+                final_delta -= fl.second;
                 flipSequence.pop_back();
             }
         }
@@ -244,17 +251,93 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, vecto
 
     int breadthA = 5;
 
-    for(int i = 1, j = 0; i <= breadthA; i++)
+    for (int i = 1, j = 0; i <= 14; i++)
     {
         int a = neighbourSet[T.next(base) - 1][i];
         double cost = delta + c[base][T.next(base)] - c[T.next(base)][a];
+
         if (cost > 0)
         {
-            A_ordering[j] = {-cost,a};
+            cout << "e\n";
+            A_ordering[j] = {-cost, a};
             j++;
         }
     }
     sort(A_ordering.begin(), A_ordering.end());
+}
 
+bool lk_search(Tour &T, int v, double **c, vector<vector<int>> &neighbourSet, deque<pair<pair<int, int>, double>> &flipSequence)
+{
+    Tour current_tour = T;
 
+    vector<bool> taken;
+    taken.assign(T.getN() + 1, false);
+
+    double delta = 0;
+
+    step(current_tour, c, v, 1, 0, delta, neighbourSet, flipSequence, taken);
+    current_tour.setCost(T.getCost() - delta);
+
+    if (current_tour.getCost() < T.getCost())
+    {
+        // T.setCost(current_tour.getCost());
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+void lin_kerninghan(Tour &T, Tour &lk_tour, double **c, vector<vector<int>> &neighbourSet)
+{
+    lk_tour = T;
+    vector<bool> marked;
+    marked.assign(T.getN(), true);
+    int markedVertices = T.getN() + 1;
+
+    while (true)
+    {
+        int v;
+        for (v = 1; v <= T.getN() && marked[v] == false; v++)
+        {
+        }
+
+        if (v == 15)
+            break;
+
+        deque<pair<pair<int, int>, double>> flipSequence;
+
+        bool flag = lk_search(lk_tour, v, c, neighbourSet, flipSequence);
+
+        if (flag == true)
+        {
+            while (!flipSequence.empty())
+            {
+                int x = flipSequence.front().first.first;
+                int y = flipSequence.front().first.second;
+                double g = flipSequence.front().second;
+
+                lk_tour.flip(x, y);
+                lk_tour.setCost(lk_tour.getCost() - g);
+
+                marked[x] = marked[y] = true;
+
+                flipSequence.pop_front();
+            }
+        }
+        else
+        {
+            marked[v] = false;
+        }
+    }
+
+    return;
+}
+
+void kick(Tour &T)
+{
+    int t1, t2, t3, t4;
+
+    
 }
