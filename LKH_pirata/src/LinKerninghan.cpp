@@ -236,20 +236,17 @@ void step(Tour &T, double **c, int base, int level, float delta, double &final_d
 
 void alternate_step(Tour &T, double **c, int base, int level, float delta, vector<vector<int>> &neighbourSet, deque<pair<int, int>> &flipSequence, vector<bool> &taken)
 {
-    // Create lk-ordering for base and next(base)
+    T.print();
+    cout << "\n";
+
+    // Create the A-ordering
     vector<pair<double, int>> A_ordering;
-    int A_ordering_size = T.getN() - 3;
-    A_ordering.assign(2 * A_ordering_size, {0, 0});
 
-    // for (int i = 0, a = T.next(T.next(T.next(base))); i < A_ordering_size; i++)
-    // {
-    //     // cout << a << "\n";
-    //     double greedy_cost = c[T.prev(a)][a] - c[T.next(base)][a];
-    //     A_ordering[i] = {{-greedy_cost, a}, false};
-    //     a = T.next(a);
-    // }
+    int MAX_NEIGHBORS = 5;
 
-    int breadthA = 5;
+    A_ordering.assign(T.getN(), {std::numeric_limits<double>::infinity(), 0});
+
+    int A_ordering_size = 0;
 
     for (int i = 1, j = 0; i <= 14; i++)
     {
@@ -262,7 +259,21 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, vecto
             A_ordering[j] = {-cost, a};
             j++;
         }
+        {
+            for (int i = 1; i <= neighbourSet[0].size(); i++)
+            {
+                int a = neighbourSet[T.next(base) - 1][i];
+                double cost = delta + c[base][T.next(base)] - c[T.next(base)][a];
+                if (cost > 0 && T.prev(a) != base && T.prev(a) != T.next(base) && T.prev(a) != T.prev(base))
+                {
+                    cost = c[T.next(a)][a] - c[T.next(base)][a];
+                    A_ordering[A_ordering_size] = {-cost, a};
+                    A_ordering_size++;
+                }
+            }
+        }
     }
+
     sort(A_ordering.begin(), A_ordering.end());
 }
 
@@ -338,6 +349,4 @@ void lin_kerninghan(Tour &T, Tour &lk_tour, double **c, vector<vector<int>> &nei
 void kick(Tour &T)
 {
     int t1, t2, t3, t4;
-
-    
 }
