@@ -156,7 +156,7 @@ int findPromisingVertex(Tour &T, double **c, int base, double delta, vector<bool
     return best_a.second;
 }
 
-void step(Tour &T, double **c, int base, int level, float delta, double &final_delta, vector<vector<int>> &neighbourSet, deque<pair<pair<int, int>, double>> &flipSequence, vector<bool> &taken)
+void step(Tour T, double **c, int base, int level, float delta, double &final_delta, vector<vector<int>> &neighbourSet, deque<pair<pair<int, int>, double>> &flipSequence, vector<bool> &taken)
 {
     // cout << T.getCost() - delta << " " << level << "\n";
 

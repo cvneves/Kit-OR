@@ -25,8 +25,8 @@ int main(int argc, char **argv)
 {
   int x = time(NULL);
   std::cout << x;
-  srand(1570422794);
-  srand(x);
+  srand(1570483768);
+  // srand(x);
   // 1570403292
 
   readData(argc, argv, &dimension, &matrizAdj);
