@@ -37,6 +37,7 @@ int main(int argc, char **argv)
 
   double alpha = (double)rand() / RAND_MAX;
   std::vector<int> s = construction(alpha, dimension, matrizAdj);
+  s = {14, 2, 1, 8, 11 ,9, 10, 5, 6 ,13, 7 ,12, 3, 4, 14};
   double objValue = calcularValorObj(s, matrizAdj);
   std::cout << "Initial obj value: " << objValue << "\n\n";
 
@@ -47,34 +48,34 @@ int main(int argc, char **argv)
   // s = T2.getTour();
   // cout << calcularValorObj(s, matrizAdj) + matrizAdj[s[s.size() - 1]][s[0]] << "\n";
 
-  Chained_Lin_Kerninghan(T, matrizAdj, neighbourSet);
+  // Chained_Lin_Kerninghan(T, matrizAdj, neighbourSet);
 
   // // lin_kerninghan(T, T2, matrizAdj, neighbourSet);
 
-  // deque<pair<pair<int, int>, double>> flipSequence;
+  deque<pair<pair<int, int>, double>> flipSequence;
 
-  // lk_search(T, 1, matrizAdj, neighbourSet, flipSequence);
+  lk_search(T, 1, matrizAdj, neighbourSet, flipSequence);
 
-  // while (!flipSequence.empty())
-  // {
-  //   int x = flipSequence.front().first.first;
-  //   int y = flipSequence.front().first.second;
+  while (!flipSequence.empty())
+  {
+    int x = flipSequence.front().first.first;
+    int y = flipSequence.front().first.second;
 
-  //   double g = flipSequence.front().second;
+    double g = flipSequence.front().second;
 
-  //   T.print();
-  //   cout << x << " " << y << " " << g << "\n\n";
+    T.print();
+    cout << x << " " << y << " " << g << "\n\n";
 
-  //   T.flip(x, y);
-  //   T.setCost(T.getCost() - g);
+    T.flip(x, y);
+    T.setCost(T.getCost() - g);
 
-  //   flipSequence.pop_front();
-  // }
+    flipSequence.pop_front();
+  }
 
-  // T.print();
+  T.print();
 
-  // s = T.getTour();
-  // cout << T.getCost() << ", " << calcularValorObj(s, matrizAdj) + matrizAdj[s[s.size() - 1]][s[0]] << " |\n";
+  s = T.getTour();
+  cout << T.getCost() << ", " << calcularValorObj(s, matrizAdj) + matrizAdj[s[s.size() - 1]][s[0]] << " |\n";
 
   return 0;
 }

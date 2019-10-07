@@ -321,7 +321,8 @@ void lin_kerninghan(Tour &T, Tour &lk_tour, double **c, vector<vector<int>> &nei
     marked.assign(T.getN(), true);
     int markedVertices = T.getN() + 1;
 
-    while (true)
+    int k = 2;
+    while (k--)
     {
         int v;
         for (v = 1; v <= T.getN() && marked[v] == false; v++)
@@ -356,8 +357,9 @@ void lin_kerninghan(Tour &T, Tour &lk_tour, double **c, vector<vector<int>> &nei
             marked[v] = false;
         }
 
-        // vector<int> s = lk_tour.getTour();
-        // cout << lk_tour.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << " |\n";
+        T.print();
+        vector<int> s = lk_tour.getTour();
+        cout << lk_tour.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << " |\n";
     }
 
     return;
@@ -399,10 +401,11 @@ void Chained_Lin_Kerninghan(Tour &S, double **c, vector<vector<int>> &neighbourS
 {
     Tour T = S, T1 = S;
     lin_kerninghan(S, T, c, neighbourSet);
-    // T.print();
-    cout << T.getCost() << "\n\n";
+    T.print();
+    vector<int> s = T.getTour();
+    cout << T.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << "\n";
 
-    int N_ITER, MAX_ITERATIONS = 30;
+    int N_ITER, MAX_ITERATIONS = 0;
 
     while (N_ITER++ < MAX_ITERATIONS)
     {
