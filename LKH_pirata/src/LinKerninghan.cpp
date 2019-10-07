@@ -217,6 +217,8 @@ void step(Tour &T, double **c, int base, int level, float delta, double &final_d
         {
             taken[a] = true;
 
+            // cout << "AQUI: " << g << " " << base << " " << T.next(base) << " " << a << " " << T.prev(a) << " " << level << "\n";
+
             g = c[base][T.next(base)] - c[base][a] + c[a][T.next(a)] - c[T.next(a)][T.next(base)];
 
             flipSequence.push_back({{T.next(a), base}, g});
@@ -357,7 +359,7 @@ void lin_kerninghan(Tour &T, Tour &lk_tour, double **c, vector<vector<int>> &nei
             marked[v] = false;
         }
 
-        T.print();
+        // T.print();
         vector<int> s = lk_tour.getTour();
         cout << lk_tour.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << " |\n";
     }
@@ -401,11 +403,11 @@ void Chained_Lin_Kerninghan(Tour &S, double **c, vector<vector<int>> &neighbourS
 {
     Tour T = S, T1 = S;
     lin_kerninghan(S, T, c, neighbourSet);
-    T.print();
+    // T.print();
     vector<int> s = T.getTour();
     cout << T.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << "\n";
 
-    int N_ITER, MAX_ITERATIONS = 0;
+    int N_ITER, MAX_ITERATIONS = 100;
 
     while (N_ITER++ < MAX_ITERATIONS)
     {
@@ -414,7 +416,7 @@ void Chained_Lin_Kerninghan(Tour &S, double **c, vector<vector<int>> &neighbourS
         t.assign(4, {0, {0, 0}});
         double delta = 0;
 
-        // kick(T, c, delta, t, kickFlips);
+        kick(T, c, delta, t, kickFlips);
         // T.print();
 
         // cout << delta << "\n\n";
@@ -442,7 +444,7 @@ void Chained_Lin_Kerninghan(Tour &S, double **c, vector<vector<int>> &neighbourS
             T.setCost(T.getCost() + delta);
         }
 
-        T.print();
+        // T.print();
         vector<int> s = T.getTour();
         cout << T.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << "\n";
         // cout << T.getCost() << "\n";
