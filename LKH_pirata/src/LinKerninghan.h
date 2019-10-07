@@ -51,4 +51,6 @@ void lin_kerninghan(Tour &T, Tour &lk_tour, double **c, vector<vector<int>> &nei
 
 void kick(Tour &T, double **c, double &delta, vector<pair<int, pair<int, int>>> t, deque<pair<int, int>> &kickFlips);
 
+void Chained_Lin_Kerninghan(Tour &T, double **c,  vector<vector<int>> &neighbourSet);
+
 #endif

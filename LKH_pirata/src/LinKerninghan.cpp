@@ -16,12 +16,13 @@ Tour::Tour(vi &s, int V, double objValue)
 
 void Tour::print()
 {
+    cout << "Tour: ";
     for (int i = 0; i < tour.size(); i++)
     {
         std::cout << tour[i] << " ";
     }
     std::cout << "\n";
-    cout << reversed << "\n";
+    cout << "Reversed: " << reversed << "\n";
     // std::cout << tour[0] << " \n";
 }
 
@@ -185,6 +186,7 @@ void step(Tour &T, double **c, int base, int level, float delta, double &final_d
 
     for (int i = 0; i < k; i++)
     {
+        // cout << lk_ordering[i].first.second << ", " << lk_ordering[i].second << "\n";
         int a = lk_ordering[i].first.second;
 
         if (taken[a] == true)
@@ -198,10 +200,15 @@ void step(Tour &T, double **c, int base, int level, float delta, double &final_d
         {
             taken[a] = true;
 
-            g = c[base][T.next(base)] - c[T.next(base)][a] + c[T.prev(a)][a] - c[T.prev(a)][base];
+            // int nullFlip = T.inverse(T.next(base));
+
+            g = (c[base][T.next(base)] - c[T.next(base)][a] + c[T.prev(a)][a] - c[T.prev(a)][base]);
 
             flipSequence.push_back({{T.next(base), T.prev(a)}, g});
             final_delta += g;
+
+            // cout << "AQUI: " << g << " " << base << " " << T.next(base) << " " << a << " " << T.prev(a) << " " << level << "\n";
+
             T.flip(T.next(base), T.prev(a));
 
             step(T, c, base, level + 1, delta + g, final_delta, neighbourSet, flipSequence, taken);
@@ -213,10 +220,13 @@ void step(Tour &T, double **c, int base, int level, float delta, double &final_d
             g = c[base][T.next(base)] - c[base][a] + c[a][T.next(a)] - c[T.next(a)][T.next(base)];
 
             flipSequence.push_back({{T.next(a), base}, g});
+
+            int newbase = T.next(a);
+
             final_delta += g;
             T.flip(T.next(a), base);
 
-            step(T, c, base, level + 1, delta + g, final_delta, neighbourSet, flipSequence, taken);
+            step(T, c, newbase, level + 1, delta + g, final_delta, neighbourSet, flipSequence, taken);
         }
 
         if (delta > 0)
@@ -230,6 +240,7 @@ void step(Tour &T, double **c, int base, int level, float delta, double &final_d
                 pair<pair<int, int>, double> fl = flipSequence.back();
                 T.flip(fl.first.second, fl.first.first);
                 final_delta -= fl.second;
+                // cout << final_delta << "\n";
                 flipSequence.pop_back();
             }
         }
@@ -289,6 +300,7 @@ bool lk_search(Tour &T, int v, double **c, vector<vector<int>> &neighbourSet, de
     double delta = 0;
 
     step(current_tour, c, v, 1, 0, delta, neighbourSet, flipSequence, taken);
+
     current_tour.setCost(T.getCost() - delta);
 
     if (current_tour.getCost() < T.getCost())
@@ -343,6 +355,9 @@ void lin_kerninghan(Tour &T, Tour &lk_tour, double **c, vector<vector<int>> &nei
         {
             marked[v] = false;
         }
+
+        // vector<int> s = lk_tour.getTour();
+        // cout << lk_tour.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << " |\n";
     }
 
     return;
@@ -378,4 +393,55 @@ void kick(Tour &T, double **c, double &delta, vector<pair<int, pair<int, int>>> 
     double delta1 = c[t[0].second.first][t[0].second.second] + c[t[1].second.first][t[1].second.second] + c[t[2].second.first][t[2].second.second] + c[t[3].second.first][t[3].second.second];
     double delta2 = c[t[0].second.first][t[2].second.second] + c[t[0].second.second][t[2].second.first] + c[t[3].second.second][t[1].second.first] + c[t[3].second.first][t[1].second.second];
     delta = delta1 - delta2;
+}
+
+void Chained_Lin_Kerninghan(Tour &S, double **c, vector<vector<int>> &neighbourSet)
+{
+    Tour T = S, T1 = S;
+    lin_kerninghan(S, T, c, neighbourSet);
+    // T.print();
+    cout << T.getCost() << "\n\n";
+
+    int N_ITER, MAX_ITERATIONS = 30;
+
+    while (N_ITER++ < MAX_ITERATIONS)
+    {
+        deque<pair<int, int>> kickFlips;
+        vector<pair<int, pair<int, int>>> t;
+        t.assign(4, {0, {0, 0}});
+        double delta = 0;
+
+        kick(T, c, delta, t, kickFlips);
+        // T.print();
+
+        // cout << delta << "\n\n";
+
+        T.setCost(T.getCost() - delta);
+
+        lin_kerninghan(T, T1, c, neighbourSet);
+
+        if (T1.getCost() < T.getCost())
+        {
+            T = T1;
+        }
+
+        else
+        {
+            // cout << "E\n";
+            while (!kickFlips.empty())
+            {
+                pair<int, int> flip = kickFlips.back();
+                kickFlips.pop_back();
+
+                T.flip(flip.second, flip.first);
+            }
+
+            T.setCost(T.getCost() + delta);
+        }
+
+        // T.print();
+        vector<int> s = T.getTour();
+        cout << T.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << "\n";
+        // cout << T.getCost() << "\n";
+    }
 }

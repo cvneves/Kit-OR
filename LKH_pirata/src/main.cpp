@@ -25,8 +25,9 @@ int main(int argc, char **argv)
 {
   int x = time(NULL);
   std::cout << x;
-  srand(1570344553);
+  srand(1570416785);
   srand(x);
+  // 1570403292
 
   readData(argc, argv, &dimension, &matrizAdj);
   printData(matrizAdj, dimension);
@@ -41,64 +42,39 @@ int main(int argc, char **argv)
 
   Tour T(s, dimension, objValue);
   Tour T2 = T;
+  // T.print();
+  cout << "\n";
+  // s = T2.getTour();
+  // cout << calcularValorObj(s, matrizAdj) + matrizAdj[s[s.size() - 1]][s[0]] << "\n";
 
-  deque<pair<pair<int, int>, double>> flipSequence;
-  deque<pair<int, int>> kickFlips;
-  vector<bool> taken;
-  taken.assign(T.getN() + 1, false);
-
-  T.print();
-  vector<pair<int, pair<int, int>>> t;
-  t.assign(4, {0, {0, 0}});
-
-  double delta = 0;
-
-  kick(T, matrizAdj, delta, t, kickFlips);
-  // T.flip(9, 5);
-  // T.flip(11,13);
-  // T.flip(7,9);
-
-  T.print();
-
-  // alternate_step(T, matrizAdj, 1, 1, 0, neighbourSet, flipSequence, taken);
-
-  // step(T, matrizAdj, 1, 1, 0, delta, neighbourSet, flipSequence, taken);
-
-  // lk_search(T, 1, matrizAdj, neighbourSet, flipSequence);
+  Chained_Lin_Kerninghan(T, matrizAdj, neighbourSet);
 
   // lin_kerninghan(T, T2, matrizAdj, neighbourSet);
 
+  // deque<pair<pair<int, int>, double>> flipSequence;
+
+  // lk_search(T, 1, matrizAdj, neighbourSet, flipSequence);
+
   // while (!flipSequence.empty())
   // {
-  //   T2.flip(flipSequence.front().first.first, flipSequence.front().first.second);
+  //   int x = flipSequence.front().first.first;
+  //   int y = flipSequence.front().first.second;
+
+  //   double g = flipSequence.front().second;
+
+  //   T.print();
+  //   cout << x << " " << y << " " << g << "\n\n";
+
+  //   T.flip(x, y);
+  //   T.setCost(T.getCost() - g);
 
   //   flipSequence.pop_front();
   // }
 
-  s = T.getTour();
+  // T.print();
 
-  T.setCost(T.getCost() - delta);
-
-  cout << T.getCost() << "\n";
-
-  cout << calcularValorObj(s, matrizAdj) + matrizAdj[s[s.size() - 1]][s[0]] << "\n";
-
-  while (!kickFlips.empty())
-  {
-    pair<int, int> flip = kickFlips.back();
-    kickFlips.pop_back();
-
-    T.flip(flip.second, flip.first);
-  }
-
-  T.print();
-
-  T.setCost(T.getCost() + delta);
-  s = T.getTour();
-
-  cout << T.getCost() << "\n";
-
-  cout << calcularValorObj(s, matrizAdj) + matrizAdj[s[s.size() - 1]][s[0]] << "\n";
+  // s = T.getTour();
+  // cout << T.getCost() << ", " << calcularValorObj(s, matrizAdj) + matrizAdj[s[s.size() - 1]][s[0]] << " |\n";
 
   return 0;
 }
