@@ -25,8 +25,8 @@ int main(int argc, char **argv)
 {
   int x = time(NULL);
   std::cout << x;
-  srand(1570416785);
-  srand(x);
+  srand(1570422794);
+  // srand(x);
   // 1570403292
 
   readData(argc, argv, &dimension, &matrizAdj);
@@ -49,7 +49,7 @@ int main(int argc, char **argv)
 
   Chained_Lin_Kerninghan(T, matrizAdj, neighbourSet);
 
-  // lin_kerninghan(T, T2, matrizAdj, neighbourSet);
+  // // lin_kerninghan(T, T2, matrizAdj, neighbourSet);
 
   // deque<pair<pair<int, int>, double>> flipSequence;
 

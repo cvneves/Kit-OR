@@ -411,7 +411,7 @@ void Chained_Lin_Kerninghan(Tour &S, double **c, vector<vector<int>> &neighbourS
         t.assign(4, {0, {0, 0}});
         double delta = 0;
 
-        kick(T, c, delta, t, kickFlips);
+        // kick(T, c, delta, t, kickFlips);
         // T.print();
 
         // cout << delta << "\n\n";
@@ -439,7 +439,7 @@ void Chained_Lin_Kerninghan(Tour &S, double **c, vector<vector<int>> &neighbourS
             T.setCost(T.getCost() + delta);
         }
 
-        // T.print();
+        T.print();
         vector<int> s = T.getTour();
         cout << T.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << "\n";
         // cout << T.getCost() << "\n";
