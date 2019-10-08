@@ -169,14 +169,12 @@ void step(Tour T, double **c, int base, int level, float delta, double &final_de
 
     for (int i = 0, a = T.next(T.next(T.next(base))); i < lk_ordering_size; i++)
     {
-        // cout << a << "\n";
         double greedy_cost = c[T.prev(a)][a] - c[T.next(base)][a];
         lk_ordering[i] = {{-greedy_cost, a}, false};
         a = T.next(a);
     }
     for (int i = lk_ordering_size, a = T.next(T.next(base)); i < 2 * lk_ordering_size; i++)
     {
-        // cout << a << "\n";
         double greedy_cost = c[a][T.next(a)] - c[base][a];
         lk_ordering[i] = {{-greedy_cost, a}, true};
         a = T.next(a);
@@ -200,14 +198,13 @@ void step(Tour T, double **c, int base, int level, float delta, double &final_de
         {
             taken[a] = true;
 
-            // int nullFlip = T.inverse(T.next(base));
-
             g = (c[base][T.next(base)] - c[T.next(base)][a] + c[T.prev(a)][a] - c[T.prev(a)][base]);
 
             flipSequence.push_back({{T.next(base), T.prev(a)}, g});
             final_delta += g;
 
-            // cout << "AQUI: " << g << " " << base << " " << T.next(base) << " " << a << " " << T.prev(a) << " " << level << "\n";
+            // T.print();
+            // cout << "AQUI: " << base << " " << T.next(base) << " " << a << " " << T.prev(a) << "\n\n";
 
             T.flip(T.next(base), T.prev(a));
 
@@ -217,9 +214,11 @@ void step(Tour T, double **c, int base, int level, float delta, double &final_de
         {
             taken[a] = true;
 
-            // cout << "AQUI: " << g << " " << base << " " << T.next(base) << " " << a << " " << T.prev(a) << " " << level << "\n";
+            // T.print();
+            // cout << "AQUI: " << base << " " << T.next(base) << " " << a << " " << T.next(a) << "\n";
 
             g = c[base][T.next(base)] - c[base][a] + c[a][T.next(a)] - c[T.next(a)][T.next(base)];
+            // cout << "g: " << g << "\n\n";
 
             flipSequence.push_back({{T.next(a), base}, g});
 
@@ -231,7 +230,7 @@ void step(Tour T, double **c, int base, int level, float delta, double &final_de
             step(T, c, newbase, level + 1, delta + g, final_delta, neighbourSet, flipSequence, taken);
         }
 
-        if (delta > 0)
+        if (delta + g > 0)
         {
             return;
         }
@@ -323,8 +322,8 @@ void lin_kerninghan(Tour &T, Tour &lk_tour, double **c, vector<vector<int>> &nei
     marked.assign(T.getN(), true);
     int markedVertices = T.getN() + 1;
 
-    int k = 2;
-    while (k--)
+    // int k = 2;
+    while (true)
     {
         int v;
         for (v = 1; v <= T.getN() && marked[v] == false; v++)
