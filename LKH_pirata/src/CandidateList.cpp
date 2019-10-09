@@ -165,7 +165,14 @@ void generateCandidateList(std::vector<std::vector<int>> &rankedNodes, double **
         for (int j = 0; j < V; j++)
         {
             sortedAdjList[i][j] = {alpha[i][j], {i, j}};
+            // matrizAdj[i+1][j+1] = alpha[i][j];
+            // cout << alpha[i][j] << " ";
         }
+        // cout << "\n";
+    }
+    for(int i = 1; i <= V; i++)
+    {
+        matrizAdj[i][i] = 1;
     }
 
     for (int i = 0; i < V; i++)
@@ -176,5 +183,4 @@ void generateCandidateList(std::vector<std::vector<int>> &rankedNodes, double **
             rankedNodes[i][j] = sortedAdjList[i][j].second.second + 1;
         }
     }
-
 }

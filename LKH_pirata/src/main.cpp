@@ -35,8 +35,8 @@ int main(int argc, char **argv)
   vector<vector<int>> neighbourSet;
   generateCandidateList(neighbourSet, matrizAdj, dimension);
 
-  // double alpha = (double)rand() / RAND_MAX;
-  double alpha = 1;
+  double alpha = (double)rand() / RAND_MAX;
+  // double alpha = 1;
   std::vector<int> s = construction(alpha, dimension, matrizAdj);
   // s = {6, 5, 7, 13, 9, 10, 11, 8, 1, 2, 14, 3, 4, 12, 6};
   double objValue = calcularValorObj(s, matrizAdj);
@@ -55,7 +55,7 @@ int main(int argc, char **argv)
 
   // deque<pair<pair<int, int>, double>> flipSequence;
 
-  // lk_search(T, 3, matrizAdj, neighbourSet, flipSequence);
+  // lk_search(T, 6, matrizAdj, neighbourSet, flipSequence);
 
   // while (!flipSequence.empty())
   // {
@@ -77,6 +77,7 @@ int main(int argc, char **argv)
   // }
 
   // T.print();
+
 
   // s = T.getTour();
   // cout << T.getCost() << ", " << calcularValorObj(s, matrizAdj) + matrizAdj[s[s.size() - 1]][s[0]] << " |\n";
