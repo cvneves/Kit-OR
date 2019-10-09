@@ -161,6 +161,8 @@ void step(Tour &T, double **c, int base, int level, float delta, double &final_d
     // cout << T.getCost() - delta << " " << level << "\n";
     int k = breadth(level);
 
+    cout << "delta: " << final_delta << "\n";
+
     // Create lk-ordering for base and next(base)
     vector<pair<pair<double, int>, bool>> lk_ordering;
     int lk_ordering_size = T.getN() - 3;
