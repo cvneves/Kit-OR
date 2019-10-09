@@ -156,10 +156,9 @@ int findPromisingVertex(Tour &T, double **c, int base, double delta, vector<bool
     return best_a.second;
 }
 
-void step(Tour T, double **c, int base, int level, float delta, double &final_delta, vector<vector<int>> &neighbourSet, deque<pair<pair<int, int>, double>> &flipSequence, vector<bool> &taken)
+void step(Tour &T, double **c, int base, int level, float delta, double &final_delta, vector<vector<int>> &neighbourSet, deque<pair<pair<int, int>, double>> &flipSequence, vector<bool> &taken)
 {
     // cout << T.getCost() - delta << " " << level << "\n";
-
     int k = breadth(level);
 
     // Create lk-ordering for base and next(base)
@@ -185,6 +184,8 @@ void step(Tour T, double **c, int base, int level, float delta, double &final_de
     for (int i = 0; i < k; i++)
     {
         // cout << lk_ordering[i].first.second << ", " << lk_ordering[i].second << "\n";
+        cout << "i = " << i << "\n";
+
         int a = lk_ordering[i].first.second;
 
         if (taken[a] == true)
@@ -206,7 +207,13 @@ void step(Tour T, double **c, int base, int level, float delta, double &final_de
             // T.print();
             // cout << "AQUI: " << base << " " << T.next(base) << " " << a << " " << T.prev(a) << "\n\n";
 
+            cout << "(a, b): " << T.next(base) << " " << T.prev(a) << "\n";
+
             T.flip(T.next(base), T.prev(a));
+
+            cout << "Current level: " << level << "\n";
+            T.print();
+            cout << "\n\n";
 
             step(T, c, base, level + 1, delta + g, final_delta, neighbourSet, flipSequence, taken);
         }
@@ -225,17 +232,29 @@ void step(Tour T, double **c, int base, int level, float delta, double &final_de
             int newbase = T.next(a);
 
             final_delta += g;
+
+            cout << "(a, b): " << T.next(a) << " " << base << "\n";
+
             T.flip(T.next(a), base);
+
+            cout << "Current level: " << level << "\n";
+            T.print();
+            cout << "\n\n";
 
             step(T, c, newbase, level + 1, delta + g, final_delta, neighbourSet, flipSequence, taken);
         }
 
-        if (delta + g > 0)
+        if (final_delta > 0)
         {
+            cout << "Current level: " << level << "\n";
+            cout << "Better tour found\n";
             return;
         }
         else
         {
+            // taken[a] = false;
+            cout << "Current level: " << level << "\n";
+            cout << "i <= i + 1\n";
             if (!flipSequence.empty())
             {
                 pair<pair<int, int>, double> fl = flipSequence.back();
@@ -246,6 +265,8 @@ void step(Tour T, double **c, int base, int level, float delta, double &final_de
             }
         }
     }
+
+    cout << "Finished level " << level << "\n";
 }
 
 void alternate_step(Tour &T, double **c, int base, int level, float delta, vector<vector<int>> &neighbourSet, deque<pair<int, int>> &flipSequence, vector<bool> &taken)
@@ -358,7 +379,7 @@ void lin_kerninghan(Tour &T, Tour &lk_tour, double **c, vector<vector<int>> &nei
             marked[v] = false;
         }
 
-        // T.print();
+        lk_tour.print();
         vector<int> s = lk_tour.getTour();
         cout << lk_tour.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << " |\n";
     }
