@@ -382,8 +382,8 @@ void lin_kerninghan(Tour &T, Tour &lk_tour, double **c, vector<vector<int>> &nei
         }
 
         // lk_tour.print();
-        vector<int> s = lk_tour.getTour();
-        cout << lk_tour.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << " |\n";
+        // vector<int> s = lk_tour.getTour();
+        // cout << lk_tour.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << " |\n";
     }
 
     return;
@@ -447,6 +447,9 @@ void Chained_Lin_Kerninghan(Tour &S, double **c, vector<vector<int>> &neighbourS
 
         lin_kerninghan(T, T1, c, neighbourSet);
 
+        cout << T.getCost() << "\n";
+        cout << T1.getCost() << "\n\n";
+
         if (T1.getCost() < T.getCost())
         {
             T = T1;
@@ -467,8 +470,7 @@ void Chained_Lin_Kerninghan(Tour &S, double **c, vector<vector<int>> &neighbourS
         }
 
         // T.print();
-        vector<int> s = T.getTour();
-        cout << T.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << "\n";
+        // vector<int> s = T.getTour();
+        // cout << T.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << "\n";
     }
-    cout << T.getCost() << "\n";
 }
