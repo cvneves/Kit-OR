@@ -49,9 +49,9 @@ int main(int argc, char **argv)
   // s = T2.getTour();
   // cout << calcularValorObj(s, matrizAdj) + matrizAdj[s[s.size() - 1]][s[0]] << "\n";
 
-  // Chained_Lin_Kerninghan(T, matrizAdj, neighbourSet);
+  Chained_Lin_Kerninghan(T, matrizAdj, neighbourSet);
 
-  lin_kerninghan(T, T2, matrizAdj, neighbourSet);
+  // lin_kerninghan(T, T2, matrizAdj, neighbourSet);
 
   // deque<pair<pair<int, int>, double>> flipSequence;
 

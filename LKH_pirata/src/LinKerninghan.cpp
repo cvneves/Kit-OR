@@ -161,7 +161,7 @@ void step(Tour &T, double **c, int base, int level, float delta, double &final_d
     // cout << T.getCost() - delta << " " << level << "\n";
     int k = breadth(level);
 
-    cout << "delta: " << final_delta << "\n";
+    // cout << "delta: " << final_delta << "\n";
 
     // Create lk-ordering for base and next(base)
     vector<pair<pair<double, int>, bool>> lk_ordering;
@@ -186,7 +186,7 @@ void step(Tour &T, double **c, int base, int level, float delta, double &final_d
     for (int i = 0; i < k; i++)
     {
         // cout << lk_ordering[i].first.second << ", " << lk_ordering[i].second << "\n";
-        cout << "i = " << i << "\n";
+        // cout << "i = " << i << "\n";
 
         int a = lk_ordering[i].first.second;
 
@@ -209,13 +209,13 @@ void step(Tour &T, double **c, int base, int level, float delta, double &final_d
             // T.print();
             // cout << "AQUI: " << base << " " << T.next(base) << " " << a << " " << T.prev(a) << "\n\n";
 
-            cout << "(a, b): " << T.next(base) << " " << T.prev(a) << "\n";
+            // cout << "(a, b): " << T.next(base) << " " << T.prev(a) << "\n";
 
             T.flip(T.next(base), T.prev(a));
 
-            cout << "Current level: " << level << "\n";
-            T.print();
-            cout << "\n\n";
+            // cout << "Current level: " << level << "\n";
+            // T.print();
+            // cout << "\n\n";
 
             step(T, c, base, level + 1, delta + g, final_delta, neighbourSet, flipSequence, taken);
         }
@@ -235,28 +235,28 @@ void step(Tour &T, double **c, int base, int level, float delta, double &final_d
 
             final_delta += g;
 
-            cout << "(a, b): " << T.next(a) << " " << base << "\n";
+            // cout << "(a, b): " << T.next(a) << " " << base << "\n";
 
             T.flip(T.next(a), base);
 
-            cout << "Current level: " << level << "\n";
-            T.print();
-            cout << "\n\n";
+            // cout << "Current level: " << level << "\n";
+            // T.print();
+            // cout << "\n\n";
 
             step(T, c, newbase, level + 1, delta + g, final_delta, neighbourSet, flipSequence, taken);
         }
 
         if (final_delta > 0)
         {
-            cout << "Current level: " << level << "\n";
-            cout << "Better tour found\n";
+            // cout << "Current level: " << level << "\n";
+            // cout << "Better tour found\n";
             return;
         }
         else
         {
             // taken[a] = false;
-            cout << "Current level: " << level << "\n";
-            cout << "i <= i + 1\n";
+            // cout << "Current level: " << level << "\n";
+            // cout << "i <= i + 1\n";
             if (!flipSequence.empty())
             {
                 pair<pair<int, int>, double> fl = flipSequence.back();
@@ -268,7 +268,7 @@ void step(Tour &T, double **c, int base, int level, float delta, double &final_d
         }
     }
 
-    cout << "Finished level " << level << "\n";
+    // cout << "Finished level " << level << "\n";
 }
 
 void alternate_step(Tour &T, double **c, int base, int level, float delta, vector<vector<int>> &neighbourSet, deque<pair<int, int>> &flipSequence, vector<bool> &taken)
@@ -381,7 +381,7 @@ void lin_kerninghan(Tour &T, Tour &lk_tour, double **c, vector<vector<int>> &nei
             marked[v] = false;
         }
 
-        lk_tour.print();
+        // lk_tour.print();
         vector<int> s = lk_tour.getTour();
         cout << lk_tour.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << " |\n";
     }
