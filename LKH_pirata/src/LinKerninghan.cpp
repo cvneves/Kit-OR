@@ -50,7 +50,7 @@ vi Tour::getTour()
 
 int breadth(int k)
 {
-    return (k <= 2) ? 5 : 5;
+    return (k <= 2) ? 5 : 1;
 }
 
 void Tour::flip(int a, int b)
@@ -426,10 +426,10 @@ void Chained_Lin_Kerninghan(Tour &S, double **c, vector<vector<int>> &neighbourS
     Tour T = S, T1 = S;
     lin_kerninghan(S, T, c, neighbourSet);
     // T.print();
-    vector<int> s = T.getTour();
-    cout << T.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << "\n";
+    // vector<int> s = T.getTour();
+    // cout << T.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << "\n";
 
-    int N_ITER, MAX_ITERATIONS = 10;
+    int N_ITER, MAX_ITERATIONS = 2;
 
     while (N_ITER++ < MAX_ITERATIONS)
     {
@@ -469,6 +469,6 @@ void Chained_Lin_Kerninghan(Tour &S, double **c, vector<vector<int>> &neighbourS
         // T.print();
         // vector<int> s = T.getTour();
         // cout << T.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << "\n";
-        cout << T.getCost() << "\n";
     }
+    cout << T.getCost() << "\n";
 }
