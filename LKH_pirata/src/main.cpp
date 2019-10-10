@@ -50,7 +50,7 @@ int main(int argc, char **argv)
   int base = 1;
   int a = T.next(T.next(T.next(T.next(T.next(T.next(T.next(base)))))));
 
-  int b = T.next(T.next(base));
+  int b = T.next(T.next(T.next(base)));
   int s1 = T.next(base);
   int b1 = T.next(b);
 
