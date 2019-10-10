@@ -271,7 +271,7 @@ void step(Tour &T, double **c, int base, int level, float delta, double &final_d
     // cout << "Finished level " << level << "\n";
 }
 
-void alternate_step(Tour &T, double **c, int base, int level, float delta, vector<vector<int>> &neighbourSet, deque<pair<int, int>> &flipSequence, vector<bool> &taken)
+void alternate_step(Tour &T, double **c, int base, int level, float delta, double &final_delta, vector<vector<int>> &neighbourSet, deque<pair<pair<int, int>, double>> &flipSequence, vector<bool> &taken)
 {
     T.print();
     cout << "\n";
@@ -279,39 +279,89 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, vecto
     // Create the A-ordering
     vector<pair<double, int>> A_ordering;
 
-    int MAX_NEIGHBORS = 5;
+    int MAX_NEIGHBORS = 10;
 
-    A_ordering.assign(T.getN(), {std::numeric_limits<double>::infinity(), 0});
+    A_ordering.assign(MAX_NEIGHBORS, {std::numeric_limits<double>::infinity(), 0});
 
     int A_ordering_size = 0;
-
-    for (int i = 1, j = 0; i <= 14; i++)
+    for (int i = 0; i < MAX_NEIGHBORS; i++)
     {
-        int a = neighbourSet[T.next(base) - 1][i];
-        double cost = delta + c[base][T.next(base)] - c[T.next(base)][a];
-
-        if (cost > 0)
+        int a = neighbourSet[T.next(base) - 1][i + 1];
+        if (base == a || T.next(base) == a || T.next(a) == base || (delta + c[base][T.next(base)] <= c[T.next(base)][T.next(a)]))
         {
-            cout << "e\n";
-            A_ordering[j] = {-cost, a};
-            j++;
+            continue;
         }
+        double cost = c[T.next(a)][a] - c[T.next(base)][a];
+        A_ordering[i] = {-cost, a};
+        A_ordering_size++;
+    }
+    sort(A_ordering.begin(), A_ordering.end());
+    // A_ordering.erase(A_ordering.begin() + A_ordering_size, A_ordering.end());
+
+    // iterate through the A-ordering
+    int breadthA = 5;
+    int breadthB = 5;
+    int breadthD = 5;
+
+    vector<pair<double, pair<int, int>>> B_ordering;
+
+    for (int i = 0; i < breadthA && i < A_ordering_size; i++)
+    {
+        cout << A_ordering[i].first << " " << A_ordering[i].second << "\n";
+        int a = A_ordering[i].second;
+        int a1 = T.next(a);
+
+        //Create the B-ordering from the neighbors of next(a)
+        B_ordering.assign(2 * MAX_NEIGHBORS, {std::numeric_limits<double>::infinity(), {0, 0}});
+
+        int B_ordering_size = 0;
+        for (int j = 0; j < 2 * MAX_NEIGHBORS && j < T.getN() - 1; j++)
         {
-            for (int i = 1; i <= neighbourSet[0].size(); i++)
+            int b = neighbourSet[T.next(a) - 1][j + 1];
+
+            if (b == base || b == T.next(base) || b == a || c[T.next(a)][b] >= c[a][T.next(a)] + c[base][T.next(base)] - c[T.next(base)][a])
             {
-                int a = neighbourSet[T.next(base) - 1][i];
-                double cost = delta + c[base][T.next(base)] - c[T.next(base)][a];
-                if (cost > 0 && T.prev(a) != base && T.prev(a) != T.next(base) && T.prev(a) != T.prev(base))
-                {
-                    cost = c[T.next(a)][a] - c[T.next(base)][a];
-                    A_ordering[A_ordering_size] = {-cost, a};
-                    A_ordering_size++;
-                }
+                continue;
+            }
+            int b1 = (j % 2 == 0) ? T.prev(b) : T.next(b);
+            double cost = c[b1][b] - c[T.next(a)][b];
+
+            B_ordering[j] = {-cost, {b, b1}};
+
+            B_ordering_size++;
+        }
+
+        sort(B_ordering.begin(), B_ordering.end());
+
+        // cout << "\nB_ordering: " << B_ordering_size << "\n";
+        // for (int j = 0; j < breadthB && j < B_ordering_size; j++)
+        // {
+        //     cout << B_ordering[j].first << " " << B_ordering[j].second.first << ", " << B_ordering[j].second.second << "\n";
+        // }
+        // cout << "\n";
+
+        for (int j = 0; j < breadthB && j < B_ordering_size; j++)
+        {
+            int b = B_ordering[i].second.first;
+            int b1 = B_ordering[i].second.second;
+            int s1 = T.next(base);
+
+            double altDelta1 = 0;
+
+            if (T.sequence(s1, b, a))
+            {
+                T.flip(s1, b);
+                altDelta1 += c[T.prev(s1)][s1] - c[s1][a] + c[b][a] - c[T.prev(a)][T.prev(s1)];
+                T.flip(b, a);
+                T.flip(s1, a);
+                T.flip(b, s1);
+                T.flip(a, b1);
+            }
+            else
+            {
             }
         }
     }
-
-    sort(A_ordering.begin(), A_ordering.end());
 }
 
 bool lk_search(Tour &T, int v, double **c, vector<vector<int>> &neighbourSet, deque<pair<pair<int, int>, double>> &flipSequence)
