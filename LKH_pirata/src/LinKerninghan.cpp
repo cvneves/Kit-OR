@@ -89,12 +89,12 @@ bool Tour::sequence(int a, int b, int c)
 {
     if (!reversed)
     {
-        if (inv[a] <= inv[b] && inv[b] <= inv[c])
+        if (inv[a] < inv[b] && inv[b] < inv[c])
             return true;
     }
     else
     {
-        if (inv[c] <= inv[b] && inv[b] <= inv[a])
+        if (inv[c] < inv[b] && inv[b] < inv[a])
             return true;
     }
     return false;
@@ -350,11 +350,19 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
 
             if (T.sequence(s1, b, a))
             {
-                T.flip(s1, b);
-                altDelta1 += c[T.prev(s1)][s1] - c[s1][a] + c[b][a] - c[T.prev(a)][T.prev(s1)];
+                altDelta1 += c[T.prev(b)][b] - c[b][T.next(a)] + c[a][T.next(a)] - c[T.prev(b)][a];
                 T.flip(b, a);
+
+                s1 = T.next(base);
+                b1 = T.prev(b);
+
+                altDelta1 += c[T.prev(s1)][s1] - c[s1][T.next(a)] + c[a][T.next(a)] - c[T.prev(s1)][a];
                 T.flip(s1, a);
+
+                altDelta1 += c[T.prev(b)][b] - c[b][T.next(s1)] + c[s1][T.next(s1)] - c[T.prev(b)][s1];
                 T.flip(b, s1);
+
+                altDelta1 += c[T.prev(a)][a] - c[b1][T.prev(a)] + c[b1][T.next(b1)] - c[T.next(b1)][a];
                 T.flip(a, b1);
             }
             else

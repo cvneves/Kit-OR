@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 {
   int x = time(NULL);
   std::cout << x;
-  srand(1570735428);
+  srand(1570745227);
   // srand(x);
   // 1570403292
 
@@ -42,36 +42,44 @@ int main(int argc, char **argv)
 
   Tour T(s, dimension, objValue);
   Tour T2 = T;
-  T.print();
+  // T.print();
   cout << "\n";
 
   double **c = matrizAdj;
 
   int base = 1;
-  int b = 2;
-  int a = 13;
+  int a = T.next(T.next(T.next(T.next(T.next(T.next(T.next(base)))))));
 
-  int b1 = T.next(b);
+  int b = T.next(T.next(base));
   int s1 = T.next(base);
+  int b1 = T.next(b);
 
   double altDelta1 = 0;
 
+  T.print();
   altDelta1 += c[T.prev(s1)][s1] - c[s1][T.next(b)] + c[b][T.next(b)] - c[b][T.prev(s1)];
+  cout << s1 << " " << b << "\n";
   T.flip(s1, b);
 
+
+  T.print();
   altDelta1 += c[T.prev(b)][b] - c[b][T.next(a)] + c[a][T.next(a)] - c[T.prev(b)][a];
+  cout << b << " " << a << "\n";
   T.flip(b, a);
 
   s1 = T.next(base);
   b1 = T.prev(b);
 
+
+  T.print();
   altDelta1 += c[T.prev(s1)][s1] - c[s1][T.next(a)] + c[a][T.next(a)] - c[T.prev(s1)][a];
+  cout << s1 << " " << a << "\n";
   T.flip(s1, a);
 
-  // altDelta1 += c[T.prev(b)][b] - c[b][s1] + c[s1][T.next(s1)] - c[T.prev(s1)][T.prev(b)];
+  // altDelta1 += c[T.prev(b)][b] - c[b][T.next(s1)] + c[s1][T.next(s1)] - c[T.prev(b)][s1];
   // T.flip(b, s1);
 
-  // altDelta1 += c[T.prev(a)][a] - c[b1][a] + c[b1][T.next(b1)] - c[T.prev(b1)][T.prev(a)];
+  // altDelta1 += c[T.prev(a)][a] - c[b1][T.prev(a)] + c[b1][T.next(b1)] - c[T.next(b1)][a];
   // T.flip(a, b1);
 
   T.print();

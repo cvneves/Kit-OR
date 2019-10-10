@@ -172,7 +172,7 @@ void generateCandidateList(std::vector<std::vector<int>> &rankedNodes, double **
     }
     for(int i = 1; i <= V; i++)
     {
-        matrizAdj[i][i] = 1;
+        // matrizAdj[i][i] = 1;
     }
 
     for (int i = 0; i < V; i++)
