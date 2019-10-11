@@ -59,6 +59,11 @@ void Tour::flip(int a, int b)
 
     if (!(!reversed && (inv[a] < inv[b]) || reversed && (inv[a] > inv[b])))
     {
+        if (segment_size == 2)
+        {
+            // reversed = !reversed;
+            // return;
+        }
         a = prev(a);
         b = next(b);
         segment_size = abs(inv[a] - inv[b]) + 1;
@@ -72,6 +77,7 @@ void Tour::flip(int a, int b)
         reversed = !reversed;
         segment_size = N - segment_size;
     }
+
     for (int i = 0; i < segment_size / 2; i++)
     {
         swap(tour[inv[a]], tour[inv[b]]);
@@ -343,30 +349,50 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
         for (int j = 0; j < breadthB && j < B_ordering_size; j++)
         {
             int b = B_ordering[i].second.first;
-            int b1 = B_ordering[i].second.second;
+            int b1 = T.next(b);
             int s1 = T.next(base);
 
             double altDelta1 = 0;
 
-            if (T.sequence(s1, b, a))
+            if (T.sequence(s1, T.next(b), a) == true)
             {
+                deque<pair<int, int>> altSequence1;
+                altDelta1 += c[T.prev(s1)][s1] - c[s1][T.next(b)] + c[b][T.next(b)] - c[b][T.prev(s1)];
+                altSequence1.push_back({s1, b});
+                T.flip(s1, b);
+
                 altDelta1 += c[T.prev(b)][b] - c[b][T.next(a)] + c[a][T.next(a)] - c[T.prev(b)][a];
+                altSequence1.push_back({b, a});
                 T.flip(b, a);
-
-                s1 = T.next(base);
+                // s1 = T.next(base);
                 b1 = T.prev(b);
-
+                
                 altDelta1 += c[T.prev(s1)][s1] - c[s1][T.next(a)] + c[a][T.next(a)] - c[T.prev(s1)][a];
+                altSequence1.push_back({s1, a});
                 T.flip(s1, a);
-
+                
                 altDelta1 += c[T.prev(b)][b] - c[b][T.next(s1)] + c[s1][T.next(s1)] - c[T.prev(b)][s1];
+                altSequence1.push_back({b, s1});
                 T.flip(b, s1);
-
+                
                 altDelta1 += c[T.prev(a)][a] - c[b1][T.prev(a)] + c[b1][T.next(b1)] - c[T.next(b1)][a];
+                altSequence1.push_back({a, b1});
                 T.flip(a, b1);
+
+                step(T, c, base, 3, altDelta1, final_delta, neighbourSet, flipSequence, taken);
+
+                if (final_delta > 0)
+                {
+                    return;
+                }
+                else
+                {
+                    
+                }
             }
             else
             {
+
             }
         }
     }
@@ -527,8 +553,8 @@ void Chained_Lin_Kerninghan(Tour &S, double **c, vector<vector<int>> &neighbourS
             T.setCost(T.getCost() + delta);
         }
 
-        // T.print();
-        // vector<int> s = T.getTour();
-        // cout << T.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << "\n";
+        T.print();
+        vector<int> s = T.getTour();
+        cout << T.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << "\n";
     }
 }

@@ -26,7 +26,7 @@ int main(int argc, char **argv)
   int x = time(NULL);
   std::cout << x;
   srand(1570745227);
-  // srand(x);
+  srand(x);
   // 1570403292
 
   readData(argc, argv, &dimension, &matrizAdj);
@@ -42,53 +42,70 @@ int main(int argc, char **argv)
 
   Tour T(s, dimension, objValue);
   Tour T2 = T;
-  // T.print();
+  T.print();
   cout << "\n";
 
   double **c = matrizAdj;
 
   int base = 1;
-  int a = T.next(T.next(T.next(T.next(T.next(T.next(T.next(base)))))));
+  int a = ((T.next(T.next(T.next(T.next(T.next(T.next(T.next(base)))))))));
 
-  int b = T.next(T.next(T.next(T.next(base))));
+  int b = (T.prev(T.prev(a)));
   int s1 = T.next(base);
   int b1 = T.next(b);
 
   double altDelta1 = 0;
 
-  T.print();
-  altDelta1 += c[T.prev(s1)][s1] - c[s1][T.next(b)] + c[b][T.next(b)] - c[b][T.prev(s1)];
-  cout << s1 << " " << b << "\n";
-  T.flip(s1, b);
+  // cout << "a: " << a << "\n";
+  // cout << "b: " << b << "\n";
 
+  // a = 11;
+  // b = 5;
 
-  T.print();
-  altDelta1 += c[T.prev(b)][b] - c[b][T.next(a)] + c[a][T.next(a)] - c[T.prev(b)][a];
-  cout << b << " " << a << "\n";
-  T.flip(b, a);
+  // T.flip(a, b);
 
-  s1 = T.next(base);
-  b1 = T.prev(b);
+  // T.print();
 
+  // T.print();
+  // altDelta1 += c[T.prev(s1)][s1] - c[s1][T.next(b)] + c[b][T.next(b)] - c[b][T.prev(s1)];
+  // cout << s1 << " " << b << "\n";
+  // cout << altDelta1 << "\n";
+  // T.flip(s1, b);
 
-  T.print();
-  altDelta1 += c[T.prev(s1)][s1] - c[s1][T.next(a)] + c[a][T.next(a)] - c[T.prev(s1)][a];
-  cout << s1 << " " << a << "\n";
-  T.flip(s1, a);
+  // T.print();
+  // altDelta1 += c[T.prev(b)][b] - c[b][T.next(a)] + c[a][T.next(a)] - c[T.prev(b)][a];
+  // cout << b << " " << a << "\n";
+  // cout << altDelta1 << "\n";
+  // T.flip(b, a);
 
+  // // s1 = T.next(base);
+  // b1 = T.prev(b);
+
+  // T.print();
+  // altDelta1 += c[T.prev(s1)][s1] - c[s1][T.next(a)] + c[a][T.next(a)] - c[T.prev(s1)][a];
+  // cout << s1 << " " << a << "\n";
+  // cout << altDelta1 << "\n";
+  // T.flip(s1, a);
+
+  // T.print();
   // altDelta1 += c[T.prev(b)][b] - c[b][T.next(s1)] + c[s1][T.next(s1)] - c[T.prev(b)][s1];
+  // cout << b << " " << s1 << "\n";
+  // cout << altDelta1 << "\n";
   // T.flip(b, s1);
 
+  // T.print();
   // altDelta1 += c[T.prev(a)][a] - c[b1][T.prev(a)] + c[b1][T.next(b1)] - c[T.next(b1)][a];
+  // cout << a << " " << b1 << "\n";
+  // cout << altDelta1 << "\n";
   // T.flip(a, b1);
 
-  T.print();
 
-  T.setCost(T.getCost() - altDelta1);
-  s = T.getTour();
-  cout << T.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << "\n";
+  // T.print();
+  // T.setCost(T.getCost() - altDelta1);
+  // s = T.getTour();
+  // cout << T.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << "\n";
 
-  // Chained_Lin_Kerninghan(T, matrizAdj, neighbourSet);
+  Chained_Lin_Kerninghan(T, matrizAdj, neighbourSet);
 
   // deque<pair<pair<int, int>, double>> flipSequence;
   // vector<bool> taken(T.getN() + 1, false);
