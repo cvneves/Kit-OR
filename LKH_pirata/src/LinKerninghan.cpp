@@ -355,9 +355,12 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
 
             double altDelta1 = 0;
             double g;
-            if (T.sequence(s1, b, a) == true)
+            if (T.sequence(s1, T.next(b), a) == true)
             {
                 deque<pair<int, int>> altSequence1;
+                T.print();
+
+                // cout << "B: " << b << " " << a << " " << "\n";
 
                 g = c[T.prev(s1)][s1] - c[s1][T.next(b)] + c[b][T.next(b)] - c[b][T.prev(s1)];
                 altDelta1 += g;
@@ -409,8 +412,6 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
                     {
                         pair<int, int> fl = altSequence1.back();
                         T.flip(fl.second, fl.first);
-                        final_delta -= fl.second;
-                        // cout << final_delta << "\n";
                         altSequence1.pop_back();
                         flipSequence.pop_back();
                     }
@@ -448,8 +449,8 @@ bool lk_search(Tour &T, int v, double **c, vector<vector<int>> &neighbourSet, de
         alternate_step(current_tour, c, v, 1, 0, delta, neighbourSet, flipSequence, taken);
         current_tour.setCost(current_tour.getCost() - delta);
 
-        vector<int> s = current_tour.getTour();
-        cout << current_tour.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << " |\n";
+        // vector<int> s = current_tour.getTour();
+        // cout << current_tour.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << " |\n";
 
         if (current_tour.getCost() < T.getCost())
         {
@@ -569,8 +570,8 @@ void Chained_Lin_Kerninghan(Tour &S, double **c, vector<vector<int>> &neighbourS
 
         lin_kerninghan(T, T1, c, neighbourSet);
 
-        cout << T.getCost() << "\n";
-        cout << T1.getCost() << "\n\n";
+        // cout << T.getCost() << "\n";
+        // cout << T1.getCost() << "\n\n";
 
         if (T1.getCost() < T.getCost())
         {

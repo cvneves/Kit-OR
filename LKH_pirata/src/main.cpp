@@ -25,8 +25,8 @@ int main(int argc, char **argv)
 {
   int x = time(NULL);
   std::cout << x;
-  // srand(1570852601);
-  srand(x);
+  srand(1570859998);
+  // srand(x);
   // 1570403292
 
   readData(argc, argv, &dimension, &matrizAdj);
@@ -61,7 +61,7 @@ int main(int argc, char **argv)
 
   lin_kerninghan(T, T2, c, neighbourSet);
 
-  // cout << T2.getCost() << "\n";
+  cout << T2.getCost() << "\n";
 
   // Chained_Lin_Kerninghan(T, matrizAdj, neighbourSet);
 
