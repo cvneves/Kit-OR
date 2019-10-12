@@ -324,12 +324,13 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
         for (int j = 0; j < 2 * MAX_NEIGHBORS && j < T.getN() - 1; j++)
         {
             int b = neighbourSet[T.next(a) - 1][j + 1];
+            int b1 = (j % 2 == 0) ? T.prev(b) : T.next(b);
 
-            if (b == base || b == T.next(base) || b == a || c[T.next(a)][b] >= c[a][T.next(a)] + c[base][T.next(base)] - c[T.next(base)][a])
+            if (b == base || b == T.next(base) || b == a || b1 == base || b1 == T.next(base) || b1 == a || c[T.next(a)][b] >= c[a][T.next(a)] + c[base][T.next(base)] - c[T.next(base)][a])
             {
                 continue;
             }
-            int b1 = (j % 2 == 0) ? T.prev(b) : T.next(b);
+
             double cost = c[b1][b] - c[T.next(a)][b];
 
             B_ordering[j] = {-cost, {b, b1}};
@@ -353,35 +354,41 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
             int s1 = T.next(base);
 
             double altDelta1 = 0;
-
-            if (T.sequence(s1, T.next(b), a) == true)
+            double g;
+            if (T.sequence(s1, b, a) == true)
             {
                 deque<pair<int, int>> altSequence1;
-                altDelta1 += c[T.prev(s1)][s1] - c[s1][T.next(b)] + c[b][T.next(b)] - c[b][T.prev(s1)];
+
+                g = c[T.prev(s1)][s1] - c[s1][T.next(b)] + c[b][T.next(b)] - c[b][T.prev(s1)];
+                altDelta1 += g;
                 altSequence1.push_back({s1, b});
-                flipSequence.push_back({{s1, b}, 0});
+                flipSequence.push_back({{s1, b}, g});
                 T.flip(s1, b);
 
-                altDelta1 += c[T.prev(b)][b] - c[b][T.next(a)] + c[a][T.next(a)] - c[T.prev(b)][a];
+                g = c[T.prev(b)][b] - c[b][T.next(a)] + c[a][T.next(a)] - c[T.prev(b)][a];
+                altDelta1 +=g;
                 altSequence1.push_back({b, a});
-                flipSequence.push_back({{b, a}, 0});
+                flipSequence.push_back({{b, a}, g});
                 T.flip(b, a);
                 // s1 = T.next(base);
                 b1 = T.prev(b);
 
-                altDelta1 += c[T.prev(s1)][s1] - c[s1][T.next(a)] + c[a][T.next(a)] - c[T.prev(s1)][a];
+                g = c[T.prev(s1)][s1] - c[s1][T.next(a)] + c[a][T.next(a)] - c[T.prev(s1)][a];
+                altDelta1 += g;
                 altSequence1.push_back({s1, a});
-                flipSequence.push_back({{s1, a}, 0});
+                flipSequence.push_back({{s1, a}, g});
                 T.flip(s1, a);
 
-                altDelta1 += c[T.prev(b)][b] - c[b][T.next(s1)] + c[s1][T.next(s1)] - c[T.prev(b)][s1];
+                g = c[T.prev(b)][b] - c[b][T.next(s1)] + c[s1][T.next(s1)] - c[T.prev(b)][s1];
+                altDelta1 += g;
                 altSequence1.push_back({b, s1});
-                flipSequence.push_back({{b, s1}, 0});
+                flipSequence.push_back({{b, s1}, g});
                 T.flip(b, s1);
 
-                altDelta1 += c[T.prev(a)][a] - c[b1][T.prev(a)] + c[b1][T.next(b1)] - c[T.next(b1)][a];
+                g = c[T.prev(a)][a] - c[b1][T.prev(a)] + c[b1][T.next(b1)] - c[T.next(b1)][a];
+                altDelta1 += g;
                 altSequence1.push_back({a, b1});
-                flipSequence.push_back({{a, b1}, 0});
+                flipSequence.push_back({{a, b1}, g});
                 T.flip(a, b1);
 
                 // vector<int> s = T.getTour();
