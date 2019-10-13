@@ -349,7 +349,7 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
 
         for (int j = 0; j < breadthB && j < B_ordering_size; j++)
         {
-            int b = B_ordering[i].second.first;
+            int b = B_ordering[j].second.first;
             int b1 = T.next(b);
             int s1 = T.next(base);
 
@@ -358,7 +358,7 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
             if (T.sequence(s1, T.next(b), a) == true)
             {
                 deque<pair<int, int>> altSequence1;
-                T.print();
+                // T.print();
 
                 // cout << "B: " << b << " " << a << " " << "\n";
 

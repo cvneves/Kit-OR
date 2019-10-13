@@ -26,7 +26,7 @@ int main(int argc, char **argv)
   int x = time(NULL);
   std::cout << x;
   srand(1570859998);
-  // srand(x);
+  srand(x);
   // 1570403292
 
   readData(argc, argv, &dimension, &matrizAdj);
@@ -57,9 +57,13 @@ int main(int argc, char **argv)
   // s = T.getTour();
   // cout << T.getCost() - altDelta1 << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << " |\n";
 
-  
-
+  std::chrono::time_point<std::chrono::system_clock> start, end;
+  start = std::chrono::system_clock::now();
   lin_kerninghan(T, T2, c, neighbourSet);
+  end = std::chrono::system_clock::now();
+
+  int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+  std::cout << "Elapsed time (s): " << elapsed_seconds / 1000.0 << "\n";
 
   cout << T2.getCost() << "\n";
 
