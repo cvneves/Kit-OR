@@ -59,17 +59,15 @@ int main(int argc, char **argv)
 
   std::chrono::time_point<std::chrono::system_clock> start, end;
   start = std::chrono::system_clock::now();
-  // lin_kerninghan(T, T2, c, neighbourSet);
+  lin_kerninghan(T, T2, c, neighbourSet);
   end = std::chrono::system_clock::now();
 
   int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-  // std::cout << "Elapsed time (s): " << elapsed_seconds / 1000.0 << "\n";
+  std::cout << "Elapsed time (s): " << elapsed_seconds / 1000.0 << "\n";
 
-  Chained_Lin_Kerninghan(T, matrizAdj, neighbourSet);
+  // Chained_Lin_Kerninghan(T, matrizAdj, neighbourSet);
 
-
-  // cout << T.getCost() << "\n";
-
+  cout << T2.getCost() << "\n";
 
   // deque<pair<pair<int, int>, double>> flipSequence;
   // vector<bool> taken(T.getN() + 1, false);
