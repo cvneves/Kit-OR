@@ -171,20 +171,32 @@ void step(Tour &T, double **c, int base, int level, float delta, double &final_d
 
     // Create lk-ordering for base and next(base)
     vector<pair<pair<double, int>, bool>> lk_ordering;
-    int lk_ordering_size = T.getN() - 3;
-    lk_ordering.assign(2 * lk_ordering_size, {{0, 0}, 0});
 
-    for (int i = 0, a = T.next(T.next(T.next(base))); i < lk_ordering_size; i++)
+    int MAX_NEIGHBORS = 10;
+
+    // int lk_ordering_size = T.getN() - 3;
+    int lk_ordering_size = 2 * MAX_NEIGHBORS;
+    lk_ordering.assign(lk_ordering_size, {{std::numeric_limits<double>::infinity(), 0}, 0});
+
+    for (int i = 0; i < MAX_NEIGHBORS; i++)
     {
+        int a = neighbourSet[T.next(base) - 1][i + 1];
+        if (base == a || T.next(base) == a || T.next(base) == T.prev(a))
+        {
+            continue;
+        }
         double greedy_cost = c[T.prev(a)][a] - c[T.next(base)][a];
         lk_ordering[i] = {{-greedy_cost, a}, false};
-        a = T.next(a);
     }
-    for (int i = lk_ordering_size, a = T.next(T.next(base)); i < 2 * lk_ordering_size; i++)
+    for (int i = MAX_NEIGHBORS, j = 0; i < lk_ordering_size; i++, j++)
     {
+        int a = neighbourSet[base - 1][j + 1];
+        if (base == a || T.next(base) == a || T.next(a) == base)
+        {
+            continue;
+        }
         double greedy_cost = c[a][T.next(a)] - c[base][a];
         lk_ordering[i] = {{-greedy_cost, a}, true};
-        a = T.next(a);
     }
 
     sort(lk_ordering.begin(), lk_ordering.end());
@@ -200,6 +212,8 @@ void step(Tour &T, double **c, int base, int level, float delta, double &final_d
         {
             continue;
         }
+        // cout << base << " " << a << " " << lk_ordering[i].second << "\n";
+        // T.print();
 
         double g = 0;
 
@@ -369,7 +383,7 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
                 T.flip(s1, b);
 
                 g = c[T.prev(b)][b] - c[b][T.next(a)] + c[a][T.next(a)] - c[T.prev(b)][a];
-                altDelta1 +=g;
+                altDelta1 += g;
                 altSequence1.push_back({b, a});
                 flipSequence.push_back({{b, a}, g});
                 T.flip(b, a);
@@ -552,7 +566,7 @@ void Chained_Lin_Kerninghan(Tour &S, double **c, vector<vector<int>> &neighbourS
     // vector<int> s = T.getTour();
     // cout << T.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << "\n";
 
-    int N_ITER, MAX_ITERATIONS = 10;
+    int N_ITER, MAX_ITERATIONS = 100;
 
     while (N_ITER++ < MAX_ITERATIONS)
     {
@@ -591,9 +605,9 @@ void Chained_Lin_Kerninghan(Tour &S, double **c, vector<vector<int>> &neighbourS
 
             T.setCost(T.getCost() + delta);
         }
-
-        // T.print();
-        vector<int> s = T.getTour();
-        cout << T.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << "\n";
     }
+
+    T.print();
+    vector<int> s = T.getTour();
+    cout << T.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << "\n";
 }
