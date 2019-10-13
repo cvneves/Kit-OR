@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 {
   int x = time(NULL);
   std::cout << x;
-  srand(1570932702);
+  srand(1571001030);
   srand(x);
   // 1570403292
 

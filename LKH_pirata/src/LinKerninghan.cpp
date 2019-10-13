@@ -338,7 +338,7 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
         int B_ordering_size = 0;
         for (int j = 0; j < 2 * MAX_NEIGHBORS && j < T.getN() - 1; j++)
         {
-            int b = neighbourSet[T.next(a) - 1][j + 1];
+            int b = neighbourSet[T.next(a) - 1][j/2 + 1];
             int b1 = (j % 2 == 0) ? T.prev(b) : T.next(b);
 
             if (b == base || b == T.next(base) || b == a || b1 == base || b1 == T.next(base) || b1 == a || c[T.next(a)][b] >= c[a][T.next(a)] + c[base][T.next(base)] - c[T.next(base)][a])
@@ -366,6 +366,7 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
         {
             int b = B_ordering[j].second.first;
             int b1 = T.next(b);
+            // int b1 = B_ordering[j].second.second;
             int s1 = T.next(base);
 
             double altDelta1 = 0;
@@ -434,104 +435,115 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
             }
             else
             {
-                // //Create the D-ordering
-                // D_ordering.assign(2 * MAX_NEIGHBORS, {std::numeric_limits<double>::infinity(), {0, 0}});
-                // int D_ordering_size = 0;
+                //Create the D-ordering
+                D_ordering.assign(2 * MAX_NEIGHBORS, {std::numeric_limits<double>::infinity(), {0, 0}});
+                int D_ordering_size = 0;
 
-                // for (int k = 0; k < 2 * MAX_NEIGHBORS && k < T.getN() - 1; k++)
-                // {
-                //     int d = neighbourSet[b1 - 1][k + 1];
-                //     int d1 = (k % 2 == 0) ? T.prev(b) : T.next(b);
+                for (int k = 0; k < 2 * MAX_NEIGHBORS && k < T.getN() - 1; k++)
+                {
+                    int d = neighbourSet[b1 - 1][k/2 + 1];
+                    int d1 = ((k % 2) == 0) ? T.prev(d) : T.next(d);
 
-                //     if (d == base || d == T.next(base) || d == a || d == T.next(a) || d1 == base || d1 == T.next(base) || d1 == a || d1 == T.next(a) || c[b1][d] >= c[b][b1] + c[base][T.next(base)] - c[T.next(base)][a] + c[a][T.next(a)] - c[T.next(a)][b])
-                //     {
-                //         continue;
-                //     }
+                    if (d == base || d == T.next(base) || d == a || d == T.next(a) || d1 == base || d1 == T.next(base) || d1 == a || d1 == T.next(a) || d == b || d1 == b || c[b1][d] >= c[b][b1] + c[base][T.next(base)] - c[T.next(base)][a] + c[a][T.next(a)] - c[T.next(a)][b])
+                    {
+                        continue;
+                    }
 
-                //     double cost = c[d1][d] - c[b1][d];
+                    double cost = c[d1][d] - c[b1][d];
 
-                //     D_ordering[k] = {-cost, {d, d1}};
+                    D_ordering[k] = {-cost, {d, d1}};
 
-                //     D_ordering_size++;
-                // }
+                    D_ordering_size++;
+                }
 
-                // sort(D_ordering.begin(), D_ordering.end());
+                sort(D_ordering.begin(), D_ordering.end());
 
-                // for (int k = 0; k < breadthD && k < D_ordering_size; k++)
-                // {
-                //     int d = D_ordering[j].second.first;
-                //     int d1 = T.next(d);
-                //     int s1 = T.next(base);
+                // T.print();
+                for (int k = 0; k < breadthD && k < D_ordering_size; k++)
+                {
+                    int d = D_ordering[k].second.first;
+                    // int d1 = D_ordering[k].second.second;
+                    int d1 = T.next(d);
+                    // cout << "b: " << b << "\n";
+                    // cout << "(base, a): " << base << ", " << a << "\n";
+                    // cout << "(d, d1): " << d << ", " << d1 << "\n\n";
 
-                //     double altDelta2 = 0;
-                //     double g;
+                    int b1 = T.prev(b);
+                    int s1 = T.next(base);
+                    int a1 = T.next(a);
 
-                //     deque<pair<int, int>> altSequence2;
-                //     // T.print();
+                    double altDelta2 = 0;
+                    double g;
 
-                //     // cout << "B: " << b << " " << a << " " << "\n";
+                    deque<pair<int, int>> altSequence2;
+                    // T.print();
 
-                //     g = c[T.prev(s1)][s1] - c[s1][T.next(b)] + c[b][T.next(b)] - c[b][T.prev(s1)];
-                //     altDelta2 += g;
-                //     altSequence2.push_back({s1, b});
-                //     flipSequence.push_back({{s1, b}, g});
-                //     T.flip(s1, b);
+                    // cout << "B: " << b << " " << a << " " << "\n";
 
-                //     g = c[T.prev(b)][b] - c[b][T.next(a)] + c[a][T.next(a)] - c[T.prev(b)][a];
-                //     altDelta2 += g;
-                //     altSequence2.push_back({b, a});
-                //     flipSequence.push_back({{b, a}, g});
-                //     T.flip(b, a);
-                //     // s1 = T.next(base);
-                //     b1 = T.prev(b);
+                    // T.print();
+                    // cout << s1 << " " << b1 << "\n";
+                    // g = c[T.prev(s1)][s1] - c[s1][T.next(b1)] + c[b1][T.next(b1)] - c[b1][T.prev(s1)];
+                    // altDelta2 += g;
+                    // altSequence2.push_back({s1, b1});
+                    // flipSequence.push_back({{s1, b1}, g});
+                    // T.flip(s1, b1);
 
-                //     g = c[T.prev(s1)][s1] - c[s1][T.next(a)] + c[a][T.next(a)] - c[T.prev(s1)][a];
-                //     altDelta2 += g;
-                //     altSequence2.push_back({s1, a});
-                //     flipSequence.push_back({{s1, a}, g});
-                //     T.flip(s1, a);
+                    // g = c[T.prev(b1)][b1] - c[b1][T.next(d1)] + c[d1][T.next(d1)] - c[T.prev(b1)][d1];
+                    // altDelta2 += g;
+                    // altSequence2.push_back({b1, d1});
+                    // flipSequence.push_back({{b1, d1}, g});
+                    // T.flip(b1, d1);
 
-                //     g = c[T.prev(b)][b] - c[b][T.next(s1)] + c[s1][T.next(s1)] - c[T.prev(b)][s1];
-                //     altDelta2 += g;
-                //     altSequence2.push_back({b, s1});
-                //     flipSequence.push_back({{b, s1}, g});
-                //     T.flip(b, s1);
+                    // g = c[T.prev(a1)][a1] - c[a1][T.next(s1)] + c[s1][T.next(s1)] - c[T.prev(a1)][s1];
+                    // altDelta2 += g;
+                    // altSequence2.push_back({a1, s1});
+                    // flipSequence.push_back({{a1, s1}, g});
+                    // T.flip(a1, s1);
 
-                //     g = c[T.prev(a)][a] - c[b1][T.prev(a)] + c[b1][T.next(b1)] - c[T.next(b1)][a];
-                //     altDelta2 += g;
-                //     altSequence2.push_back({a, b1});
-                //     flipSequence.push_back({{a, b1}, g});
-                //     T.flip(a, b1);
+                    // b1 = T.prev(b);
+                    // d1 = T.prev(d);
 
-                //     g = c[T.prev(a)][a] - c[b1][T.prev(a)] + c[b1][T.next(b1)] - c[T.next(b1)][a];
-                //     altDelta2 += g;
-                //     altSequence2.push_back({a, b1});
-                //     flipSequence.push_back({{a, b1}, g});
-                //     T.flip(a, b1);
+                    // g = c[T.prev(s1)][s1] - c[s1][T.next(d1)] + c[d1][T.next(d1)] - c[T.prev(s1)][d1];
+                    // altDelta2 += g;
+                    // altSequence2.push_back({s1, d1});
+                    // flipSequence.push_back({{s1, d1}, g});
+                    // T.flip(s1, d1);
 
-                //     // vector<int> s = T.getTour();
-                //     // cout << T.getCost() - altDelta1 << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << " ||\n";
+                    // g = c[T.prev(d)][d] - c[a][T.prev(d)] + c[a][T.next(a)] - c[T.next(a)][d];
+                    // altDelta2 += g;
+                    // altSequence2.push_back({d, a});
+                    // flipSequence.push_back({{d, a}, g});
+                    // T.flip(d, a);
 
-                //     double old_final_delta = final_delta;
-                //     final_delta = altDelta1;
-                //     step(T, c, base, 4, altDelta1, final_delta, neighbourSet, flipSequence, taken);
+                    // g = c[T.prev(a1)][a1] - c[b1][T.prev(a1)] + c[b1][T.next(b1)] - c[T.next(b1)][a1];
+                    // altDelta2 += g;
+                    // altSequence2.push_back({a1, b1});
+                    // flipSequence.push_back({{a1, b1}, g});
+                    // T.flip(a1, b1);
 
-                //     if (final_delta > 0)
-                //     {
-                //         return;
-                //     }
-                //     else
-                //     {
-                //         final_delta = old_final_delta;
-                //         while (!altSequence2.empty())
-                //         {
-                //             pair<int, int> fl = altSequence2.back();
-                //             T.flip(fl.second, fl.first);
-                //             altSequence2.pop_back();
-                //             flipSequence.pop_back();
-                //         }
-                //     }
-                // }
+                    // vector<int> s = T.getTour();
+                    // cout << T.getCost() - altDelta1 << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << " ||\n";
+
+                    double old_final_delta = final_delta;
+                    final_delta = altDelta2;
+                    step(T, c, base, 4, altDelta2, final_delta, neighbourSet, flipSequence, taken);
+
+                    if (final_delta > 0)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        final_delta = old_final_delta;
+                        while (!altSequence2.empty())
+                        {
+                            pair<int, int> fl = altSequence2.back();
+                            T.flip(fl.second, fl.first);
+                            altSequence2.pop_back();
+                            flipSequence.pop_back();
+                        }
+                    }
+                }
             }
         }
     }
