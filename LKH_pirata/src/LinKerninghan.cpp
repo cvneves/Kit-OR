@@ -472,6 +472,8 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
                     int s1 = T.next(base);
                     int a1 = T.next(a);
 
+                    cout << "A\n";
+
                     double altDelta2 = 0;
                     double g;
 
@@ -480,13 +482,13 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
 
                     // cout << "B: " << b << " " << a << " " << "\n";
 
-                    // T.print();
-                    // cout << s1 << " " << b1 << "\n";
-                    // g = c[T.prev(s1)][s1] - c[s1][T.next(b1)] + c[b1][T.next(b1)] - c[b1][T.prev(s1)];
-                    // altDelta2 += g;
-                    // altSequence2.push_back({s1, b1});
-                    // flipSequence.push_back({{s1, b1}, g});
-                    // T.flip(s1, b1);
+                    T.print();
+                    cout << s1 << " " << b1 << "\n";
+                    g = c[T.prev(s1)][s1] - c[s1][T.next(b1)] + c[b1][T.next(b1)] - c[b1][T.prev(s1)];
+                    altDelta2 += g;
+                    altSequence2.push_back({s1, b1});
+                    flipSequence.push_back({{s1, b1}, g});
+                    T.flip(s1, b1);
 
                     // g = c[T.prev(b1)][b1] - c[b1][T.next(d1)] + c[d1][T.next(d1)] - c[T.prev(b1)][d1];
                     // altDelta2 += g;
