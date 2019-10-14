@@ -324,7 +324,7 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
     int breadthD = 5;
 
     vector<pair<pair<double, pair<int, int>>, bool>> B_ordering;
-    vector<pair<double, pair<int, int>>> D_ordering;
+    vector<pair<pair<double, pair<int, int>>, bool>> D_ordering;
 
     for (int i = 0; i < breadthA && i < A_ordering_size; i++)
     {
@@ -439,13 +439,14 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
             else
             {
                 //Create the D-ordering
-                D_ordering.assign(2 * MAX_NEIGHBORS, {std::numeric_limits<double>::infinity(), {0, 0}});
+                D_ordering.assign(2 * MAX_NEIGHBORS, {{std::numeric_limits<double>::infinity(), {0, 0}}, 0});
                 int D_ordering_size = 0;
 
                 for (int k = 0; k < 2 * MAX_NEIGHBORS && k < T.getN() - 1; k++)
                 {
                     int d = neighbourSet[b1 - 1][k / 2 + 1];
-                    int d1 = ((k % 2) == 0) ? T.prev(d) : T.next(d);
+                    bool next = ((k % 2) == 0);
+                    int d1 = next ? T.next(d) : T.prev(d);
 
                     if (d == base || d == T.next(base) || d == a || d == T.next(a) || d1 == base || d1 == T.next(base) || d1 == a || d1 == T.next(a) || d == b || d1 == b || d == b1 || d1 == b1 || c[b1][d] >= c[b][b1] + c[base][T.next(base)] - c[T.next(base)][a] + c[a][T.next(a)] - c[T.next(a)][b])
                     {
@@ -454,7 +455,7 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
 
                     double cost = c[d1][d] - c[b1][d];
 
-                    D_ordering[k] = {-cost, {d, d1}};
+                    D_ordering[k] = {{-cost, {d, d1}}, next};
 
                     D_ordering_size++;
                 }
@@ -464,14 +465,15 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
                 // T.print();
                 for (int k = 0; k < breadthD && k < D_ordering_size; k++)
                 {
-                    int d = D_ordering[k].second.first;
-                    int d1 = D_ordering[k].second.second;
+                    int d = D_ordering[k].first.second.first;
+                    int d1 = D_ordering[k].first.second.second;
                     // int d1 = T.next(d);
                     // cout << "b: " << b << "\n";
                     // cout << "(base, a): " << base << ", " << a << "\n";
                     // cout << "(d, d1): " << d << ", " << d1 << "\n\n";
 
                     !B_ordering[j].second ? swap(b, b1), 0 : 0;
+                    !D_ordering[j].second ? swap(d, d1), 0 : 0;
 
                     // int b1 = T.prev(b);
                     int s1 = T.next(base);
@@ -487,10 +489,6 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
 
                     // cout << "B: " << b << " " << a << " " << "\n";
 
-                    if (d1 == b1)
-                    {
-                        cout << d1 << " " << b1 << "\n";
-                    }
                     g = c[T.prev(s1)][s1] - c[s1][T.next(b1)] + c[b1][T.next(b1)] - c[b1][T.prev(s1)];
                     altDelta2 += g;
                     altSequence2.push_back({s1, b1});
@@ -512,12 +510,7 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
                     // b1 = T.prev(b);
                     // d1 = T.prev(d);
 
-                    if (s1 == T.next(d1))
-                    {
-                        T.print();
-                        cout << s1 << "d1: " << d1 << "d: " << d << "\n";
-                        cout << base << "\n";
-                    }
+                    cout << T.inverse(s1) - T.inverse(d1) << "\n";
                     g = c[T.prev(s1)][s1] - c[s1][T.next(d1)] + c[d1][T.next(d1)] - c[T.prev(s1)][d1];
                     altDelta2 += g;
                     altSequence2.push_back({s1, d1});
