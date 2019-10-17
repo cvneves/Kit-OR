@@ -342,7 +342,7 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
             bool next = (j % 2 == 0);
             int b1 = next ? T.prev(b) : T.next(b);
 
-            if (b == base || b == T.next(base) || b == a || b1 == base || b1 == T.next(base) || b1 == a || c[T.next(a)][b] >= c[a][T.next(a)] + c[base][T.next(base)] - c[T.next(base)][a])
+            if (b == base || b == T.next(base) || b == a || b1 == base || b1 == T.next(base) || b1 == a || (c[T.next(a)][b] >= c[a][T.next(a)] + c[base][T.next(base)] - c[T.next(base)][a]))
             {
                 continue;
             }
@@ -510,7 +510,7 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
                     // b1 = T.prev(b);
                     // d1 = T.prev(d);
 
-                    cout << T.inverse(s1) - T.inverse(d1) << "\n";
+                    // cout << T.inverse(s1) - T.inverse(d1) << "\n";
                     g = c[T.prev(s1)][s1] - c[s1][T.next(d1)] + c[d1][T.next(d1)] - c[T.prev(s1)][d1];
                     altDelta2 += g;
                     altSequence2.push_back({s1, d1});
