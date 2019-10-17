@@ -485,9 +485,10 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
                     double g;
 
                     deque<pair<int, int>> altSequence2;
-                    // T.print();
+                    
+                    T.print();
 
-                    // cout << "B: " << b << " " << a << " " << "\n";
+                    cout << b << " " << b1 << " " << d << " " << d1 << " " << a << "\n\n";
 
                     g = c[T.prev(s1)][s1] - c[s1][T.next(b1)] + c[b1][T.next(b1)] - c[b1][T.prev(s1)];
                     altDelta2 += g;
@@ -507,10 +508,17 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
                     flipSequence.push_back({{a1, s1}, g});
                     T.flip(a1, s1);
 
+                    // int temp_b1 = T.prev(b);
+                    int temp_d1 = T.prev(d);
+
+                    // swap(b1, temp_b1);
+                    swap(d1, temp_d1);
+
                     // b1 = T.prev(b);
                     // d1 = T.prev(d);
 
                     // cout << T.inverse(s1) - T.inverse(d1) << "\n";
+                    
                     g = c[T.prev(s1)][s1] - c[s1][T.next(d1)] + c[d1][T.next(d1)] - c[T.prev(s1)][d1];
                     altDelta2 += g;
                     altSequence2.push_back({s1, d1});
@@ -550,6 +558,12 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
                             altSequence2.pop_back();
                             flipSequence.pop_back();
                         }
+
+                        !B_ordering[j].second ? swap(b, b1), 0 : 0;
+                        !D_ordering[j].second ? swap(d, d1), 0 : 0;
+
+                        // swap(b1, temp_b1);
+                        swap(d1, temp_d1);
                     }
                 }
             }
