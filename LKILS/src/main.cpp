@@ -146,19 +146,19 @@ void RVND(std::vector<int> &solucao, double &valor_obj, double **m)
   double novo_valor_obj = valor_obj;
 
   int i = 0;
-  while (NL.empty() == false)
-  {
-    n = rand() % NL.size();
-    switch (NL[n])
-    {
-    case 1:
-      // temp1 = std::chrono::system_clock::now();
-      buscaVizinhancaSwap(nova_solucao, novo_valor_obj, m);
-      // temp2 = std::chrono::system_clock::now();
-      // tempos[0] += std::chrono::duration_cast<std::chrono::microseconds>(temp2 - temp1).count();
-      break;
-    case 2:
-    {
+  // while (NL.empty() == false)
+  // {
+  //   n = rand() % NL.size();
+  //   switch (NL[n])
+  //   {
+  //   case 1:
+  //     // temp1 = std::chrono::system_clock::now();
+  //     buscaVizinhancaSwap(nova_solucao, novo_valor_obj, m);
+  //     // temp2 = std::chrono::system_clock::now();
+  //     // tempos[0] += std::chrono::duration_cast<std::chrono::microseconds>(temp2 - temp1).count();
+  //     break;
+  //   case 2:
+  //   {
       Tour T(nova_solucao, dimension, novo_valor_obj);
       Tour T2 = T;
 
@@ -176,37 +176,37 @@ void RVND(std::vector<int> &solucao, double &valor_obj, double **m)
         k++;
       }
 
-      // printSolucao(nova_solucao);
+    //   // printSolucao(nova_solucao);
 
-      // nova_solucao = T.getTour();
+    //   // nova_solucao = T.getTour();
 
-      // temp1 = std::chrono::system_clock::now();
-      // buscaVizinhanca2Opt(nova_solucao, novo_valor_obj, m);
-      // temp2 = std::chrono::system_clock::now();
-      // tempos[1] += std::chrono::duration_cast<std::chrono::microseconds>(temp2 - temp1).count();
-      break;
-    }
-    case 3:
-      // temp1 = std::chrono::system_clock::now();
-      buscaVizinhancaReinsertion(nova_solucao, novo_valor_obj, m, 1);
-      // temp2 = std::chrono::system_clock::now();
-      // tempos[2] += std::chrono::duration_cast<std::chrono::microseconds>(temp2 - temp1).count();
-      break;
-    case 4:
-      // temp1 = std::chrono::system_clock::now();
-      buscaVizinhancaReinsertion(nova_solucao, novo_valor_obj, m, 2);
-      // // temp2 = std::chrono::system_clock::now();
-      // tempos[3] += std::chrono::duration_cast<std::chrono::microseconds>(temp2 - temp1).count();
-      break;
-    case 5:
-    {
-      // temp1 = std::chrono::system_clock::now();
-      buscaVizinhancaReinsertion(nova_solucao, novo_valor_obj, m, 3);
-      // temp2 = std::chrono::system_clock::now();
-      // tempos[4] += std::chrono::duration_cast<std::chrono::microseconds>(temp2 - temp1).count();
-      break;
-    }
-    }
+    //   // temp1 = std::chrono::system_clock::now();
+    //   // buscaVizinhanca2Opt(nova_solucao, novo_valor_obj, m);
+    //   // temp2 = std::chrono::system_clock::now();
+    //   // tempos[1] += std::chrono::duration_cast<std::chrono::microseconds>(temp2 - temp1).count();
+    //   break;
+    // }
+    // case 3:
+    //   // temp1 = std::chrono::system_clock::now();
+    //   buscaVizinhancaReinsertion(nova_solucao, novo_valor_obj, m, 1);
+    //   // temp2 = std::chrono::system_clock::now();
+    //   // tempos[2] += std::chrono::duration_cast<std::chrono::microseconds>(temp2 - temp1).count();
+    //   break;
+    // case 4:
+    //   // temp1 = std::chrono::system_clock::now();
+    //   buscaVizinhancaReinsertion(nova_solucao, novo_valor_obj, m, 2);
+    //   // // temp2 = std::chrono::system_clock::now();
+    //   // tempos[3] += std::chrono::duration_cast<std::chrono::microseconds>(temp2 - temp1).count();
+    //   break;
+    // case 5:
+    // {
+    //   // temp1 = std::chrono::system_clock::now();
+    //   buscaVizinhancaReinsertion(nova_solucao, novo_valor_obj, m, 3);
+    //   // temp2 = std::chrono::system_clock::now();
+    //   // tempos[4] += std::chrono::duration_cast<std::chrono::microseconds>(temp2 - temp1).count();
+    //   break;
+    // }
+    // }
 
     if (novo_valor_obj < valor_obj)
     {
@@ -219,7 +219,7 @@ void RVND(std::vector<int> &solucao, double &valor_obj, double **m)
       nova_solucao = solucao;
       novo_valor_obj = valor_obj;
     }
-  }
+  // }
 }
 
 void printSolucao(std::vector<int> &solucao)
@@ -470,17 +470,19 @@ void buscaVizinhanca2Opt(std::vector<int> &solucao, double &valor_obj, double **
 
 std::vector<int> GILS_RVND()
 {
-  int I_max = 2;
+  int I_max = 10;
   int I_ils;
 
-  if (dimension >= 150)
-  {
-    I_ils = dimension / 2;
-  }
-  else
-  {
-    I_ils = dimension;
-  }
+  // if (dimension >= 150)
+  // {
+  //   I_ils = dimension / 2;
+  // }
+  // else
+  // {
+  //   I_ils = dimension;
+  // }
+
+  I_ils = 50;
 
   double valor_obj_final = std::numeric_limits<double>::infinity();
   std::vector<int> s_final;
@@ -516,7 +518,9 @@ std::vector<int> GILS_RVND()
         s_b = s;
         valor_obj_b = valor_obj;
         iter_ILS = 0;
+        cout << "HOUVE MELHORA DENTRO\n";
       }
+      cout << "NAO HOUVE MELHORA DENTRO\n";
 
       std::vector<int> temp_s = s_b;
 
@@ -531,8 +535,13 @@ std::vector<int> GILS_RVND()
 
     if (valor_obj_b < valor_obj_final)
     {
+      cout << "\nHOUVE MELHORA NO RESTART\n";
       s_final = s_b;
       valor_obj_final = valor_obj_b;
+    }
+    else
+    {
+      cout << "\nNAO HOUVE MELHORA NO RESTART\n";
     }
   }
 
