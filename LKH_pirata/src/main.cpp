@@ -37,7 +37,7 @@ int main(int argc, char **argv)
   double best = numeric_limits<double>::infinity();
   double **c = matrizAdj;
 
-  for (int ITER = 0; ITER < 10; ITER++)
+  for (int ITER = 0; ITER < 1; ITER++)
   {
     double alpha = (double)rand() / RAND_MAX;
     std::vector<int> s = construction(alpha, dimension, matrizAdj);
