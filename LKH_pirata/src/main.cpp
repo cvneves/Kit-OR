@@ -66,14 +66,16 @@ int main(int argc, char **argv)
 
   // Chained_Lin_Kerninghan(T, matrizAdj, neighbourSet);
 
-  cout << T2.getCost() << "\n";
+  // cout << T2.getCost() << "\n";
+  s = T2.getTour();
+  cout << T2.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << "\n";
 
   // deque<pair<pair<int, int>, double>> flipSequence;
   // vector<bool> taken(T.getN() + 1, false);
   // double final_delta = 0;
 
   // alternate_step(T, matrizAdj, 1, 1, 0, final_delta, neighbourSet, flipSequence, taken);
-  std::cout << x;
+  // std::cout << x;
 
   return 0;
 }
