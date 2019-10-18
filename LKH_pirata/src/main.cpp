@@ -24,8 +24,7 @@ double **matrizAdj;
 int main(int argc, char **argv)
 {
   int x = time(NULL);
-  std::cout << x;
-  srand(1571352132);
+  srand(1571414316);
   // srand(x);
   // 1570403292
 
@@ -74,6 +73,7 @@ int main(int argc, char **argv)
   // double final_delta = 0;
 
   // alternate_step(T, matrizAdj, 1, 1, 0, final_delta, neighbourSet, flipSequence, taken);
+  std::cout << x;
 
   return 0;
 }

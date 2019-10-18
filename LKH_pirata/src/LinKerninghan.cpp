@@ -342,7 +342,7 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
             bool next = (j % 2 == 0);
             int b1 = next ? T.prev(b) : T.next(b);
 
-            if (b == base || b == T.next(base) || b == a || b1 == base || b1 == T.next(base) || b1 == a || (c[T.next(a)][b] >= c[a][T.next(a)] + c[base][T.next(base)] - c[T.next(base)][a]))
+            if (b == base || b == T.next(base) || b == a || b1 == base || b1 == T.next(base) || b1 == a || b1 == T.next(a) || b == T.next(a) || (c[T.next(a)][b] >= c[a][T.next(a)] + c[base][T.next(base)] - c[T.next(base)][a]))
             {
                 continue;
             }
@@ -372,7 +372,7 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
 
             double altDelta1 = 0;
             double g;
-            if (T.sequence(s1, T.next(b), a) == true)
+            if (T.sequence(s1, b, a) == true)
             {
                 deque<pair<int, int>> altSequence1;
                 // T.print();
@@ -485,10 +485,10 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
                     double g;
 
                     deque<pair<int, int>> altSequence2;
-                    
+
                     T.print();
 
-                    cout << b << " " << b1 << " " << d << " " << d1 << " " << a << "\n\n";
+                    cout << b << " " << b1 << " " << d << " " << d1 << " " << a << " " << base << "\n\n";
 
                     g = c[T.prev(s1)][s1] - c[s1][T.next(b1)] + c[b1][T.next(b1)] - c[b1][T.prev(s1)];
                     altDelta2 += g;
@@ -496,17 +496,26 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
                     flipSequence.push_back({{s1, b1}, g});
                     T.flip(s1, b1);
 
+                    cout << s1 << " " << b1 << "\n";
+                    T.print();
+
                     g = c[T.prev(b1)][b1] - c[b1][T.next(d1)] + c[d1][T.next(d1)] - c[T.prev(b1)][d1];
                     altDelta2 += g;
                     altSequence2.push_back({b1, d1});
                     flipSequence.push_back({{b1, d1}, g});
                     T.flip(b1, d1);
 
+                    cout << b1 << " " << d1 << "\n";
+                    T.print();
+
                     g = c[T.prev(a1)][a1] - c[a1][T.next(s1)] + c[s1][T.next(s1)] - c[T.prev(a1)][s1];
                     altDelta2 += g;
                     altSequence2.push_back({a1, s1});
                     flipSequence.push_back({{a1, s1}, g});
                     T.flip(a1, s1);
+
+                    cout << a1 << " " << s1 << "\n";
+                    T.print();
 
                     // int temp_b1 = T.prev(b);
                     int temp_d1 = T.prev(d);
@@ -518,18 +527,24 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
                     // d1 = T.prev(d);
 
                     // cout << T.inverse(s1) - T.inverse(d1) << "\n";
-                    
+
                     g = c[T.prev(s1)][s1] - c[s1][T.next(d1)] + c[d1][T.next(d1)] - c[T.prev(s1)][d1];
                     altDelta2 += g;
                     altSequence2.push_back({s1, d1});
                     flipSequence.push_back({{s1, d1}, g});
                     T.flip(s1, d1);
 
-                    // g = c[T.prev(d)][d] - c[a][T.prev(d)] + c[a][T.next(a)] - c[T.next(a)][d];
-                    // altDelta2 += g;
-                    // altSequence2.push_back({d, a});
-                    // flipSequence.push_back({{d, a}, g});
-                    // T.flip(d, a);
+                    cout << s1 << " " << d1 << "\n";
+                    T.print();
+
+                    g = c[T.prev(d)][d] - c[a][T.prev(d)] + c[a][T.next(a)] - c[T.next(a)][d];
+                    altDelta2 += g;
+                    altSequence2.push_back({d, a});
+                    flipSequence.push_back({{d, a}, g});
+                    T.flip(d, a);
+
+                    cout << d << " " << a << "\n";
+                    T.print();
 
                     // g = c[T.prev(a1)][a1] - c[b1][T.prev(a1)] + c[b1][T.next(b1)] - c[T.next(b1)][a1];
                     // altDelta2 += g;
