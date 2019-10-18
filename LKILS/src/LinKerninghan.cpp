@@ -48,7 +48,6 @@ vi Tour::getTour()
     return tour;
 }
 
-
 int breadth(int k)
 {
     return (k <= 2) ? 5 : 1;
@@ -135,7 +134,7 @@ void lkStep(Tour &T, double **c, vector<vector<int>> &neighbourSet)
         // }
         std::cout << "\n";
         // printSolucao(s);
-        cout << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << "\n";
+        // cout << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << "\n";
     }
 }
 
@@ -635,6 +634,7 @@ void lin_kerninghan(Tour &T, Tour &lk_tour, double **c, vector<vector<int>> &nei
 
         // lk_tour.print();
         // vector<int> s = lk_tour.getTour();
+        // cout << lk_tour.getCost() << "\n";
         // cout << lk_tour.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << " |\n";
     }
 
@@ -724,5 +724,5 @@ void Chained_Lin_Kerninghan(Tour &S, double **c, vector<vector<int>> &neighbourS
 
     // T.print();
     vector<int> s = T.getTour();
-    cout << T.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << "\n";
+    // cout << T.getCost() << ", " << calcularValorObj(s, c) + c[s[s.size() - 1]][s[0]] << "\n";
 }

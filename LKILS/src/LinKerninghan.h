@@ -6,7 +6,7 @@
 #include <iostream>
 #include <deque>
 #include <list>
-#include "SolutionUtils.h"
+//#include "SolutionUtils.h"
 #include <limits>
 
 #define INF std::numeric_limits<double>::infinity()
@@ -18,7 +18,7 @@ typedef vector<int> vi;
 class Tour
 {
 private:
-  vi tour, inv, tour_padronizado;
+  vi tour, inv;
   double cost;
   int N;
   bool reversed;
