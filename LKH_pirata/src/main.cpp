@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 {
   int x = time(NULL);
   srand(1571423237);
-  // srand(x);
+  srand(x);
   // 1570403292
 
   readData(argc, argv, &dimension, &matrizAdj);
