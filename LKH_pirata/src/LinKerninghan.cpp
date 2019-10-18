@@ -584,7 +584,7 @@ void alternate_step(Tour &T, double **c, int base, int level, float delta, doubl
 
                     //     // swap(b1, temp_b1);
                     //     swap(d1, temp_d1);
-                    // }
+                    // }AAA
                 }
             }
         }
