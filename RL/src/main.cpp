@@ -69,7 +69,7 @@ int main(int argc, char **argv)
 
   std::vector<std::pair<std::pair<int, int>, double>> ci;
   std::vector<std::pair<int, int>> solucaoEdges;
-  double UB = calcularValorObj(s, matrizAdj)+1;
+  double UB = calcularValorObj(s, matrizAdj) + 1;
   std::cout << "Heuristic UB: " << UB << "\n\n";
 
   std::vector<double> lambda(dimension, 0);
@@ -101,7 +101,7 @@ int main(int argc, char **argv)
 
     std::cout << "LB: " << node->LB << "\nNodes: " << tree.size() << "\n";
 
-    if(std::abs(node->LB - UB) < EPSILON)
+    if (std::abs(node->LB - UB) < EPSILON)
     {
       //break;
     }
@@ -110,12 +110,27 @@ int main(int argc, char **argv)
     {
       std::cout << "Feasible \n\n";
 
-      if (node->LB - UB < EPSILON)
+      double currentNodeCost = 0;
+      for (int i = 0; i < dimension; i++)
+      {
+        currentNodeCost += matrizAdj[node->s[i].first + 1][node->s[i].second + 1];
+      }
+
+      for (auto it = tree.begin(); it != tree.end(); it++)
+      {
+        if(it->LB > currentNodeCost)
+        {
+          it->pruning = true;
+        }
+      }
+
+      if (currentNodeCost - UB < EPSILON)
       {
         solucaoEdges = node->s;
-        UB = node->LB;
+        UB = currentNodeCost;
       }
     }
+
     else
     {
       std::cout << "Unfeasible \n\n";
@@ -130,7 +145,7 @@ int main(int argc, char **argv)
     }
 
     int noEscolhido = std::min_element(node->penalizacao.begin() + 0, node->penalizacao.end()) - node->penalizacao.begin();
-    
+
     for (auto &aresta : node->s)
     {
       //if (node->penalizacao[aresta.first] == grau || node->penalizacao[aresta.second] == grau)

@@ -13,6 +13,9 @@ void Node::calculateLB(int &dimension, std::vector<std::vector<double>> &M, cons
     std::vector<double> vetorInfinito1(arcosProibidos.size(), std::numeric_limits<double>::infinity());
     std::vector<double> vetorInfinito2(arcosProibidos.size(), std::numeric_limits<double>::infinity());
 
+    double bestLB = -std::numeric_limits<double>::infinity();
+    std::vector<double> bestLambda;
+
     int cont = 0;
     for (const auto &arco : arcosProibidos)
     {
@@ -36,6 +39,11 @@ void Node::calculateLB(int &dimension, std::vector<std::vector<double>> &M, cons
         kr = Kruskal(cost);
 
         LB = kr.MST(dimension);
+        if (LB > bestLB)
+        {
+            bestLB = LB;
+            bestLambda = lambda;
+        }
 
         for (int i = 1; i < dimension; i++)
         {
@@ -121,4 +129,7 @@ void Node::calculateLB(int &dimension, std::vector<std::vector<double>> &M, cons
         std::swap(M[arco.second][arco.first], vetorInfinito2[cont]);
         cont++;
     }
+
+    lambda = bestLambda;
+    LB = bestLB;
 }
