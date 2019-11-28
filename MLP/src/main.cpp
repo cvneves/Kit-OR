@@ -180,6 +180,7 @@ void RVND(std::vector<int> &solucao, std::vector<std::vector<std::vector<long do
 
     if (novo_valor_obj < valor_obj)
     {
+      NL = {1, 2, 3, 4, 5};
       valor_obj = novo_valor_obj;
       solucao = nova_solucao;
     }
