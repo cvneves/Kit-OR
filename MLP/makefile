@@ -4,8 +4,8 @@ CPLEX_VERSION = 12.4
 BITS_OPTION = -m64
 
 ####diretorios com as libs do cplex
-CPLEXDIR  = /opt/ibm/ILOG/CPLEX_Studio127/cplex
-CONCERTDIR = /opt/ibm/ILOG/CPLEX_Studio127/concert
+CPLEXDIR  = /opt/ibm/ILOG/CPLEX_Studio128/cplex
+CONCERTDIR = /opt/ibm/ILOG/CPLEX_Studio128/concert
    
 CPLEXLIBDIR   = $(CPLEXDIR)/lib/x86-64_linux/static_pic
 CONCERTLIBDIR = $(CONCERTDIR)/lib/x86-64_linux/static_pic
