@@ -15,7 +15,7 @@
 void printData();
 
 double **M; // matriz de adjacencia
-int N;           // quantidade total de vertices
+int N;      // quantidade total de vertices
 
 double calculaCustoAcumulado(std::vector<int> &s);
 double calculaCustoSubsequencia(std::vector<int> &s, int i, int j);
@@ -689,7 +689,6 @@ void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vecto
     {
       for (int i = j - 1; i >= 0; i--)
       {
-
         reOpt[2][i][j] = reOpt[2][i][j - 1] + reOpt[2][j][j];
         reOpt[0][i][j] = reOpt[0][i][j - 1] + M[s[j - 1]][s[j]];
         reOpt[1][i][j] = reOpt[1][i][j - 1] + reOpt[2][j][j] * (reOpt[0][i][j - 1] + M[s[j - 1]][s[j]]) + reOpt[1][j][j];
@@ -705,7 +704,6 @@ void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vecto
     {
       for (int j = melhor_j + 1; j <= N; j++)
       {
-
         reOpt[2][i][j] = reOpt[2][i][j - 1] + reOpt[2][j][j];
         reOpt[0][i][j] = reOpt[0][i][j - 1] + M[s[j - 1]][s[j]];
         reOpt[1][i][j] = reOpt[1][i][j - 1] + reOpt[2][j][j] * (reOpt[0][i][j - 1] + M[s[j - 1]][s[j]]) + reOpt[1][j][j];
@@ -717,19 +715,22 @@ void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vecto
       }
     }
 
-    for (int i = 0, j = melhor_j + 1; j <= N; j++)
+    for (int i = melhor_i - 1, k = melhor_i, l; i >= 0; i--)
     {
+      for (int j = melhor_j + 1; j <= N; j++)
+      {
 
-      reOpt[2][i][j] = reOpt[2][i][j - 1] + reOpt[2][j][j];
-      reOpt[0][i][j] = reOpt[0][i][j - 1] + M[s[j - 1]][s[j]];
-      reOpt[1][i][j] = reOpt[1][i][j - 1] + reOpt[2][j][j] * (reOpt[0][i][j - 1] + M[s[j - 1]][s[j]]) + reOpt[1][j][j];
+        reOpt[2][i][j] = reOpt[2][i][k] + reOpt[2][k + 1][j];
+        reOpt[0][i][j] = reOpt[0][i][k] + M[s[k]][s[k + 1]] + reOpt[0][k + 1][j];
+        reOpt[1][i][j] = reOpt[1][i][k] + reOpt[2][k + 1][j] * (reOpt[0][i][k] + M[s[k]][s[k + 1]]) + reOpt[1][k + 1][j];
 
-      reOpt[2][j][i] = reOpt[2][i][j];
-      reOpt[0][j][i] = reOpt[0][i][j];
+        reOpt[2][j][i] = reOpt[2][i][j];
+        reOpt[0][j][i] = reOpt[0][i][j];
 
-      reOpt[1][j][i] = reOpt[1][j - 1][i] + reOpt[2][j - 1][i] * (reOpt[0][j][j] + M[s[j]][s[j - 1]]) + reOpt[1][j][j];
+        reOpt[1][j][i] = reOpt[1][k][i] + reOpt[2][k][i] * (reOpt[0][j][k + 1] + M[s[k + 1]][s[k]]) + reOpt[1][j][k + 1];
+      }
     }
-    reOptPreProcessing(s, reOpt);
+    // reOptPreProcessing(s, reOpt);
   }
 }
 
