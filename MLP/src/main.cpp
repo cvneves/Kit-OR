@@ -732,6 +732,8 @@ void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vecto
     }
     // reOptPreProcessing(s, reOpt);
   }
+
+  // std::cout << calculaCustoAcumulado(s) << " " << reOpt[1][0][N] + reOpt[0][0][N] << "\n";
 }
 
 void printData()
