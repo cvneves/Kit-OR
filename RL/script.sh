@@ -1,4 +1,4 @@
-for file in instances/*
+for file in instances_teste/*
 do
-  ./tsp "$file" >> resultados.txt
+  ./tsp "$file" >> resultados.csv
 done

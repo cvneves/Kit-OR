@@ -168,7 +168,7 @@ int main(int argc, char **argv)
   }
 
   std::cout
-      << UB <<", " << cpuTime() - t1 <<  "\n";
+ << string(argv[1]) << ", "     << UB <<", " << cpuTime() - t1 <<  "\n";
 
   return 0;
 }
