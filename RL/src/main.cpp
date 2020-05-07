@@ -11,6 +11,7 @@
 #include "Kruskal.h"
 #include "Lagrange.h"
 #include <list>
+#include "Util.h"
 
 #define EPSILON std::numeric_limits<double>::epsilon()
 #define INF std::numeric_limits<double>::infinity()
@@ -45,8 +46,8 @@ void perturb(std::vector<int> &s);
 int main(int argc, char **argv)
 {
   readData(argc, argv, &dimension, &matrizAdj);
-  printData();
-  std::cout << "\n\n";
+  // printData();
+  // std::cout << "\n\n";
 
   std::vector<std::vector<double>> matrizDistancia(dimension, std::vector<double>(dimension));
 
@@ -70,7 +71,7 @@ int main(int argc, char **argv)
   std::vector<std::pair<std::pair<int, int>, double>> ci;
   std::vector<std::pair<int, int>> solucaoEdges;
   double UB = calcularValorObj(s, matrizAdj) + 1;
-  std::cout << "Heuristic UB: " << UB << "\n\n";
+  // std::cout << "Heuristic UB: " << UB << "\n\n";
 
   std::vector<double> lambda(dimension, 0);
   Node root;
@@ -83,6 +84,8 @@ int main(int argc, char **argv)
   std::list<Node> tree = {root};
 
   auto node = tree.begin();
+
+  double t1 = cpuTime();
 
   while (tree.empty() == false)
   {
@@ -99,7 +102,7 @@ int main(int argc, char **argv)
     //node = tree.end();
     //node--;
 
-    std::cout << "LB: " << node->LB << "\nNodes: " << tree.size() << "\n";
+    // std::cout << "LB: " << node->LB << "\nNodes: " << tree.size() << "\n";
 
     if (std::abs(node->LB - UB) < EPSILON)
     {
@@ -108,7 +111,7 @@ int main(int argc, char **argv)
 
     if (node->isFeasible)
     {
-      std::cout << "Feasible \n\n";
+      // std::cout << "Feasible \n\n";
 
       double currentNodeCost = 0;
       for (int i = 0; i < dimension; i++)
@@ -118,7 +121,7 @@ int main(int argc, char **argv)
 
       for (auto it = tree.begin(); it != tree.end(); it++)
       {
-        if(it->LB > currentNodeCost)
+        if (it->LB > currentNodeCost)
         {
           it->pruning = true;
         }
@@ -133,7 +136,7 @@ int main(int argc, char **argv)
 
     else
     {
-      std::cout << "Unfeasible \n\n";
+      // std::cout << "Unfeasible \n\n";
     }
 
     if (node->pruning)
@@ -164,8 +167,8 @@ int main(int argc, char **argv)
     tree.erase(node);
   }
 
-  std::cout << "\n\n"
-            << UB << "\n";
+  std::cout
+      << UB <<", " << cpuTime() - t1 <<  "\n";
 
   return 0;
 }
