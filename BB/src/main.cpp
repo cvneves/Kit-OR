@@ -59,8 +59,8 @@ int main(int argc, char **argv)
 		}
 
 		//		node = tree.begin();
-		node = tree.end();
-		node--;
+		// node = tree.end();
+		// node--;
 
 		hungarian_free(&p);
 		hungarian_init(&p, cost, data->getDimension(), data->getDimension(), mode);
@@ -120,7 +120,7 @@ int main(int argc, char **argv)
 			hungarian_init(&p, cost, data->getDimension(), data->getDimension(), mode);
 
 			// current_subtour = calcularSolucao(&p, *node);
-			n.obj_value = node->obj_value;
+			// n.obj_value = node->obj_value;
 		}
 
 		tree.erase(node);
