@@ -27,6 +27,16 @@ std::vector<int> calcularSolucao(hungarian_problem_t *p, Node &n)
 
     std::vector<std::vector<int>> subtours = construirSubtours(p->assignment, p->num_rows);
 
+    // for(int i = 0; i < subtours.size();i++)
+    // {
+    //     for(int j = 0; j < subtours[i].size();j++)
+    //     {
+    //         std::cout << subtours[i][j] - 1 << " ";
+    //     }
+    //     std::cout << "\n";
+    // }
+    // std::cout << "\n";
+
     if (subtours.size() == 1)
         n.pruning = true;
     else

@@ -40,14 +40,13 @@ int main(int argc, char **argv)
 
 	std::list<Node> tree = {root};
 
-	double upper_bound = 3323 + 1;
+	double upper_bound = 99999999;
 
 	auto node = tree.begin();
 	int cont = 0;
 
 	while (tree.empty() == false)
 	{
-
 		double menor_lb = std::numeric_limits<double>::infinity();
 
 		for (auto it = tree.begin(); it != tree.end(); it++)
@@ -60,34 +59,38 @@ int main(int argc, char **argv)
 		}
 
 		//		node = tree.begin();
-		// node = tree.end();
-		// node--;
+		node = tree.end();
+		node--;
 
 		hungarian_free(&p);
 		hungarian_init(&p, cost, data->getDimension(), data->getDimension(), mode);
 
+
 		current_subtour = calcularSolucao(&p, *node);
+
+		
+		
 
 		// std::cout << node->obj_value << "\n";
 
 		// std::cout << tree.size() << ", " << cont << "\n";
 
-		// LOG
-		if (cont == 10000)
-		{
-			std::cout << "\n\nTree size: " << tree.size() << "\n";
-			std::cout << "Soluçao: ";
-			printSolucao(current_subtour);
-			std::cout << "LB: " << node->obj_value << "\n";
-			for (const auto &arco : node->arcos_proibidos)
-			{
-				std::cout << "(" << arco.first << "," << arco.second << "), ";
-			}
-			std::cout << "\n";
-			cont = 0;
-		}
+		// // LOG
+		// if (cont == 1)
+		// {
+		// std::cout << "\n\nTree size: " << tree.size() << "\n";
+		// std::cout << "Soluçao: ";
+		// printSolucao(current_subtour);
+		// std::cout << "LB: " << node->obj_value << "\n";
+		// for (const auto &arco : node->arcos_proibidos)
+		// {
+		// 	std::cout << "(" << arco.first << "," << arco.second << "), ";
+		// }
+		// std::cout << "\n";
+		// cont = 0;
+		// }
 
-		if (node->obj_value - upper_bound > std::numeric_limits<double>::epsilon())
+		if (node->obj_value > upper_bound)
 		{
 			tree.erase(node);
 			continue;
@@ -95,9 +98,10 @@ int main(int argc, char **argv)
 
 		if (node->pruning == true)
 		{
-			if (node->obj_value - best_node.obj_value < std::numeric_limits<double>::epsilon())
+			if (node->obj_value < best_node.obj_value)
 			{
 				best_node = *node;
+				upper_bound = node->obj_value;
 			}
 			tree.erase(node);
 			continue;
@@ -115,7 +119,8 @@ int main(int argc, char **argv)
 			hungarian_free(&p);
 			hungarian_init(&p, cost, data->getDimension(), data->getDimension(), mode);
 
-			current_subtour = calcularSolucao(&p, *node);
+			// current_subtour = calcularSolucao(&p, *node);
+			n.obj_value = node->obj_value;
 		}
 
 		tree.erase(node);
