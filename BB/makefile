@@ -4,8 +4,8 @@ CPLEX_VERSION = 12.4
 BITS_OPTION = -m64
 
 ####diretorios com as libs do cplex
-CPLEXDIR  = /opt/ibm/ILOG/CPLEX_Studio127/cplex
-CONCERTDIR = /opt/ibm/ILOG/CPLEX_Studio127/concert
+CPLEXDIR  = /opt/ibm/ILOG/CPLEX_Studio128/cplex
+CONCERTDIR = /opt/ibm/ILOG/CPLEX_Studio128/concert
    
 CPLEXLIBDIR   = $(CPLEXDIR)/lib/x86-64_linux/static_pic
 CONCERTLIBDIR = $(CONCERTDIR)/lib/x86-64_linux/static_pic
@@ -22,7 +22,7 @@ CCFLAGS = $(CCOPT) -I$(CPLEXINCDIR) -I$(CONCERTINCDIR)
 #############################
 
 #### flags do linker
-CCLNFLAGS = -L$(CPLEXLIBDIR) -lilocplex -lcplex -L$(CONCERTLIBDIR) -lconcert -lm -lpthread 
+CCLNFLAGS = -L$(CPLEXLIBDIR) -lilocplex -lcplex -L$(CONCERTLIBDIR) -lconcert -lm -lpthread -lconcert -lilocplex -lcplex -lm -lpthread -ldl
 #############################
 
 #### diretorios com os source files e com os objs files
@@ -36,7 +36,7 @@ OBJS = $(patsubst $(SRCDIR)/%.cpp, $(OBJDIR)/%.o, $(SRCS))
 #############################
 
 #### regra principal, gera o executavel
-tsp: $(OBJS) 
+rcvrp: $(OBJS) 
 	@echo  "\033[31m \nLinking all objects files: \033[0m"
 	$(CPPC) $(BITS_OPTION) $(OBJS) -o $@ $(CCLNFLAGS)
 ############################
@@ -58,7 +58,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 #delete objetos e arquivos de dependencia
 clean:
 	@echo "\033[31mcleaning obj directory \033[0m"
-	@rm tsp -f $(OBJDIR)/*.o $(OBJDIR)/*.d
+	@rm rcvrp -f $(OBJDIR)/*.o $(OBJDIR)/*.d
 
 
-rebuild: clean tsp
+rebuild: clean rcvrp

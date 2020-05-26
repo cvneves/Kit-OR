@@ -40,7 +40,7 @@ int main(int argc, char **argv)
 
 	std::list<Node> tree = {root};
 
-	double upper_bound = 10628 + 1;
+	double upper_bound = 3323 + 1;
 
 	auto node = tree.begin();
 	int cont = 0;
@@ -60,6 +60,8 @@ int main(int argc, char **argv)
 		}
 
 		//		node = tree.begin();
+		// node = tree.end();
+		// node--;
 
 		hungarian_free(&p);
 		hungarian_init(&p, cost, data->getDimension(), data->getDimension(), mode);
@@ -71,7 +73,7 @@ int main(int argc, char **argv)
 		// std::cout << tree.size() << ", " << cont << "\n";
 
 		// LOG
-		if(cont==10000)
+		if (cont == 10000)
 		{
 			std::cout << "\n\nTree size: " << tree.size() << "\n";
 			std::cout << "Soluçao: ";
@@ -110,6 +112,10 @@ int main(int argc, char **argv)
 			arco.second = current_subtour[i + 1];
 			n.arcos_proibidos.push_back(arco);
 			tree.insert(tree.end(), n);
+			hungarian_free(&p);
+			hungarian_init(&p, cost, data->getDimension(), data->getDimension(), mode);
+
+			current_subtour = calcularSolucao(&p, *node);
 		}
 
 		tree.erase(node);
