@@ -10,6 +10,8 @@
 #include <limits>
 #include <chrono>
 
+struct Subsequence;
+
 #define EPSILON 1e-6
 
 void printData();
@@ -34,9 +36,69 @@ void perturb(std::vector<int> &s);
 
 std::vector<int> construction(double alpha);
 void reOptPreProcessing(std::vector<int> &s, std::vector<std::vector<std::vector<double>>> &reOpt);
+std::vector<std::vector<Subsequence>> subseq_matrix;
 
 void RVND(std::vector<int> &solucao, std::vector<std::vector<std::vector<double>>> &reOpt, double &valor_obj);
 std::vector<int> GILS_RVND();
+
+
+/******** Estruturas Auxiliares MLP *********/
+
+struct Subsequence{
+
+	double t, c;
+	int w;
+	int first, last;
+
+	inline static Subsequence Concatenate(Subsequence &sigma1, Subsequence &sigma2){
+
+		Subsequence sigma;
+
+		double temp = M[sigma1.last][sigma2.first];
+		sigma.w = sigma1.w + sigma2.w;
+		sigma.t= sigma1.t + temp + sigma2.t;
+		sigma.c = sigma1.c + sigma2.w * (sigma1.t + temp) + sigma2.c;
+		sigma.first = sigma1.first;
+		sigma.last = sigma2.last;
+
+		return sigma;
+	}
+
+
+};
+
+void UpdateAllSubseq(std::vector<int> sequence, std::vector<std::vector<Subsequence>> &subseq_matrix){
+
+  int n = sequence.size();
+
+  for (int i = 0; i < n; i++){
+
+    int v = sequence[i];
+
+    subseq_matrix[i][i].w = (i > 0);
+    subseq_matrix[i][i].c = 0;
+    subseq_matrix[i][i].t = 0;
+    subseq_matrix[i][i].first = sequence[i];
+    subseq_matrix[i][i].last = sequence[i];
+
+  }
+
+  for (int i = 0; i < n; i++){
+    for (int j = i + 1; j < n; j++){
+      subseq_matrix[i][j] = Subsequence::Concatenate(subseq_matrix[i][j-1], subseq_matrix[j][j]);
+    }
+  }
+
+  for (int i = n - 1; i >= 0; i--){
+    for (int j = i - 1; j >= 0; j--){
+      subseq_matrix[i][j] = Subsequence::Concatenate(subseq_matrix[i][j+1], subseq_matrix[j][j]);
+    }
+  }
+
+}
+
+/************* Fim Estruturas Auxiliares MLP *************/
+
 
 int main(int argc, char **argv)
 {
@@ -105,6 +167,21 @@ std::vector<int> GILS_RVND()
     double alpha = R[rand() % 26];
     s = construction(alpha);
     reOptPreProcessing(s, reOpt);
+
+		subseq_matrix = std::vector<std::vector<Subsequence>>(s.size(), std::vector<Subsequence>(s.size()));
+		UpdateAllSubseq(s, subseq_matrix);
+
+		// for (int i = 0; i < reOpt[0].size(); i++)
+		// {
+		// 	for (int j = 0; j < reOpt[0][i].size(); j++)
+		// 	{
+		// 		if (subseq_matrix[i][j].t != reOpt[0][i][j])
+		// 		{
+		// 			exit(0);
+		// 		}
+		// 	}
+		// }
+
     valor_obj = reOpt[1][0][N] + reOpt[0][0][N];
 
     s_b = s;
@@ -127,6 +204,7 @@ std::vector<int> GILS_RVND()
       perturb(s_copia);
       s = s_copia;
       reOptPreProcessing(s, reOpt);
+			UpdateAllSubseq(s, subseq_matrix);
 
       valor_obj = reOpt[1][0][N] + reOpt[0][0][N];
 
@@ -146,6 +224,7 @@ std::vector<int> GILS_RVND()
 void RVND(std::vector<int> &solucao, std::vector<std::vector<std::vector<double>>> &reOpt, double &valor_obj)
 {
   std::vector<int> NL = {1, 2, 3, 4, 5};
+  // std::vector<int> NL = {2};
   int n;
 
   std::vector<int> nova_solucao = solucao;
@@ -153,44 +232,41 @@ void RVND(std::vector<int> &solucao, std::vector<std::vector<std::vector<double>
 
   int i = 0;
   while (NL.empty() == false)
-  {
-    n = rand() % NL.size();
-    switch (NL[n])
-    {
-    case 1:
-      buscaVizinhancaSwap(nova_solucao, reOpt, novo_valor_obj);
-      break;
-    case 2:
-    {
-      buscaVizinhanca2Opt(nova_solucao, reOpt, novo_valor_obj);
-      break;
-    }
-    case 3:
-      buscaVizinhancaReinsertion(nova_solucao, reOpt, novo_valor_obj, 1);
-      break;
-    case 4:
-      buscaVizinhancaReinsertion(nova_solucao, reOpt, novo_valor_obj, 2);
-      break;
-    case 5:
-    {
-      buscaVizinhancaReinsertion(nova_solucao, reOpt, novo_valor_obj, 3);
-      break;
-    }
-    }
+	{
+		n = rand() % NL.size();
+		switch (NL[n])
+		{
+			case 1:
+				buscaVizinhancaSwap(nova_solucao, reOpt, novo_valor_obj);
+				break;
+			case 2:
+				buscaVizinhanca2Opt(nova_solucao, reOpt, novo_valor_obj);
+				break;
+			case 3:
+				buscaVizinhancaReinsertion(nova_solucao, reOpt, novo_valor_obj, 1);
+				break;
+			case 4:
+				buscaVizinhancaReinsertion(nova_solucao, reOpt, novo_valor_obj, 2);
+				break;
+			case 5:
+				buscaVizinhancaReinsertion(nova_solucao, reOpt, novo_valor_obj, 3);
+				break;
+		}
 
-    if (novo_valor_obj < valor_obj)
-    {
-      NL = {1, 2, 3, 4, 5};
-      valor_obj = novo_valor_obj;
-      solucao = nova_solucao;
-    }
-    else
-    {
-      NL.erase(NL.begin() + n);
-      nova_solucao = solucao;
-      novo_valor_obj = valor_obj;
-    }
-  }
+		if (novo_valor_obj < valor_obj)
+		{
+			NL = {1, 2, 3, 4, 5};
+			// NL = {2};
+			valor_obj = novo_valor_obj;
+			solucao = nova_solucao;
+		}
+		else
+		{
+			NL.erase(NL.begin() + n);
+			nova_solucao = solucao;
+			novo_valor_obj = valor_obj;
+		}
+	}
 }
 
 void perturb(std::vector<int> &s)
@@ -371,6 +447,8 @@ void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vecto
   double fs;
   int melhor_i, melhor_j;
   bool improved = false;
+	Subsequence sigma1, sigma2;
+
   for (int i = 1; i < s.size() - 2; i++)
   {
     for (int j = i + 1; j < s.size() - 1; j++)
@@ -385,6 +463,12 @@ void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vecto
       T = T2 + M[s[i]][s[j + 1]] + reOpt[0][j + 1][N];
 
       fs = C + T;
+
+			sigma1 = Subsequence::Concatenate(subseq_matrix[0][i-1], subseq_matrix[j][i]);
+			sigma2 = Subsequence::Concatenate(sigma1, subseq_matrix[j+1][N]);
+
+			// std::cout << reOpt[2][j][i] << " " << subseq_matrix[j][i].w << "\n";
+
       // twoOpt(s, i, j);
 
       // if (fs != calculaCustoAcumulado(s))
@@ -402,10 +486,12 @@ void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vecto
 
       // twoOpt(s, i, j);
 
-      if (fs + EPSILON < melhor_valor_obj)
+      // if (fs + EPSILON < melhor_valor_obj)
+      if (sigma2.c + EPSILON < melhor_valor_obj)
       {
         improved = true;
-        melhor_valor_obj = fs;
+        // melhor_valor_obj = fs;
+        melhor_valor_obj = sigma2.c;
         melhor_i = i;
         melhor_j = j;
       }
@@ -416,6 +502,8 @@ void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vecto
   {
     valor_obj = melhor_valor_obj;
     twoOpt(s, melhor_i, melhor_j);
+
+		UpdateAllSubseq(s, subseq_matrix);
 
     for (int j = melhor_i; j <= melhor_j; j++)
     {
@@ -462,6 +550,7 @@ void buscaVizinhanca2Opt(std::vector<int> &s, std::vector<std::vector<std::vecto
         reOpt[1][j][i] = reOpt[1][k][i] + reOpt[2][k][i] * (reOpt[0][j][k + 1] + M[s[k + 1]][s[k]]) + reOpt[1][j][k + 1];
       }
     }
+
   }
 }
 
@@ -475,6 +564,8 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
   int i1, i2, j1, j2;
 
   std::vector<int> COPIA;
+
+	Subsequence sigma1, sigma2;
   for (int i = 1; i < N + 1 - t; i++)
   {
     for (int j = 1; j < N + 1 - t; j++)
@@ -627,6 +718,8 @@ void buscaVizinhancaReinsertion(std::vector<int> &s, std::vector<std::vector<std
         reOpt[1][j][i] = reOpt[1][k][i] + reOpt[2][k][i] * (reOpt[0][j][k + 1] + M[s[k + 1]][s[k]]) + reOpt[1][j][k + 1];
       }
     }
+
+		UpdateAllSubseq(s, subseq_matrix);
   }
 }
 
@@ -637,6 +730,9 @@ void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vecto
   double fs;
   int melhor_i, melhor_j;
   bool improved = false;
+
+	Subsequence sigma1, sigma2, sigma3, sigma4;
+
   for (int i = 1; i < s.size() - 2; i++)
   {
     for (int j = i + 2; j < s.size() - 1; j++)
@@ -659,6 +755,11 @@ void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vecto
 
       fs = C + T;
 
+			sigma1 = Subsequence::Concatenate(subseq_matrix[0][i-1], subseq_matrix[j][j]);
+			sigma2 = Subsequence::Concatenate(sigma1, subseq_matrix[i+1][j-1]);
+			sigma3 = Subsequence::Concatenate(sigma2, subseq_matrix[i][i]);
+			sigma4 = Subsequence::Concatenate(sigma3, subseq_matrix[j+1][N]);
+
       // swap(s, i, j);
       // if (fs != calculaCustoAcumulado(s))
       // {
@@ -670,10 +771,12 @@ void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vecto
       // }
       // swap(s, i, j);
 
-      if (fs + EPSILON < melhor_valor_obj)
+      // if (fs + EPSILON < melhor_valor_obj)
+      if (sigma4.c + EPSILON < melhor_valor_obj)
       {
         improved = true;
-        melhor_valor_obj = fs;
+        // melhor_valor_obj = fs;
+        melhor_valor_obj = sigma4.c;
         melhor_i = i;
         melhor_j = j;
       }
@@ -731,6 +834,8 @@ void buscaVizinhancaSwap(std::vector<int> &s, std::vector<std::vector<std::vecto
       }
     }
     // reOptPreProcessing(s, reOpt);
+
+		UpdateAllSubseq(s, subseq_matrix);
   }
 
   // std::cout << calculaCustoAcumulado(s) << " " << reOpt[1][0][N] + reOpt[0][0][N] << "\n";

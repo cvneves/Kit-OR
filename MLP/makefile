@@ -1,11 +1,11 @@
-CPLEX_VERSION = 12.4
+CPLEX_VERSION = 201
 
 #detecta se o sistema é de 32 ou 64 bits
 BITS_OPTION = -m64
 
 ####diretorios com as libs do cplex
-CPLEXDIR  = /opt/ibm/ILOG/CPLEX_Studio128/cplex
-CONCERTDIR = /opt/ibm/ILOG/CPLEX_Studio128/concert
+CPLEXDIR  = /opt/ibm/ILOG/CPLEX_Studio$(CPLEX_VERSION)/cplex
+CONCERTDIR = /opt/ibm/ILOG/CPLEX_Studio$(CPLEX_VERSION)/concert
    
 CPLEXLIBDIR   = $(CPLEXDIR)/lib/x86-64_linux/static_pic
 CONCERTLIBDIR = $(CONCERTDIR)/lib/x86-64_linux/static_pic
@@ -22,7 +22,7 @@ CCFLAGS = $(CCOPT) -I$(CPLEXINCDIR) -I$(CONCERTINCDIR)
 #############################
 
 #### flags do linker
-CCLNFLAGS = -L$(CPLEXLIBDIR) -lilocplex -lcplex -L$(CONCERTLIBDIR) -lconcert -lm -lpthread 
+CCLNFLAGS = -L$(CPLEXLIBDIR) -lilocplex -lcplex -L$(CONCERTLIBDIR) -lconcert -lm -lpthread -lconcert -lilocplex -lcplex -lm -lpthread -ldl
 #############################
 
 #### diretorios com os source files e com os objs files
